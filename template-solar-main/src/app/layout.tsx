@@ -32,7 +32,7 @@ export const metadata: Metadata = {
     url: siteConfig.url,
     title: siteConfig.name,
     description: siteConfig.description,
-    siteName: siteConfig.name,
+    siteName: siteConfig.brandName,
     images: [
       {
         url: "/opengraph-image",

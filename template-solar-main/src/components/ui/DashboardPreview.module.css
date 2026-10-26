@@ -57,6 +57,68 @@
 .frame select {
   cursor: pointer;
 }
+.handCursor {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 40;
+  pointer-events: none;
+  opacity: 0;
+}
+.handCursorGesture {
+  position: relative;
+  display: block;
+  width: 30px;
+  height: 30px;
+  /* Align the extended fingertip with the actual pointer position. */
+  margin: -2px 0 0 -12px;
+  color: #102442;
+  filter: drop-shadow(0 2px 3px #10244230);
+  transition: transform 140ms ease;
+}
+.handCursorGesture > svg {
+  position: relative;
+  fill: #fff;
+}
+.handCursorHalo {
+  position: absolute;
+  inset: -6px;
+  border: 1px solid #084db540;
+  border-radius: 50%;
+  background: #084db510;
+  animation: handCursorPulse 1.8s ease-in-out infinite;
+}
+.handCursor[data-pressed] .handCursorGesture {
+  transform: scale(0.85);
+}
+@keyframes handCursorPulse {
+  0%,
+  100% {
+    transform: scale(0.85);
+    opacity: 0.45;
+  }
+  50% {
+    transform: scale(1.12);
+    opacity: 0.85;
+  }
+}
+@media (hover: hover) and (pointer: fine) {
+  .frame[data-hand-cursor],
+  .frame[data-hand-cursor] * {
+    cursor: none !important;
+  }
+  .handCursor[data-visible] {
+    opacity: 1;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .handCursorHalo {
+    animation: none;
+  }
+  .handCursorGesture {
+    transition: none;
+  }
+}
 .frame button {
   transition:
     background 0.15s,

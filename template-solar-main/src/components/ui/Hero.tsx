@@ -7,17 +7,16 @@ import {
   RiTeamLine,
 } from "@remixicon/react"
 import styles from "../marketing/Marketing.module.css"
-import { FlickeringGrid } from "@/registry/magicui/flickering-grid"
+import { InteractiveGridPattern } from "@/components/ui/interactive-grid-pattern"
 export function Hero() {
   return (
     <section id="home" className={styles.hero} aria-labelledby="hero-heading">
       <div className={styles.heroGrid} aria-hidden="true">
-        <FlickeringGrid
-          squareSize={4}
-          gridGap={6}
-          color="currentColor"
-          maxOpacity={0.5}
-          flickerChance={0.1}
+        <InteractiveGridPattern
+          width={40}
+          height={40}
+          squares={[36, 20]}
+          drift
         />
       </div>
       <div className={styles.heroContent}>
@@ -31,8 +30,9 @@ export function Hero() {
           <span>Smarter examinations.</span>
         </h1>
         <p>
-          Bring your syllabus, question bank, and examination workflow together.
-          Create with AI assistance. Review with academic confidence.
+          Questra brings syllabus-aligned question banks, AI-assisted question
+          creation, and examination workflows together for colleges and
+          universities. Review with academic confidence.
         </p>
         <div className={styles.heroActions}>
           <a className={styles.button} href="#demo">
@@ -44,14 +44,17 @@ export function Hero() {
           </a>
         </div>
         <div className={styles.heroQualities}>
-          {["Syllabus-aligned", "Faculty-reviewed", "Examination-ready"].map(
-            (item) => (
-              <span key={item}>
-                <RiCheckLine size={14} aria-hidden="true" />
-                {item}
-              </span>
-            ),
-          )}
+          {[
+            "Syllabus-aligned",
+            "Faculty-controlled",
+            "Bloom’s-aware",
+            "Outcome-mapped",
+          ].map((item) => (
+            <span key={item}>
+              <RiCheckLine size={14} aria-hidden="true" />
+              {item}
+            </span>
+          ))}
         </div>
       </div>
       <div className={styles.audiences}>

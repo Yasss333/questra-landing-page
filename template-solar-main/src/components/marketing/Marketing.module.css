@@ -93,7 +93,7 @@
   top: 24px;
 }
 .navbar {
-  /* Keep the navigation and its menu on the original white palette. */
+  /* Keep the navigation and its menu light in both themes. */
   color-scheme: light;
   --theme-text: #102442;
   --theme-muted: #53627a;
@@ -114,11 +114,16 @@
   justify-content: space-between;
   gap: 24px;
   padding: 15px 20px;
-  border: 1px solid var(--theme-border, #e3e9f2b3);
-  border-radius: 10px;
-  background: var(--theme-glass, #ffffffed);
-  backdrop-filter: blur(16px);
-  box-shadow: 0 6px 25px #10244204;
+  border: 1px solid #dce9facc;
+  border-radius: 20px;
+  background: linear-gradient(115deg, #fffffff5, #f0f7fff0 50%, #eaf3ffeb);
+  -webkit-backdrop-filter: blur(24px) saturate(160%);
+  backdrop-filter: blur(24px) saturate(160%);
+  box-shadow:
+    0 14px 36px -12px #084db529,
+    0 3px 8px #1024420a,
+    inset 0 1px 0 #fff,
+    inset 0 -1px 0 #ffffff80;
 }
 .navbar > a:first-child {
   flex: none;
@@ -190,13 +195,13 @@
   padding: 182px 24px 0;
 }
 .heroGrid {
-  color: #19a889;
+  color: #102442;
   position: absolute;
   inset: 70px 0 80px;
   z-index: -1;
   pointer-events: none;
   overflow: hidden;
-  opacity: 0.5;
+  opacity: 1;
   mask-image: radial-gradient(ellipse at center, black 15%, transparent 75%);
 }
 :global(.dark) .heroGrid {
@@ -1523,6 +1528,63 @@
 .formStatus a {
   text-decoration: underline;
   text-underline-offset: 3px;
+}
+.audienceSection {
+  padding-top: 64px;
+  scroll-margin-top: 110px;
+}
+.audienceSection > h3 {
+  color: var(--theme-text, #102442);
+  font-size: clamp(24px, 3vw, 34px);
+  font-weight: 600;
+  letter-spacing: -1px;
+  line-height: 1.3;
+}
+.audienceSection > p {
+  color: var(--theme-muted, #64748b);
+  font-size: 14px;
+  line-height: 1.8;
+  margin-top: 12px;
+}
+.audienceGrid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 15px;
+  margin: 26px 0;
+}
+.audienceGrid article {
+  padding: 22px;
+  border: 1px solid var(--theme-border, #e1e8f1);
+  border-radius: 12px;
+  background: var(--theme-surface, #fff);
+}
+.audienceGrid h4 {
+  color: var(--theme-text, #102442);
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.6;
+}
+.audienceGrid p {
+  color: var(--theme-muted, #64748b);
+  font-size: 12px;
+  line-height: 1.9;
+  margin-top: 9px;
+}
+@media (max-width: 800px) {
+  .audienceGrid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+@media (max-width: 480px) {
+  .audienceGrid {
+    grid-template-columns: 1fr;
+  }
+  .audienceSection {
+    padding-top: 40px;
+  }
+  .audienceGrid article {
+    padding: 19px;
+  }
 }
 .footer {
   max-width: 1152px;

@@ -311,11 +311,15 @@ export function BarList({
 export function GrowthChart({
   total,
   dual = false,
+  approvedTotal = total,
+  initialPeriod = "6 months",
 }: {
   total: number
   dual?: boolean
+  approvedTotal?: number
+  initialPeriod?: string
 }) {
-  const [period, setPeriod] = useState("6 months")
+  const [period, setPeriod] = useState(initialPeriod)
   const [active, setActive] = useState<number | null>(null)
   const id = useId().replaceAll(":", "")
   const labels =
@@ -395,7 +399,8 @@ export function GrowthChart({
             <path
               d={points
                 .map(
-                  (p, i) => `${i ? "L" : "M"}${p.x},${p.y + (158 - p.y) * 0.3}`,
+                  (p, i) =>
+                    `${i ? "L" : "M"}${p.x},${p.y + (158 - p.y) * (1 - approvedTotal / Math.max(1, total))}`,
                 )
                 .join(" ")}
               fill="none"

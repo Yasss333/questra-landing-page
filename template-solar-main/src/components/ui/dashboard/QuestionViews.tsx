@@ -24,6 +24,7 @@ import {
 
 export function QuestionEditor({ question }: { question?: Question }) {
   const demo = useDemo()
+  const [error, setError] = useState("")
   function save(e: FormEvent<HTMLFormElement>) {
     e.preventDefault()
     const fields = new FormData(e.currentTarget)
@@ -43,7 +44,10 @@ export function QuestionEditor({ question }: { question?: Question }) {
       version: question ? "v1.2" : "v1.0",
       released: false,
     }
-    if (!updated.title || !updated.answer) return
+    if (!updated.title || !updated.answer) {
+      setError("Enter a question and an answer outline with visible text.")
+      return
+    }
     demo.setQuestions((all) =>
       question
         ? all.map((q) => (q.id === question.id ? updated : q))
@@ -57,7 +61,7 @@ export function QuestionEditor({ question }: { question?: Question }) {
     )
   }
   return (
-    <form className={styles.form} onSubmit={save}>
+    <form className={styles.form} onSubmit={save} onChange={() => setError("")}>
       <label>
         Question
         <textarea
@@ -157,6 +161,11 @@ export function QuestionEditor({ question }: { question?: Question }) {
         Saving creates a draft. Faculty review is required before approval and
         student release.
       </Notice>
+      {error && (
+        <p className={styles.formError} role="alert">
+          {error}
+        </p>
+      )}
       <button type="submit" className={styles.primaryAction}>
         Save draft
       </button>
@@ -580,7 +589,18 @@ export default function QuestionBankView({
             Clear filters
           </button>
         </div>
-        <QuestionTable questions={filtered} student={student} />
+        <QuestionTable
+          key={JSON.stringify([
+            demo.scope,
+            demo.search,
+            status,
+            type,
+            difficulty,
+            unit,
+          ])}
+          questions={filtered}
+          student={student}
+        />
       </Panel>
       {!student && (
         <div className={styles.twoColumns}>

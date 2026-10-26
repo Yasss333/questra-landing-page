@@ -3,17 +3,33 @@
 import { useState } from "react"
 import { RiArrowRightUpLine, RiCheckLine, RiMailLine } from "@remixicon/react"
 import { siteConfig } from "@/app/siteConfig"
+import { prepareDemoEnquiry } from "@/lib/demo-enquiry"
 import styles from "./Marketing.module.css"
 
 export default function DemoContact() {
   const [prepared, setPrepared] = useState(false)
   const [draft, setDraft] = useState("")
+  const [errors, setErrors] = useState<string[]>([])
   function prepareEmail(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault()
     const values = new FormData(event.currentTarget)
-    const body = `Hello Questra team,\n\nI would like a live demonstration for our institution.\n\nName: ${String(values.get("name")).trim()}\nWork email: ${String(values.get("email")).trim()}\nInstitution: ${String(values.get("institution")).trim()}\nRole: ${String(values.get("role"))}\n\nWhat we would like to explore:\n${String(values.get("message")).trim() || "The Questra platform and Student Portal."}\n\nPlease contact me to arrange a suitable time.`
-    const mailto = `mailto:${siteConfig.contactEmail}?subject=${encodeURIComponent(`Questra demo enquiry — ${String(values.get("institution")).trim()}`)}&body=${encodeURIComponent(body)}`
-    setDraft(mailto)
+    const result = prepareDemoEnquiry(
+      {
+        name: String(values.get("name") || ""),
+        email: String(values.get("email") || ""),
+        institution: String(values.get("institution") || ""),
+        role: String(values.get("role") || ""),
+        message: String(values.get("message") || ""),
+      },
+      siteConfig.contactEmail,
+    )
+    setErrors(result.errors)
+    if (result.errors.length) {
+      setPrepared(false)
+      setDraft("")
+      return
+    }
+    setDraft(result.href)
     setPrepared(true)
   }
   return (
@@ -68,7 +84,11 @@ export default function DemoContact() {
           <form
             className={styles.demoForm}
             onSubmit={prepareEmail}
-            onChange={() => setPrepared(false)}
+            onChange={() => {
+              setPrepared(false)
+              setDraft("")
+              setErrors([])
+            }}
           >
             <div className={styles.formRow}>
               <label>
@@ -135,6 +155,11 @@ export default function DemoContact() {
               Prepare your enquiry, then open it in your email app and send it
               to complete your request.
             </p>
+            {errors.length > 0 && (
+              <div className={styles.formStatus} role="alert">
+                <p>{errors.join(" ")}</p>
+              </div>
+            )}
             {prepared && (
               <div className={styles.formStatus} role="status">
                 <RiCheckLine size={17} aria-hidden="true" />

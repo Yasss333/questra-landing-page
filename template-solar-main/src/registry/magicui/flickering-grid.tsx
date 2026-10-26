@@ -11,6 +11,7 @@ interface FlickeringGridProps extends HTMLAttributes<HTMLDivElement> {
   color?: string
   maxOpacity?: number
   flickerChance?: number
+  hoverStrength?: number
   width?: number
   height?: number
 }
@@ -21,6 +22,7 @@ export function FlickeringGrid({
   color = "#6B7280",
   maxOpacity = 0.5,
   flickerChance = 0.1,
+  hoverStrength = 0,
   width,
   height,
   className,
@@ -50,6 +52,25 @@ export function FlickeringGrid({
     let previousTime = 0
     let inView = false
     let fillColor = color
+    const hoverTarget = container.closest("section") ?? container
+    let targetX = 0
+    let targetY = 0
+    let offsetX = 0
+    let offsetY = 0
+
+    function resetHover() {
+      targetX = 0
+      targetY = 0
+    }
+
+    function followPointer(event: PointerEvent) {
+      if (event.pointerType !== "mouse" || motionPreference.matches) return
+      const bounds = hoverTarget.getBoundingClientRect()
+      targetX =
+        ((event.clientX - bounds.left) / bounds.width - 0.5) * hoverStrength * 2
+      targetY =
+        ((event.clientY - bounds.top) / bounds.height - 0.5) * hoverStrength * 2
+    }
 
     function paint() {
       if (!context) return
@@ -59,8 +80,8 @@ export function FlickeringGrid({
         for (let column = 0; column < columns; column++) {
           context.globalAlpha = opacities[row * columns + column]
           context.fillRect(
-            column * cellSize,
-            row * cellSize,
+            column * cellSize + offsetX,
+            row * cellSize + offsetY,
             squareSize,
             squareSize,
           )
@@ -82,6 +103,10 @@ export function FlickeringGrid({
       const elapsed = (time - previousTime) / 1000
       // A decorative background only needs 30 updates per second.
       if (elapsed >= 1 / 30) {
+        // Ease toward the cursor and gently return to rest on pointer leave.
+        const easing = 1 - Math.exp(-elapsed / 0.16)
+        offsetX += (targetX - offsetX) * easing
+        offsetY += (targetY - offsetY) * easing
         const chance = Math.max(0, flickerChance) * Math.min(elapsed, 0.1)
         for (let index = 0; index < opacities.length; index++) {
           if (Math.random() < chance)
@@ -95,6 +120,10 @@ export function FlickeringGrid({
 
     function syncAnimation() {
       stop()
+      resetHover()
+      offsetX = 0
+      offsetY = 0
+      paint()
       if (inView && !document.hidden && !motionPreference.matches) {
         frame = requestAnimationFrame(animate)
       }
@@ -141,6 +170,11 @@ export function FlickeringGrid({
     intersectionObserver.observe(container)
     motionPreference.addEventListener("change", syncAnimation)
     document.addEventListener("visibilitychange", syncAnimation)
+    if (hoverStrength > 0) {
+      hoverTarget.addEventListener("pointermove", followPointer)
+      hoverTarget.addEventListener("pointerleave", resetHover)
+      window.addEventListener("blur", resetHover)
+    }
 
     return () => {
       stop()
@@ -149,8 +183,20 @@ export function FlickeringGrid({
       intersectionObserver.disconnect()
       motionPreference.removeEventListener("change", syncAnimation)
       document.removeEventListener("visibilitychange", syncAnimation)
+      hoverTarget.removeEventListener("pointermove", followPointer)
+      hoverTarget.removeEventListener("pointerleave", resetHover)
+      window.removeEventListener("blur", resetHover)
     }
-  }, [squareSize, gridGap, color, maxOpacity, flickerChance, width, height])
+  }, [
+    squareSize,
+    gridGap,
+    color,
+    maxOpacity,
+    flickerChance,
+    hoverStrength,
+    width,
+    height,
+  ])
 
   return (
     <div

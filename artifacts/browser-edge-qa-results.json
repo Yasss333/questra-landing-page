@@ -1,0 +1,166 @@
+{
+  "testedAt": "2026-10-26T15:02:08.205Z",
+  "results": [
+    {
+      "name": "All visible section links reach unobscured anchor targets",
+      "status": "passed",
+      "detail": {
+        "targets": 8
+      }
+    },
+    {
+      "name": "Public text has no hidden overflow or clipped headings",
+      "status": "passed"
+    },
+    {
+      "name": "Accessible control names: Overview",
+      "status": "passed",
+      "detail": {
+        "controls": 39
+      }
+    },
+    {
+      "name": "Accessible control names: Master data",
+      "status": "passed",
+      "detail": {
+        "controls": 38
+      }
+    },
+    {
+      "name": "Accessible control names: Question bank",
+      "status": "passed",
+      "detail": {
+        "controls": 39
+      }
+    },
+    {
+      "name": "Accessible control names: AI question studio",
+      "status": "passed",
+      "detail": {
+        "controls": 28
+      }
+    },
+    {
+      "name": "Accessible control names: Coverage explorer",
+      "status": "passed",
+      "detail": {
+        "controls": 63
+      }
+    },
+    {
+      "name": "Accessible control names: Question papers",
+      "status": "passed",
+      "detail": {
+        "controls": 33
+      }
+    },
+    {
+      "name": "Accessible control names: Review & approval",
+      "status": "passed",
+      "detail": {
+        "controls": 33
+      }
+    },
+    {
+      "name": "Accessible control names: Bloom’s analytics",
+      "status": "passed",
+      "detail": {
+        "controls": 49
+      }
+    },
+    {
+      "name": "Accessible control names: Outcome mapping",
+      "status": "passed",
+      "detail": {
+        "controls": 35
+      }
+    },
+    {
+      "name": "Accessible control names: Reports",
+      "status": "passed",
+      "detail": {
+        "controls": 46
+      }
+    },
+    {
+      "name": "Accessible control names: Student portal",
+      "status": "passed",
+      "detail": {
+        "controls": 31
+      }
+    },
+    {
+      "name": "Touch taps navigate the mobile menu and FAQ",
+      "status": "passed"
+    },
+    {
+      "name": "Touch navigation reaches horizontally overflowing dashboard tabs",
+      "status": "passed"
+    },
+    {
+      "name": "Phone table scrolls horizontally without widening the page",
+      "status": "passed"
+    },
+    {
+      "name": "Mobile profile dialog fits the viewport and keeps background still",
+      "status": "passed"
+    },
+    {
+      "name": "Open navigation closes correctly across mobile/desktop breakpoints",
+      "status": "passed"
+    },
+    {
+      "name": "Moving grid animates and responds to a mouse pointer",
+      "status": "passed"
+    },
+    {
+      "name": "Animated theme transition cleans up and both directions stay usable",
+      "status": "passed"
+    },
+    {
+      "name": "Reduced-motion preference removes infinite decorative animation",
+      "status": "passed"
+    },
+    {
+      "name": "Theme toggle works without the View Transitions API",
+      "status": "passed"
+    },
+    {
+      "name": "Dialog focus and size 320px light",
+      "status": "passed"
+    },
+    {
+      "name": "Dialog focus and size 320px dark",
+      "status": "passed"
+    },
+    {
+      "name": "Dialog focus and size 390px light",
+      "status": "passed"
+    },
+    {
+      "name": "Dialog focus and size 390px dark",
+      "status": "passed"
+    },
+    {
+      "name": "Dialog focus and size 820px light",
+      "status": "passed"
+    },
+    {
+      "name": "Dialog focus and size 820px dark",
+      "status": "passed"
+    },
+    {
+      "name": "Dialog focus and size 1440px light",
+      "status": "passed"
+    },
+    {
+      "name": "Dialog focus and size 1440px dark",
+      "status": "passed"
+    },
+    {
+      "name": "Additional browser scenarios have no uncaught exceptions",
+      "status": "passed"
+    }
+  ],
+  "errors": []
+}

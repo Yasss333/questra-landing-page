@@ -3,6 +3,8 @@ import { useState } from "react"
 import { useDemo } from "./DemoContext"
 import {
   csvDownload,
+  coverageTargets,
+  getPaperQuestions,
   levels,
   outcomes,
   percent,
@@ -155,21 +157,13 @@ export function CoverageView() {
         return `K${q.bloom} · ${levels[q.bloom - 1]}`
     }
   }
-  const groups =
-    dimension === "Unit / topic"
-      ? units.map((unit, i) => `Unit ${i + 1} · ${unit}`)
-      : [...new Set(questions.map(groupKey))]
+  const targets = coverageTargets(demo.scopedSubjects, dimension)
+  const groups = [...new Set([...targets.keys(), ...questions.map(groupKey)])]
   const rows = groups
     .filter((key) => key.toLowerCase().includes(demo.search.toLowerCase()))
     .map((key) => {
       const group = questions.filter((q) => groupKey(q) === key)
-      const target =
-        dimension === "Unit / topic"
-          ? demo.scopedSubjects.length * 6
-          : Math.max(
-              group.length,
-              Math.ceil(required / Math.max(1, groups.length)),
-            )
+      const target = targets.get(key) || 0
       const need = Math.max(0, target - group.length)
       const progress = percent(group.length, target)
       return [
@@ -652,15 +646,16 @@ function OutcomeMappingQueue() {
             aria-label={`Assign outcome for ${q.id}`}
             defaultValue=""
             onChange={(e) => {
-              if (!e.target.value) return
+              const selectedOutcome = e.target.value
+              if (!selectedOutcome) return
               demo.setQuestions((all) =>
                 all.map((item) =>
                   item.id === q.id
-                    ? { ...item, outcome: e.target.value }
+                    ? { ...item, outcome: selectedOutcome }
                     : item,
                 ),
               )
-              demo.notify(`${q.id} mapped to ${e.target.value}.`)
+              demo.notify(`${q.id} mapped to ${selectedOutcome}.`)
             }}
           >
             <option value="">Select CO</option>
@@ -669,7 +664,11 @@ function OutcomeMappingQueue() {
             ))}
           </select>,
         ])}
-      empty="All sample questions have an outcome mapping."
+      empty={
+        demo.scopedQuestions.length
+          ? "All sample questions have an outcome mapping."
+          : "No sample questions match this academic selection."
+      }
     />
   )
 }
@@ -727,8 +726,8 @@ export function ReportsView() {
         p.title,
         p.status,
         p.questions.length,
-        p.questions.reduce(
-          (sum, id) => sum + (questions.find((q) => q.id === id)?.marks || 0),
+        getPaperQuestions(p, demo.questions).reduce(
+          (sum, q) => sum + q.marks,
           0,
         ),
       ]),
@@ -753,8 +752,8 @@ export function ReportsView() {
         p.id,
         p.set,
         p.questions.length,
-        p.questions.reduce(
-          (sum, id) => sum + (questions.find((q) => q.id === id)?.marks || 0),
+        getPaperQuestions(p, demo.questions).reduce(
+          (sum, q) => sum + q.marks,
           0,
         ),
       ]),
@@ -846,6 +845,11 @@ export function ReportsView() {
               : Math.round(questions.length * 0.3)
           }
           dual
+          approvedTotal={Math.round(
+            questions.filter((q) => q.status === "Approved").length *
+              (period === "Last 6 months" ? 1 : 0.3),
+          )}
+          initialPeriod={period === "Last 6 months" ? "6 months" : "30 days"}
         />
         <Panel title="Department readiness">
           <BarList

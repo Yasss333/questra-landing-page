@@ -1,0 +1,247 @@
+{
+  "testedAt": "2026-10-26T15:04:31Z",
+  "target": "http://127.0.0.1:3001",
+  "checks": [
+    {
+      "name": "Homepage responds successfully",
+      "status": "passed"
+    },
+    {
+      "name": "Exactly one page-level H1",
+      "status": "passed"
+    },
+    {
+      "name": "HTML IDs are unique",
+      "status": "passed"
+    },
+    {
+      "name": "All homepage anchor targets exist",
+      "status": "passed"
+    },
+    {
+      "name": "No placeholder hash links",
+      "status": "passed"
+    },
+    {
+      "name": "Primary marketing sections exist",
+      "status": "passed"
+    },
+    {
+      "name": "Brand images have descriptive alternatives",
+      "status": "passed"
+    },
+    {
+      "name": "No removed meteor footer banner remains",
+      "status": "passed"
+    },
+    {
+      "name": "No original farming marketing copy remains",
+      "status": "passed"
+    },
+    {
+      "name": "Questra SEO title and description are present",
+      "status": "passed"
+    },
+    {
+      "name": "Canonical identifies the configured production domain",
+      "status": "passed"
+    },
+    {
+      "name": "Social metadata is present",
+      "status": "passed"
+    },
+    {
+      "name": "Structured data is present and valid JSON",
+      "status": "passed"
+    },
+    {
+      "name": "Enquiry copy distinguishes preparation from sending",
+      "status": "passed"
+    },
+    {
+      "name": "Illustrative dashboard labeling is present",
+      "status": "passed"
+    },
+    {
+      "name": "Student content does not imply measured mastery",
+      "status": "passed"
+    },
+    {
+      "name": "Blueprint topic represented: Connected academic masters",
+      "status": "passed"
+    },
+    {
+      "name": "Blueprint topic represented: Syllabus intelligence, down to the topic",
+      "status": "passed"
+    },
+    {
+      "name": "Blueprint topic represented: Quality signals for academic reviewers",
+      "status": "passed"
+    },
+    {
+      "name": "Blueprint topic represented: Requests, deadlines, and accountable review",
+      "status": "passed"
+    },
+    {
+      "name": "Blueprint topic represented: A command center for examination readiness",
+      "status": "passed"
+    },
+    {
+      "name": "Blueprint topic represented: Your formats. Your release controls.",
+      "status": "passed"
+    },
+    {
+      "name": "Blueprint topic represented: Controllers of Examinations",
+      "status": "passed"
+    },
+    {
+      "name": "Blueprint topic represented: IQAC & OBE teams",
+      "status": "passed"
+    },
+    {
+      "name": "Blueprint topic represented: Syllabus to questions",
+      "status": "passed"
+    },
+    {
+      "name": "Blueprint topic represented: Clarity through analytics",
+      "status": "passed"
+    },
+    {
+      "name": "Blueprint topic represented: Institution-managed access",
+      "status": "passed"
+    },
+    {
+      "name": "Route/asset /robots.txt returns 200",
+      "status": "passed"
+    },
+    {
+      "name": "Route/asset /sitemap.xml returns 200",
+      "status": "passed"
+    },
+    {
+      "name": "Route/asset /icon.svg returns 200",
+      "status": "passed"
+    },
+    {
+      "name": "Route/asset /opengraph-image returns 200",
+      "status": "passed"
+    },
+    {
+      "name": "Route/asset /brand/questra-logo.png returns 200",
+      "status": "passed"
+    },
+    {
+      "name": "Route/asset /qa-route-that-does-not-exist returns 404",
+      "status": "passed"
+    },
+    {
+      "name": "Route/asset /?utm_source=qa-audit returns 200",
+      "status": "passed"
+    },
+    {
+      "name": "Route/asset /_next/static/css/3e86d4cae9603aa5.css returns 200",
+      "status": "passed"
+    },
+    {
+      "name": "Route/asset /_next/static/css/0fa8f21f21155555.css returns 200",
+      "status": "passed"
+    },
+    {
+      "name": "Route/asset /_next/static/css/1397924f4acf76f1.css returns 200",
+      "status": "passed"
+    },
+    {
+      "name": "Route/asset /_next/image?url=%2Fbrand%2Fquestra-logo.png&w=1920&q=75 returns 200",
+      "status": "passed"
+    },
+    {
+      "name": "Robots points to production sitemap",
+      "status": "passed"
+    },
+    {
+      "name": "Sitemap identifies production home",
+      "status": "passed"
+    },
+    {
+      "name": "Bounded localhost workload: 40 requests, concurrency 4, no failed responses",
+      "status": "passed"
+    }
+  ],
+  "stress": {
+    "requests": 40,
+    "concurrency": 4,
+    "successful": 40,
+    "p50Ms": 45.63,
+    "p95Ms": 62.66,
+    "maxMs": 66.47
+  },
+  "routes": [
+    {
+      "path": "/robots.txt",
+      "status": 200,
+      "type": "text/plain",
+      "ms": 92.47
+    },
+    {
+      "path": "/sitemap.xml",
+      "status": 200,
+      "type": "application/xml",
+      "ms": 96.81
+    },
+    {
+      "path": "/icon.svg",
+      "status": 200,
+      "type": "image/svg+xml",
+      "ms": 37.1
+    },
+    {
+      "path": "/opengraph-image",
+      "status": 200,
+      "type": "image/png",
+      "ms": 92.48
+    },
+    {
+      "path": "/brand/questra-logo.png",
+      "status": 200,
+      "type": "image/png",
+      "ms": 48.4
+    },
+    {
+      "path": "/qa-route-that-does-not-exist",
+      "status": 404,
+      "type": "text/html; charset=utf-8",
+      "ms": 126.03
+    },
+    {
+      "path": "/?utm_source=qa-audit",
+      "status": 200,
+      "type": "text/html; charset=utf-8",
+      "ms": 42.1
+    },
+    {
+      "path": "/_next/static/css/3e86d4cae9603aa5.css",
+      "status": 200,
+      "type": "text/css; charset=UTF-8",
+      "ms": 72.46
+    },
+    {
+      "path": "/_next/static/css/0fa8f21f21155555.css",
+      "status": 200,
+      "type": "text/css; charset=UTF-8",
+      "ms": 69.47
+    },
+    {
+      "path": "/_next/static/css/1397924f4acf76f1.css",
+      "status": 200,
+      "type": "text/css; charset=UTF-8",
+      "ms": 47.71
+    },
+    {
+      "path": "/_next/image?url=%2Fbrand%2Fquestra-logo.png&w=1920&q=75",
+      "status": 200,
+      "type": "image/png",
+      "ms": 23.73
+    }
+  ],
+  "browserStatus": "blocked; this suite checks HTTP/SSR, not browser layout, touch, or keyboard behavior"
+}

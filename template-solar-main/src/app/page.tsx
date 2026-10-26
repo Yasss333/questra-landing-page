@@ -10,9 +10,16 @@ import {
 } from "@/components/marketing/HomeSections"
 import DemoContact from "@/components/marketing/DemoContact"
 import styles from "@/components/marketing/Marketing.module.css"
+import { homeStructuredData } from "./structured-data"
 export default function Home() {
   return (
     <main id="main-content" tabIndex={-1} className={styles.main}>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(homeStructuredData).replace(/</g, "\\u003c"),
+        }}
+      />
       <Hero />
       <div className={styles.dashboardWrap}>
         <DashboardPreview />

@@ -1,5 +1,7 @@
 import type { MetadataRoute } from "next"
 import { siteConfig } from "./siteConfig"
 export default function sitemap(): MetadataRoute.Sitemap {
-  return [{ url: siteConfig.url, changeFrequency: "monthly", priority: 1 }]
+  return [
+    { url: `${siteConfig.url}/`, changeFrequency: "monthly", priority: 1 },
+  ]
 }

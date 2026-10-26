@@ -20,6 +20,7 @@ import {
   RiSparklingLine,
 } from "@remixicon/react"
 import QuestraLogo from "../marketing/QuestraLogo"
+import DashboardCursor from "./DashboardCursor"
 import {
   DemoContext,
   type DemoContextValue,
@@ -234,7 +235,9 @@ export default function DashboardPreview() {
   const [students, setStudents] = useState<Student[]>(() =>
     initialStudents.map((s) => ({ ...s })),
   )
-  const [reportHistory, setReportHistory] = useState<{ report: DemoReport; at: string }[]>([])
+  const [reportHistory, setReportHistory] = useState<
+    { report: DemoReport; at: string }[]
+  >([])
   const [dialog, setDialog] = useState<{
     title: string
     body: ReactNode
@@ -246,6 +249,10 @@ export default function DashboardPreview() {
   const triggerRef = useRef<HTMLElement | null>(null)
   const toastTimer = useRef<ReturnType<typeof setTimeout> | null>(null)
   const open = Boolean(dialog)
+  const dialogTitle = dialog?.title
+  useEffect(() => {
+    if (dialogTitle) closeRef.current?.focus()
+  }, [dialogTitle])
   useEffect(() => {
     if (!open) return
     closeRef.current?.focus()
@@ -320,7 +327,10 @@ export default function DashboardPreview() {
     students,
     setStudents,
     showDialog: (title, body, subtitle) => {
-      if (!dialog) triggerRef.current = document.activeElement as HTMLElement
+      // Stored dialog actions can hold an older context; inspect the live
+      // dialog ref so replacing its contents preserves the original opener.
+      if (!modalRef.current)
+        triggerRef.current = document.activeElement as HTMLElement
       setDialog({ title, body, subtitle })
     },
     closeDialog: () => setDialog(null),
@@ -412,6 +422,7 @@ export default function DashboardPreview() {
           </p>
         </div>
         <div className={styles.frame}>
+          <DashboardCursor />
           <aside
             className={styles.sidebar}
             aria-label="Dashboard preview navigation"
@@ -461,7 +472,15 @@ export default function DashboardPreview() {
                   value={search}
                   onChange={(e) => {
                     setSearch(e.target.value)
-                    if (["Overview", "AI question studio", "Bloom’s analytics", "Outcome mapping"].includes(view)) setView("Question bank")
+                    if (
+                      [
+                        "Overview",
+                        "AI question studio",
+                        "Bloom’s analytics",
+                        "Outcome mapping",
+                      ].includes(view)
+                    )
+                      setView("Question bank")
                   }}
                 />
               </label>

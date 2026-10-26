@@ -189,6 +189,7 @@ function AddRecord({ kind }: { kind: "subject" | "student" | "staff" }) {
         <input
           name="name"
           required
+          pattern={".*\\S.*"}
           maxLength={100}
           placeholder={
             kind === "subject"
@@ -317,7 +318,11 @@ export default function MasterDataView() {
         </strong>,
         5,
         s.pdf ? (
-          <button key="syllabus" className={styles.textAction} onClick={() => openSyllabus(s)}>
+          <button
+            key="syllabus"
+            className={styles.textAction}
+            onClick={() => openSyllabus(s)}
+          >
             View syllabus
           </button>
         ) : (
@@ -326,7 +331,11 @@ export default function MasterDataView() {
         s.version,
         demo.staff.filter((st) => st.subjects.includes(s.id)).length,
         <Pill key="status">{s.pdf ? "Verified" : "Incomplete"}</Pill>,
-        <button key="details" className={styles.textAction} onClick={() => openSubject(s)}>
+        <button
+          key="details"
+          className={styles.textAction}
+          onClick={() => openSubject(s)}
+        >
           View details
         </button>,
       ])}
@@ -396,9 +405,29 @@ export default function MasterDataView() {
             key={name}
             id={`master-tab-${name.replaceAll(" ", "-")}`}
             role="tab"
+            tabIndex={tab === name ? 0 : -1}
             aria-selected={tab === name}
             aria-controls="master-tabpanel"
             onClick={() => setTab(name)}
+            onKeyDown={(event) => {
+              const index = tabs.indexOf(name)
+              const next =
+                event.key === "ArrowRight"
+                  ? (index + 1) % tabs.length
+                  : event.key === "ArrowLeft"
+                    ? (index + tabs.length - 1) % tabs.length
+                    : event.key === "Home"
+                      ? 0
+                      : event.key === "End"
+                        ? tabs.length - 1
+                        : -1
+              if (next < 0) return
+              event.preventDefault()
+              setTab(tabs[next])
+              event.currentTarget.parentElement
+                ?.querySelectorAll<HTMLButtonElement>("button")
+                [next].focus()
+            }}
           >
             {name}
           </button>

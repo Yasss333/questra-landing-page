@@ -1,4 +1,3 @@
-import Image from "next/image"
 import {
   RiArrowRightLine,
   RiArrowRightUpLine,
@@ -121,7 +120,8 @@ export function Platform() {
             <p>
               AI Question Studio is designed to draft from selected syllabus
               topics, with controls for marks, question type, difficulty, and
-              Bloom’s level.
+              Bloom’s level. Faculty can preview drafts, refine wording and
+              answers, and review alternatives before approval.
             </p>
           </div>
           <div
@@ -161,17 +161,47 @@ export function Platform() {
           {
             Icon: RiQuestionAnswerLine,
             title: "A question bank with context",
-            text: "Bring manual and AI-assisted questions together, with topic, marks, difficulty, and outcome mapping.",
+            text: "Bring manual and AI-assisted MCQs, short answers, essays, numerical, coding, and case-based questions together. Keep marks, difficulty, Bloom’s levels, outcomes, answers, variants, and revision history in context.",
           },
           {
             Icon: RiFlowChart,
             title: "Your pattern. Your paper.",
-            text: "Define sections, marks, internal choices, and coverage. Assemble paper sets from the approved bank.",
+            text: "Design reusable blueprints with duration, maximum marks, Part A/B/C sections, compulsory and optional questions, either/or choices, unit weightage, difficulty, and cognitive balance. Validate totals before assembling approved paper sets.",
           },
           {
             Icon: RiFileList3Line,
             title: "Ready for the next step",
             text: "Prepare answer keys, marking guidance, and institution-specific paper formats for PDF and Word export.",
+          },
+          {
+            Icon: RiGraduationCapLine,
+            title: "Connected academic masters",
+            text: "Organize institutions, academic years, batches, degrees, departments, semesters, subject types, students, and staff. Plan structured imports, validation, completeness checks, and faculty-to-subject assignments.",
+          },
+          {
+            Icon: RiBookOpenLine,
+            title: "Syllabus intelligence, down to the topic",
+            text: "Connect syllabus PDFs and curriculum versions to units, topics, subtopics, and Course Outcomes. Define Mid-Term and End-Semester scope, preserve references, and surface missing mappings or coverage gaps.",
+          },
+          {
+            Icon: RiShieldCheckLine,
+            title: "Quality signals for academic reviewers",
+            text: "Designed checks highlight semantic similarity, ambiguous wording, syllabus relevance, answer correctness, MCQ validity, numerical reasoning, Bloom’s consistency, and blueprint compliance. Faculty verify every academic decision.",
+          },
+          {
+            Icon: RiFlowChart,
+            title: "Requests, deadlines, and accountable review",
+            text: "Coordinate paper requests, assigned setters, deadlines, review queues, resubmissions, and release approvals. Compare Set A/B/C/D alternatives, check repetition, and authorize question substitutions before release.",
+          },
+          {
+            Icon: RiFileList3Line,
+            title: "A command center for examination readiness",
+            text: "Review question inventory, AI and manual contributions, faculty workload, pending approvals, department readiness, coverage gaps, and examination deadlines. Planned Excel, CSV, and PDF reporting supports institutional review.",
+          },
+          {
+            Icon: RiLockLine,
+            title: "Your formats. Your release controls.",
+            text: "Plan institution-specific headers, instructions, numbering, and page layouts alongside role-based permissions, controlled access, version history, and audit trails. Deployment and security requirements are confirmed with your institution.",
           },
         ].map(({ Icon, title, text }) => (
           <article key={title}>
@@ -185,6 +215,47 @@ export function Platform() {
         Explore the proposed platform workflow in your demo. Feature
         availability and configuration are confirmed for your institution.
       </p>
+      <div id="solutions" className={styles.audienceSection}>
+        <h3>Designed for the people behind academic quality.</h3>
+        <p>One shared process, with a clear role for every academic team.</p>
+        <div className={styles.audienceGrid}>
+          {[
+            [
+              "Universities & autonomous colleges",
+              "Standardize examination governance across departments and programmes.",
+            ],
+            [
+              "Controllers of Examinations",
+              "Oversee paper readiness, deadlines, review progress, and controlled release.",
+            ],
+            [
+              "Heads of Department",
+              "Track syllabus coverage, faculty assignments, and the balance of upcoming papers.",
+            ],
+            [
+              "Faculty & question setters",
+              "Draft faster while retaining control over wording, answers, and academic quality.",
+            ],
+            [
+              "IQAC & OBE teams",
+              "Review cognitive distribution and Course Outcome / Programme Outcome alignment.",
+            ],
+            [
+              "Institution IT & administration",
+              "Discuss identity, access, deployment, data policies, and integration requirements.",
+            ],
+          ].map(([title, text]) => (
+            <article key={title}>
+              <h4>{title}</h4>
+              <p>{text}</p>
+            </article>
+          ))}
+        </div>
+        <a className={styles.textLink} href="#demo">
+          See Questra for your institution{" "}
+          <RiArrowRightUpLine size={17} aria-hidden="true" />
+        </a>
+      </div>
     </section>
   )
 }
@@ -411,40 +482,31 @@ export function StudentPortal() {
             </a>
           </div>
         </div>
-        <div className={styles.studentImage}>
-          <div className={styles.browserBar}>
-            <span />
-            <span />
-            <span />
-            <p>
-              Questra Student Portal <span>· Product concept</span>
-            </p>
-            <RiLockLine size={12} aria-hidden="true" />
-          </div>
-          <Image
-            src="/images/questra-student-portal.png"
-            alt="Questra Student Portal concept showing subjects, syllabus units, approved questions, past examination papers, and content analytics"
-            width={1280}
-            height={837}
-            sizes="(max-width: 768px) 100vw, 1120px"
-          />
-          <span className={styles.imageCaption}>
-            Supplied product concept · Sample academic data
-          </span>
-        </div>
         <div className={styles.studentBenefits}>
           {[
             [
               "Your semester, simplified",
-              "Current subjects and syllabus topics, organized in one place.",
+              "Registered current-semester subjects, course codes, credits, syllabus resources, and faculty details where your institution publishes them.",
+            ],
+            [
+              "Syllabus to questions",
+              "Explore units, topics, subtopics, curriculum versions, learning objectives, and permitted syllabus PDFs. Move directly to relevant published practice questions.",
             ],
             [
               "Practice with context",
-              "Approved questions by topic, marks, Bloom’s level, and outcome.",
+              "Discover approved questions by subject, topic, marks, type, difficulty, Bloom’s K1–K6 level, and Course Outcome. Answers and marking guidance appear only when authorized.",
             ],
             [
               "Learn from past papers",
-              "Institution-authorized Mid-Term and End-Semester archives.",
+              "Explore institution-authorized Mid-Term I, Mid-Term II, and End-Semester archives by subject, year, exam date, paper set, and version, with policy-aware viewing and downloads.",
+            ],
+            [
+              "Clarity through analytics",
+              "See published question types, Bloom’s distribution, Course Outcome coverage, and unit-level gaps. These describe available content, not measured student mastery.",
+            ],
+            [
+              "Institution-managed access",
+              "The portal is designed around your student profile and enrollment, with academic notices and help. Private records, future examination sets, and staff-only materials remain restricted.",
             ],
           ].map(([title, text], i) => (
             <article key={title}>

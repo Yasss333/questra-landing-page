@@ -1,0 +1,453 @@
+{
+  "testedAt": "2026-10-26T15:04:25.550Z",
+  "results": [
+    {
+      "name": "Question IDs are unique",
+      "status": "passed",
+      "ms": 0.13
+    },
+    {
+      "name": "Question references and metadata are valid",
+      "status": "passed",
+      "ms": 0.36
+    },
+    {
+      "name": "Student-visible sample records are approved and released",
+      "status": "passed",
+      "ms": 0.07
+    },
+    {
+      "name": "Paper references resolve to approved questions",
+      "status": "passed",
+      "ms": 0.13
+    },
+    {
+      "name": "Locked paper content survives question-bank edits",
+      "status": "passed",
+      "ms": 0.39
+    },
+    {
+      "name": "Student IDs are unique despite duplicate-name candidates",
+      "status": "passed",
+      "ms": 0.04
+    },
+    {
+      "name": "Staff subject assignments resolve and contain no duplicate IDs",
+      "status": "passed",
+      "ms": 0.07
+    },
+    {
+      "name": "Blueprint targets total correctly: Unit / topic, 0 subjects",
+      "status": "passed",
+      "ms": 0.26
+    },
+    {
+      "name": "Blueprint targets total correctly: Unit / topic, 1 subjects",
+      "status": "passed",
+      "ms": 0.06
+    },
+    {
+      "name": "Blueprint targets total correctly: Unit / topic, 2 subjects",
+      "status": "passed",
+      "ms": 0.02
+    },
+    {
+      "name": "Blueprint targets total correctly: Unit / topic, 7 subjects",
+      "status": "passed",
+      "ms": 0.03
+    },
+    {
+      "name": "Blueprint targets total correctly: Unit / topic, 50 subjects",
+      "status": "passed",
+      "ms": 0.03
+    },
+    {
+      "name": "Blueprint targets total correctly: Batch, 0 subjects",
+      "status": "passed",
+      "ms": 0.01
+    },
+    {
+      "name": "Blueprint targets total correctly: Batch, 1 subjects",
+      "status": "passed",
+      "ms": 0.01
+    },
+    {
+      "name": "Blueprint targets total correctly: Batch, 2 subjects",
+      "status": "passed",
+      "ms": 0.01
+    },
+    {
+      "name": "Blueprint targets total correctly: Batch, 7 subjects",
+      "status": "passed",
+      "ms": 0.01
+    },
+    {
+      "name": "Blueprint targets total correctly: Batch, 50 subjects",
+      "status": "passed",
+      "ms": 0.06
+    },
+    {
+      "name": "Blueprint targets total correctly: Degree, 0 subjects",
+      "status": "passed",
+      "ms": 0.01
+    },
+    {
+      "name": "Blueprint targets total correctly: Degree, 1 subjects",
+      "status": "passed",
+      "ms": 0.01
+    },
+    {
+      "name": "Blueprint targets total correctly: Degree, 2 subjects",
+      "status": "passed",
+      "ms": 0.01
+    },
+    {
+      "name": "Blueprint targets total correctly: Degree, 7 subjects",
+      "status": "passed",
+      "ms": 0.01
+    },
+    {
+      "name": "Blueprint targets total correctly: Degree, 50 subjects",
+      "status": "passed",
+      "ms": 0.05
+    },
+    {
+      "name": "Blueprint targets total correctly: Department, 0 subjects",
+      "status": "passed",
+      "ms": 0.01
+    },
+    {
+      "name": "Blueprint targets total correctly: Department, 1 subjects",
+      "status": "passed",
+      "ms": 0.01
+    },
+    {
+      "name": "Blueprint targets total correctly: Department, 2 subjects",
+      "status": "passed",
+      "ms": 0
+    },
+    {
+      "name": "Blueprint targets total correctly: Department, 7 subjects",
+      "status": "passed",
+      "ms": 0.01
+    },
+    {
+      "name": "Blueprint targets total correctly: Department, 50 subjects",
+      "status": "passed",
+      "ms": 0.03
+    },
+    {
+      "name": "Blueprint targets total correctly: Semester, 0 subjects",
+      "status": "passed",
+      "ms": 0
+    },
+    {
+      "name": "Blueprint targets total correctly: Semester, 1 subjects",
+      "status": "passed",
+      "ms": 0
+    },
+    {
+      "name": "Blueprint targets total correctly: Semester, 2 subjects",
+      "status": "passed",
+      "ms": 0
+    },
+    {
+      "name": "Blueprint targets total correctly: Semester, 7 subjects",
+      "status": "passed",
+      "ms": 0.01
+    },
+    {
+      "name": "Blueprint targets total correctly: Semester, 50 subjects",
+      "status": "passed",
+      "ms": 0.03
+    },
+    {
+      "name": "Blueprint targets total correctly: Subject, 0 subjects",
+      "status": "passed",
+      "ms": 0
+    },
+    {
+      "name": "Blueprint targets total correctly: Subject, 1 subjects",
+      "status": "passed",
+      "ms": 0
+    },
+    {
+      "name": "Blueprint targets total correctly: Subject, 2 subjects",
+      "status": "passed",
+      "ms": 0
+    },
+    {
+      "name": "Blueprint targets total correctly: Subject, 7 subjects",
+      "status": "passed",
+      "ms": 0.01
+    },
+    {
+      "name": "Blueprint targets total correctly: Subject, 50 subjects",
+      "status": "passed",
+      "ms": 0.05
+    },
+    {
+      "name": "Blueprint targets total correctly: Marks, 0 subjects",
+      "status": "passed",
+      "ms": 0.01
+    },
+    {
+      "name": "Blueprint targets total correctly: Marks, 1 subjects",
+      "status": "passed",
+      "ms": 0.01
+    },
+    {
+      "name": "Blueprint targets total correctly: Marks, 2 subjects",
+      "status": "passed",
+      "ms": 0.01
+    },
+    {
+      "name": "Blueprint targets total correctly: Marks, 7 subjects",
+      "status": "passed",
+      "ms": 0.01
+    },
+    {
+      "name": "Blueprint targets total correctly: Marks, 50 subjects",
+      "status": "passed",
+      "ms": 0.04
+    },
+    {
+      "name": "Blueprint targets total correctly: Complexity, 0 subjects",
+      "status": "passed",
+      "ms": 0.01
+    },
+    {
+      "name": "Blueprint targets total correctly: Complexity, 1 subjects",
+      "status": "passed",
+      "ms": 0
+    },
+    {
+      "name": "Blueprint targets total correctly: Complexity, 2 subjects",
+      "status": "passed",
+      "ms": 0.01
+    },
+    {
+      "name": "Blueprint targets total correctly: Complexity, 7 subjects",
+      "status": "passed",
+      "ms": 0.01
+    },
+    {
+      "name": "Blueprint targets total correctly: Complexity, 50 subjects",
+      "status": "passed",
+      "ms": 0.03
+    },
+    {
+      "name": "Blueprint targets total correctly: Type, 0 subjects",
+      "status": "passed",
+      "ms": 0.03
+    },
+    {
+      "name": "Blueprint targets total correctly: Type, 1 subjects",
+      "status": "passed",
+      "ms": 0.01
+    },
+    {
+      "name": "Blueprint targets total correctly: Type, 2 subjects",
+      "status": "passed",
+      "ms": 0.01
+    },
+    {
+      "name": "Blueprint targets total correctly: Type, 7 subjects",
+      "status": "passed",
+      "ms": 0.01
+    },
+    {
+      "name": "Blueprint targets total correctly: Type, 50 subjects",
+      "status": "passed",
+      "ms": 0.05
+    },
+    {
+      "name": "Blueprint targets total correctly: Outcome, 0 subjects",
+      "status": "passed",
+      "ms": 0.03
+    },
+    {
+      "name": "Blueprint targets total correctly: Outcome, 1 subjects",
+      "status": "passed",
+      "ms": 0.01
+    },
+    {
+      "name": "Blueprint targets total correctly: Outcome, 2 subjects",
+      "status": "passed",
+      "ms": 0.01
+    },
+    {
+      "name": "Blueprint targets total correctly: Outcome, 7 subjects",
+      "status": "passed",
+      "ms": 0.01
+    },
+    {
+      "name": "Blueprint targets total correctly: Outcome, 50 subjects",
+      "status": "passed",
+      "ms": 0.03
+    },
+    {
+      "name": "Blueprint targets total correctly: Bloom, 0 subjects",
+      "status": "passed",
+      "ms": 0.03
+    },
+    {
+      "name": "Blueprint targets total correctly: Bloom, 1 subjects",
+      "status": "passed",
+      "ms": 0.01
+    },
+    {
+      "name": "Blueprint targets total correctly: Bloom, 2 subjects",
+      "status": "passed",
+      "ms": 0.01
+    },
+    {
+      "name": "Blueprint targets total correctly: Bloom, 7 subjects",
+      "status": "passed",
+      "ms": 0.01
+    },
+    {
+      "name": "Blueprint targets total correctly: Bloom, 50 subjects",
+      "status": "passed",
+      "ms": 0.05
+    },
+    {
+      "name": "Exhaustive academic filter combinations remain consistent",
+      "status": "passed",
+      "ms": 9.46
+    },
+    {
+      "name": "Empty scopes report zero safely",
+      "status": "passed",
+      "ms": 0.2
+    },
+    {
+      "name": "Percentages cap at 100 for overfilled sample blueprints",
+      "status": "passed",
+      "ms": 0.02
+    },
+    {
+      "name": "CSV escapes quotes and preserves multiline content",
+      "status": "passed",
+      "ms": 0.15
+    },
+    {
+      "name": "CSV neutralizes formula-like text: \"=1+1\"",
+      "status": "passed",
+      "ms": 0.09
+    },
+    {
+      "name": "CSV neutralizes formula-like text: \"+SUM(A1:A2)\"",
+      "status": "passed",
+      "ms": 0.01
+    },
+    {
+      "name": "CSV neutralizes formula-like text: \"@SUM(A1:A2)\"",
+      "status": "passed",
+      "ms": 0
+    },
+    {
+      "name": "CSV neutralizes formula-like text: \"-1+2\"",
+      "status": "passed",
+      "ms": 0
+    },
+    {
+      "name": "CSV neutralizes formula-like text: \"  =HYPERLINK(\\\"x\\\")\"",
+      "status": "passed",
+      "ms": 0
+    },
+    {
+      "name": "CSV neutralizes formula-like text: \"\\t=2+2\"",
+      "status": "passed",
+      "ms": 0
+    },
+    {
+      "name": "CSV preserves actual numeric values",
+      "status": "passed",
+      "ms": 0.03
+    },
+    {
+      "name": "Valid enquiry prepares an addressed draft, without sending",
+      "status": "passed",
+      "ms": 0.49
+    },
+    {
+      "name": "Enquiry trims surrounding whitespace",
+      "status": "passed",
+      "ms": 0.28
+    },
+    {
+      "name": "Enquiry rejects invalid name: 3 characters",
+      "status": "passed",
+      "ms": 0.05
+    },
+    {
+      "name": "Enquiry rejects invalid institution: 2 characters",
+      "status": "passed",
+      "ms": 0.01
+    },
+    {
+      "name": "Enquiry rejects invalid email: 7 characters",
+      "status": "passed",
+      "ms": 0.01
+    },
+    {
+      "name": "Enquiry rejects invalid email: 3 characters",
+      "status": "passed",
+      "ms": 0.01
+    },
+    {
+      "name": "Enquiry rejects invalid email: 17 characters",
+      "status": "passed",
+      "ms": 0.01
+    },
+    {
+      "name": "Enquiry rejects invalid role: 0 characters",
+      "status": "passed",
+      "ms": 0.01
+    },
+    {
+      "name": "Enquiry rejects invalid name: 101 characters",
+      "status": "passed",
+      "ms": 0.01
+    },
+    {
+      "name": "Enquiry rejects invalid email: 173 characters",
+      "status": "passed",
+      "ms": 0.01
+    },
+    {
+      "name": "Enquiry rejects invalid institution: 161 characters",
+      "status": "passed",
+      "ms": 0.01
+    },
+    {
+      "name": "Enquiry rejects invalid message: 1501 characters",
+      "status": "passed",
+      "ms": 0.02
+    },
+    {
+      "name": "Unicode and special characters round-trip through mailto encoding",
+      "status": "passed",
+      "ms": 0.19
+    },
+    {
+      "name": "Maximum supported message length is accepted",
+      "status": "passed",
+      "ms": 0.05
+    },
+    {
+      "name": "10,000-record filter workload remains correct",
+      "status": "passed",
+      "ms": 30.5
+    }
+  ],
+  "scopeCases": 1440,
+  "benchmark": {
+    "records": 10000,
+    "iterations": 100,
+    "ms": 25.97,
+    "matches": 98000
+  },
+  "browserStatus": "blocked: browser and native-computer runtimes fail before connection with failed to write kernel assets"
+}

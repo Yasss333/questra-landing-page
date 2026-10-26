@@ -18,7 +18,9 @@ import type {
 } from "./demo-data"
 export type DemoContextValue = {
   reportHistory: { report: DemoReport; at: string }[]
-  setReportHistory: Dispatch<SetStateAction<{ report: DemoReport; at: string }[]>>
+  setReportHistory: Dispatch<
+    SetStateAction<{ report: DemoReport; at: string }[]>
+  >
   view: View
   navigate: (view: View) => void
   search: string

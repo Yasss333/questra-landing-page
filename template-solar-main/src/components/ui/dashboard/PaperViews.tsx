@@ -3,6 +3,7 @@ import { useState, type FormEvent } from "react"
 import { RiCheckLine, RiFileTextLine, RiLockLine } from "@remixicon/react"
 import { useDemo } from "./DemoContext"
 import {
+  getPaperQuestions,
   levels,
   percent,
   units,
@@ -22,16 +23,16 @@ import {
 
 function PaperBuilder({ paper }: { paper?: Paper }) {
   const demo = useDemo()
+  const [error, setError] = useState("")
   const [subject, setSubject] = useState(
-    paper?.subjectId ||
-      demo.scope.subject ||
-      demo.scopedSubjects[0]?.id ||
-      "CS401",
+    paper?.subjectId || demo.scope.subject || demo.scopedSubjects[0]?.id || "",
   )
   const [count, setCount] = useState(5)
-  const approved = demo.questions.filter(
-    (q) => q.subjectId === subject && q.status === "Approved",
-  )
+  const approved = demo.scopedSubjects.some((s) => s.id === subject)
+    ? demo.questions.filter(
+        (q) => q.subjectId === subject && q.status === "Approved",
+      )
+    : []
   function save(e: FormEvent<HTMLFormElement>) {
     e.preventDefault()
     if (!approved.length) return
@@ -55,7 +56,10 @@ function PaperBuilder({ paper }: { paper?: Paper }) {
       ],
       set: String(fields.get("set")),
     }
-    if (!updated.title) return
+    if (!updated.title) {
+      setError("Enter an examination title with visible text.")
+      return
+    }
     demo.setPapers((all) =>
       paper
         ? all.map((p) => (p.id === paper.id ? updated : p))
@@ -69,7 +73,7 @@ function PaperBuilder({ paper }: { paper?: Paper }) {
     )
   }
   return (
-    <form className={styles.form} onSubmit={save}>
+    <form className={styles.form} onSubmit={save} onChange={() => setError("")}>
       <label>
         Examination title
         <input
@@ -114,6 +118,11 @@ function PaperBuilder({ paper }: { paper?: Paper }) {
         to {Math.min(count, approved.length)} questions and derives marks from
         them.
       </Notice>
+      {error && (
+        <p className={styles.formError} role="alert">
+          {error}
+        </p>
+      )}
       <button
         type="submit"
         className={styles.primaryAction}
@@ -126,9 +135,7 @@ function PaperBuilder({ paper }: { paper?: Paper }) {
 }
 export function PaperDocument({ paper }: { paper: Paper }) {
   const demo = useDemo()
-  const questions = paper.questions
-    .map((id) => demo.questions.find((q) => q.id === id))
-    .filter((q) => q !== undefined)
+  const questions = getPaperQuestions(paper, demo.questions)
   const subject = demo.subjects.find((s) => s.id === paper.subjectId)
   return (
     <div className={styles.document}>
@@ -164,9 +171,7 @@ export function PaperDocument({ paper }: { paper: Paper }) {
 }
 function PaperResources({ paper }: { paper: Paper }) {
   const demo = useDemo()
-  const questions = paper.questions
-    .map((id) => demo.questions.find((q) => q.id === id))
-    .filter((q) => q !== undefined)
+  const questions = getPaperQuestions(paper, demo.questions)
   const compare = () => {
     const other = demo.scopedPapers.find(
       (p) =>
@@ -178,9 +183,7 @@ function PaperResources({ paper }: { paper: Paper }) {
       demo.notify("Create a second set for this subject to compare papers.")
       return
     }
-    const otherQuestions = other.questions
-      .map((id) => demo.questions.find((q) => q.id === id))
-      .filter((q) => q !== undefined)
+    const otherQuestions = getPaperQuestions(other, demo.questions)
     const overlap = paper.questions.filter((id) =>
       other.questions.includes(id),
     ).length
@@ -407,9 +410,8 @@ export default function PapersView() {
                   <small className={styles.cellSub}>{p.id}</small>
                 </span>,
                 p.set,
-                p.questions.reduce(
-                  (sum, id) =>
-                    sum + (demo.questions.find((q) => q.id === id)?.marks || 0),
+                getPaperQuestions(p, demo.questions).reduce(
+                  (sum, q) => sum + q.marks,
                   0,
                 ),
                 p.version,
@@ -431,7 +433,7 @@ export default function PapersView() {
                   label="Paper blueprint balance"
                   headers={["Unit", "Bloom distribution", "Questions"]}
                   rows={units.map((unit, i) => {
-                    const qs = demo.questions.filter(
+                    const qs = getPaperQuestions(active, demo.questions).filter(
                       (q) =>
                         active.questions.includes(q.id) && q.unit === i + 1,
                     )
@@ -536,6 +538,10 @@ function ReviewActions({ paper }: { paper: Paper }) {
           ? {
               ...p,
               status: target,
+              questionSnapshot:
+                target === "Locked"
+                  ? getPaperQuestions(p, demo.questions).map((q) => ({ ...q }))
+                  : undefined,
               comments: comment.trim()
                 ? [...p.comments, comment.trim()]
                 : p.comments,
@@ -624,10 +630,7 @@ export function ReviewView() {
     papers.find((p) => p.id === selected) ||
     papers.find((p) => /review|approval/.test(p.status)) ||
     papers[0]
-  const questions =
-    active?.questions
-      .map((id) => demo.questions.find((q) => q.id === id))
-      .filter((q) => q !== undefined) || []
+  const questions = active ? getPaperQuestions(active, demo.questions) : []
   const index = Math.min(questionIndex, Math.max(0, questions.length - 1))
   const question = questions[index]
   const columns = ["Faculty review", "Moderator review", "Ready for approval"]

@@ -80,6 +80,7 @@ export type Paper = {
   status: PaperStatus
   version: string
   questions: string[]
+  questionSnapshot?: Question[]
   reviewer: string
   comments: string[]
   history: string[]
@@ -110,7 +111,12 @@ export type Scope = {
   semester: string
   subject: string
 }
-export type DemoReport = { name: string; subtitle: string; headers: string[]; rows: (string | number)[][] }
+export type DemoReport = {
+  name: string
+  subtitle: string
+  headers: string[]
+  rows: (string | number)[][]
+}
 export const emptyScope: Scope = {
   batch: "",
   degree: "",
@@ -352,6 +358,12 @@ export function createPapers(questions: Question[]): Paper[] {
     status,
     version: i % 2 ? "v1.1" : "v1.0",
     questions: approved.slice(0, i % 2 ? 5 : 8),
+    questionSnapshot:
+      status === "Locked"
+        ? questions
+            .filter((q) => approved.slice(0, i % 2 ? 5 : 8).includes(q.id))
+            .map((q) => ({ ...q }))
+        : undefined,
     reviewer: ["Dr. Priya Raman", "Prof. Arun Kumar", "Dr. Meena S"][i % 3],
     comments:
       i === 1
@@ -365,6 +377,14 @@ export function createPapers(questions: Question[]): Paper[] {
     ],
     set: i % 2 ? "B" : "A",
   }))
+}
+export function getPaperQuestions(paper: Paper, questions: Question[]) {
+  return (
+    paper.questionSnapshot ||
+    paper.questions
+      .map((id) => questions.find((q) => q.id === id))
+      .filter((q) => q !== undefined)
+  )
 }
 export const initialStaff: Staff[] = [
   {
@@ -479,18 +499,67 @@ export function matchesScope(subject: Subject, scope: Scope) {
 export function percent(part: number, total: number) {
   return total ? Math.min(100, Math.round((part / total) * 100)) : 0
 }
+export function coverageTargets(subjects: Subject[], dimension: string) {
+  const n = subjects.length
+  if (dimension === "Unit / topic")
+    return new Map(units.map((unit, i) => [`Unit ${i + 1} · ${unit}`, n * 6]))
+  if (dimension === "Bloom")
+    return new Map(levels.map((level, i) => [`K${i + 1} · ${level}`, n * 5]))
+  if (dimension === "Type")
+    return new Map(questionTypes.map((type) => [type, n * 5]))
+  if (dimension === "Marks")
+    return new Map([
+      ["1 marks", 0],
+      ["2 marks", n * 5],
+      ["5 marks", n * 10],
+      ["10 marks", n * 10],
+      ["15 marks", n * 5],
+    ])
+  if (dimension === "Complexity")
+    return new Map([
+      ["Easy", n * 9],
+      ["Medium", n * 12],
+      ["Hard", n * 9],
+    ])
+  if (dimension === "Outcome")
+    return new Map([
+      ...outcomes.map((o) => [o.id, n * 6] as [string, number]),
+      ["Unmapped", 0],
+    ])
+  const groups = new Map<string, number>()
+  for (const subject of subjects) {
+    const key =
+      dimension === "Batch"
+        ? subject.batch
+        : dimension === "Degree"
+          ? subject.degree
+          : dimension === "Department"
+            ? subject.department
+            : dimension === "Semester"
+              ? subject.semester
+              : subject.name
+    groups.set(key, (groups.get(key) || 0) + 30)
+  }
+  return groups
+}
+export function csvCell(value: string | number) {
+  const text = String(value)
+  const safe =
+    typeof value === "string" && /^[\s]*[=+@-]/.test(text) ? `'${text}` : text
+  return `"${safe.replaceAll('"', '""')}"`
+}
 export function csvDownload(
   name: string,
   headers: string[],
   rows: (string | number)[][],
 ) {
-  const cell = (value: string | number) =>
-    `"${String(value).replaceAll('"', '""')}"`
   const url = URL.createObjectURL(
     new Blob(
       [
         "\uFEFF" +
-          [headers, ...rows].map((row) => row.map(cell).join(",")).join("\r\n"),
+          [headers, ...rows]
+            .map((row) => row.map(csvCell).join(","))
+            .join("\r\n"),
       ],
       { type: "text/csv;charset=utf-8" },
     ),
