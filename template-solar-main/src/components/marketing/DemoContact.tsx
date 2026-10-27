@@ -5,6 +5,7 @@ import { RiArrowRightUpLine, RiCheckLine, RiMailLine } from "@remixicon/react"
 import { siteConfig } from "@/app/siteConfig"
 import { prepareDemoEnquiry } from "@/lib/demo-enquiry"
 import styles from "./Marketing.module.css"
+import { BorderBeam } from "@/registry/magicui/border-beam"
 
 export default function DemoContact() {
   const [prepared, setPrepared] = useState(false)
@@ -79,6 +80,7 @@ export default function DemoContact() {
           </a>
         </div>
         <div className={styles.demoFormWrap}>
+          <BorderBeam />
           <h3>Let’s find the right fit.</h3>
           <p>Tell us a little about your academic team.</p>
           <form

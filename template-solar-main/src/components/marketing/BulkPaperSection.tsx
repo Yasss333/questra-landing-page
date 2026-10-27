@@ -1,4 +1,6 @@
 import styles from "./BulkPaperSection.module.css"
+import { Pointer } from "@/registry/magicui/pointer"
+import { DiaTextReveal } from "@/registry/magicui/dia-text-reveal"
 
 const features = [
   ["01", "Bulk paper generation", "Select multiple batch years, degrees, departments, semesters and subjects in one coordinated workflow."],
@@ -8,6 +10,7 @@ const features = [
   ["05", "A complete overview", "See paper requests, examination types, generation progress, current approvers and approval status in one dashboard."],
   ["06", "Individual paper tracking", "Follow each paper from generation through review, revision and final approval, with pending actions visible."],
 ]
+const featurePointers = ["📄", "📅", "📚", "✅", "📊", "📋"]
 const papers = [
   ["Data Structures", "Mid-term I", "In review", "Level 2 of 3"],
   ["Engineering Mathematics", "End-semester", "Approved", "Complete"],
@@ -18,7 +21,14 @@ export default function BulkPaperSection() {
     <section id="bulk-paper-generation" className={styles.section} aria-labelledby="bulk-heading">
       <div className={styles.heading}>
         <span className={styles.eyebrow}>EXAMINATION INTELLIGENCE · AT SCALE</span>
-        <h2 id="bulk-heading">Simplicity of Super Intelligence in <span>Bulk Question Paper Generation</span></h2>
+        <h2 id="bulk-heading">
+          <DiaTextReveal
+            text="Simplicity of Super Intelligence in Bulk Question Paper Generation"
+            colors={["#0754b5", "#38bdf8", "#078d78", "#22c5a0", "#0754b5"]}
+            delay={0.35}
+            duration={2.4}
+          />
+        </h2>
         <p>Generate multiple question papers across your institution with intelligent syllabus mapping, configurable approval workflows and complete examination visibility.</p>
         <a className={styles.cta} href="#demo">Schedule a live demo <span aria-hidden="true">↗</span></a>
       </div>
@@ -29,7 +39,7 @@ export default function BulkPaperSection() {
         <div className={styles.tableWrap}><table><thead><tr><th>Subject</th><th>Examination</th><th>Status</th><th>Approval</th></tr></thead><tbody>{papers.map(([subject, exam, status, approval]) => <tr key={subject}><td>{subject}</td><td>{exam}</td><td><span className={styles.status}>{status}</span></td><td>{approval}</td></tr>)}</tbody></table></div>
         <p className={styles.note}>Sample records shown for illustration.</p>
       </div>
-      <div className={styles.features}>{features.map(([number, title, description]) => <article key={number}><span>{number}</span><h3>{title}</h3><p>{description}</p></article>)}</div>
+      <div className={styles.features}>{features.map(([number, title, description], index) => <article key={number}><span>{number}</span><h3>{title}</h3><p>{description}</p><Pointer>{featurePointers[index]}</Pointer></article>)}</div>
     </section>
   )
 }

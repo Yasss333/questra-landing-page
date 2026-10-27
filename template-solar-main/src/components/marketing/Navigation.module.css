@@ -415,3 +415,6 @@
 .menuLink small {
   font-size: 12px;
 }
+
+.trigger, .navigation .directLink, .menuLink strong { font-size: 15px; }
+.menuLink small { font-size: 14px; }

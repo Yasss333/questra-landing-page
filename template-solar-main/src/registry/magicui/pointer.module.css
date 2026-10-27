@@ -1,0 +1,23 @@
+.pointer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  pointer-events: none;
+  user-select: none;
+}
+.icon {
+  display: grid;
+  place-items: center;
+  width: 42px;
+  height: 42px;
+  font-size: 25px;
+  line-height: 1;
+  border-radius: 50%;
+  border: 1px solid var(--theme-border, #d9e4f3);
+  background: var(--theme-surface, #fff);
+  box-shadow: 0 4px 16px #0754b526;
+}
+@media (hover: none), (pointer: coarse) {
+  .pointer { display: none; }
+}
