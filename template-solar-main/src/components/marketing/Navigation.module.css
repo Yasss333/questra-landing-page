@@ -405,3 +405,13 @@
     transition: none;
   }
 }
+
+/* Keep navigation and dropdown descriptions easy to read. */
+.trigger,
+.navigation .directLink,
+.menuLink strong {
+  font-size: 14px;
+}
+.menuLink small {
+  font-size: 12px;
+}

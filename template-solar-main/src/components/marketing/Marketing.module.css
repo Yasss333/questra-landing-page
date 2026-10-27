@@ -2806,3 +2806,41 @@
     transform: none;
   }
 }
+
+/* Readable marketing copy across desktop and mobile. */
+.section p:not(.syllabusViz p):not(.questionViz p),
+.facultySection p,
+.demoSection p {
+  font-size: max(15px, 1em);
+}
+.sectionHeading > p,
+.featureCopy p,
+.faqSection > div > p,
+.faqList details > p {
+  font-size: 16px;
+  line-height: 1.7;
+}
+.faqList summary {
+  font-size: 17px;
+  line-height: 1.5;
+}
+.faqList > details {
+  padding: 22px 0;
+}
+.heroContent > p {
+  font-size: 18px;
+}
+@media (max-width: 767px) {
+  .sectionHeading > p,
+  .featureCopy p,
+  .faqSection > div > p,
+  .faqList details > p {
+    font-size: 16px;
+  }
+  .faqList summary {
+    font-size: 16px;
+  }
+  .heroContent > p {
+    font-size: 16px;
+  }
+}

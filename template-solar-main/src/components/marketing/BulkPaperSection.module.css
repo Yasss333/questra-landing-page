@@ -1,0 +1,44 @@
+.section { max-width: 1200px; margin: 40px auto 0; padding: 70px 24px 90px; }
+.heading { max-width: 960px; margin: 0 auto 48px; text-align: center; }
+.eyebrow { display: inline-block; color: var(--theme-accent, #0754b5); font-size: 12px; font-weight: 700; letter-spacing: .13em; }
+.heading h2 { margin: 18px 0; color: var(--theme-text, #102442); font-size: clamp(34px, 4.2vw, 58px); line-height: 1.12; letter-spacing: -.035em; }
+.heading h2 span { color: var(--theme-accent, #0754b5); }
+.heading p { max-width: 740px; margin: 0 auto; color: var(--theme-muted, #526781); font-size: 18px; line-height: 1.7; }
+.cta { display: inline-flex; gap: 12px; align-items: center; margin-top: 25px; padding: 14px 21px; border-radius: 8px; background: #0754b5; color: white; font-size: 15px; font-weight: 600; text-decoration: none; }
+.dashboard { border: 1px solid var(--theme-border, #d8e5f2); border-radius: 16px; overflow: hidden; background: var(--theme-surface, #fff); box-shadow: 0 20px 60px #153c6e18; }
+.dashboardTop { display:flex; justify-content:space-between; gap: 12px; padding: 16px 24px; background: var(--theme-subtle, #f5f9fd); border-bottom: 1px solid var(--theme-border, #e2eaf3); color: var(--theme-muted, #607591); font-size: 11px; font-weight: 700; letter-spacing: .08em; }
+.dot { display:inline-block; width:8px; height:8px; margin-right:8px; border-radius:50%; background:#18ac8a; }
+.dashboardTitle { display:flex; justify-content:space-between; align-items:center; gap:16px; padding:26px 28px 18px; }
+.dashboardTitle div > span { font-size:11px; font-weight:700; letter-spacing:.1em; color:var(--theme-muted, #64748b); }
+.dashboardTitle h3 { margin:7px 0 4px; font-size:25px; color:var(--theme-text, #102442); }
+.dashboardTitle p { margin:0; color:var(--theme-muted, #64748b); font-size:14px; }
+.tag, .status { display:inline-block; border-radius:30px; padding:6px 10px; color:var(--theme-green, #087f6d); background:var(--theme-green-surface, #e7f8f2); font-size:12px; font-weight:600; }
+.metrics { display:grid; grid-template-columns:repeat(4,1fr); gap:12px; padding:0 28px 24px; }
+.metrics > div { padding:16px; border:1px solid var(--theme-border, #e2eaf3); border-radius:10px; background:var(--theme-subtle, #f8fbfe); }
+.metrics span { display:block; color:var(--theme-muted, #64748b); font-size:13px; }
+.metrics strong { display:block; margin-top:8px; color:var(--theme-text, #102442); font-size:25px; }
+.tableWrap { overflow-x:auto; padding:0 28px; }
+.tableWrap table { width:100%; min-width:560px; border-collapse:collapse; text-align:left; }
+.tableWrap th, .tableWrap td { padding:13px 10px; border-bottom:1px solid var(--theme-border, #e7edf5); font-size:13px; color:var(--theme-muted, #526781); }
+.tableWrap th { font-size:11px; text-transform:uppercase; letter-spacing:.07em; }
+.tableWrap td:first-child { color:var(--theme-text, #102442); font-weight:600; }
+.note { padding:14px 28px 20px; margin:0; font-size:12px; color:var(--theme-muted, #64748b); }
+.features { display:grid; grid-template-columns:repeat(3,1fr); gap:16px; margin-top:24px; }
+.features article { padding:24px; border:1px solid var(--theme-border, #dce7f2); border-radius:12px; background:var(--theme-surface, #fff); }
+.features article > span { color:var(--theme-green, #078d78); font-size:13px; font-weight:700; }
+.features h3 { margin:12px 0 8px; color:var(--theme-text, #102442); font-size:18px; }
+.features p { margin:0; color:var(--theme-muted, #526781); font-size:15px; line-height:1.65; }
+@media (max-width: 767px) { .section { padding:52px 20px 65px; margin-top:0; } .heading p { font-size:16px; } .dashboardTop { padding:14px 16px; font-size:10px; } .dashboardTitle { padding:22px 18px 16px; align-items:flex-start; flex-direction:column; } .metrics { grid-template-columns:repeat(2,1fr); padding:0 18px 20px; } .tableWrap { padding:0 18px; } .note { padding:14px 18px 18px; } .features { grid-template-columns:1fr; } }
+
+/* Increase readability of the bulk-generation section. */
+.eyebrow, .dashboardTop, .dashboardTitle div > span, .tableWrap th { font-size: 14px; }
+.heading p { font-size: 20px; }
+.cta, .dashboardTitle p, .metrics span, .tableWrap td, .note, .features p { font-size: 16px; }
+.tag, .status, .features article > span { font-size: 14px; }
+.dashboardTitle h3, .metrics strong { font-size: 28px; }
+.features h3 { font-size: 21px; }
+@media (max-width: 767px) {
+  .heading p { font-size: 18px; }
+  .dashboardTop { font-size: 12px; flex-wrap: wrap; }
+  .features h3 { font-size: 20px; }
+}

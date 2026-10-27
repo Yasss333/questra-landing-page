@@ -8,6 +8,7 @@ import {
   StudentPortal,
   Workflow,
 } from "@/components/marketing/HomeSections"
+import BulkPaperSection from "@/components/marketing/BulkPaperSection"
 import DemoContact from "@/components/marketing/DemoContact"
 import styles from "@/components/marketing/Marketing.module.css"
 import { homeStructuredData } from "./structured-data"
@@ -21,6 +22,7 @@ export default function Home() {
         }}
       />
       <Hero />
+      <BulkPaperSection />
       <div className={styles.dashboardWrap}>
         <DashboardPreview />
       </div>
