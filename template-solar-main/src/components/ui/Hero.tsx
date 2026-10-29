@@ -1,3 +1,4 @@
+import Link from "next/link"
 import {
   RiArrowDownLine,
   RiArrowRightUpLine,
@@ -20,28 +21,32 @@ export function Hero() {
         />
       </div>
       <div className={styles.heroContent}>
-        <a className={styles.heroBadge} href="#platform">
-          <span /> Academic intelligence. Faculty control.{" "}
+        <Link
+          className={styles.heroBadge}
+          href="/how-it-works#institution-setup"
+        >
+          <span /> Question paper super intelligence.{" "}
           <RiArrowRightUpLine size={14} aria-hidden="true" />
-        </a>
+        </Link>
         <h1 id="hero-heading">
-          Better questions.
+          From syllabus to
           <br />
-          <span>Smarter examinations.</span>
+          <span>sanctioned question paper.</span>
         </h1>
         <p>
-          Questra brings syllabus-aligned question banks, AI-assisted question
-          creation, and examination workflows together for colleges and
-          universities. Review with academic confidence.
+          Generate smarter questions. Validate every requirement. Coordinate
+          every stakeholder. Questra connects question banks, paper generation,
+          and institutional approvals in one intelligent workspace.
         </p>
         <div className={styles.heroActions}>
-          <a className={styles.button} href="#demo">
-            Book a live demo <RiArrowRightUpLine size={18} aria-hidden="true" />
-          </a>
-          <a className={styles.secondaryButton} href="#platform">
-            Explore the platform{" "}
+          <Link className={styles.button} href="/book-demo">
+            Experience a live demo{" "}
+            <RiArrowRightUpLine size={18} aria-hidden="true" />
+          </Link>
+          <Link className={styles.secondaryButton} href="#platform">
+            Explore the 11-step setup{" "}
             <RiArrowDownLine size={16} aria-hidden="true" />
-          </a>
+          </Link>
         </div>
         <div className={styles.heroQualities}>
           {[

@@ -1,0 +1,159 @@
+.main {
+  padding-top: 120px;
+  color: var(--theme-text, #102442);
+}
+.hero,
+.section {
+  width: min(1180px, calc(100% - 48px));
+  margin: 0 auto;
+}
+.hero {
+  padding: 70px 0 64px;
+  border-bottom: 1px solid #8b9bb533;
+}
+.eyebrow {
+  color: #19a889;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+.hero h1 {
+  max-width: 960px;
+  font-size: clamp(40px, 5.7vw, 76px);
+  line-height: 1.08;
+  letter-spacing: -0.055em;
+  margin: 24px 0;
+  font-weight: 600;
+}
+.hero p,
+.intro {
+  max-width: 730px;
+  font-size: 18px;
+  line-height: 1.8;
+  opacity: 0.8;
+}
+.actions {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  align-items: center;
+  margin-top: 30px;
+}
+.button {
+  display: inline-flex;
+  background: #084db5;
+  color: white;
+  padding: 14px 22px;
+  border-radius: 10px;
+  font-size: 14px;
+  font-weight: 600;
+}
+.link {
+  font-size: 14px;
+  font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: 5px;
+}
+.section {
+  padding: 64px 0;
+}
+.section h2 {
+  font-size: clamp(28px, 3.5vw, 44px);
+  letter-spacing: -0.04em;
+  line-height: 1.15;
+  margin: 16px 0 22px;
+  font-weight: 600;
+}
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+  margin-top: 32px;
+  padding: 0;
+  list-style: none;
+}
+.card {
+  padding: 28px;
+  border: 1px solid #8b9bb533;
+  border-radius: 16px;
+  background: #8b9bb508;
+}
+.card h3 {
+  font-size: 19px;
+  line-height: 1.4;
+  font-weight: 600;
+  margin: 15px 0 12px;
+  letter-spacing: -0.025em;
+}
+.card p {
+  font-size: 14px;
+  line-height: 1.85;
+  opacity: 0.8;
+}
+.number {
+  color: #19a889;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+}
+.path {
+  line-height: 2 !important;
+}
+.note {
+  margin-top: 24px;
+  font-size: 14px;
+  line-height: 1.8;
+  opacity: 0.8;
+}
+.banner {
+  background: #102442;
+  color: white;
+  padding: 32px;
+  border-radius: 18px;
+  margin-top: 28px;
+}
+.banner h3 {
+  font-size: 24px;
+  margin-bottom: 12px;
+  font-weight: 600;
+}
+.banner p {
+  max-width: 740px;
+  line-height: 1.8;
+  opacity: 0.85;
+}
+.main :focus-visible {
+  outline: 3px solid #19a889;
+  outline-offset: 5px;
+}
+@media (max-width: 850px) {
+  .grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+@media (max-width: 600px) {
+  .main {
+    padding-top: 90px;
+  }
+  .hero {
+    padding: 42px 0;
+  }
+  .hero,
+  .section {
+    width: calc(100% - 36px);
+  }
+  .section {
+    padding: 42px 0;
+  }
+  .grid {
+    grid-template-columns: 1fr;
+  }
+  .card {
+    padding: 24px;
+  }
+}
+
+.section[id] {
+  scroll-margin-top: 110px;
+}

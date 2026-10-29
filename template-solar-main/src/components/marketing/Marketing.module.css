@@ -341,7 +341,7 @@
 }
 .section h2,
 .facultySection h2,
-.demoSection h2 {
+.demoSection :is(h1, h2) {
   font-size: clamp(30px, 3.6vw, 46px);
   font-weight: 550;
   letter-spacing: -1.7px;
@@ -1385,13 +1385,13 @@
   font-weight: 500;
   color: var(--theme-muted, #6382aa);
 }
-.demoCopy h2 {
+.demoCopy :is(h1, h2) {
   margin-top: 24px;
   font-size: 50px;
   line-height: 1.14;
   letter-spacing: -2px;
 }
-.demoCopy h2 > span {
+.demoCopy :is(h1, h2) > span {
   color: var(--theme-accent, #084db5);
 }
 .demoCopy > p {
@@ -1819,7 +1819,7 @@
   .demoInner {
     gap: 40px;
   }
-  .demoCopy h2 {
+  .demoCopy :is(h1, h2) {
     font-size: 42px;
   }
   .demoFormWrap {
@@ -2145,7 +2145,7 @@
     grid-template-columns: 1fr;
     padding-block: 60px;
   }
-  .demoCopy h2 {
+  .demoCopy :is(h1, h2) {
     font-size: 46px;
   }
   .demoCopy > p {
@@ -2314,7 +2314,7 @@
   }
   .section h2,
   .facultySection h2,
-  .demoSection h2 {
+  .demoSection :is(h1, h2) {
     font-size: 32px;
     letter-spacing: -1.2px;
   }
@@ -2692,7 +2692,7 @@
     padding-block: 50px;
     gap: 30px;
   }
-  .demoCopy h2 {
+  .demoCopy :is(h1, h2) {
     font-size: 40px;
     letter-spacing: -1.6px;
   }

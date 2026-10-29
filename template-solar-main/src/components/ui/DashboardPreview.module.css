@@ -3476,3 +3476,15 @@
 .primaryAction {
   color: #fff;
 }
+
+/* Public preview shows selected modules; full workflows are demo-only. */
+.navLock { margin-left: auto; flex-shrink: 0; opacity: .65; }
+.lockedPreview { position: relative; overflow: hidden; min-height: 400px; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 48px 24px; border: 1px solid var(--theme-border, #e0e7ef); border-radius: 14px; background: var(--theme-surface, #fff); }
+.lockArtwork { position: absolute; inset: 28px; opacity: .35; filter: blur(6px); pointer-events: none; display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+.lockArtwork span { background: linear-gradient(180deg, #8b9bb522, transparent); border: 1px solid #8b9bb533; border-radius: 12px; }
+.lockedPreview > :not(.lockArtwork) { position: relative; }
+.lockIcon { display: grid; place-items: center; width: 64px; height: 64px; border-radius: 18px; background: var(--theme-blue-surface, #edf4ff); color: var(--theme-accent, #084db5); margin-bottom: 22px; }
+.lockedPreview h4 { font-size: clamp(22px, 3vw, 30px); line-height: 1.25; letter-spacing: -.04em; margin: 14px 0; font-weight: 600; }
+.lockedPreview p { max-width: 390px; color: var(--theme-muted, #64748b); font-size: 14px; line-height: 1.8; }
+.unlockCta { display: inline-flex; align-items: center; justify-content: center; gap: 12px; min-height: 46px; background: #084db5; color: white; padding: 12px 20px; border-radius: 8px; font-size: 13px; font-weight: 600; margin: 24px 0 16px; }
+.lockedPreview small { max-width: 340px; color: var(--theme-muted, #64748b); font-size: 12px; line-height: 1.7; }

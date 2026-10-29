@@ -1,3 +1,4 @@
+import Link from "next/link"
 import {
   RiArrowRightLine,
   RiArrowRightUpLine,
@@ -9,11 +10,11 @@ import {
   RiGraduationCapLine,
   RiLockLine,
   RiMagicLine,
-  RiQuestionAnswerLine,
   RiShieldCheckLine,
   RiUploadCloud2Line,
 } from "@remixicon/react"
 import styles from "./Marketing.module.css"
+import { capabilities, stakeholders } from "./ProductContent"
 
 function SectionLabel({
   number,
@@ -118,10 +119,10 @@ export function Platform() {
               <br />A higher bar for questions.
             </h3>
             <p>
-              AI Question Studio is designed to draft from selected syllabus
-              topics, with controls for marks, question type, difficulty, and
-              Bloom’s level. Faculty can preview drafts, refine wording and
-              answers, and review alternatives before approval.
+              AI Question Studio drafts from selected syllabus topics, with
+              controls for marks, question type, difficulty, and Bloom’s level.
+              Faculty can preview drafts, refine wording and answers, and review
+              alternatives before approval.
             </p>
           </div>
           <div
@@ -157,104 +158,33 @@ export function Platform() {
         </article>
       </div>
       <div className={styles.capabilityRow}>
-        {[
-          {
-            Icon: RiQuestionAnswerLine,
-            title: "A question bank with context",
-            text: "Bring manual and AI-assisted MCQs, short answers, essays, numerical, coding, and case-based questions together. Keep marks, difficulty, Bloom’s levels, outcomes, answers, variants, and revision history in context.",
-          },
-          {
-            Icon: RiFlowChart,
-            title: "Your pattern. Your paper.",
-            text: "Design reusable blueprints with duration, maximum marks, Part A/B/C sections, compulsory and optional questions, either/or choices, unit weightage, difficulty, and cognitive balance. Validate totals before assembling approved paper sets.",
-          },
-          {
-            Icon: RiFileList3Line,
-            title: "Ready for the next step",
-            text: "Prepare answer keys, marking guidance, and institution-specific paper formats for PDF and Word export.",
-          },
-          {
-            Icon: RiGraduationCapLine,
-            title: "Connected academic masters",
-            text: "Organize institutions, academic years, batches, degrees, departments, semesters, subject types, students, and staff. Plan structured imports, validation, completeness checks, and faculty-to-subject assignments.",
-          },
-          {
-            Icon: RiBookOpenLine,
-            title: "Syllabus intelligence, down to the topic",
-            text: "Connect syllabus PDFs and curriculum versions to units, topics, subtopics, and Course Outcomes. Define Mid-Term and End-Semester scope, preserve references, and surface missing mappings or coverage gaps.",
-          },
-          {
-            Icon: RiShieldCheckLine,
-            title: "Quality signals for academic reviewers",
-            text: "Designed checks highlight semantic similarity, ambiguous wording, syllabus relevance, answer correctness, MCQ validity, numerical reasoning, Bloom’s consistency, and blueprint compliance. Faculty verify every academic decision.",
-          },
-          {
-            Icon: RiFlowChart,
-            title: "Requests, deadlines, and accountable review",
-            text: "Coordinate paper requests, assigned setters, deadlines, review queues, resubmissions, and release approvals. Compare Set A/B/C/D alternatives, check repetition, and authorize question substitutions before release.",
-          },
-          {
-            Icon: RiFileList3Line,
-            title: "A command center for examination readiness",
-            text: "Review question inventory, AI and manual contributions, faculty workload, pending approvals, department readiness, coverage gaps, and examination deadlines. Planned Excel, CSV, and PDF reporting supports institutional review.",
-          },
-          {
-            Icon: RiLockLine,
-            title: "Your formats. Your release controls.",
-            text: "Plan institution-specific headers, instructions, numbering, and page layouts alongside role-based permissions, controlled access, version history, and audit trails. Deployment and security requirements are confirmed with your institution.",
-          },
-        ].map(({ Icon, title, text }) => (
+        {capabilities.map(([title, text]) => (
           <article key={title}>
-            <Icon size={22} aria-hidden="true" />
+            <RiShieldCheckLine size={22} aria-hidden="true" />
             <h3>{title}</h3>
             <p>{text}</p>
           </article>
         ))}
       </div>
       <p className={styles.productNote}>
-        Explore the proposed platform workflow in your demo. Feature
-        availability and configuration are confirmed for your institution.
+        One connected workspace, configured around your institution’s academic
+        structure and approval policies.
       </p>
       <div id="solutions" className={styles.audienceSection}>
         <h3>Designed for the people behind academic quality.</h3>
         <p>One shared process, with a clear role for every academic team.</p>
         <div className={styles.audienceGrid}>
-          {[
-            [
-              "Universities & autonomous colleges",
-              "Standardize examination governance across departments and programmes.",
-            ],
-            [
-              "Controllers of Examinations",
-              "Oversee paper readiness, deadlines, review progress, and controlled release.",
-            ],
-            [
-              "Heads of Department",
-              "Track syllabus coverage, faculty assignments, and the balance of upcoming papers.",
-            ],
-            [
-              "Faculty & question setters",
-              "Draft faster while retaining control over wording, answers, and academic quality.",
-            ],
-            [
-              "IQAC & OBE teams",
-              "Review cognitive distribution and Course Outcome / Programme Outcome alignment.",
-            ],
-            [
-              "Institution IT & administration",
-              "Discuss identity, access, deployment, data policies, and integration requirements.",
-            ],
-          ].map(([title, text]) => (
+          {stakeholders.map(([title, text]) => (
             <article key={title}>
               <h4>{title}</h4>
               <p>{text}</p>
             </article>
           ))}
         </div>
-        <a className={styles.textLink} href="#demo">
+        <Link className={styles.textLink} href="/book-demo">
           See Questra for your institution{" "}
           <RiArrowRightUpLine size={17} aria-hidden="true" />
-        </a>
+        </Link>
       </div>
     </section>
   )
@@ -277,8 +207,8 @@ export function FacultyReview() {
           </h2>
           <p>
             AI can help draft a question. Academic judgement makes it
-            examination-ready. Questra’s review workflow is designed to keep
-            that responsibility with your team.
+            examination-ready. Questra’s review workflow keeps that
+            responsibility with your team.
           </p>
           <ul>
             {[
@@ -304,10 +234,10 @@ export function FacultyReview() {
               </li>
             ))}
           </ul>
-          <a className={styles.lightLink} href="#workflow">
+          <Link className={styles.lightLink} href="/how-it-works">
             See the review journey{" "}
             <RiArrowRightLine size={16} aria-hidden="true" />
-          </a>
+          </Link>
         </div>
         <div className={styles.reviewVisual}>
           <div className={styles.reviewWindow}>
@@ -439,9 +369,9 @@ export function Workflow() {
           <RiShieldCheckLine size={17} aria-hidden="true" /> Human review is
           part of the journey, from draft to release.
         </span>
-        <a href="#demo">
+        <Link href="/book-demo">
           See it in a demo <RiArrowRightUpLine size={16} aria-hidden="true" />
-        </a>
+        </Link>
       </div>
     </section>
   )
@@ -476,10 +406,10 @@ export function StudentPortal() {
               preparation. Give students an organized way to explore their
               semester and practice with purpose.
             </p>
-            <a className={styles.textLink} href="#demo">
+            <Link className={styles.textLink} href="/book-demo">
               Bring Questra to your campus{" "}
               <RiArrowRightUpLine size={17} aria-hidden="true" />
-            </a>
+            </Link>
           </div>
         </div>
         <div className={styles.studentBenefits}>
@@ -506,7 +436,7 @@ export function StudentPortal() {
             ],
             [
               "Institution-managed access",
-              "The portal is designed around your student profile and enrollment, with academic notices and help. Private records, future examination sets, and staff-only materials remain restricted.",
+              "The portal connects your student profile and enrollment, with academic notices and help. Private records, future examination sets, and staff-only materials remain restricted.",
             ],
           ].map(([title, text], i) => (
             <article key={title}>
@@ -568,10 +498,10 @@ export function Analytics() {
               </p>
             </div>
           </div>
-          <a className={styles.textLink} href="#demo">
+          <Link className={styles.textLink} href="/book-demo">
             Explore academic insights{" "}
             <RiArrowRightUpLine size={17} aria-hidden="true" />
-          </a>
+          </Link>
         </div>
         <div className={styles.analyticsVisual}>
           <div className={styles.analyticsHeader}>
@@ -644,7 +574,7 @@ export function FAQ() {
   const items = [
     [
       "Can faculty edit AI-generated questions?",
-      "Yes. The proposed AI Question Studio workflow gives authorized faculty the ability to revise question wording, suggested answers, marks, and academic mapping before submitting content for review.",
+      "Yes. The AI Question Studio workflow gives authorized faculty the ability to revise question wording, suggested answers, marks, and academic mapping before submitting content for review.",
     ],
     [
       "Does AI approve or release examination papers?",
@@ -652,11 +582,11 @@ export function FAQ() {
     ],
     [
       "Can papers follow our institution’s examination pattern?",
-      "The blueprint and formatting modules are designed for configurable sections, marks, internal choices, unit coverage, and institution-specific paper formats. Your demo can explore the patterns your team needs.",
+      "The blueprint and formatting modules support configurable sections, marks, internal choices, unit coverage, and institution-specific paper formats. Your demo can explore the patterns your team needs.",
     ],
     [
       "Can we bring in existing syllabus and question bank content?",
-      "Academic masters and structured Excel/CSV imports are part of the platform design. Share your current formats during the demo so the team can confirm import scope and mapping requirements.",
+      "Yes. Upload syllabus PDFs and import questions using supported PDF and Excel templates. Academic masters support structured imports and mapping checks. Bring your current formats to the demo to explore the workflow.",
     ],
     [
       "What can students access in the Student Portal?",
@@ -664,7 +594,7 @@ export function FAQ() {
     ],
     [
       "Does Questra support outcome-based academic review?",
-      "Planned Course Outcome/Program Outcome mapping and Bloom’s taxonomy analytics support OBE-oriented review. Content coverage and cognitive distribution are kept distinct from measured student performance.",
+      "Course Outcome/Programme Outcome mapping and Bloom’s taxonomy analytics support OBE-oriented review. Content coverage and cognitive distribution are kept distinct from measured student performance.",
     ],
   ]
   return (
@@ -685,9 +615,9 @@ export function FAQ() {
           <br />
           We’d love to understand your institution.
         </p>
-        <a className={styles.textLink} href="#demo">
+        <Link className={styles.textLink} href="/book-demo">
           Let’s talk <RiArrowRightUpLine size={17} aria-hidden="true" />
-        </a>
+        </Link>
       </div>
       <div className={styles.faqList}>
         {items.map(([question, answer], i) => (

@@ -1,5 +1,7 @@
 "use client"
 
+import Link from "next/link"
+
 import {
   useCallback,
   useEffect,
@@ -32,25 +34,25 @@ const platformLinks = [
   {
     title: "Platform overview",
     description: "Explore the complete academic toolkit.",
-    href: "#platform",
+    href: "/platform",
     Icon: RiBookOpenLine,
   },
   {
     title: "Faculty review",
     description: "Academic judgement at every step.",
-    href: "#faculty-review",
+    href: "/platform#governance",
     Icon: RiShieldCheckLine,
   },
   {
     title: "Examination workflow",
     description: "From syllabus to approved paper.",
-    href: "#workflow",
+    href: "/how-it-works",
     Icon: RiFlowChart,
   },
   {
     title: "Analytics & outcomes",
     description: "Coverage, Bloom’s levels, and COs.",
-    href: "#analytics",
+    href: "/platform#dashboards",
     Icon: RiBarChartLine,
   },
 ]
@@ -58,13 +60,13 @@ const resourceLinks = [
   {
     title: "Frequently asked questions",
     description: "Clear answers for your academic team.",
-    href: "#faq",
+    href: "/#faq",
     Icon: RiQuestionAnswerLine,
   },
   {
     title: "Contact & live demo",
     description: "Let’s talk about your institution.",
-    href: "#demo",
+    href: "/book-demo",
     Icon: RiMailLine,
   },
 ]
@@ -132,7 +134,7 @@ export function NavBar() {
 
   function menuLinks(items: typeof platformLinks) {
     return items.map(({ title, description, href, Icon }) => (
-      <a
+      <Link
         className={menuStyles.menuLink}
         key={href}
         href={href}
@@ -150,7 +152,7 @@ export function NavBar() {
           size={15}
           aria-hidden="true"
         />
-      </a>
+      </Link>
     ))
   }
 
@@ -166,9 +168,9 @@ export function NavBar() {
           if (!event.currentTarget.contains(event.relatedTarget)) closeMenus()
         }}
       >
-        <a href="#home" aria-label="Questra home" onClick={closeMenus}>
+        <Link href="/" aria-label="Questra home" onClick={closeMenus}>
           <QuestraLogo />
-        </a>
+        </Link>
         <nav
           className={`${styles.desktopNav} ${menuStyles.navigation}`}
           aria-label="Main navigation"
@@ -199,9 +201,9 @@ export function NavBar() {
                 <div className={menuStyles.linkGrid}>
                   {menuLinks(platformLinks)}
                 </div>
-                <a
+                <Link
                   className={menuStyles.menuFooter}
-                  href="#dashboard-preview"
+                  href="/#dashboard-preview"
                   onClick={closeMenus}
                 >
                   <span>
@@ -210,7 +212,7 @@ export function NavBar() {
                     <span className={menuStyles.tryBadge}>Try it out</span>
                   </span>
                   <RiArrowRightLine size={16} aria-hidden="true" />
-                </a>
+                </Link>
               </div>
               <div className={menuStyles.menuFeature}>
                 <span className={menuStyles.featureIcon}>
@@ -228,20 +230,20 @@ export function NavBar() {
                   See how academic intelligence connects to everyday student
                   preparation.
                 </p>
-                <a href="#student-portal" onClick={closeMenus}>
+                <Link href="/#student-portal" onClick={closeMenus}>
                   Discover Student Portal{" "}
                   <RiArrowRightUpLine size={15} aria-hidden="true" />
-                </a>
+                </Link>
               </div>
             </div>
           )}
-          <a
+          <Link
             className={menuStyles.directLink}
-            href="#student-portal"
+            href="/#student-portal"
             onClick={closeMenus}
           >
             Student Portal
-          </a>
+          </Link>
           <button
             ref={resourcesRef}
             className={menuStyles.trigger}
@@ -271,13 +273,13 @@ export function NavBar() {
         </nav>
         <div className={styles.navActions}>
           <AnimatedThemeToggler className={styles.themeToggle} />
-          <a
+          <Link
             className={`${styles.button} ${styles.navCta}`}
-            href="#demo"
+            href="/book-demo"
             onClick={closeMenus}
           >
             Book a demo <RiArrowRightUpLine size={16} aria-hidden="true" />
-          </a>
+          </Link>
         </div>
         <button
           ref={toggleRef}
@@ -301,14 +303,14 @@ export function NavBar() {
             <div className={menuStyles.mobileHeading}>
               EXPLORE QUESTRA<span>Intelligence behind every Question.</span>
             </div>
-            <a
+            <Link
               className={menuStyles.mobileHome}
-              href="#home"
+              href="/"
               onClick={closeMenus}
             >
               Home
               <RiArrowRightUpLine size={15} aria-hidden="true" />
-            </a>
+            </Link>
             <button
               className={menuStyles.mobileTrigger}
               aria-expanded={mobileExpanded === "platform"}
@@ -328,9 +330,9 @@ export function NavBar() {
                 className={menuStyles.mobileLinks}
               >
                 {menuLinks(platformLinks)}
-                <a
+                <Link
                   className={menuStyles.menuLink}
-                  href="#dashboard-preview"
+                  href="/#dashboard-preview"
                   onClick={closeMenus}
                 >
                   <span className={menuStyles.linkIcon}>
@@ -340,12 +342,12 @@ export function NavBar() {
                     <strong>Interactive workspace</strong>
                     <small>Explore the product experience.</small>
                   </span>
-                </a>
+                </Link>
               </div>
             )}
-            <a
+            <Link
               className={menuStyles.mobileStudent}
-              href="#student-portal"
+              href="/#student-portal"
               onClick={closeMenus}
             >
               <span>
@@ -353,7 +355,7 @@ export function NavBar() {
                 Student Portal
               </span>
               <RiArrowRightUpLine size={15} aria-hidden="true" />
-            </a>
+            </Link>
             <button
               className={menuStyles.mobileTrigger}
               aria-expanded={mobileExpanded === "resources"}
@@ -375,10 +377,14 @@ export function NavBar() {
                 {menuLinks(resourceLinks)}
               </div>
             )}
-            <a href="#demo" className={styles.button} onClick={closeMenus}>
+            <Link
+              href="/book-demo"
+              className={styles.button}
+              onClick={closeMenus}
+            >
               Book a live demo{" "}
               <RiArrowRightUpLine size={16} aria-hidden="true" />
-            </a>
+            </Link>
           </nav>
         )}
       </header>

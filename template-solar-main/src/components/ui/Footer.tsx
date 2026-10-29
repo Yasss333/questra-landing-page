@@ -1,3 +1,4 @@
+import Link from "next/link"
 import { RiArrowRightUpLine } from "@remixicon/react"
 import QuestraLogo from "../marketing/QuestraLogo"
 import styles from "../marketing/Marketing.module.css"
@@ -8,9 +9,9 @@ export default function Footer() {
       <div className={styles.footerPattern} aria-hidden="true" />
       <div className={styles.footerGrid}>
         <div className={styles.footerBrand}>
-          <a href="#home" aria-label="Questra home">
+          <Link href="/" aria-label="Questra home">
             <QuestraLogo width={180} />
-          </a>
+          </Link>
           <p>
             Create with intelligence.
             <br />
@@ -21,30 +22,30 @@ export default function Footer() {
         </div>
         <div>
           <h2>Platform</h2>
-          <a href="#platform">Capabilities</a>
-          <a href="#faculty-review">Faculty review</a>
-          <a href="#workflow">How it works</a>
-          <a href="#analytics">Analytics & outcomes</a>
+          <Link href="/platform">Capabilities</Link>
+          <Link href="/platform#governance">Faculty review</Link>
+          <Link href="/how-it-works">How it works</Link>
+          <Link href="/platform#dashboards">Analytics & outcomes</Link>
         </div>
         <div>
           <h2>Explore</h2>
-          <a href="#student-portal">Student Portal</a>
-          <a href="#faq">Common questions</a>
-          <a href="#demo">Book a demo</a>
+          <Link href="/#student-portal">Student Portal</Link>
+          <Link href="/#faq">Common questions</Link>
+          <Link href="/book-demo">Book a demo</Link>
         </div>
         <div className={styles.footerContact}>
           <h2>Let’s talk</h2>
-          <a href={`mailto:${siteConfig.contactEmail}`}>
+          <Link href={`mailto:${siteConfig.contactEmail}`}>
             {siteConfig.contactEmail}
             <RiArrowRightUpLine size={14} aria-hidden="true" />
-          </a>
+          </Link>
           <p>Bring Questra to your institution.</p>
         </div>
       </div>
       <div className={styles.footerBottom}>
         <span>© {new Date().getFullYear()} Questra. All rights reserved.</span>
         <span>Intelligence behind every Question.</span>
-        <a href="#home">Back to top ↑</a>
+        <a href="#main-content">Back to top ↑</a>
       </div>
     </footer>
   )

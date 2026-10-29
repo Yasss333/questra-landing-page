@@ -1,5 +1,6 @@
 "use client"
 
+import Link from "next/link"
 import { useEffect, useRef, useState, type ReactNode } from "react"
 import {
   RiArrowRightLine,
@@ -12,6 +13,7 @@ import {
   RiFileList3Line,
   RiGraduationCapLine,
   RiNodeTree,
+  RiLockLine,
   RiPieChartLine,
   RiQuestionAnswerLine,
   RiRestartLine,
@@ -47,17 +49,7 @@ import {
 } from "./dashboard/demo-data"
 import { GrowthChart, Metrics, Panel, styles } from "./dashboard/DashboardKit"
 import MasterDataView from "./dashboard/MasterDataView"
-import QuestionBankView, {
-  QuestionStudioView,
-  QuestionTable,
-} from "./dashboard/QuestionViews"
-import PapersView, { ReviewView } from "./dashboard/PaperViews"
-import {
-  BloomView,
-  CoverageView,
-  OutcomeView,
-  ReportsView,
-} from "./dashboard/AnalyticsViews"
+import QuestionBankView, { QuestionTable } from "./dashboard/QuestionViews"
 
 const navigation = [
   { label: "Overview", icon: RiDashboardLine },
@@ -72,6 +64,40 @@ const navigation = [
   { label: "Reports", icon: RiFileChartLine },
   { label: "Student portal", icon: RiGraduationCapLine },
 ] as const
+const previewViews: readonly View[] = [
+  "Overview",
+  "Master data",
+  "Question bank",
+]
+const isPreviewView = (view: View) => previewViews.includes(view)
+
+function LockedPreview({ view }: { view: View }) {
+  return (
+    <div className={styles.lockedPreview}>
+      <div className={styles.lockArtwork} aria-hidden="true">
+        <span />
+        <span />
+        <span />
+      </div>
+      <span className={styles.lockIcon}>
+        <RiLockLine size={28} aria-hidden="true" />
+      </span>
+      <span className={styles.eyebrow}>THE FULL EXPERIENCE AWAITS</span>
+      <h4>Discover {view} in action.</h4>
+      <p>
+        Explore how Questra brings it all together in a guided walkthrough
+        tailored to your institution.
+      </p>
+      <Link className={styles.unlockCta} href="/book-demo">
+        Book a demo to explore <RiArrowRightLine size={16} aria-hidden="true" />
+      </Link>
+      <small>
+        Overview, Master data, and Question bank are open for you to try.
+      </small>
+    </div>
+  )
+}
+
 const descriptions: Record<View, string> = {
   Overview: "A clear view of your academic workspace.",
   "Master data": "Academic structure, completeness, and subject mapping.",
@@ -392,19 +418,12 @@ export default function DashboardPreview() {
         .map((s) => ({ value: s.id, label: s.name })),
     },
   ]
-  const content: Record<View, ReactNode> = {
+  const content: Partial<Record<View, ReactNode>> = {
     Overview: <Overview />,
     "Master data": <MasterDataView />,
     "Question bank": <QuestionBankView />,
-    "AI question studio": <QuestionStudioView />,
-    "Coverage explorer": <CoverageView />,
-    "Question papers": <PapersView />,
-    "Review & approval": <ReviewView />,
-    "Bloom’s analytics": <BloomView />,
-    "Outcome mapping": <OutcomeView />,
-    Reports: <ReportsView />,
-    "Student portal": <QuestionBankView student />,
   }
+
   return (
     <DemoContext.Provider value={context}>
       <section
@@ -418,7 +437,8 @@ export default function DashboardPreview() {
           </span>
           <h2>Your academic workspace. At a glance.</h2>
           <p>
-            From syllabus to signed-off paper. Explore how everything connects.
+            Try Overview, Master data, and Question bank. Discover the full
+            examination workflow in a live demo.
           </p>
         </div>
         <div className={styles.frame}>
@@ -438,11 +458,24 @@ export default function DashboardPreview() {
                   type="button"
                   className={view === label ? styles.activeNav : ""}
                   aria-current={view === label ? "page" : undefined}
+                  aria-label={
+                    !isPreviewView(label)
+                      ? `${label} — available in a live demo`
+                      : undefined
+                  }
                   onClick={() => navigate(label)}
                 >
                   <Icon size={17} aria-hidden="true" />
                   <span>{label}</span>
-                  {view === label && <span className={styles.navDot} />}
+                  {!isPreviewView(label) ? (
+                    <RiLockLine
+                      size={13}
+                      className={styles.navLock}
+                      aria-hidden="true"
+                    />
+                  ) : (
+                    view === label && <span className={styles.navDot} />
+                  )}
                 </button>
               ))}
             </nav>
@@ -468,6 +501,7 @@ export default function DashboardPreview() {
                 <RiSearchLine size={16} aria-hidden="true" />
                 <input
                   aria-label="Search dashboard records"
+                  disabled={!isPreviewView(view)}
                   placeholder="Search subjects, questions, records…"
                   value={search}
                   onChange={(e) => {
@@ -485,7 +519,7 @@ export default function DashboardPreview() {
                 />
               </label>
               <span className={styles.previewLabel}>
-                <span /> Interactive demo
+                <span /> Selected preview
               </span>
               <span className={styles.headerAvatar}>AS</span>
             </header>
@@ -510,54 +544,62 @@ export default function DashboardPreview() {
                   <span className={styles.sampleIndicator} /> Sample data
                 </span>
               </div>
-              <div className={styles.academicFilters}>
-                {filters.map((filter) => (
-                  <label key={filter.key}>
-                    {filter.label}
-                    <select
-                      aria-label={`Dashboard ${filter.label.toLowerCase()}`}
-                      value={scope[filter.key]}
-                      onChange={(e) =>
-                        setScope((current) => ({
-                          ...current,
-                          [filter.key]: e.target.value,
-                          ...(filter.key !== "subject" ? { subject: "" } : {}),
-                        }))
-                      }
-                    >
-                      <option value="">
-                        All{" "}
-                        {filter.label === "Batch year"
-                          ? "batches"
-                          : filter.label === "Degree"
-                            ? "degrees"
-                            : filter.label === "Department"
-                              ? "departments"
-                              : filter.label === "Semester"
-                                ? "semesters"
-                                : "subjects"}
-                      </option>
-                      {filter.options.map((o) => (
-                        <option key={o.value} value={o.value}>
-                          {o.label}
+              {isPreviewView(view) && (
+                <div className={styles.academicFilters}>
+                  {filters.map((filter) => (
+                    <label key={filter.key}>
+                      {filter.label}
+                      <select
+                        aria-label={`Dashboard ${filter.label.toLowerCase()}`}
+                        value={scope[filter.key]}
+                        onChange={(e) =>
+                          setScope((current) => ({
+                            ...current,
+                            [filter.key]: e.target.value,
+                            ...(filter.key !== "subject"
+                              ? { subject: "" }
+                              : {}),
+                          }))
+                        }
+                      >
+                        <option value="">
+                          All{" "}
+                          {filter.label === "Batch year"
+                            ? "batches"
+                            : filter.label === "Degree"
+                              ? "degrees"
+                              : filter.label === "Department"
+                                ? "departments"
+                                : filter.label === "Semester"
+                                  ? "semesters"
+                                  : "subjects"}
                         </option>
-                      ))}
-                    </select>
-                  </label>
-                ))}
-                <button
-                  className={styles.filterReset}
-                  onClick={() => {
-                    setScope({ ...emptyScope })
-                    setSearch("")
-                  }}
-                  aria-label="Reset academic filters"
-                >
-                  <RiRestartLine size={16} />
-                </button>
-              </div>
+                        {filter.options.map((o) => (
+                          <option key={o.value} value={o.value}>
+                            {o.label}
+                          </option>
+                        ))}
+                      </select>
+                    </label>
+                  ))}
+                  <button
+                    className={styles.filterReset}
+                    onClick={() => {
+                      setScope({ ...emptyScope })
+                      setSearch("")
+                    }}
+                    aria-label="Reset academic filters"
+                  >
+                    <RiRestartLine size={16} />
+                  </button>
+                </div>
+              )}
               <div key={view} className={styles.moduleContent}>
-                {content[view]}
+                {isPreviewView(view) ? (
+                  content[view]
+                ) : (
+                  <LockedPreview view={view} />
+                )}
               </div>
               <div className={styles.workspaceFooter}>
                 <span>

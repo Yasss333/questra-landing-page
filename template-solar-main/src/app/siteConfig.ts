@@ -1,9 +1,9 @@
 export const siteConfig = {
   brandName: "Questra",
-  name: "Questra | AI Question Bank & Examination Management",
+  name: "Questra | Question Paper Intelligence & Institutional Approvals",
   url: "https://www.questra.si",
   description:
-    "Questra helps colleges and universities manage syllabus-aligned question banks, AI-assisted question creation, faculty review, and examination workflows.",
+    "From syllabus to sanctioned question paper. Questra connects AI-assisted question banks, paper validation, stakeholder approvals, and controlled examination release.",
   contactEmail: "voicedotsio@gmail.com",
   baseLinks: {
     home: "/",

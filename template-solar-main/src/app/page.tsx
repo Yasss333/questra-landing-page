@@ -9,7 +9,11 @@ import {
   Workflow,
 } from "@/components/marketing/HomeSections"
 import BulkPaperSection from "@/components/marketing/BulkPaperSection"
-import DemoContact from "@/components/marketing/DemoContact"
+import {
+  ApprovalOverview,
+  ClosingCTA,
+  InstitutionProblem,
+} from "@/components/marketing/ProductContent"
 import styles from "@/components/marketing/Marketing.module.css"
 import { homeStructuredData } from "./structured-data"
 export default function Home() {
@@ -22,6 +26,7 @@ export default function Home() {
         }}
       />
       <Hero />
+      <InstitutionProblem />
       <BulkPaperSection />
       <div className={styles.dashboardWrap}>
         <DashboardPreview />
@@ -29,10 +34,11 @@ export default function Home() {
       <Platform />
       <FacultyReview />
       <Workflow />
+      <ApprovalOverview />
       <StudentPortal />
       <Analytics />
       <FAQ />
-      <DemoContact />
+      <ClosingCTA />
     </main>
   )
 }

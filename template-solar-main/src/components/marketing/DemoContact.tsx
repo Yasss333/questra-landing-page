@@ -7,7 +7,11 @@ import { prepareDemoEnquiry } from "@/lib/demo-enquiry"
 import styles from "./Marketing.module.css"
 import { BorderBeam } from "@/registry/magicui/border-beam"
 
-export default function DemoContact() {
+export default function DemoContact({
+  standalone = false,
+}: {
+  standalone?: boolean
+}) {
   const [prepared, setPrepared] = useState(false)
   const [draft, setDraft] = useState("")
   const [errors, setErrors] = useState<string[]>([])
@@ -42,15 +46,19 @@ export default function DemoContact() {
       <div className={styles.demoInner}>
         <div className={styles.demoCopy}>
           <span className={styles.kicker}>LET’S BRING IT TO YOUR CAMPUS</span>
-          <h2 id="demo-heading">
-            Better examinations
-            <br />
-            start with
-            <br />
-            <span>a conversation.</span>
-          </h2>
+          {standalone ? (
+            <h1 id="demo-heading">See Questra in action.</h1>
+          ) : (
+            <h2 id="demo-heading">
+              Better examinations
+              <br />
+              start with
+              <br />
+              <span>a conversation.</span>
+            </h2>
+          )}
           <p>
-            See how Questra’s proposed workflow fits your curriculum, your
+            See how Questra’s connected workflow fits your curriculum, your
             faculty, and your examination process.
           </p>
           <div className={styles.demoPromises}>
@@ -63,8 +71,8 @@ export default function DemoContact() {
               questions, answered
             </span>
             <span>
-              <RiCheckLine size={16} aria-hidden="true" /> Platform and Student
-              Portal overview
+              <RiCheckLine size={16} aria-hidden="true" /> Examination platform
+              and Student Portal overview
             </span>
           </div>
           <a
