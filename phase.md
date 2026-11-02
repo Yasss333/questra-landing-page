@@ -21,4 +21,4 @@ Detailed reference: [master plan](tasks/plan.md). Next: [Phase 2](phase%202.md).
 
 ## Implementation status
 
-Implemented and checked on 2 November 2026. User design review is pending. See [implementation review](tasks/phase-zero-review.md). The user's latest reference replaces the earlier blue/green palette with magenta/navy for this implementation.
+Implemented and checked on 2 November 2026. See [implementation review](tasks/phase-zero-review.md). Following design review, restore Questra's approved blue/green/navy palette while retaining the reference-inspired layout and interactions.

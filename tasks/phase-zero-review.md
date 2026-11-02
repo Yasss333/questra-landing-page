@@ -1,10 +1,10 @@
 # Phase 0 implementation review
 
-Implemented on 2 November 2026 on branch `codex/questra-phase-zero`.
+Implemented on 2 November 2026 on branch `codex/questra-phase-zero`. Following user review, the approved Questra palette is restored: blue `#084DB5`, green `#19A889`, navy `#102442`, soft background `#F5F8FC`, white and secondary text `#64748B`. Layout and behavior remain unchanged.
 
 ## Delivered
 
-- Reference-inspired split hero with the user-approved magenta/navy/white palette and static curved background. Removed the interactive/flickering grid from the hero.
+- Reference-inspired split hero with Questra's blue/green/navy palette and static curved background. Removed the interactive/flickering grid from the hero.
 - Official Magic UI TypingAnimation at the supplied registry path, looping through typing/deleting the approved `Final Approval.` wording. Stable accessible heading and reduced-motion fallback.
 - Seven supplied dashboard images in a level, two-second autoplay slideshow, with pause/play, previous/next and individual slide selection. Autoplay pauses on interaction and when the document is hidden; reduced-motion visitors can opt in.
 - Questra branding overlays cover the previous dashboard header logos in the website. Original image pixels are preserved; downloaded source PNGs still contain their original branding beneath the presentation overlay.
