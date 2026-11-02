@@ -45,6 +45,9 @@ Retain the template's spacious layout and typography. The rendered Solar brandin
 - [x] Full production build: compilation, lint, TypeScript, and static route generation passed on 26 October 2026; the earlier dashboard key errors are resolved.
 - [ ] User review of the completed marketing homepage.
 - [x] Complete the subsequently requested dashboard expansion in place.
+- [x] Apply the updated website briefs: refresh the hero and 30-minute demo messaging, bring approval routes forward, and add a dedicated Approval Automation page.
+- [x] Expand the demo enquiry draft with optional institution/exam context, preferred time, optional mobile, and response consent.
+- [x] Add the approval page to the site navigation, footer, metadata, and sitemap; confirm the homepage, approval page, and demo form render locally.
 
 ## Delivery checks
 
@@ -67,6 +70,18 @@ Retain the template's spacious layout and typography. The rendered Solar brandin
 - [ ] Future dashboard images or changes, when that phase resumes.
 
 The enquiry form prepares a real `mailto:` draft. It does not automatically send messages, store enquiries, or claim inbox delivery. An automatic delivery service would be a separate integration if requested.
+
+The updated local preview is running at `http://127.0.0.1:3002`; the previous port 3001 is occupied by an unresponsive listener.
+
+## Public marketing pages from the November briefs
+
+- [x] Add focused pages for Syllabus Intelligence, AI Question Studio, Question Bank, Bulk Paper Generation, Academic Analytics, Security & Governance, Solutions by Role, About, and the Student Portal.
+- [x] Expand the Platform and Resources navigation menus, footer links, metadata, structured data, and sitemap to include the new customer-facing pages.
+- [x] Add a mobile sticky demo action and accessible Student Portal preview built from page components.
+- [x] Keep academic approval and final release authority with faculty in the public copy; label the Student Portal preview as a product concept.
+- [ ] Connect the Student Portal sign-in to the product URL and authentication flow after integration details are provided.
+- [ ] Connect demo enquiries to the production API/CRM after its endpoint and payload contract are provided. The current form prepares an email draft addressed to `voicedotsio@gmail.com`.
+- [ ] Add Privacy and Terms pages only after approved legal copy is supplied.
 
 ## Content and QA audit on 26 October 2026
 

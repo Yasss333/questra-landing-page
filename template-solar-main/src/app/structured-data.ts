@@ -1,4 +1,5 @@
 import { siteConfig } from "./siteConfig"
+import { homeFaqItems } from "@/components/marketing/faqContent"
 
 const homeUrl = `${siteConfig.url}/`
 
@@ -36,6 +37,26 @@ export const homeStructuredData = {
       inLanguage: "en",
       isPartOf: { "@id": `${homeUrl}#website` },
       about: { "@id": `${homeUrl}#organization` },
+    },
+    {
+      "@type": "SoftwareApplication",
+      "@id": `${homeUrl}#software`,
+      name: siteConfig.brandName,
+      url: homeUrl,
+      applicationCategory: "EducationalApplication",
+      operatingSystem: "Web browser",
+      description: siteConfig.description,
+      provider: { "@id": `${homeUrl}#organization` },
+    },
+    {
+      "@type": "FAQPage",
+      "@id": `${homeUrl}#faq`,
+      mainEntity: homeFaqItems.map(([name, answer]) => ({
+        "@type": "Question",
+        name,
+        acceptedAnswer: { "@type": "Answer", text: answer },
+      })),
+      isPartOf: { "@id": `${homeUrl}#website` },
     },
   ],
 }

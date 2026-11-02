@@ -27,6 +27,7 @@ export default function Home() {
       />
       <Hero />
       <InstitutionProblem />
+      <ApprovalOverview />
       <BulkPaperSection />
       <div className={styles.dashboardWrap}>
         <DashboardPreview />
@@ -34,7 +35,6 @@ export default function Home() {
       <Platform />
       <FacultyReview />
       <Workflow />
-      <ApprovalOverview />
       <StudentPortal />
       <Analytics />
       <FAQ />

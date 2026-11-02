@@ -62,19 +62,23 @@ export const stakeholders = [
 const pathways = [
   [
     "New questions",
-    "Faculty submission → Subject review → Department approval → Final academic authority → Approved question bank",
+    "Faculty creates, imports, or drafts with AI → Automated checks → Subject reviewer → HoD / moderator → Optional academic authority → Approved question bank",
   ],
   [
     "Mid-term papers",
-    "Paper setter → Subject review → Department moderation → Examination-cell authorization → Scheduled release",
+    "Exam schedule and syllabus scope → Paper request → Blueprint and assembly → Validation → Configured review → Examination-cell authorization",
   ],
   [
     "End-semester papers",
-    "Authorized paper setter → Academic moderation → Examination controller or nominated final authority → Controlled release",
+    "Authorized setter → Full-syllabus blueprint and paper sets → Independent moderation → Controller of Examinations → Sealed, timed release",
   ],
 ] as const
 
-export function ApprovalOverview() {
+export function ApprovalOverview({
+  showDetailLink = true,
+}: {
+  showDetailLink?: boolean
+} = {}) {
   return (
     <section
       id="approvals"
@@ -84,8 +88,9 @@ export function ApprovalOverview() {
       <span className={styles.eyebrow}>Approval intelligence</span>
       <h2 id="approvals-heading">Three pathways. Clear accountability.</h2>
       <p className={styles.intro}>
-        Questions, mid-term papers, and end-semester papers each follow their
-        own approval policy, with the right people involved at every stage.
+        Questions, mid-term papers, and end-semester papers follow separate,
+        institution-configured approval routes, with authorized people
+        responsible for each decision.
       </p>
       <div className={styles.grid}>
         {pathways.map(([title, path], i) => (
@@ -97,15 +102,20 @@ export function ApprovalOverview() {
         ))}
       </div>
       <p className={styles.note}>
-        These examples show the journey. Configure one, two, or three approval
-        stages for each pathway, assign authorized roles, separate
-        responsibilities, and return submissions for correction with comments
-        and timestamps.
+        Example routes only. Institutions define the actual reviewers and
+        required one-to-three stages for each examination. Questra automates
+        routing, reminders, and configured checks; authorized people make
+        academic decisions and approve release.
       </p>
       <div className={styles.actions}>
         <Link className={styles.link} href="/how-it-works#institution-setup">
           Explore the 11-step institution setup →
         </Link>
+        {showDetailLink && (
+          <Link className={styles.link} href="/approval-automation">
+            Explore approval automation →
+          </Link>
+        )}
       </div>
     </section>
   )
@@ -130,7 +140,7 @@ export function ClosingCTA() {
         </p>
         <div className={styles.actions}>
           <Link className={styles.button} href="/book-demo">
-            Experience a live demo ↗
+            Request a 30-Minute Live Demo ↗
           </Link>
         </div>
       </div>

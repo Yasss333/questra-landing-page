@@ -38,10 +38,46 @@ const platformLinks = [
     Icon: RiBookOpenLine,
   },
   {
+    title: "AI Question Studio",
+    description: "Create syllabus-grounded, faculty-reviewed drafts.",
+    href: "/ai-question-studio",
+    Icon: RiQuestionAnswerLine,
+  },
+  {
+    title: "Question Bank",
+    description: "Explore a structured, governed question repository.",
+    href: "/question-bank",
+    Icon: RiBookOpenLine,
+  },
+  {
+    title: "Paper Generation",
+    description: "Blueprint, validate, and prepare examination papers.",
+    href: "/bulk-paper-generation",
+    Icon: RiFlowChart,
+  },
+  {
+    title: "Syllabus Intelligence",
+    description: "Connect academic masters, topics, and outcomes.",
+    href: "/syllabus-intelligence",
+    Icon: RiGraduationCapLine,
+  },
+  {
+    title: "Academic Analytics",
+    description: "Review coverage, Bloom’s levels, and outcomes.",
+    href: "/academic-analytics",
+    Icon: RiBarChartLine,
+  },
+  {
     title: "Faculty review",
     description: "Academic judgement at every step.",
     href: "/platform#governance",
     Icon: RiShieldCheckLine,
+  },
+  {
+    title: "Approval automation",
+    description: "Three governed routes, with people in control.",
+    href: "/approval-automation",
+    Icon: RiFlowChart,
   },
   {
     title: "Examination workflow",
@@ -49,14 +85,32 @@ const platformLinks = [
     href: "/how-it-works",
     Icon: RiFlowChart,
   },
-  {
-    title: "Analytics & outcomes",
-    description: "Coverage, Bloom’s levels, and COs.",
-    href: "/platform#dashboards",
-    Icon: RiBarChartLine,
-  },
 ]
 const resourceLinks = [
+  {
+    title: "About Questra",
+    description: "The intelligence behind every question.",
+    href: "/about",
+    Icon: RiBookOpenLine,
+  },
+  {
+    title: "Solutions by role",
+    description: "A clear view for every academic team.",
+    href: "/solutions",
+    Icon: RiGraduationCapLine,
+  },
+  {
+    title: "Security & governance",
+    description: "Understand access, review, and release controls.",
+    href: "/security-governance",
+    Icon: RiShieldCheckLine,
+  },
+  {
+    title: "How it works",
+    description: "Follow the academic setup and paper journey.",
+    href: "/how-it-works",
+    Icon: RiFlowChart,
+  },
   {
     title: "Frequently asked questions",
     description: "Clear answers for your academic team.",
@@ -230,7 +284,7 @@ export function NavBar() {
                   See how academic intelligence connects to everyday student
                   preparation.
                 </p>
-                <Link href="/#student-portal" onClick={closeMenus}>
+                <Link href="/student-portal" onClick={closeMenus}>
                   Discover Student Portal{" "}
                   <RiArrowRightUpLine size={15} aria-hidden="true" />
                 </Link>
@@ -239,10 +293,17 @@ export function NavBar() {
           )}
           <Link
             className={menuStyles.directLink}
-            href="/#student-portal"
+            href="/student-portal"
             onClick={closeMenus}
           >
             Student Portal
+          </Link>
+          <Link
+            className={menuStyles.directLink}
+            href="/solutions"
+            onClick={closeMenus}
+          >
+            Solutions
           </Link>
           <button
             ref={resourcesRef}
@@ -278,7 +339,7 @@ export function NavBar() {
             href="/book-demo"
             onClick={closeMenus}
           >
-            Book a demo <RiArrowRightUpLine size={16} aria-hidden="true" />
+            30-Minute Demo <RiArrowRightUpLine size={16} aria-hidden="true" />
           </Link>
         </div>
         <button
@@ -347,13 +408,21 @@ export function NavBar() {
             )}
             <Link
               className={menuStyles.mobileStudent}
-              href="/#student-portal"
+              href="/student-portal"
               onClick={closeMenus}
             >
               <span>
                 <RiGraduationCapLine size={19} aria-hidden="true" />
                 Student Portal
               </span>
+              <RiArrowRightUpLine size={15} aria-hidden="true" />
+            </Link>
+            <Link
+              className={menuStyles.mobileStudent}
+              href="/solutions"
+              onClick={closeMenus}
+            >
+              <span>Solutions by role</span>
               <RiArrowRightUpLine size={15} aria-hidden="true" />
             </Link>
             <button
@@ -382,12 +451,18 @@ export function NavBar() {
               className={styles.button}
               onClick={closeMenus}
             >
-              Book a live demo{" "}
+              Request a 30-minute live demo{" "}
               <RiArrowRightUpLine size={16} aria-hidden="true" />
             </Link>
           </nav>
         )}
       </header>
+      {!mobileOpen && (
+        <Link className={menuStyles.stickyDemo} href="/book-demo">
+          Request a 30-Minute Live Demo
+          <RiArrowRightUpLine size={17} aria-hidden="true" />
+        </Link>
+      )}
     </>
   )
 }

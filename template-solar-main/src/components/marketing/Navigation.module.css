@@ -245,6 +245,9 @@
 .mobileStudent {
   display: none;
 }
+.stickyDemo {
+  display: none;
+}
 @keyframes menuEnter {
   from {
     opacity: 0;
@@ -300,6 +303,30 @@
   }
   .mobileNavigation {
     padding: 12px !important;
+  }
+  .stickyDemo {
+    position: fixed;
+    z-index: 80;
+    right: 18px;
+    bottom: calc(14px + env(safe-area-inset-bottom));
+    left: 18px;
+    display: flex;
+    min-height: 50px;
+    align-items: center;
+    justify-content: center;
+    gap: 9px;
+    border: 1px solid #ffffff55;
+    border-radius: 12px;
+    background: #084db5;
+    color: #fff;
+    box-shadow: 0 10px 28px #10244238;
+    font-size: 14px;
+    font-weight: 600;
+    text-decoration: none;
+  }
+  .stickyDemo:focus-visible {
+    outline: 3px solid #19a889;
+    outline-offset: 3px;
   }
   .mobileHeading {
     display: flex;

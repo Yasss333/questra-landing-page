@@ -22,9 +22,15 @@ export default function DemoContact({
       {
         name: String(values.get("name") || ""),
         email: String(values.get("email") || ""),
+        mobile: String(values.get("mobile") || ""),
         institution: String(values.get("institution") || ""),
+        institutionType: String(values.get("institutionType") || ""),
+        scale: String(values.get("scale") || ""),
         role: String(values.get("role") || ""),
+        examFocus: String(values.get("examFocus") || ""),
+        preferredTime: String(values.get("preferredTime") || ""),
         message: String(values.get("message") || ""),
+        consent: String(values.get("consent") || ""),
       },
       siteConfig.contactEmail,
     )
@@ -134,6 +140,38 @@ export default function DemoContact({
               />
             </label>
             <label>
+              Mobile number <span>(optional)</span>
+              <input
+                name="mobile"
+                type="tel"
+                autoComplete="tel"
+                placeholder="Include your country code"
+                maxLength={24}
+              />
+            </label>
+            <div className={styles.formRow}>
+              <label>
+                Institution type <span>(optional)</span>
+                <select name="institutionType" defaultValue="">
+                  <option value="">Choose a type</option>
+                  <option>University</option>
+                  <option>Autonomous college</option>
+                  <option>Affiliated college</option>
+                  <option>Other institution</option>
+                </select>
+              </label>
+              <label>
+                Approximate scale <span>(optional)</span>
+                <select name="scale" defaultValue="">
+                  <option value="">Choose a range</option>
+                  <option>1–5 departments</option>
+                  <option>6–15 departments</option>
+                  <option>16+ departments</option>
+                  <option>Not sure yet</option>
+                </select>
+              </label>
+            </div>
+            <label>
               Your role
               <select required name="role" defaultValue="">
                 <option value="" disabled>
@@ -148,6 +186,24 @@ export default function DemoContact({
                 <option>Other</option>
               </select>
             </label>
+            <div className={styles.formRow}>
+              <label>
+                Examination focus <span>(optional)</span>
+                <select name="examFocus" defaultValue="">
+                  <option value="">Choose an area</option>
+                  <option>Question bank and AI drafting</option>
+                  <option>Mid-term papers</option>
+                  <option>End-semester papers</option>
+                  <option>Review and approval workflows</option>
+                  <option>Student Portal</option>
+                  <option>Academic analytics</option>
+                </select>
+              </label>
+              <label>
+                Preferred date and time <span>(optional)</span>
+                <input name="preferredTime" type="datetime-local" />
+              </label>
+            </div>
             <label>
               What would you like to explore? <span>(optional)</span>
               <textarea
@@ -157,12 +213,20 @@ export default function DemoContact({
                 maxLength={1500}
               />
             </label>
+            <label className={styles.consentLabel}>
+              <input required type="checkbox" name="consent" value="yes" />
+              <span>
+                I agree Questra may use these details to respond to my demo
+                enquiry.
+              </span>
+            </label>
             <button type="submit" className={styles.button}>
               Prepare demo enquiry{" "}
               <RiArrowRightUpLine size={17} aria-hidden="true" />
             </button>
             <p className={styles.formNote}>
-              Prepare your enquiry, then open it in your email app and send it
+              This page prepares an email draft on your device; it does not send
+              or store your details. Open the draft in your email app and send it
               to complete your request.
             </p>
             {errors.length > 0 && (

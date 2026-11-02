@@ -16,7 +16,7 @@ export default function PageIntro({
       <p>{description}</p>
       <div className={styles.actions}>
         <Link className={styles.button} href="/book-demo">
-          Experience a live demo ↗
+          Request a 30-Minute Live Demo ↗
         </Link>
         <Link className={styles.link} href="/platform">
           Explore the platform →

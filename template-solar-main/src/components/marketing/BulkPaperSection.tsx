@@ -31,7 +31,7 @@ export default function BulkPaperSection() {
           />
         </h2>
         <p>Generate multiple question papers across your institution with intelligent syllabus mapping, configurable approval workflows and complete examination visibility.</p>
-        <Link className={styles.cta} href="/book-demo">Schedule a live demo <span aria-hidden="true">↗</span></Link>
+        <Link className={styles.cta} href="/book-demo">Request a 30-Minute Live Demo <span aria-hidden="true">↗</span></Link>
       </div>
       <div className={styles.dashboard} aria-label="Illustrative bulk paper generation dashboard">
         <div className={styles.dashboardTop}><div><span className={styles.dot} /> EXAMINATION COMMAND CENTER</div><span>ILLUSTRATIVE VIEW</span></div>

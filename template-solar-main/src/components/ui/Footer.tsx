@@ -19,22 +19,30 @@ export default function Footer() {
             <br />
             Examine with purpose.
           </p>
+          <small className={styles.footerProduct}>A product of VoiceDots AI</small>
         </div>
         <div>
           <h2>Platform</h2>
           <Link href="/platform">Capabilities</Link>
-          <Link href="/platform#governance">Faculty review</Link>
-          <Link href="/how-it-works">How it works</Link>
-          <Link href="/platform#dashboards">Analytics & outcomes</Link>
+          <Link href="/ai-question-studio">AI Question Studio</Link>
+          <Link href="/question-bank">Question Bank</Link>
+          <Link href="/bulk-paper-generation">Paper Generation</Link>
+          <Link href="/syllabus-intelligence">Syllabus Intelligence</Link>
+          <Link href="/approval-automation">Approval automation</Link>
+          <Link href="/academic-analytics">Analytics & outcomes</Link>
         </div>
         <div>
           <h2>Explore</h2>
-          <Link href="/#student-portal">Student Portal</Link>
+          <Link href="/student-portal">Student Portal</Link>
+          <Link href="/solutions">Solutions by role</Link>
+          <Link href="/security-governance">Security & governance</Link>
+          <Link href="/how-it-works">How it works</Link>
           <Link href="/#faq">Common questions</Link>
-          <Link href="/book-demo">Book a demo</Link>
         </div>
         <div className={styles.footerContact}>
-          <h2>Let’s talk</h2>
+          <h2>Company & contact</h2>
+          <Link href="/about">About Questra</Link>
+          <Link href="/book-demo">Request a 30-minute demo</Link>
           <Link href={`mailto:${siteConfig.contactEmail}`}>
             {siteConfig.contactEmail}
             <RiArrowRightUpLine size={14} aria-hidden="true" />

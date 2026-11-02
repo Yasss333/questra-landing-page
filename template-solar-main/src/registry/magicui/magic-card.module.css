@@ -1,0 +1,37 @@
+.card {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  --magic-x: 50%;
+  --magic-y: 35%;
+}
+.card > :not(.glow) { position: relative; z-index: 1; }
+.glow {
+  pointer-events: none;
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  border-radius: inherit;
+  opacity: 0;
+  background: radial-gradient(440px circle at var(--magic-x) var(--magic-y), color-mix(in srgb, var(--theme-accent, #0754b5) 15%, transparent), color-mix(in srgb, var(--theme-green, #078d78) 10%, transparent) 45%, transparent 75%);
+  transition: opacity 250ms ease;
+}
+.card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  padding: 1px;
+  border-radius: inherit;
+  pointer-events: none;
+  z-index: 2;
+  opacity: 0;
+  background: radial-gradient(380px circle at var(--magic-x) var(--magic-y), var(--theme-accent, #0754b5), var(--theme-green, #078d78) 45%, transparent 75%);
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask-composite: exclude;
+  transition: opacity 250ms ease;
+}
+.card:hover > .glow, .card:focus-within > .glow,
+.card:hover::after, .card:focus-within::after { opacity: 1; }
+@media (prefers-reduced-motion: reduce) {
+  .glow, .card::after { transition: none; background-position: center; }
+}

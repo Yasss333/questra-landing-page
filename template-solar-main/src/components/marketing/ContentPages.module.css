@@ -91,6 +91,178 @@
   line-height: 1.85;
   opacity: 0.8;
 }
+.stepGrid li {
+  position: relative;
+}
+.relatedCard {
+  display: flex;
+  min-height: 150px;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 24px;
+}
+.relatedCard h3 {
+  margin-top: 0;
+}
+.portalFigure {
+  margin: 34px 0 0;
+}
+.portalFrame {
+  display: grid;
+  grid-template-columns: 205px minmax(0, 1fr);
+  min-height: 410px;
+  overflow: hidden;
+  border: 1px solid #8b9bb544;
+  border-radius: 20px;
+  background: var(--theme-surface, #fff);
+  box-shadow: 0 28px 72px #10244212;
+}
+.portalSidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 24px 18px;
+  background: #102442;
+  color: #fff;
+  font-size: 13px;
+}
+.portalBrand {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  margin: 0 0 18px;
+  font-size: 17px;
+  font-weight: 700;
+}
+.portalBrand small {
+  color: #c4d0e2;
+  font-size: 10px;
+  font-weight: 400;
+}
+.portalSidebar > span:not(.portalBrand) {
+  padding: 11px 10px;
+  border-radius: 8px;
+  color: #d0d9e8;
+}
+.portalSidebar > .portalActive {
+  background: #ffffff18;
+  color: #fff !important;
+}
+.portalWorkspace {
+  min-width: 0;
+  padding: 20px 26px 24px;
+}
+.portalTopbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid #8b9bb533;
+  font-size: 13px;
+  font-weight: 600;
+}
+.portalTopbar span + span {
+  color: #64748b;
+  font-size: 11px;
+  font-weight: 500;
+}
+.portalWelcome {
+  padding: 26px 0 20px;
+}
+.portalWelcome > span {
+  color: #19a889;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.13em;
+}
+.portalWelcome h3 {
+  max-width: 580px;
+  margin: 12px 0 8px;
+  font-size: clamp(21px, 2.7vw, 31px);
+  line-height: 1.2;
+  letter-spacing: -0.035em;
+}
+.portalWelcome p {
+  color: #64748b;
+  font-size: 12px;
+  line-height: 1.6;
+}
+.portalSubjects {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+}
+.portalSubjects article {
+  display: flex;
+  min-width: 0;
+  min-height: 135px;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 16px;
+  border: 1px solid #8b9bb533;
+  border-radius: 12px;
+  background: #8b9bb508;
+}
+.portalSubjects article > div {
+  display: flex;
+  min-width: 0;
+  flex-direction: column;
+  gap: 6px;
+}
+.portalSubjects article strong {
+  font-size: 13px;
+}
+.portalSubjects article small {
+  color: #64748b;
+  font-size: 10px;
+  line-height: 1.5;
+}
+.portalSubjects article > span:last-child {
+  display: none;
+}
+.portalSubjectIcon {
+  width: 24px;
+  height: 24px;
+  border: 1px solid #084db544;
+  border-radius: 7px;
+  background: #084db510;
+}
+.portalDisclosure {
+  margin-top: 16px;
+  color: #64748b;
+  font-size: 11px;
+  line-height: 1.6;
+}
+.portalFigure figcaption {
+  margin-top: 12px;
+  color: #64748b;
+  font-size: 12px;
+  line-height: 1.6;
+}
+.portalFaq {
+  margin-top: 24px;
+  border-top: 1px solid #8b9bb533;
+}
+.portalFaq details {
+  padding: 18px 0;
+  border-bottom: 1px solid #8b9bb533;
+}
+.portalFaq summary {
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 1.5;
+}
+.portalFaq details p {
+  max-width: 760px;
+  margin: 12px 0 0;
+  color: #64748b;
+  font-size: 14px;
+  line-height: 1.8;
+}
 .number {
   color: #19a889;
   font-size: 12px;
@@ -135,6 +307,7 @@
 @media (max-width: 600px) {
   .main {
     padding-top: 90px;
+    padding-bottom: 88px;
   }
   .hero {
     padding: 42px 0;
@@ -151,6 +324,30 @@
   }
   .card {
     padding: 24px;
+  }
+  .portalFrame {
+    grid-template-columns: 1fr;
+  }
+  .portalSidebar {
+    display: none;
+  }
+  .portalWorkspace {
+    padding: 18px;
+  }
+  .portalSubjects {
+    grid-template-columns: 1fr;
+  }
+  .portalSubjects article {
+    min-height: auto;
+    flex-direction: row;
+    align-items: center;
+  }
+  .portalSubjects article > div {
+    flex: 1;
+  }
+  .portalSubjects article > span:last-child {
+    display: block;
+    color: #084db5;
   }
 }
 

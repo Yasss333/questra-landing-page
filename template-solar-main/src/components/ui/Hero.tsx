@@ -25,35 +25,36 @@ export function Hero() {
           className={styles.heroBadge}
           href="/how-it-works#institution-setup"
         >
-          <span /> Question paper super intelligence.{" "}
+          <span /> The intelligent examination automation platform{" "}
           <RiArrowRightUpLine size={14} aria-hidden="true" />
         </Link>
         <h1 id="hero-heading">
           From syllabus to
           <br />
-          <span>sanctioned question paper.</span>
+          <span>final approval.</span>
         </h1>
         <p>
-          Generate smarter questions. Validate every requirement. Coordinate
-          every stakeholder. Questra connects question banks, paper generation,
-          and institutional approvals in one intelligent workspace.
+          End-to-end AI-powered question paper automation. Bring curriculum,
+          question creation, paper validation, and approval routing into one
+          connected workflow, with final academic authority staying with your
+          institution.
         </p>
         <div className={styles.heroActions}>
           <Link className={styles.button} href="/book-demo">
-            Experience a live demo{" "}
+            Request a 30-Minute Live Demo{" "}
             <RiArrowRightUpLine size={18} aria-hidden="true" />
           </Link>
-          <Link className={styles.secondaryButton} href="#platform">
-            Explore the 11-step setup{" "}
+          <Link className={styles.secondaryButton} href="/how-it-works">
+            Explore the complete workflow{" "}
             <RiArrowDownLine size={16} aria-hidden="true" />
           </Link>
         </div>
         <div className={styles.heroQualities}>
           {[
             "Syllabus-aligned",
-            "Faculty-controlled",
             "Bloom’s-aware",
             "Outcome-mapped",
+            "Faculty-authorized release",
           ].map((item) => (
             <span key={item}>
               <RiCheckLine size={14} aria-hidden="true" />

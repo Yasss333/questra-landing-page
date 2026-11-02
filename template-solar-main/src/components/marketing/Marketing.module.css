@@ -995,6 +995,15 @@
   max-width: 350px;
   margin-bottom: 23px;
 }
+.studentCtas {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px 20px;
+  margin-top: 4px;
+}
+.studentCtas .textLink {
+  margin-top: 0;
+}
 .textLink {
   display: inline-flex;
   align-items: center;
@@ -1470,6 +1479,22 @@
   color: var(--theme-muted, #8a9cb4);
   display: contents;
 }
+.demoForm .consentLabel {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 10px;
+  color: var(--theme-muted, #53627a);
+  font-size: 11px;
+  line-height: 1.6;
+}
+.demoForm .consentLabel input {
+  width: 16px;
+  height: 16px;
+  flex: none;
+  margin: 1px 0 0;
+  accent-color: #084db5;
+}
 .demoForm input,
 .demoForm select,
 .demoForm textarea {
@@ -1629,6 +1654,12 @@
   font-size: 11px;
   line-height: 1.9;
   color: var(--theme-muted, #7b8da5);
+}
+.footerBrand .footerProduct {
+  display: inline-block;
+  margin-top: 8px;
+  color: var(--theme-muted, #7b8da5);
+  font-size: 10px;
 }
 .footerGrid h2 {
   color: var(--theme-muted, #3d5677);
@@ -2789,7 +2820,10 @@
     line-height: 1.8;
   }
   .footer {
-    padding-bottom: 20px;
+    padding-bottom: 92px;
+  }
+  .main {
+    padding-bottom: 84px;
   }
   .notFound h1 {
     font-size: 29px;

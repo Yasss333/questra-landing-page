@@ -28,7 +28,7 @@ const modules = [
   ],
   [
     "validation",
-    "04 / Responsive validation",
+    "04 / Automated quality validation",
     "See exceptions before submission.",
     "Check marks, question counts, unit distribution, outcome mapping, Bloom’s levels, duplication, metadata, and paper-pattern conformity. Clear exceptions and corrective guidance help faculty resolve issues while retaining academic judgment.",
   ],
@@ -64,7 +64,7 @@ export default function PlatformPage() {
       <section className={styles.section} aria-labelledby="modules-heading">
         <span className={styles.eyebrow}>Connected capabilities</span>
         <h2 id="modules-heading">
-          From syllabus to sanctioned question paper.
+          From syllabus to final approval.
         </h2>
         <div className={styles.grid}>
           {modules.map(([id, label, name, text]) => (
