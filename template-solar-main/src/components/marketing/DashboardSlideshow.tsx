@@ -8,6 +8,7 @@ import {
   GraduationCap,
   Pause,
   Play,
+  Square,
 } from "lucide-react"
 import styles from "./PhaseZero.module.css"
 const slides = [
@@ -71,12 +72,12 @@ export default function DashboardSlideshow() {
   const [motionOptIn, setMotionOptIn] = useState(false)
   const autoplay = playing && (!mounted || !reducedMotion || motionOptIn)
   useEffect(() => {
-    if (!autoplay || interacting) return
+    if (!autoplay || (interacting && !motionOptIn)) return
     const timer = window.setInterval(() => {
       if (!document.hidden) setActive((index) => (index + 1) % slides.length)
     }, 2000)
     return () => window.clearInterval(timer)
-  }, [autoplay, interacting])
+  }, [autoplay, interacting, motionOptIn])
   function select(index: number) {
     setActive((index + slides.length) % slides.length)
     setPlaying(false)
@@ -150,6 +151,7 @@ export default function DashboardSlideshow() {
             type="button"
             onClick={() => select(active - 1)}
             aria-label="Previous dashboard"
+            title="Previous dashboard"
           >
             <ChevronLeft size={16} />
           </button>
@@ -157,9 +159,12 @@ export default function DashboardSlideshow() {
             type="button"
             onClick={() => {
               setMotionOptIn(true)
+              setInteracting(false)
               setPlaying(!autoplay)
             }}
             aria-label={autoplay ? "Pause slideshow" : "Play slideshow"}
+            title={autoplay ? "Pause slideshow" : "Play slideshow"}
+            className={styles.darkControl}
           >
             {autoplay ? <Pause size={14} /> : <Play size={14} />}
           </button>
@@ -167,8 +172,17 @@ export default function DashboardSlideshow() {
             type="button"
             onClick={() => select(active + 1)}
             aria-label="Next dashboard"
+            title="Next dashboard"
           >
             <ChevronRight size={16} />
+          </button>
+          <button
+            type="button"
+            onClick={() => setPlaying(false)}
+            aria-label="Stop slideshow"
+            title="Stop slideshow"
+          >
+            <Square size={14} fill="currentColor" />
           </button>
         </div>
       </div>

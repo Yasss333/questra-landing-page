@@ -296,18 +296,35 @@
 }
 .controls {
   display: flex;
-  gap: 3px;
+  gap: 7px;
+  flex: none;
 }
 .controls button {
   display: grid;
   place-items: center;
-  width: 30px;
-  height: 30px;
+  width: 40px;
+  height: 40px;
   cursor: pointer;
-  border-radius: 5px;
+  border-radius: 8px;
+  color: #111827;
+  background: #fff;
+  border: 1px solid #cbd5e1;
+  box-shadow: 0 2px 4px #1024420a;
+  transition:
+    background 0.15s,
+    border-color 0.15s;
 }
 .controls button:hover {
-  background: #edf4ff;
+  background: #f1f5f9;
+  border-color: #111827;
+}
+.controls .darkControl {
+  background: #111827;
+  color: #fff;
+  border-color: #111827;
+}
+.controls .darkControl:hover {
+  background: #334155;
 }
 .slideDots {
   display: flex;
@@ -616,14 +633,23 @@
 }
 .header {
   position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
+  top: 20px;
+  left: 24px;
+  right: 24px;
+  max-width: 1440px;
+  margin: auto;
   z-index: 50;
-  background: #fffffff5;
-  border-bottom: 1px solid #e3ebf4;
+  background: linear-gradient(115deg, #fffffff2, #f0f7ffeb 50%, #eaf3ffe6);
+  border: 1px solid #ffffffed;
+  border-radius: 24px;
   color: #102442;
-  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(24px) saturate(160%);
+  backdrop-filter: blur(24px) saturate(160%);
+  box-shadow:
+    0 14px 36px -12px #084db52e,
+    0 3px 8px #1024420a,
+    inset 0 1px 0 #fff,
+    inset 0 -1px 0 #ffffff80;
 }
 .headerInner {
   max-width: 1440px;
@@ -705,6 +731,10 @@
   width: 32px;
   height: 32px;
   cursor: pointer;
+  border: 1px solid #d6e3f5;
+  border-radius: 8px;
+  background: #ffffffd9;
+  box-shadow: inset 0 1px 0 #fff;
 }
 .menuToggle {
   display: none;
@@ -894,8 +924,14 @@
   }
 }
 @media (max-width: 600px) {
+  .header {
+    top: 10px;
+    left: 10px;
+    right: 10px;
+    border-radius: 18px;
+  }
   .headerInner {
-    padding: 14px 18px;
+    padding: 12px 10px;
     gap: 8px;
   }
   .headerInner > a img {
@@ -961,6 +997,8 @@
   }
   .slideControls {
     padding: 7px 9px 0;
+    flex-wrap: wrap;
+    row-gap: 8px;
   }
   .slideControls strong {
     font-size: 8px;
@@ -972,8 +1010,8 @@
     font-size: 6px;
   }
   .controls button {
-    width: 26px;
-    height: 30px;
+    width: 36px;
+    height: 36px;
   }
   .previewNote {
     font-size: 6px;
