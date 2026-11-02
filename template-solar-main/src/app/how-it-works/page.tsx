@@ -1,9 +1,9 @@
 import PageIntro from "@/components/marketing/PageIntro"
 import {
-  ApprovalOverview,
-  ClosingCTA,
-} from "@/components/marketing/ProductContent"
-import { Workflow } from "@/components/marketing/HomeSections"
+  ExactWorkflow,
+  PriorityApprovals,
+  PriorityClosing,
+} from "@/components/marketing/PrioritySections"
 import styles from "@/components/marketing/ContentPages.module.css"
 import { marketingMetadata, pageStructuredData } from "../marketing-metadata"
 const title = "How It Works | Questra"
@@ -69,6 +69,7 @@ export default function HowItWorks() {
         title="Set up once. Move every examination forward."
         description="Turn your academic structure into a connected foundation. From the first syllabus upload to the final authorized paper, every step carries the right context forward."
       />
+      <ExactWorkflow />
       <section
         id="institution-setup"
         className={styles.section}
@@ -92,9 +93,8 @@ export default function HowItWorks() {
           ))}
         </ol>
       </section>
-      <Workflow />
-      <ApprovalOverview />
-      <ClosingCTA />
+      <PriorityApprovals />
+      <PriorityClosing />
     </main>
   )
 }

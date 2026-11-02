@@ -1,20 +1,16 @@
 import { Hero } from "@/components/ui/Hero"
 import DashboardPreview from "@/components/ui/DashboardPreview"
+import { FAQ } from "@/components/marketing/HomeSections"
 import {
-  Analytics,
-  FacultyReview,
-  FAQ,
-  Platform,
-  StudentPortal,
-  Workflow,
-} from "@/components/marketing/HomeSections"
-import BulkPaperSection from "@/components/marketing/BulkPaperSection"
-import {
-  ApprovalOverview,
-  ClosingCTA,
-  InstitutionProblem,
-} from "@/components/marketing/ProductContent"
-import styles from "@/components/marketing/Marketing.module.css"
+  ExactWorkflow,
+  ExamComparison,
+  FeatureIndex,
+  Positioning,
+  PriorityApprovals,
+  PriorityClosing,
+  RolesAndValidation,
+} from "@/components/marketing/PrioritySections"
+import styles from "@/components/marketing/PhaseZero.module.css"
 import { homeStructuredData } from "./structured-data"
 export default function Home() {
   return (
@@ -26,19 +22,26 @@ export default function Home() {
         }}
       />
       <Hero />
-      <InstitutionProblem />
-      <ApprovalOverview />
-      <BulkPaperSection />
-      <div className={styles.dashboardWrap}>
-        <DashboardPreview />
-      </div>
-      <Platform />
-      <FacultyReview />
-      <Workflow />
-      <StudentPortal />
-      <Analytics />
+      <Positioning />
+      <ExactWorkflow />
+      <PriorityApprovals />
+      <ExamComparison />
+      <FeatureIndex />
+      <RolesAndValidation />
+      <section
+        className={styles.section}
+        aria-label="Interactive product preview"
+      >
+        <span className={styles.eyebrow}>EXPLORE THE WORKSPACE</span>
+        <h2>Try the interactive preview.</h2>
+        <p className={styles.note}>
+          Overview, Master data and Question bank are available with sample
+          records. Explore the complete product in a guided demo.
+        </p>
+      </section>
+      <DashboardPreview />
       <FAQ />
-      <ClosingCTA />
+      <PriorityClosing />
     </main>
   )
 }

@@ -1,9 +1,9 @@
 export const siteConfig = {
   brandName: "Questra",
-  name: "Questra | AI Question Paper Automation & Approval Workflows",
+  name: "Questra.si | AI Question Paper Generation & Approval Automation.",
   url: "https://www.questra.si",
   description:
-    "From syllabus to final approval. Questra connects AI-assisted question creation, paper validation, and institution-governed examination workflows with academic authority kept in human hands.",
+    "Automate syllabus-aligned question creation, mid-term and semester paper generation, validation and multi-level approvals with Questra. Request a demo.",
   contactEmail: "voicedotsio@gmail.com",
   baseLinks: {
     home: "/",

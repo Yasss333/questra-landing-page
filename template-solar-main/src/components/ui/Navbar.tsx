@@ -1,468 +1,225 @@
 "use client"
-
 import Link from "next/link"
-
-import {
-  useCallback,
-  useEffect,
-  useRef,
-  useState,
-  type KeyboardEvent,
-} from "react"
-import {
-  RiArrowDownSLine,
-  RiArrowRightLine,
-  RiArrowRightUpLine,
-  RiBarChartLine,
-  RiBookOpenLine,
-  RiCloseLine,
-  RiDashboardLine,
-  RiFlowChart,
-  RiGraduationCapLine,
-  RiMailLine,
-  RiMenuLine,
-  RiQuestionAnswerLine,
-  RiShieldCheckLine,
-} from "@remixicon/react"
+import { useCallback, useEffect, useRef, useState } from "react"
+import { ChevronDown, Menu, X } from "lucide-react"
 import QuestraLogo from "../marketing/QuestraLogo"
-import styles from "../marketing/Marketing.module.css"
-import menuStyles from "../marketing/Navigation.module.css"
 import { AnimatedThemeToggler } from "./animated-theme-toggler"
+import styles from "../marketing/PhaseZero.module.css"
+import legacy from "../marketing/Marketing.module.css"
 
-type MenuName = "platform" | "resources"
-const platformLinks = [
+export const navGroups = [
   {
-    title: "Platform overview",
-    description: "Explore the complete academic toolkit.",
-    href: "/platform",
-    Icon: RiBookOpenLine,
+    name: "Platform",
+    links: [
+      ["Platform overview", "/platform"],
+      ["Academic Setup", "/platform#academic-setup"],
+      ["Question Bank", "/question-bank"],
+      ["AI Question Studio", "/ai-question-studio"],
+      ["Paper Generation", "/bulk-paper-generation"],
+      ["Approval Engine", "/approval-automation"],
+      ["Student & Faculty Portals", "/platform#portals"],
+    ],
   },
   {
-    title: "AI Question Studio",
-    description: "Create syllabus-grounded, faculty-reviewed drafts.",
-    href: "/ai-question-studio",
-    Icon: RiQuestionAnswerLine,
+    name: "Intelligence",
+    links: [
+      ["Syllabus Coverage", "/syllabus-intelligence"],
+      ["Bloom’s Analytics", "/academic-analytics"],
+      ["CO/PO Mapping", "/platform#syllabus"],
+      ["Quality Validation", "/platform#validation"],
+      ["Reports", "/platform#reports"],
+    ],
   },
   {
-    title: "Question Bank",
-    description: "Explore a structured, governed question repository.",
-    href: "/question-bank",
-    Icon: RiBookOpenLine,
+    name: "Resources",
+    links: [
+      ["How It Works", "/how-it-works"],
+      ["Product Screens", "/#product-screens"],
+      ["FAQs", "/#faq"],
+      ["Security & Privacy", "/security-governance"],
+    ],
   },
   {
-    title: "Paper Generation",
-    description: "Blueprint, validate, and prepare examination papers.",
-    href: "/bulk-paper-generation",
-    Icon: RiFlowChart,
+    name: "Company",
+    links: [
+      ["About", "/about"],
+      ["Contact", "/book-demo#demo"],
+      ["Request Demo", "/book-demo"],
+    ],
   },
-  {
-    title: "Syllabus Intelligence",
-    description: "Connect academic masters, topics, and outcomes.",
-    href: "/syllabus-intelligence",
-    Icon: RiGraduationCapLine,
-  },
-  {
-    title: "Academic Analytics",
-    description: "Review coverage, Bloom’s levels, and outcomes.",
-    href: "/academic-analytics",
-    Icon: RiBarChartLine,
-  },
-  {
-    title: "Faculty review",
-    description: "Academic judgement at every step.",
-    href: "/platform#governance",
-    Icon: RiShieldCheckLine,
-  },
-  {
-    title: "Approval automation",
-    description: "Three governed routes, with people in control.",
-    href: "/approval-automation",
-    Icon: RiFlowChart,
-  },
-  {
-    title: "Examination workflow",
-    description: "From syllabus to approved paper.",
-    href: "/how-it-works",
-    Icon: RiFlowChart,
-  },
-]
-const resourceLinks = [
-  {
-    title: "About Questra",
-    description: "The intelligence behind every question.",
-    href: "/about",
-    Icon: RiBookOpenLine,
-  },
-  {
-    title: "Solutions by role",
-    description: "A clear view for every academic team.",
-    href: "/solutions",
-    Icon: RiGraduationCapLine,
-  },
-  {
-    title: "Security & governance",
-    description: "Understand access, review, and release controls.",
-    href: "/security-governance",
-    Icon: RiShieldCheckLine,
-  },
-  {
-    title: "How it works",
-    description: "Follow the academic setup and paper journey.",
-    href: "/how-it-works",
-    Icon: RiFlowChart,
-  },
-  {
-    title: "Frequently asked questions",
-    description: "Clear answers for your academic team.",
-    href: "/#faq",
-    Icon: RiQuestionAnswerLine,
-  },
-  {
-    title: "Contact & live demo",
-    description: "Let’s talk about your institution.",
-    href: "/book-demo",
-    Icon: RiMailLine,
-  },
-]
+] as const
 
 export function NavBar() {
-  const [mobileOpen, setMobileOpen] = useState(false)
-  const [activeMenu, setActiveMenu] = useState<MenuName | null>(null)
-  const [mobileExpanded, setMobileExpanded] = useState<MenuName | null>(
-    "platform",
-  )
-  const rootRef = useRef<HTMLElement>(null)
-  const toggleRef = useRef<HTMLButtonElement>(null)
-  const platformRef = useRef<HTMLButtonElement>(null)
-  const resourcesRef = useRef<HTMLButtonElement>(null)
-  const closeMenus = useCallback(() => {
-    setActiveMenu(null)
-    setMobileOpen(false)
+  const [mobile, setMobile] = useState(false)
+  const [active, setActive] = useState<string | null>(null)
+  const root = useRef<HTMLElement>(null)
+  const toggle = useRef<HTMLButtonElement>(null)
+  const close = useCallback(() => {
+    setActive(null)
+    setMobile(false)
   }, [])
-
   useEffect(() => {
-    const onPointerDown = (event: PointerEvent) => {
-      if (!rootRef.current?.contains(event.target as Node)) closeMenus()
+    function pointer(event: PointerEvent) {
+      if (!root.current?.contains(event.target as Node)) close()
     }
-    const onKeyDown = (event: globalThis.KeyboardEvent) => {
+    function escape(event: KeyboardEvent) {
       if (event.key !== "Escape") return
-      if (activeMenu) {
-        event.preventDefault()
-        ;(activeMenu === "platform"
-          ? platformRef
-          : resourcesRef
-        ).current?.focus()
-      } else if (mobileOpen) {
-        event.preventDefault()
-        toggleRef.current?.focus()
-      }
-      closeMenus()
+      if (mobile) toggle.current?.focus()
+      else
+        root.current
+          ?.querySelector<HTMLButtonElement>(`button[data-menu="${active}"]`)
+          ?.focus()
+      close()
     }
-    document.addEventListener("pointerdown", onPointerDown)
-    document.addEventListener("keydown", onKeyDown)
+    const breakpoint = window.matchMedia("(min-width: 1051px)")
+    document.addEventListener("pointerdown", pointer)
+    document.addEventListener("keydown", escape)
+    breakpoint.addEventListener("change", close)
     return () => {
-      document.removeEventListener("pointerdown", onPointerDown)
-      document.removeEventListener("keydown", onKeyDown)
+      document.removeEventListener("pointerdown", pointer)
+      document.removeEventListener("keydown", escape)
+      breakpoint.removeEventListener("change", close)
     }
-  }, [activeMenu, mobileOpen, closeMenus])
-
-  useEffect(() => {
-    const breakpoint = window.matchMedia("(min-width: 801px)")
-    breakpoint.addEventListener("change", closeMenus)
-    return () => breakpoint.removeEventListener("change", closeMenus)
-  }, [closeMenus])
-
-  function openWithKeyboard(
-    event: KeyboardEvent<HTMLButtonElement>,
-    menu: MenuName,
-  ) {
-    if (event.key !== "ArrowDown") return
-    event.preventDefault()
-    setActiveMenu(menu)
-    requestAnimationFrame(() =>
-      rootRef.current
-        ?.querySelector<HTMLAnchorElement>(`#${menu}-menu a`)
-        ?.focus(),
+  }, [active, mobile, close])
+  function groupMenu(group: (typeof navGroups)[number]) {
+    const id = group.name.toLowerCase()
+    return (
+      <div className={styles.navItem} key={id}>
+        <button
+          type="button"
+          data-menu={group.name}
+          aria-expanded={active === group.name}
+          aria-controls={`${id}-menu`}
+          onClick={() => setActive(active === group.name ? null : group.name)}
+          onKeyDown={(event) => {
+            if (event.key === "ArrowDown") {
+              event.preventDefault()
+              setActive(group.name)
+              requestAnimationFrame(() =>
+                root.current
+                  ?.querySelector<HTMLAnchorElement>(`#${id}-menu a`)
+                  ?.focus(),
+              )
+            }
+          }}
+        >
+          {group.name}
+          <ChevronDown size={12} />
+        </button>
+        {active === group.name && (
+          <div id={`${id}-menu`} className={styles.dropdown}>
+            {group.links.map(([label, href]) => (
+              <Link key={label} href={href} onClick={close}>
+                {label}
+              </Link>
+            ))}
+          </div>
+        )}
+      </div>
     )
   }
-
-  function menuLinks(items: typeof platformLinks) {
-    return items.map(({ title, description, href, Icon }) => (
-      <Link
-        className={menuStyles.menuLink}
-        key={href}
-        href={href}
-        onClick={closeMenus}
-      >
-        <span className={menuStyles.linkIcon}>
-          <Icon size={20} aria-hidden="true" />
-        </span>
-        <span>
-          <strong>{title}</strong>
-          <small>{description}</small>
-        </span>
-        <RiArrowRightUpLine
-          className={menuStyles.linkArrow}
-          size={15}
-          aria-hidden="true"
-        />
-      </Link>
-    ))
-  }
-
   return (
     <>
-      <a className={styles.skipLink} href="#main-content">
+      <a className={legacy.skipLink} href="#main-content">
         Skip to content
       </a>
       <header
-        ref={rootRef}
-        className={styles.navbar}
+        ref={root}
+        className={styles.header}
         onBlur={(event) => {
-          if (!event.currentTarget.contains(event.relatedTarget)) closeMenus()
+          if (!event.currentTarget.contains(event.relatedTarget)) close()
         }}
       >
-        <Link href="/" aria-label="Questra home" onClick={closeMenus}>
-          <QuestraLogo />
-        </Link>
-        <nav
-          className={`${styles.desktopNav} ${menuStyles.navigation}`}
-          aria-label="Main navigation"
-        >
-          <button
-            ref={platformRef}
-            className={menuStyles.trigger}
-            aria-expanded={activeMenu === "platform"}
-            aria-controls="platform-menu"
-            onClick={() =>
-              setActiveMenu(activeMenu === "platform" ? null : "platform")
-            }
-            onKeyDown={(event) => openWithKeyboard(event, "platform")}
-          >
-            Platform <RiArrowDownSLine size={15} aria-hidden="true" />
-          </button>
-          {activeMenu === "platform" && (
-            <div
-              id="platform-menu"
-              className={menuStyles.megaMenu}
-              role="region"
-              aria-label="Platform sections"
-            >
-              <div className={menuStyles.menuMain}>
-                <div className={menuStyles.menuEyebrow}>
-                  THE QUESTRA PLATFORM <span>Built around your curriculum</span>
-                </div>
-                <div className={menuStyles.linkGrid}>
-                  {menuLinks(platformLinks)}
-                </div>
-                <Link
-                  className={menuStyles.menuFooter}
-                  href="/#dashboard-preview"
-                  onClick={closeMenus}
-                >
-                  <span>
-                    <RiDashboardLine size={16} aria-hidden="true" /> Explore the
-                    interactive workspace{" "}
-                    <span className={menuStyles.tryBadge}>Try it out</span>
-                  </span>
-                  <RiArrowRightLine size={16} aria-hidden="true" />
-                </Link>
-              </div>
-              <div className={menuStyles.menuFeature}>
-                <span className={menuStyles.featureIcon}>
-                  <RiGraduationCapLine size={25} aria-hidden="true" />
-                </span>
-                <span className={menuStyles.featureEyebrow}>
-                  CONNECTED LEARNING
-                </span>
-                <h2>
-                  Every subject.
-                  <br />
-                  One clear path.
-                </h2>
-                <p>
-                  See how academic intelligence connects to everyday student
-                  preparation.
-                </p>
-                <Link href="/student-portal" onClick={closeMenus}>
-                  Discover Student Portal{" "}
-                  <RiArrowRightUpLine size={15} aria-hidden="true" />
-                </Link>
-              </div>
-            </div>
-          )}
-          <Link
-            className={menuStyles.directLink}
-            href="/student-portal"
-            onClick={closeMenus}
-          >
-            Student Portal
+        <div className={styles.headerInner}>
+          <Link href="/" aria-label="Questra home" onClick={close}>
+            <QuestraLogo width={165} />
           </Link>
-          <Link
-            className={menuStyles.directLink}
-            href="/solutions"
-            onClick={closeMenus}
-          >
-            Solutions
-          </Link>
-          <button
-            ref={resourcesRef}
-            className={menuStyles.trigger}
-            aria-expanded={activeMenu === "resources"}
-            aria-controls="resources-menu"
-            onClick={() =>
-              setActiveMenu(activeMenu === "resources" ? null : "resources")
-            }
-            onKeyDown={(event) => openWithKeyboard(event, "resources")}
-          >
-            Resources <RiArrowDownSLine size={15} aria-hidden="true" />
-          </button>
-          {activeMenu === "resources" && (
-            <div
-              id="resources-menu"
-              className={menuStyles.resourceMenu}
-              role="region"
-              aria-label="Resources sections"
-            >
-              <div className={menuStyles.menuEyebrow}>HERE TO HELP</div>
-              {menuLinks(resourceLinks)}
-              <div className={menuStyles.resourceNote}>
-                <span /> Better examinations start with a conversation.
-              </div>
-            </div>
-          )}
-        </nav>
-        <div className={styles.navActions}>
-          <AnimatedThemeToggler className={styles.themeToggle} />
-          <Link
-            className={`${styles.button} ${styles.navCta}`}
-            href="/book-demo"
-            onClick={closeMenus}
-          >
-            30-Minute Demo <RiArrowRightUpLine size={16} aria-hidden="true" />
-          </Link>
-        </div>
-        <button
-          ref={toggleRef}
-          className={styles.menuToggle}
-          aria-label={mobileOpen ? "Close navigation" : "Open navigation"}
-          aria-expanded={mobileOpen}
-          aria-controls="mobile-navigation"
-          onClick={() => {
-            setMobileOpen(!mobileOpen)
-            setActiveMenu(null)
-          }}
-        >
-          {mobileOpen ? <RiCloseLine size={23} /> : <RiMenuLine size={23} />}
-        </button>
-        {mobileOpen && (
-          <nav
-            id="mobile-navigation"
-            className={`${styles.mobileNav} ${menuStyles.mobileNavigation}`}
-            aria-label="Mobile navigation"
-          >
-            <div className={menuStyles.mobileHeading}>
-              EXPLORE QUESTRA<span>Intelligence behind every Question.</span>
-            </div>
-            <Link
-              className={menuStyles.mobileHome}
-              href="/"
-              onClick={closeMenus}
-            >
+          <nav className={styles.nav} aria-label="Main navigation">
+            <Link href="/" onClick={close}>
               Home
-              <RiArrowRightUpLine size={15} aria-hidden="true" />
             </Link>
-            <button
-              className={menuStyles.mobileTrigger}
-              aria-expanded={mobileExpanded === "platform"}
-              aria-controls="mobile-platform-links"
-              onClick={() =>
-                setMobileExpanded(
-                  mobileExpanded === "platform" ? null : "platform",
-                )
-              }
-            >
-              Platform
-              <RiArrowDownSLine size={18} aria-hidden="true" />
-            </button>
-            {mobileExpanded === "platform" && (
-              <div
-                id="mobile-platform-links"
-                className={menuStyles.mobileLinks}
-              >
-                {menuLinks(platformLinks)}
-                <Link
-                  className={menuStyles.menuLink}
-                  href="/#dashboard-preview"
-                  onClick={closeMenus}
-                >
-                  <span className={menuStyles.linkIcon}>
-                    <RiDashboardLine size={19} aria-hidden="true" />
-                  </span>
-                  <span>
-                    <strong>Interactive workspace</strong>
-                    <small>Explore the product experience.</small>
-                  </span>
-                </Link>
-              </div>
-            )}
-            <Link
-              className={menuStyles.mobileStudent}
-              href="/student-portal"
-              onClick={closeMenus}
-            >
-              <span>
-                <RiGraduationCapLine size={19} aria-hidden="true" />
-                Student Portal
-              </span>
-              <RiArrowRightUpLine size={15} aria-hidden="true" />
+            {navGroups.slice(0, 2).map(groupMenu)}
+            <Link href="/solutions" onClick={close}>
+              Solutions
             </Link>
-            <Link
-              className={menuStyles.mobileStudent}
-              href="/solutions"
-              onClick={closeMenus}
-            >
-              <span>Solutions by role</span>
-              <RiArrowRightUpLine size={15} aria-hidden="true" />
-            </Link>
-            <button
-              className={menuStyles.mobileTrigger}
-              aria-expanded={mobileExpanded === "resources"}
-              aria-controls="mobile-resources-links"
-              onClick={() =>
-                setMobileExpanded(
-                  mobileExpanded === "resources" ? null : "resources",
-                )
-              }
-            >
-              Resources
-              <RiArrowDownSLine size={18} aria-hidden="true" />
-            </button>
-            {mobileExpanded === "resources" && (
-              <div
-                id="mobile-resources-links"
-                className={menuStyles.mobileLinks}
-              >
-                {menuLinks(resourceLinks)}
-              </div>
-            )}
+            {navGroups.slice(2).map(groupMenu)}
+          </nav>
+          <div className={styles.headerActions}>
+            <AnimatedThemeToggler className={styles.themeToggle} />
             <Link
               href="/book-demo"
-              className={styles.button}
-              onClick={closeMenus}
+              onClick={close}
+              className={`${styles.primaryButton} ${styles.navCta}`}
             >
-              Request a 30-minute live demo{" "}
-              <RiArrowRightUpLine size={16} aria-hidden="true" />
+              Request a 30-Minute Live Demo
             </Link>
+          </div>
+          <button
+            ref={toggle}
+            type="button"
+            className={styles.menuToggle}
+            aria-expanded={mobile}
+            aria-label={mobile ? "Close navigation" : "Open navigation"}
+            aria-controls="mobile-navigation"
+            onClick={() => {
+              setMobile(!mobile)
+              setActive(null)
+            }}
+          >
+            {mobile ? <X size={22} /> : <Menu size={22} />}
+          </button>
+        </div>
+        {mobile && (
+          <nav
+            id="mobile-navigation"
+            aria-label="Mobile navigation"
+            className={styles.mobileNav}
+          >
+            <Link href="/" onClick={close}>
+              Home
+            </Link>
+            {navGroups.map((group, index) => (
+              <div key={group.name}>
+                {index === 2 && (
+                  <Link
+                    href="/solutions"
+                    onClick={close}
+                    style={{
+                      display: "block",
+                      padding: "15px 0",
+                      fontSize: 14,
+                    }}
+                  >
+                    Solutions
+                  </Link>
+                )}
+                <div className={styles.mobileGroup}>
+                  <button
+                    type="button"
+                    aria-expanded={active === group.name}
+                    aria-controls={`mobile-${group.name}`}
+                    onClick={() =>
+                      setActive(active === group.name ? null : group.name)
+                    }
+                  >
+                    {group.name}
+                    <ChevronDown size={15} />
+                  </button>
+                  {active === group.name && (
+                    <div id={`mobile-${group.name}`}>
+                      {group.links.map(([label, href]) => (
+                        <Link key={label} href={href} onClick={close}>
+                          {label}
+                        </Link>
+                      ))}
+                    </div>
+                  )}
+                </div>
+              </div>
+            ))}
           </nav>
         )}
       </header>
-      {!mobileOpen && (
-        <Link className={menuStyles.stickyDemo} href="/book-demo">
-          Request a 30-Minute Live Demo
-          <RiArrowRightUpLine size={17} aria-hidden="true" />
-        </Link>
-      )}
     </>
   )
 }

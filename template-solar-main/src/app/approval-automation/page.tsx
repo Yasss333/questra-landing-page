@@ -1,112 +1,102 @@
-import PageIntro from "@/components/marketing/PageIntro"
 import {
-  ApprovalOverview,
-  ClosingCTA,
-} from "@/components/marketing/ProductContent"
-import styles from "@/components/marketing/ContentPages.module.css"
-import { marketingMetadata, pageStructuredData } from "../marketing-metadata"
-
-const title = "Question and Paper Approval Automation | Questra"
-const description =
-  "Explore Questra’s configurable request, review, validation, and release workflows for questions, mid-term papers, and end-semester examinations."
+  PriorityApprovals,
+  PriorityClosing,
+} from "@/components/marketing/PrioritySections"
+import styles from "@/components/marketing/PhaseZero.module.css"
+import { marketingMetadata } from "../marketing-metadata"
 export const metadata = marketingMetadata(
   "/approval-automation",
-  title,
-  description,
+  "Question and Paper Approval Automation | Questra",
+  "Configurable question, mid-term and end-semester requests, validation, review and authorized release.",
 )
-
-const stages = [
-  ["Draft", "Prepare or revise a question or paper."],
-  ["Submitted", "Send the item into its institution-defined review route."],
-  ["In review", "Assigned reviewers check, comment, and request changes."],
-  ["Changes requested", "Return work to the setter with comments and a clear resubmission path."],
-  ["Rejected", "Record a reasoned decision and retain the associated version history."],
-  ["Approved", "Required academic authorities record their decisions."],
-  ["Validated", "Check marks, pattern, coverage, duplication, and outcome rules."],
-  ["Locked and released", "Authorize the final version for controlled release."],
-]
-
 const controls = [
   [
-    "Role-defined review",
-    "Set the intended responsibilities for setters, reviewers, moderators, and examination authorities.",
+    "Configurable routing",
+    "Configurable 1–3 stages by exam, subject, department and institution; prevent self-approval when policy requires.",
   ],
   [
-    "Return and resubmit",
-    "Keep revision requests and reviewer comments connected to the item under review.",
+    "Assignments and separation",
+    "Role and subject allotment checks; substitute reviewers, delegation and conflict-of-interest rules.",
   ],
   [
-    "Version-aware decisions",
-    "Make it clear which question or paper version is being reviewed and approved.",
+    "Alerts and escalation",
+    "In-app/email alerts, overdue queues, escalation rules and complete request timelines.",
   ],
   [
-    "Release governance",
-    "Keep final academic authorization with the institution’s designated people.",
+    "Review and revision",
+    "Inline annotations, revision comparison, resubmit actions and reviewer comments.",
   ],
   [
-    "Deadlines and escalation",
-    "Assign due dates, send reminders, and escalate overdue reviews using institution-defined rules.",
+    "Approval evidence",
+    "Approval evidence: actor, time, version, reason, validation result and final authorization.",
   ],
   [
-    "Delegation and separation",
-    "Support approved reviewer substitutions and independent decisions where policy requires them.",
+    "Confidential release",
+    "No release of confidential paper until all required approvals and validations pass.",
   ],
-]
-
-export default function ApprovalAutomationPage() {
+] as const
+export default function ApprovalPage() {
   return (
-    <main id="main-content" tabIndex={-1} className={styles.main}>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify(
-            pageStructuredData("/approval-automation", title, description),
-          ).replace(/</g, "\\u003c"),
-        }}
-      />
-      <PageIntro
-        eyebrow="Question and paper approval automation"
-        title="Every question accountable. Every paper approved."
-        description="Questra coordinates question, mid-term paper, and end-semester paper requests through configurable review routes, reminders, and validation. Authorized academic teams retain the decisions and release authority."
-      />
-      <ApprovalOverview showDetailLink={false} />
-      <section className={styles.section} aria-labelledby="stages-heading">
-          <span className={styles.eyebrow}>Configurable approval workflow</span>
-        <h2 id="stages-heading">A clear route from draft to release.</h2>
-        <p className={styles.intro}>
-          Institutions decide which stages apply, who is authorized to act, and
-          when a paper is ready to leave the review process.
-        </p>
-        <ol className={styles.grid}>
-          {stages.map(([name, text], index) => (
-            <li className={styles.card} key={name}>
-              <span className={styles.number}>
-                {String(index + 1).padStart(2, "0")}
-              </span>
-              <h3>{name}</h3>
-              <p>{text}</p>
-            </li>
-          ))}
-        </ol>
-        <p className={styles.note}>
-          Institutions configure the stages, roles, deadlines, and release
-          controls that apply to each examination. The example above shows a
-          common route; the configured process remains the source of truth.
-        </p>
+    <main
+      id="main-content"
+      tabIndex={-1}
+      className={styles.main}
+      style={{ paddingTop: 110 }}
+    >
+      <PriorityApprovals detailed />
+      <section className={styles.blush}>
+        <div className={styles.section}>
+          <span className={styles.eyebrow}>REQUIRED WORKFLOW STATES</span>
+          <h2>Every decision stays with its version.</h2>
+          <div className={styles.states}>
+            <span>Draft</span>
+            <b aria-hidden="true">→</b>
+            <span>Submitted</span>
+            <b aria-hidden="true">→</b>
+            <span>In Review (Level 1/2/3 as configured)</span>
+          </div>
+          <div className={styles.branches}>
+            <strong>Review outcomes</strong>
+            <p>Changes Requested → revise and resubmit a new version.</p>
+            <p>
+              Rejected → retain the decision and version history; no release.
+            </p>
+            <p>Approved → continue to Final Validation.</p>
+          </div>
+          <div className={styles.states}>
+            <span>Approved</span>
+            <b aria-hidden="true">→</b>
+            <span>Final Validation</span>
+            <b aria-hidden="true">→</b>
+            <span>Locked</span>
+            <b aria-hidden="true">→</b>
+            <span>Authorized Release</span>
+          </div>
+          <p className={styles.note}>
+            Revisions create new versions and preserve previous decisions.
+            Validation findings must be resolved or handled through an
+            authorized exception process before locking and release.
+          </p>
+        </div>
       </section>
-      <section className={styles.section} aria-labelledby="controls-heading">
-        <span className={styles.eyebrow}>Built around academic governance</span>
-        <h2 id="controls-heading">Keep responsibility visible at each step.</h2>
-        <div className={styles.grid}>
-          {controls.map(([name, text]) => (
-            <article className={styles.card} key={name}>
-              <h3>{name}</h3>
+      <section className={styles.section}>
+        <span className={styles.eyebrow}>ESSENTIAL CONTROLS</span>
+        <h2>Academic oversight at every stage.</h2>
+        <div className={styles.featureGrid}>
+          {controls.map(([title, text]) => (
+            <article className={styles.feature} key={title}>
+              <h3>{title}</h3>
               <p>{text}</p>
             </article>
           ))}
         </div>
+        <p className={styles.note}>
+          Workflow illustrations describe the intended product controls. Confirm
+          released capabilities with your institutional roles during a live
+          demonstration.
+        </p>
       </section>
-      <ClosingCTA />
+      <PriorityClosing />
     </main>
   )
 }

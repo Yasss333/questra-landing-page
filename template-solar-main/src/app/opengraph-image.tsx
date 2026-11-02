@@ -13,8 +13,8 @@ export default function OpenGraphImage() {
           flexDirection: "column",
           justifyContent: "space-between",
           padding: "64px 72px",
-          background: "#F5F8FC",
-          color: "#102442",
+          background: "#fff2f7",
+          color: "#2c3e50",
         }}
       >
         <div style={{ display: "flex", alignItems: "center", gap: 16 }}>
@@ -23,7 +23,7 @@ export default function OpenGraphImage() {
               display: "flex",
               alignItems: "center",
               justifyContent: "center",
-              background: "#084DB5",
+              background: "#df0052",
               color: "white",
               borderRadius: 13,
               width: 60,
@@ -37,10 +37,10 @@ export default function OpenGraphImage() {
         </div>
         <div style={{ display: "flex", flexDirection: "column", gap: 8 }}>
           <span style={{ fontSize: 70, letterSpacing: -3 }}>
-            Better questions.
+            From Syllabus to
           </span>
-          <span style={{ fontSize: 70, letterSpacing: -3, color: "#084DB5" }}>
-            Smarter examinations.
+          <span style={{ fontSize: 70, letterSpacing: -3, color: "#df0052" }}>
+            Final Approval.
           </span>
         </div>
         <div
@@ -52,7 +52,7 @@ export default function OpenGraphImage() {
           }}
         >
           <span>Intelligence behind every Question.</span>
-          <span style={{ color: "#19A889" }}>questra.si</span>
+          <span style={{ color: "#d60050" }}>questra.si</span>
         </div>
       </div>
     ),

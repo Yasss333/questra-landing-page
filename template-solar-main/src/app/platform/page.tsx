@@ -1,119 +1,83 @@
 import Link from "next/link"
-import PageIntro from "@/components/marketing/PageIntro"
-import { ClosingCTA, stakeholders } from "@/components/marketing/ProductContent"
-import styles from "@/components/marketing/ContentPages.module.css"
-import { marketingMetadata, pageStructuredData } from "../marketing-metadata"
-const title = "Platform | Questra"
-const description =
-  "Explore Questra’s AI Question Studio, syllabus intelligence, paper patterns, validation, stakeholder dashboards, and institutional approval controls."
-export const metadata = marketingMetadata("/platform", title, description)
-const modules = [
-  [
-    "question-studio",
-    "01 / AI Question Studio",
-    "Three ways to build. One governed bank.",
-    "Enter questions manually, request AI-assisted drafts against selected syllabus topics, or import supported PDF and Excel templates. Map each item to subject, unit, topic, marks, type, complexity, Course Outcome, and Bloom’s level. Faculty refine wording and answers before academic review.",
-  ],
-  [
-    "syllabus",
-    "02 / Syllabus intelligence",
-    "Every question has academic context.",
-    "Connect syllabus PDFs, curriculum versions, units, topics, and subtopics to your question bank. Review coverage by subject and examination scope, and find missing mappings before papers move forward.",
-  ],
-  [
-    "paper-intelligence",
-    "03 / Paper intelligence",
-    "Your patterns. Consistent papers.",
-    "Create reusable mid-term and end-semester patterns with sections, question counts, marks, internal choices, and topic coverage. Assemble papers from approved questions or generate draft candidates for review, including alternative paper sets.",
-  ],
-  [
-    "validation",
-    "04 / Automated quality validation",
-    "See exceptions before submission.",
-    "Check marks, question counts, unit distribution, outcome mapping, Bloom’s levels, duplication, metadata, and paper-pattern conformity. Clear exceptions and corrective guidance help faculty resolve issues while retaining academic judgment.",
-  ],
-  [
-    "governance",
-    "05 / Approval intelligence & governance",
-    "The right authority at every stage.",
-    "Configure separate one-, two-, or three-stage policies for questions, mid-term papers, and end-semester papers. Role-based permissions and segregation of duties control who can review, comment, return, approve, escalate, and release. Retain timestamps, versions, and audit history.",
-  ],
-  [
-    "exports",
-    "06 / Controlled outputs",
-    "Release with the evidence attached.",
-    "Produce standardized PDF and Word papers with institution-specific headers, instructions, and formats, subject to permissions. Review answer keys and marking schemes alongside papers. Preserve validation results, approval records, and final-release accountability.",
-  ],
-]
+import { blueprintFeatures } from "@/components/marketing/blueprint"
+import { PriorityClosing } from "@/components/marketing/PrioritySections"
+import styles from "@/components/marketing/PhaseZero.module.css"
+import { marketingMetadata } from "../marketing-metadata"
+export const metadata = marketingMetadata(
+  "/platform",
+  "Platform | Questra",
+  "Syllabus ingestion, question banks, AI-assisted generation, blueprinting, requests, approvals, validation and secure release.",
+)
+const detailLinks: Record<string, string> = {
+  "academic-setup": "/how-it-works#institution-setup",
+  syllabus: "/syllabus-intelligence",
+  "question-studio": "/ai-question-studio",
+  "paper-intelligence": "/bulk-paper-generation",
+  "question-approval": "/approval-automation#questions",
+  "mid-term-approval": "/approval-automation#mid-term",
+  "semester-approval": "/approval-automation#end-semester",
+  reports: "/academic-analytics",
+  governance: "/security-governance",
+  portals: "/student-portal",
+}
 export default function PlatformPage() {
   return (
-    <main id="main-content" tabIndex={-1} className={styles.main}>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify(
-            pageStructuredData("/platform", title, description),
-          ).replace(/</g, "\\u003c"),
-        }}
-      />
-      <PageIntro
-        eyebrow="The Questra platform"
-        title="Intelligence at every step. Authority with your institution."
-        description="Bring question creation, paper generation, validation, and stakeholder approvals together. One connected workspace gives every team a clear view of what is ready and what needs attention."
-      />
-      <section className={styles.section} aria-labelledby="modules-heading">
-        <span className={styles.eyebrow}>Connected capabilities</span>
-        <h2 id="modules-heading">
-          From syllabus to final approval.
-        </h2>
-        <div className={styles.grid}>
-          {modules.map(([id, label, name, text]) => (
-            <article id={id} className={styles.card} key={id}>
-              <span className={styles.number}>{label}</span>
-              <h3>{name}</h3>
-              <p>{text}</p>
-            </article>
-          ))}
-        </div>
-      </section>
-      <section
-        id="dashboards"
-        className={styles.section}
-        aria-labelledby="dashboards-heading"
-      >
-        <span className={styles.eyebrow}>Stakeholder dashboards</span>
-        <h2 id="dashboards-heading">Every stakeholder knows the next step.</h2>
+    <main
+      id="main-content"
+      tabIndex={-1}
+      className={styles.main}
+      style={{ paddingTop: 105 }}
+    >
+      <section className={styles.section}>
+        <span className={styles.eyebrow}>THE QUESTRA PLATFORM</span>
+        <h1
+          style={{
+            fontSize: "clamp(34px,5vw,64px)",
+            lineHeight: 1.15,
+            fontWeight: 600,
+            letterSpacing: "-.045em",
+            margin: "22px 0",
+          }}
+        >
+          One Intelligent Platform. Every Question. Every Examination. Every
+          Approval.
+        </h1>
         <p className={styles.intro}>
-          Role-specific views surface assigned subjects, papers due, reviewer
-          queues, overdue actions, coverage gaps, approval turnaround, and
-          release status.
+          Questra is an institution-wide examination intelligence platform that
+          unifies syllabus ingestion, question bank management, AI-assisted
+          question generation, blueprinting, multi-stage requests and approvals,
+          automated validation, paper assembly and secure release in one
+          governed workflow.
         </p>
-        <div className={styles.grid}>
-          {stakeholders.map(([name, text]) => (
-            <article className={styles.card} key={name}>
-              <h3>{name}</h3>
+        <p className={styles.note}>
+          This overview describes the product blueprint. Confirm released
+          capabilities and institution-specific configurations in your demo.
+        </p>
+        <div className={styles.featureGrid}>
+          {blueprintFeatures.map(([id, title, text], index) => (
+            <article id={id} className={styles.feature} key={id}>
+              <span>{String(index + 1).padStart(2, "0")}</span>
+              <h2 style={{ fontSize: 21 }}>{title}</h2>
               <p>{text}</p>
+              {detailLinks[id] && (
+                <Link className={styles.sectionLink} href={detailLinks[id]}>
+                  Explore this workflow →
+                </Link>
+              )}
             </article>
           ))}
         </div>
-        <div className={styles.banner}>
-          <h3>Institutional visibility. Faculty control.</h3>
-          <p>
-            Leadership can see readiness across examinations while faculty and
-            reviewers act on their own assignments. Students access only
-            institution-authorized practice materials and past papers.
-          </p>
-          <div className={styles.actions}>
-            <Link className={styles.link} href="/#dashboard-preview">
-              Try the interactive workspace →
-            </Link>
-            <Link className={styles.link} href="/#student-portal">
-              Explore Student Portal →
-            </Link>
-          </div>
+        <div id="exports" className={styles.note}>
+          Secure export, release & reporting follow required academic approvals.
+          Faculty work queues and student-safe access are covered under Student
+          & Faculty Portals.
+        </div>
+        <div id="dashboards" className={styles.note}>
+          Role-specific dashboards: Management, Controller of Examinations, HoD,
+          Faculty and Reviewers.
         </div>
       </section>
-      <ClosingCTA />
+      <PriorityClosing />
     </main>
   )
 }
