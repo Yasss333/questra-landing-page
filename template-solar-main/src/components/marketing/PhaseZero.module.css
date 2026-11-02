@@ -61,7 +61,7 @@
   align-items: center;
   gap: 9px;
   color: var(--theme-accent);
-  font-size: 10px;
+  font-size: 14px;
   font-weight: 650;
   letter-spacing: 0.1em;
   line-height: 1.7;
@@ -102,7 +102,7 @@
   margin: 0 0 17px;
 }
 .heroDescription {
-  font-size: 14px;
+  font-size: 16px;
   line-height: 1.85;
   color: var(--theme-muted);
   max-width: 545px;
@@ -121,7 +121,7 @@
   justify-content: center;
   gap: 10px;
   min-height: 48px;
-  font-size: 12px;
+  font-size: 14px;
   font-weight: 600;
   text-decoration: none;
 }
@@ -157,7 +157,8 @@
   gap: 16px;
   flex-wrap: wrap;
   margin-top: 26px;
-  font-size: 10px;
+  font-size: 14px;
+  line-height: 1.6;
   color: var(--theme-muted);
 }
 .heroChecks span {
@@ -184,13 +185,14 @@
 }
 .browserBar {
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
   gap: 10px;
   padding: 13px 15px;
   border-bottom: 1px solid #e9eaf0;
   background: #fff;
-  font-size: 9px;
+  font-size: 14px;
 }
 .browserDots {
   display: flex;
@@ -209,7 +211,7 @@
   background: #bcd9cc;
 }
 .previewTag {
-  font-size: 7px;
+  font-size: 14px;
   letter-spacing: 0.07em;
   color: #64748b;
 }
@@ -275,6 +277,7 @@
 }
 .slideControls {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
   gap: 10px;
@@ -286,12 +289,12 @@
   gap: 13px;
 }
 .slideControls strong {
-  font-size: 10px;
+  font-size: 14px;
   font-weight: 550;
 }
 .slideCount {
   color: #64748b;
-  font-size: 8px;
+  font-size: 14px;
   letter-spacing: 0.1em;
 }
 .controls {
@@ -351,7 +354,7 @@
   background: #084db5;
 }
 .previewNote {
-  font-size: 8px;
+  font-size: 14px;
   color: #64748b;
   text-align: center;
   padding: 2px 12px 10px;
@@ -396,7 +399,7 @@
 }
 .pillar > span {
   color: var(--theme-accent);
-  font-size: 12px;
+  font-size: 14px;
 }
 .pillar h3 {
   font-size: 18px;
@@ -405,7 +408,7 @@
   margin: 17px 0 10px;
 }
 .pillar p {
-  font-size: 13px;
+  font-size: 16px;
   line-height: 1.9;
   color: var(--theme-muted);
 }
@@ -439,10 +442,10 @@
   width: 42px;
   height: 42px;
   border-radius: 50%;
-  font-size: 12px;
+  font-size: 14px;
 }
 .journey h3 {
-  font-size: 14px;
+  font-size: 16px;
   line-height: 1.6;
   font-weight: 550;
   margin-top: 16px;
@@ -453,7 +456,7 @@
   align-items: center;
   gap: 8px;
   color: var(--theme-accent);
-  font-size: 13px;
+  font-size: 16px;
   font-weight: 600;
   margin-top: 28px;
   text-underline-offset: 5px;
@@ -474,7 +477,7 @@
   padding: 28px;
 }
 .approvalCard > span {
-  font-size: 10px;
+  font-size: 14px;
   color: var(--theme-accent);
 }
 .approvalCard h3 {
@@ -484,7 +487,7 @@
   margin: 14px 0;
 }
 .approvalCard p {
-  font-size: 13px;
+  font-size: 16px;
   line-height: 1.9;
   color: var(--theme-muted);
 }
@@ -494,7 +497,7 @@
   margin: 20px 0;
 }
 .approvalCard li {
-  font-size: 12px;
+  font-size: 16px;
   padding: 11px 0;
   border-bottom: 1px solid var(--theme-border);
   display: flex;
@@ -502,7 +505,7 @@
   gap: 10px;
 }
 .approvalCard li span {
-  font-size: 9px;
+  font-size: 14px;
   color: var(--theme-accent);
 }
 .outcome {
@@ -510,7 +513,7 @@
   color: var(--theme-text);
   padding: 12px;
   border-radius: 5px;
-  font-size: 12px;
+  font-size: 16px;
   line-height: 1.6;
 }
 .featureGrid {
@@ -524,7 +527,7 @@
   padding: 25px 0;
 }
 .feature > span {
-  font-size: 10px;
+  font-size: 14px;
   color: var(--theme-accent);
 }
 .feature h3 {
@@ -534,7 +537,7 @@
   font-weight: 550;
 }
 .feature p {
-  font-size: 13px;
+  font-size: 16px;
   line-height: 1.85;
   color: var(--theme-muted);
 }
@@ -545,7 +548,7 @@
 .comparison table {
   width: 100%;
   border-collapse: collapse;
-  font-size: 13px;
+  font-size: 16px;
   line-height: 1.8;
 }
 .comparison th,
@@ -584,7 +587,7 @@
 .roles p,
 .note {
   color: var(--theme-muted);
-  font-size: 12px;
+  font-size: 16px;
   line-height: 1.8;
 }
 .note {
@@ -619,7 +622,7 @@
   border-radius: 5px;
   padding: 12px 15px;
   background: var(--theme-surface);
-  font-size: 12px;
+  font-size: 16px;
 }
 .states > b {
   color: var(--theme-accent);
@@ -628,7 +631,7 @@
   padding: 20px;
   border-left: 3px solid var(--theme-accent);
   background: var(--theme-blue-surface);
-  font-size: 13px;
+  font-size: 16px;
   line-height: 1.9;
 }
 .header {
@@ -673,7 +676,7 @@
   display: flex;
   align-items: center;
   gap: 4px;
-  font-size: 12px;
+  font-size: 14px;
   padding: 12px 10px;
   border-radius: 6px;
   cursor: pointer;
@@ -702,7 +705,7 @@
 }
 .dropdown a {
   display: block;
-  font-size: 12px;
+  font-size: 14px;
   padding: 13px 12px;
   border-radius: 5px;
 }
@@ -720,7 +723,7 @@
   gap: 10px;
 }
 .navCta {
-  font-size: 10px;
+  font-size: 14px;
   min-height: 40px;
   white-space: nowrap;
   padding: 10px 13px;
@@ -755,25 +758,25 @@
   gap: 30px;
 }
 .footer h2 {
-  font-size: 12px;
+  font-size: 14px;
   font-weight: 650;
   margin-bottom: 17px;
 }
 .footer a:not(:first-child),
 .footerGroup a {
   display: block;
-  font-size: 11px;
+  font-size: 14px;
   color: var(--theme-muted);
   margin: 12px 0;
 }
 .footer p {
   margin: 20px 0 10px;
-  font-size: 12px;
+  font-size: 14px;
   color: var(--theme-muted);
   line-height: 1.9;
 }
 .footer small {
-  font-size: 10px;
+  font-size: 14px;
   color: var(--theme-accent);
 }
 .footerBottom {
@@ -784,7 +787,7 @@
   display: flex;
   justify-content: space-between;
   gap: 20px;
-  font-size: 10px;
+  font-size: 14px;
   color: var(--theme-muted);
 }
 .main a:focus-visible,
@@ -818,7 +821,7 @@
   }
   .nav button,
   .nav > a {
-    font-size: 11px;
+    font-size: 14px;
     padding: 12px 7px;
   }
   .headerInner > a img {
@@ -828,7 +831,7 @@
     gap: 6px;
   }
   .navCta {
-    font-size: 9px;
+    font-size: 14px;
   }
   .hero h1 {
     font-size: 43px;
@@ -837,7 +840,7 @@
     width: 58%;
   }
 }
-@media (max-width: 1050px) {
+@media (max-width: 1180px) {
   .nav {
     display: none;
   }
@@ -852,7 +855,7 @@
     margin-left: auto;
   }
   .navCta {
-    font-size: 11px;
+    font-size: 14px;
   }
   .mobileNav {
     display: block;
@@ -879,7 +882,7 @@
   }
   .mobileGroup a {
     display: block;
-    font-size: 12px;
+    font-size: 14px;
     padding: 12px 0;
     color: #64748b;
   }
@@ -932,16 +935,16 @@
   }
   .headerInner {
     padding: 12px 10px;
-    gap: 8px;
+    gap: 6px;
   }
   .headerInner > a img {
-    width: 110px !important;
+    width: 96px !important;
   }
   .headerActions {
     gap: 3px;
   }
   .navCta {
-    font-size: 9px;
+    font-size: 14px;
     padding: 8px 10px;
     min-height: 36px;
     max-width: 130px;
@@ -963,14 +966,14 @@
     margin-top: 19px;
   }
   .eyebrow {
-    font-size: 8px;
+    font-size: 14px;
     letter-spacing: 0.065em;
   }
   .heroSubhead {
     font-size: 20px;
   }
   .heroDescription {
-    font-size: 13px;
+    font-size: 16px;
   }
   .heroActions {
     gap: 15px;
@@ -979,7 +982,7 @@
   }
   .heroChecks {
     gap: 12px;
-    font-size: 9px;
+    font-size: 14px;
   }
   .heroVisual {
     margin-top: 15px;
@@ -990,10 +993,10 @@
   }
   .browserBar {
     padding: 10px;
-    font-size: 7px;
+    font-size: 14px;
   }
   .previewTag {
-    font-size: 5px;
+    font-size: 14px;
   }
   .slideControls {
     padding: 7px 9px 0;
@@ -1001,20 +1004,20 @@
     row-gap: 8px;
   }
   .slideControls strong {
-    font-size: 8px;
+    font-size: 14px;
   }
   .slideControls > div:first-child {
     gap: 6px;
   }
   .slideCount {
-    font-size: 6px;
+    font-size: 14px;
   }
   .controls button {
     width: 36px;
     height: 36px;
   }
   .previewNote {
-    font-size: 6px;
+    font-size: 14px;
   }
   .section {
     width: calc(100% - 40px);
@@ -1030,7 +1033,7 @@
     font-size: 16px;
   }
   .pillar p {
-    font-size: 12px;
+    font-size: 16px;
   }
   .approvalGrid {
     grid-template-columns: 1fr;
@@ -1045,13 +1048,13 @@
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
   .journey h3 {
-    font-size: 12px;
+    font-size: 16px;
   }
   .comparison th,
   .comparison td {
     padding: 12px 10px;
     min-width: 130px;
-    font-size: 11px;
+    font-size: 14px;
   }
   .comparison th:first-child,
   .comparison td:first-child {

@@ -13,7 +13,7 @@
 }
 .eyebrow {
   color: #19a889;
-  font-size: 12px;
+  font-size: 14px;
   font-weight: 700;
   letter-spacing: 0.16em;
   text-transform: uppercase;
@@ -87,7 +87,7 @@
   letter-spacing: -0.025em;
 }
 .card p {
-  font-size: 14px;
+  font-size: 16px;
   line-height: 1.85;
   opacity: 0.8;
 }
@@ -125,7 +125,7 @@
   padding: 24px 18px;
   background: #102442;
   color: #fff;
-  font-size: 13px;
+  font-size: 14px;
 }
 .portalBrand {
   display: flex;
@@ -137,7 +137,7 @@
 }
 .portalBrand small {
   color: #c4d0e2;
-  font-size: 10px;
+  font-size: 14px;
   font-weight: 400;
 }
 .portalSidebar > span:not(.portalBrand) {
@@ -160,12 +160,12 @@
   gap: 16px;
   padding-bottom: 16px;
   border-bottom: 1px solid #8b9bb533;
-  font-size: 13px;
+  font-size: 14px;
   font-weight: 600;
 }
 .portalTopbar span + span {
   color: #64748b;
-  font-size: 11px;
+  font-size: 14px;
   font-weight: 500;
 }
 .portalWelcome {
@@ -173,7 +173,7 @@
 }
 .portalWelcome > span {
   color: #19a889;
-  font-size: 10px;
+  font-size: 14px;
   font-weight: 700;
   letter-spacing: 0.13em;
 }
@@ -186,7 +186,7 @@
 }
 .portalWelcome p {
   color: #64748b;
-  font-size: 12px;
+  font-size: 14px;
   line-height: 1.6;
 }
 .portalSubjects {
@@ -213,11 +213,11 @@
   gap: 6px;
 }
 .portalSubjects article strong {
-  font-size: 13px;
+  font-size: 14px;
 }
 .portalSubjects article small {
   color: #64748b;
-  font-size: 10px;
+  font-size: 14px;
   line-height: 1.5;
 }
 .portalSubjects article > span:last-child {
@@ -233,13 +233,13 @@
 .portalDisclosure {
   margin-top: 16px;
   color: #64748b;
-  font-size: 11px;
+  font-size: 14px;
   line-height: 1.6;
 }
 .portalFigure figcaption {
   margin-top: 12px;
   color: #64748b;
-  font-size: 12px;
+  font-size: 14px;
   line-height: 1.6;
 }
 .portalFaq {
@@ -265,7 +265,7 @@
 }
 .number {
   color: #19a889;
-  font-size: 12px;
+  font-size: 14px;
   font-weight: 700;
   letter-spacing: 0.1em;
 }

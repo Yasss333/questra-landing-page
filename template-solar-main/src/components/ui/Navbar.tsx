@@ -71,7 +71,7 @@ export function NavBar() {
           ?.focus()
       close()
     }
-    const breakpoint = window.matchMedia("(min-width: 1051px)")
+    const breakpoint = window.matchMedia("(min-width: 1181px)")
     document.addEventListener("pointerdown", pointer)
     document.addEventListener("keydown", escape)
     breakpoint.addEventListener("change", close)
