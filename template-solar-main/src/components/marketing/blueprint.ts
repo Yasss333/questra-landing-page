@@ -82,8 +82,8 @@ export const blueprintFeatures = [
   ],
   [
     "portals",
-    "Student & Faculty Portals",
-    "Faculty see assigned subjects, tasks, paper requests and review status. Students may view permitted syllabus and academic learning resources, not confidential papers.",
+    "Faculty Portal",
+    "Faculty see assigned subjects, tasks, paper requests and review status.",
   ],
 ] as const
 export const approvalRoutes = [

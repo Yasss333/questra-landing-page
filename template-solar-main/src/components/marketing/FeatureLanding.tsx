@@ -60,7 +60,7 @@ export default function FeatureLanding({
                 {String(index + 1).padStart(2, "0")}
               </span>
               <h3>{title}</h3>
-              <p>{description}</p>
+              {description && <p>{description}</p>}
             </article>
           ))}
         </div>

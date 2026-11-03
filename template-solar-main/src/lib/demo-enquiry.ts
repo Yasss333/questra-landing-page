@@ -36,7 +36,7 @@ export function prepareDemoEnquiry(values: EnquiryValues, recipient: string) {
   if (clean.consent !== "yes")
     errors.push("Confirm that Questra may use these details to respond.")
   if (errors.length) return { errors, href: "" }
-  const body = `Hello Questra team,\n\nI would like a 30-minute live demonstration for our institution.\n\nName: ${clean.name}\nWork email: ${clean.email}\nMobile: ${clean.mobile || "Not provided"}\nInstitution: ${clean.institution}\nInstitution type: ${clean.institutionType || "Not specified"}\nDepartments / subjects: ${clean.scale || "Not specified"}\nRole: ${clean.role}\nExamination focus: ${clean.examFocus || "Not specified"}\nPreferred date and time: ${clean.preferredTime || "To be arranged"}\n\nWhat we would like to explore:\n${clean.message || "The Questra platform and Student Portal."}\n\nPlease contact me to arrange a suitable time.`
+  const body = `Hello Questra team,\n\nI would like a 30-minute live demonstration for our institution.\n\nName: ${clean.name}\nWork email: ${clean.email}\nMobile: ${clean.mobile || "Not provided"}\nInstitution: ${clean.institution}\nInstitution type: ${clean.institutionType || "Not specified"}\nDepartments / subjects: ${clean.scale || "Not specified"}\nRole: ${clean.role}\nExamination focus: ${clean.examFocus || "Not specified"}\nPreferred date and time: ${clean.preferredTime || "To be arranged"}\n\nWhat we would like to explore:\n${clean.message || "Questra examination workflows."}\n\nPlease contact me to arrange a suitable time.`
   return {
     errors,
     href: `mailto:${recipient}?subject=${encodeURIComponent(`Questra demo enquiry — ${clean.institution}`)}&body=${encodeURIComponent(body)}`,

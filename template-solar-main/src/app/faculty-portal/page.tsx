@@ -2,7 +2,7 @@ import FeatureLanding from "@/components/marketing/FeatureLanding"
 import { phaseTwoFeatures } from "@/components/marketing/phaseTwoContent"
 import { marketingMetadata } from "../marketing-metadata"
 const content = phaseTwoFeatures.faculty
-const title = "Student & Faculty Portals | Questra"
+const title = "Questra Faculty Portal"
 export const metadata = marketingMetadata(
   "/faculty-portal",
   title,

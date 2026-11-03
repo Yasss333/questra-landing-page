@@ -7,7 +7,6 @@ import {
   RiCheckboxCircleFill,
   RiFileList3Line,
   RiFlowChart,
-  RiGraduationCapLine,
   RiLockLine,
   RiMagicLine,
   RiShieldCheckLine,
@@ -373,91 +372,6 @@ export function Workflow() {
         <Link href="/book-demo">
           See it in a demo <RiArrowRightUpLine size={16} aria-hidden="true" />
         </Link>
-      </div>
-    </section>
-  )
-}
-
-export function StudentPortal() {
-  return (
-    <section
-      id="student-portal"
-      className={styles.studentSection}
-      aria-labelledby="student-heading"
-    >
-      <div className={styles.section}>
-        <SectionLabel number="04">QUESTRA STUDENT INTELLIGENCE</SectionLabel>
-        <div className={styles.studentHeading}>
-          <div>
-            <span className={styles.studentEyebrow}>
-              <RiGraduationCapLine size={18} aria-hidden="true" /> A CLEARER
-              PATH TO PREPARATION
-            </span>
-            <h2 id="student-heading">
-              Every subject.
-              <br />
-              Every topic.
-              <br />
-              <span>One connected experience.</span>
-            </h2>
-          </div>
-          <div>
-            <p>
-              Your institution’s academic intelligence, connected to everyday
-              preparation. Give students an organized way to explore their
-              semester and practice with purpose.
-            </p>
-            <div className={styles.studentCtas}>
-              <Link className={styles.textLink} href="/student-portal">
-                Explore Student Portal{" "}
-                <RiArrowRightUpLine size={17} aria-hidden="true" />
-              </Link>
-              <Link className={styles.textLink} href="/book-demo">
-                Bring Questra to your campus{" "}
-                <RiArrowRightUpLine size={17} aria-hidden="true" />
-              </Link>
-            </div>
-          </div>
-        </div>
-        <div className={styles.studentBenefits}>
-          {[
-            [
-              "Your semester, simplified",
-              "Registered current-semester subjects, course codes, credits, syllabus resources, and faculty details where your institution publishes them.",
-            ],
-            [
-              "Syllabus to questions",
-              "Explore units, topics, subtopics, curriculum versions, learning objectives, and permitted syllabus PDFs. Move directly to relevant published practice questions.",
-            ],
-            [
-              "Practice with context",
-              "Discover approved questions by subject, topic, marks, type, difficulty, Bloom’s K1–K6 level, and Course Outcome. Answers and marking guidance appear only when authorized.",
-            ],
-            [
-              "Learn from past papers",
-              "Explore institution-authorized Mid-Term I, Mid-Term II, and End-Semester archives by subject, year, exam date, paper set, and version, with policy-aware viewing and downloads.",
-            ],
-            [
-              "Clarity through analytics",
-              "See published question types, Bloom’s distribution, Course Outcome coverage, and unit-level gaps. These describe available content, not measured student mastery.",
-            ],
-            [
-              "Institution-managed access",
-              "The portal connects your student profile and enrollment, with academic notices and help. Private records, future examination sets, and staff-only materials remain restricted.",
-            ],
-          ].map(([title, text], i) => (
-            <article key={title}>
-              <span>0{i + 1}</span>
-              <h3>{title}</h3>
-              <p>{text}</p>
-            </article>
-          ))}
-        </div>
-        <p className={styles.studentPolicy}>
-          <RiShieldCheckLine size={15} aria-hidden="true" /> Participating
-          institutions manage access and publication. Questions, answers, and
-          past papers appear only when authorized.
-        </p>
       </div>
     </section>
   )

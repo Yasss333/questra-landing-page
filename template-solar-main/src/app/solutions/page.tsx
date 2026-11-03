@@ -2,9 +2,9 @@ import FeatureLanding from "@/components/marketing/FeatureLanding"
 import { solutionsContent } from "@/components/marketing/featureLandingContent"
 import { marketingMetadata } from "../marketing-metadata"
 
-const title = "Questra Solutions for Universities and Examination Teams"
+const title = "Questra Solutions"
 const description =
-  "See how Questra supports examination controllers, institutional leaders, academic heads, departments, faculty, reviewers, IT teams, and students."
+  "Universities; Autonomous Colleges; Examination Cells; Faculty & HoDs."
 
 export const metadata = marketingMetadata("/solutions", title, description)
 

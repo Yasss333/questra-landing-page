@@ -16,10 +16,6 @@ export const homeFaqItems = [
     "Yes. Upload syllabus PDFs and import questions using supported PDF and Excel templates. Academic masters support structured imports and mapping checks. Bring your current formats to the demo to explore the workflow.",
   ],
   [
-    "What can students access in the Student Portal?",
-    "The portal presents enrolled subjects, syllabus topics, published practice questions, and authorized past papers. Participating institutions control which questions, answer keys, and papers are available.",
-  ],
-  [
     "Does Questra support outcome-based academic review?",
     "Course Outcome/Programme Outcome mapping and Bloom’s taxonomy analytics support OBE-oriented review. Content coverage and cognitive distribution are kept distinct from measured student performance.",
   ],

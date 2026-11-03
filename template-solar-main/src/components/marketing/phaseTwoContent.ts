@@ -73,7 +73,6 @@ export const phaseTwoFeatures = {
     ],
     [
       ["Syllabus intelligence", "/syllabus-intelligence"],
-      ["Examination calendar", "/examination-calendar"],
     ],
   ),
   calendar: feature(
@@ -239,7 +238,6 @@ export const phaseTwoFeatures = {
       ],
     ],
     [
-      ["Student portal", "/student-portal"],
       ["Question bank", "/question-bank"],
       ["Approval automation", "/approval-automation"],
     ],
@@ -249,7 +247,7 @@ export const featureRoutes = [
   "/academic-setup",
   "/syllabus-intelligence",
   "/ai-question-studio",
-  "/examination-calendar",
+  null,
   "/bulk-paper-generation",
   "/approval-automation#questions",
   "/approval-automation#mid-term",

@@ -1,11 +1,11 @@
 import Link from "next/link"
 import FeatureBento from "./FeatureBento"
+import WorkflowJourney from "./WorkflowJourney"
 import { ArrowRight } from "lucide-react"
 import {
   blueprintFeatures,
   approvalCopy,
   approvalRoutes,
-  journey,
   valuePillars,
 } from "./blueprint"
 import styles from "./PhaseZero.module.css"
@@ -47,14 +47,7 @@ export function ExactWorkflow() {
       <div className={styles.section}>
         <span className={styles.eyebrow}>HOW IT WORKS</span>
         <h2>From Syllabus to Final Approval.</h2>
-        <ol className={styles.journey}>
-          {journey.map((step, index) => (
-            <li key={step}>
-              <span>0{index + 1}</span>
-              <h3>{step}</h3>
-            </li>
-          ))}
-        </ol>
+        <WorkflowJourney />
         <Link className={styles.sectionLink} href="/how-it-works">
           Explore the End-to-End Workflow
           <ArrowRight size={15} />
@@ -126,8 +119,8 @@ export function FeatureIndex() {
         Automation
       </h2>
       <FeatureBento />
-      <Link className={styles.sectionLink} href="/platform">
-        Explore the platform
+      <Link className={styles.sectionLink} href="/how-it-works">
+        See how it works
         <ArrowRight size={15} />
       </Link>
     </section>

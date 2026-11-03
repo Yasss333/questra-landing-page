@@ -31,8 +31,8 @@ export default function ResourceLayout({
       />
       {children}
       <section className={styles.section}>
-        <Link className={styles.link} href="/platform">
-          Explore all twelve capabilities →
+        <Link className={styles.link} href="/how-it-works">
+          See how the workflow works →
         </Link>
       </section>
       <PriorityClosing />

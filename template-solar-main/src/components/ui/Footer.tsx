@@ -12,16 +12,13 @@ const groups = [
       ["Paper Generation", "/bulk-paper-generation"],
       ["Approval Engine", "/approval-automation"],
       ["Faculty Portal", "/faculty-portal"],
-      ["Student Portal", "/student-portal"],
-      ["Calendar & Patterns", "/examination-calendar"],
     ],
   ],
   [
     "Intelligence",
     [
       ["Syllabus Coverage", "/syllabus-intelligence"],
-      ["Bloom’s Analytics", "/academic-analytics"],
-      ["CO/PO Mapping", "/academic-analytics#outcome-mapping"],
+      ["Bloom’s & CO/PO Mapping", "/academic-analytics#outcome-mapping"],
       ["Quality Validation", "/quality-validation"],
       ["Reports", "/academic-analytics#reports"],
     ],

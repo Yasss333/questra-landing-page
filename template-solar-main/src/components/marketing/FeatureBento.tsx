@@ -165,12 +165,18 @@ export default function FeatureBento() {
             <div className={styles.copy}>
               <Icon className={styles.icon} size={23} aria-hidden="true" />
               <h3>
-                <Link href={featureRoutes[index]}>{title}</Link>
+                {featureRoutes[index] ? (
+                  <Link href={featureRoutes[index]}>{title}</Link>
+                ) : (
+                  title
+                )}
               </h3>
               <p>{description}</p>
-              <Link className={styles.cta} href={featureRoutes[index]}>
-                Explore capability <ArrowRight size={15} aria-hidden="true" />
-              </Link>
+              {featureRoutes[index] && (
+                <Link className={styles.cta} href={featureRoutes[index]}>
+                  Explore capability <ArrowRight size={15} aria-hidden="true" />
+                </Link>
+              )}
             </div>
           </article>
         )

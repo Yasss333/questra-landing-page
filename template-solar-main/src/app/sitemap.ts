@@ -5,9 +5,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...[
       "/",
       "/how-it-works",
-      "/platform",
       "/academic-setup",
-      "/examination-calendar",
       "/quality-validation",
       "/faculty-portal",
       "/contact",
@@ -21,7 +19,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
       "/bulk-paper-generation",
       "/academic-analytics",
       "/security-governance",
-      "/student-portal",
       "/solutions",
       "/book-demo",
     ].map((path) => ({

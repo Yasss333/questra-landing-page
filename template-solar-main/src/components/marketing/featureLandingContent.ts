@@ -196,7 +196,6 @@ export const featureLandingContent = {
     related: [
       ["AI Question Studio", "/ai-question-studio"],
       ["Paper Generation", "/bulk-paper-generation"],
-      ["Student Portal", "/student-portal"],
     ],
   },
   paperGeneration: {
@@ -267,74 +266,41 @@ export const featureLandingContent = {
     ],
   },
   analytics: {
-    eyebrow: "Academic Analytics and OBE",
-    title: "See what your question bank and papers cover.",
-    description: blueprintFeatures[9][2],
-    sectionEyebrow: "Useful academic signals",
-    sectionTitle: "Turn content structure into clearer review decisions.",
-    sectionIntro:
-      "Filter analytics by academic year, batch, programme, department, semester, subject, and examination to understand readiness at the level your team needs.",
+    eyebrow: "Bloom’s & CO/PO Mapping",
+    title: "Bloom’s taxonomy and outcome mapping. One connected view.",
+    description: blueprintFeatures[1][2],
+    sectionEyebrow: "Dashboards, Analytics & Reports",
+    sectionTitle: "Academic coverage and examination readiness.",
+    sectionIntro: blueprintFeatures[9][2],
     cards: [
       [
-        "Six academic scope filters",
-        "Filter by batch, degree, department, semester, subject and examination. Drill down from institution readiness to the underlying work queue or coverage issue.",
+        "Bloom’s & CO/PO Mapping",
+        "Map CO/PO and Bloom’s taxonomy; track planned vs available questions and paper coverage.",
       ],
       [
-        "Scheduled and permissioned exports",
-        "Schedule reports for authorized recipients and apply role permissions to available data and exports.",
+        "Academic scope",
+        "Filters by batch/degree/department/semester/subject/exam; drilldowns; scheduled exports and permissions.",
       ],
       [
-        "CO/PO and Bloom’s mapping",
-        "Compare available content and paper distribution by outcomes and cognitive level. Content coverage is distinct from measured student proficiency.",
-      ],
-      [
-        "Syllabus coverage",
-        "See published and approved question availability by subject, unit, topic, and examination scope.",
-      ],
-      [
-        "Bloom’s distribution",
-        "Review the number and marks-weighted share of available questions across K1 Remember through K6 Create.",
-      ],
-      [
-        "Outcome alignment",
-        "Inspect mapped questions and coverage across Course Outcomes and configured Programme Outcomes.",
-      ],
-      [
-        "Question-bank readiness",
-        "Find weakly represented topics, missing metadata, and subject-level gaps that need academic attention.",
-      ],
-      [
-        "Review workload",
-        "Surface pending reviews, upcoming exam deadlines, bottlenecks, and paper status for authorized teams.",
-      ],
-      [
-        "Useful exports",
-        "Prepare filtered reports for institutional and departmental review in the formats available to your role.",
+        "Coverage and quality checks",
+        "Pre-approval checks for total marks, question count, internal choices, duplicate questions, topic distribution, CO/PO and Bloom’s coverage, difficulty balance and template adherence.",
       ],
     ],
     steps: [
       [
-        "Choose an academic scope",
-        "Filter by term, programme, department, semester, subject, and exam.",
+        "Syllabus structure",
+        "Upload syllabus; structure units, topics and subtopics.",
       ],
+      ["Academic mapping", "Map CO/PO and Bloom’s taxonomy."],
+      ["Coverage", "Track planned vs available questions and paper coverage."],
       [
-        "Review content coverage",
-        "Compare unit and topic availability with the planned assessment scope.",
-      ],
-      [
-        "Inspect cognitive and outcome balance",
-        "Explore Bloom’s levels and Course or Programme Outcome mappings.",
-      ],
-      [
-        "Drill down and act",
-        "Identify gaps, review relevant questions, and share permitted reports with academic teams.",
+        "Reports",
+        "Filters by batch/degree/department/semester/subject/exam; drilldowns; scheduled exports and permissions.",
       ],
     ],
-    note: "Question counts and syllabus coverage describe available content. Student proficiency or readiness requires actual attempt or assessment evidence and is reported separately.",
     related: [
       ["Syllabus Intelligence", "/syllabus-intelligence"],
-      ["Question Bank", "/question-bank"],
-      ["Solutions", "/solutions"],
+      ["Quality Validation", "/quality-validation"],
     ],
   },
   security: {
@@ -407,90 +373,20 @@ export const featureLandingContent = {
 } satisfies Record<string, FeatureLandingContent>
 
 export const solutionsContent: FeatureLandingContent = {
-  eyebrow: "Solutions for academic teams",
-  title: "One examination process. A clear role for every team.",
+  eyebrow: "Solutions",
+  title: "Solutions",
   description:
-    "Connect institutional oversight, examination operations, academic review, faculty preparation, and student resources in one governed examination workflow.",
-  sectionEyebrow: "Built around real responsibilities",
-  sectionTitle: "Give each stakeholder the view and actions they need.",
-  sectionIntro:
-    "Questra helps teams coordinate academic setup, question creation, paper preparation, review, and controlled publication across the institution.",
+    "Universities; Autonomous Colleges; Examination Cells; Faculty & HoDs.",
+  sectionEyebrow: "AUDIENCES",
+  sectionTitle: "Who Questra serves",
+  sectionIntro: "",
   cards: [
-    [
-      "Universities",
-      "Coordinate programmes and departments under shared examination policies, with institution-wide readiness and clear delegated responsibilities.",
-    ],
-    [
-      "Autonomous colleges",
-      "Configure institution-specific paper patterns, outcome targets and approval hierarchies while retaining faculty authority.",
-    ],
-    [
-      "Examination cells",
-      "Connect paper preparation dates, review queues, validation evidence and controlled release to each examination schedule.",
-    ],
-    [
-      "Faculty & HoDs",
-      "Coordinate subject allotments, question drafting, departmental review and corrections without losing academic context.",
-    ],
-    [
-      "Controllers of Examinations",
-      "Coordinate exam schedules, paper patterns, review queues, final authorization, and controlled release.",
-    ],
-    [
-      "Principals and management",
-      "Review readiness and outstanding examination work across departments and academic terms.",
-    ],
-    [
-      "Deans and academic heads",
-      "Monitor academic standards, outcome alignment, departmental readiness, and escalated reviews.",
-    ],
-    [
-      "Heads of Department",
-      "Coordinate subject assignments, reviewer capacity, syllabus coverage, and departmental approvals.",
-    ],
-    [
-      "Faculty and question setters",
-      "Draft, edit, map, and submit questions or papers for review against assigned subjects and patterns.",
-    ],
-    [
-      "Reviewers and moderators",
-      "Inspect submissions, add comments, request revisions, and record decisions for assigned work.",
-    ],
-    [
-      "Students",
-      "Explore enrolled subjects, syllabus topics, published practice materials, and institution-authorized past papers.",
-    ],
-    [
-      "IT and academic administrators",
-      "Configure academic masters, roles, institutional policies, and supported data imports.",
-    ],
-  ],
-  steps: [
-    [
-      "Set institutional policy",
-      "Configure academic structure, roles, assignments, and examination routes.",
-    ],
-    [
-      "Connect the academic work",
-      "Bring syllabus, questions, paper patterns, and reviewers into the same process.",
-    ],
-    [
-      "Act in role",
-      "Give each team its assigned review, preparation, oversight, or student-access responsibilities.",
-    ],
-    [
-      "See readiness clearly",
-      "Use status and coverage views to identify what is ready and what needs attention.",
-    ],
-  ],
-  note: "Available views and actions depend on the user’s institution, role, assignment, and release policy.",
-  related: [
-    ["Platform Overview", "/platform"],
-    ["Student Portal", "/student-portal"],
-    ["Approval Automation", "/approval-automation"],
+    ["Universities", ""],
+    ["Autonomous Colleges", ""],
+    ["Examination Cells", ""],
+    ["Faculty & HoDs", ""],
   ],
 }
-
 export const aboutContent: FeatureLandingContent = {
   eyebrow: "About Questra",
   title: "The intelligence behind every question.",
@@ -534,57 +430,8 @@ export const aboutContent: FeatureLandingContent = {
   ],
   note: "Questra is a product of VoiceDots AI.",
   related: [
-    ["Platform Overview", "/platform"],
+    ["How It Works", "/how-it-works"],
     ["Solutions by Role", "/solutions"],
     ["Contact Questra", "/contact"],
   ],
-}
-
-export const studentPortalContent = {
-  title: "A smarter way to prepare for every examination.",
-  description: blueprintFeatures[11][2],
-  cards: [
-    [
-      "Your current subjects",
-      "See enrolled subjects, course codes, units, credits, and published academic resources for the active term.",
-    ],
-    [
-      "A navigable syllabus",
-      "Move through curriculum versions, units, topics, and subtopics with permitted syllabus documents.",
-    ],
-    [
-      "Approved practice questions",
-      "Find published questions by subject, topic, marks, type, difficulty, Bloom’s level, and Course Outcome.",
-    ],
-    [
-      "Authorized past papers",
-      "Explore released Mid-Term and End-Semester papers by subject, exam type, year, date, and paper set.",
-    ],
-    [
-      "Academic context",
-      "Understand how available practice content relates to cognitive levels and learning outcomes.",
-    ],
-    [
-      "Profile and help",
-      "Use your institution-managed profile and enrollment mapping, with access to relevant academic support.",
-    ],
-  ] as const,
-  steps: [
-    [
-      "Sign in through your institution",
-      "Your institution’s enrollment and account permissions determine the subjects you can see.",
-    ],
-    [
-      "Choose a subject and topic",
-      "Follow the syllabus structure to the unit or subtopic you are studying.",
-    ],
-    [
-      "Practice with published content",
-      "Filter eligible questions and view answers only when the institution allows them.",
-    ],
-    [
-      "Review authorized past papers",
-      "Use released papers and content analytics to guide your preparation.",
-    ],
-  ] as const,
 }

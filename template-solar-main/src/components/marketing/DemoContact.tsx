@@ -77,8 +77,8 @@ export default function DemoContact({
               questions, answered
             </span>
             <span>
-              <RiCheckLine size={16} aria-hidden="true" /> Examination platform
-              and Student Portal overview
+              <RiCheckLine size={16} aria-hidden="true" /> Examination
+              workflow overview
             </span>
           </div>
           <a
@@ -195,7 +195,6 @@ export default function DemoContact({
                   <option>Mid-term papers</option>
                   <option>End-semester papers</option>
                   <option>Review and approval workflows</option>
-                  <option>Student Portal</option>
                   <option>Academic analytics</option>
                 </select>
               </label>

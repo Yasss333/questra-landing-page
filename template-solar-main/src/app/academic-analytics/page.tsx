@@ -2,9 +2,9 @@ import FeatureLanding from "@/components/marketing/FeatureLanding"
 import { featureLandingContent } from "@/components/marketing/featureLandingContent"
 import { marketingMetadata } from "../marketing-metadata"
 
-const title = "Academic Analytics and OBE Mapping | Questra"
+const title = "Bloom’s & CO/PO Mapping | Questra"
 const description =
-  "Review question availability, syllabus coverage, Bloom’s taxonomy distribution, Course Outcomes, Programme Outcomes, and examination readiness with Questra."
+  "Map CO/PO and Bloom’s taxonomy; track planned vs available questions and paper coverage."
 
 export const metadata = marketingMetadata(
   "/academic-analytics",

@@ -9,25 +9,10 @@ import legacy from "../marketing/Marketing.module.css"
 
 export const navGroups = [
   {
-    name: "Platform",
-    links: [
-      ["Platform overview", "/platform"],
-      ["Academic Setup", "/academic-setup"],
-      ["Question Bank", "/question-bank"],
-      ["AI Question Studio", "/ai-question-studio"],
-      ["Paper Generation", "/bulk-paper-generation"],
-      ["Approval Engine", "/approval-automation"],
-      ["Faculty Portal", "/faculty-portal"],
-      ["Student Portal", "/student-portal"],
-      ["Calendar & Patterns", "/examination-calendar"],
-    ],
-  },
-  {
     name: "Intelligence",
     links: [
       ["Syllabus Coverage", "/syllabus-intelligence"],
-      ["Bloom’s Analytics", "/academic-analytics"],
-      ["CO/PO Mapping", "/academic-analytics#outcome-mapping"],
+      ["Bloom’s & CO/PO Mapping", "/academic-analytics#outcome-mapping"],
       ["Quality Validation", "/quality-validation"],
       ["Reports", "/academic-analytics#reports"],
     ],
@@ -140,11 +125,11 @@ export function NavBar() {
             <Link href="/" onClick={close}>
               Home
             </Link>
-            {navGroups.slice(0, 2).map(groupMenu)}
+            {navGroups.slice(0, 1).map(groupMenu)}
             <Link href="/solutions" onClick={close}>
               Solutions
             </Link>
-            {navGroups.slice(2).map(groupMenu)}
+            {navGroups.slice(1).map(groupMenu)}
           </nav>
           <div className={styles.headerActions}>
             <AnimatedThemeToggler className={styles.themeToggle} />
@@ -182,7 +167,7 @@ export function NavBar() {
             </Link>
             {navGroups.map((group, index) => (
               <div key={group.name}>
-                {index === 2 && (
+                {index === 1 && (
                   <Link
                     href="/solutions"
                     onClick={close}

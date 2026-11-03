@@ -26,8 +26,6 @@ export default function Home() {
       <ExactWorkflow />
       <PriorityApprovals />
       <ExamComparison />
-      <FeatureIndex />
-      <RolesAndValidation />
       <section
         className={styles.section}
         aria-label="Interactive product preview"
@@ -40,6 +38,9 @@ export default function Home() {
         </p>
       </section>
       <DashboardPreview />
+      <FeatureIndex />
+      <RolesAndValidation />
+
       <FAQ />
       <PriorityClosing />
     </main>

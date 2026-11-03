@@ -18,8 +18,8 @@ export default function PageIntro({
         <Link className={styles.button} href="/book-demo">
           Request a 30-Minute Live Demo ↗
         </Link>
-        <Link className={styles.link} href="/platform">
-          Explore the platform →
+        <Link className={styles.link} href="/how-it-works">
+          See how it works →
         </Link>
       </div>
     </header>
