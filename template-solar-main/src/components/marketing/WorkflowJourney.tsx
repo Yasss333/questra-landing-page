@@ -6,7 +6,7 @@ import {
   Send,
   ShieldCheck,
   LockKeyhole,
-  ArrowUpRight,
+  ArrowRight,
 } from "lucide-react"
 import { journey } from "./blueprint"
 import styles from "./WorkflowJourney.module.css"
@@ -27,6 +27,7 @@ export default function WorkflowJourney() {
         return (
           <li key={title} className={styles.step}>
             <Link className={styles.card} href={hrefs[index]}>
+              <div className={styles.circle}>
               <div className={styles.art} aria-hidden="true">
                 <div className={styles.orbit} />
                 <div className={styles.backplate} />
@@ -37,13 +38,13 @@ export default function WorkflowJourney() {
                 <i className={styles.satellite} />
               </div>
               <span className={styles.number}>0{index + 1}</span>
+              </div>
               <h3>{title}</h3>
-              <ArrowUpRight
-                className={styles.arrow}
-                size={17}
-                aria-hidden="true"
-              />
+
             </Link>
+            {index < journey.length - 1 && (
+              <ArrowRight className={styles.connector} size={24} aria-hidden="true" />
+            )}
           </li>
         )
       })}
