@@ -1,9 +1,10 @@
 import Link from "next/link"
+import FeatureBento from "./FeatureBento"
 import { ArrowRight } from "lucide-react"
 import {
+  blueprintFeatures,
   approvalCopy,
   approvalRoutes,
-  blueprintFeatures,
   journey,
   valuePillars,
 } from "./blueprint"
@@ -124,17 +125,7 @@ export function FeatureIndex() {
         From Syllabus to Final Approval — End-to-End AI-Powered Question Paper
         Automation
       </h2>
-      <div className={styles.featureGrid}>
-        {blueprintFeatures.map(([id, title, description], index) => (
-          <article className={styles.feature} key={id}>
-            <span>{String(index + 1).padStart(2, "0")}</span>
-            <h3>
-              <Link href={`/platform#${id}`}>{title}</Link>
-            </h3>
-            <p>{description}</p>
-          </article>
-        ))}
-      </div>
+      <FeatureBento />
       <Link className={styles.sectionLink} href="/platform">
         Explore the platform
         <ArrowRight size={15} />
@@ -252,8 +243,9 @@ export function RolesAndValidation() {
       </Link>
       <p className={styles.note}>
         Blocking and advisory rules, explanations, exception approvals and
-        validation reports form part of the proposed governed workflow. Product
-        controls and availability should be verified for your institution.
+        validation reports support your institution’s governed workflow.
+        Configure controls and reviewer responsibilities around your academic
+        policy.
       </p>
     </section>
   )

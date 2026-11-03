@@ -1,0 +1,197 @@
+QUESTRA
+INTELLIGENCE BEHIND EVERY QUESTION
+Premium Website Content & Product Development Blueprint
+questra.si  |  AI-Powered Examination Intelligence  |  Website copy + functional specifications
+Editorial note: This document describes the designed product vision and proposed website copy. Claims about live integrations, accuracy, security certifications, customer adoption or deployed functionality must be verified before publication.
+01 / Brand positioning
+The intelligence behind every question. The confidence behind every examination.
+Questra is envisioned as a modern examination intelligence platform that helps institutions turn curriculum requirements into structured, faculty-reviewed question banks and balanced examination papers. From syllabus mapping to AI-assisted question creation, academic review and outcome analytics, Questra brings the complete question-paper lifecycle into one connected workspace.
+Primary CTA: Book a Live Demo  |  Secondary CTA: Explore Questra
+02 / Homepage hero
+Better Questions. Smarter Examinations.
+Create syllabus-aligned questions, build balanced question papers and give examination teams greater control—with AI-assisted generation, faculty editing, approval workflows and actionable academic intelligence.
+Trust strip: Syllabus-aligned • Faculty-controlled • Bloom’s-aware • Outcome-mapped
+03 / Why Questra
+Move beyond fragmented examination workflows.
+Manual paper setting often involves disconnected spreadsheets, inconsistent difficulty, repeated questions, slow approvals and limited visibility into syllabus coverage. Questra is designed to connect academic data, question creation, validation, blueprint rules and review into one transparent process.
+Value pillars: Reduce repetitive preparation • Improve academic consistency • Strengthen oversight • Reveal coverage gaps
+04 / AI Question Studio
+From a syllabus topic to a faculty-ready question.
+Select a degree, department, subject, unit and topic. Set the number of questions, marks, question type, difficulty and Bloom’s level. Preview AI-generated drafts, refine wording and answers, regenerate alternatives, review quality signals and submit approved content to the Question Bank.
+Screen 1: Topic-based generation | Screen 2: Faculty question editor | Screen 3: Review and approval
+05 / Academic Master Data
+Every examination starts with connected academic data.
+Maintain institutions, academic years, batches, degrees, departments, semesters, subject types, subjects, students and staff. Support spreadsheet imports, validation, data completeness monitoring and faculty-to-subject mapping.
+Student Master: registration number, name, sex, DOB, contact, photo, batch/degree/department/semester. Staff Master: profile, department, designation, multiple subject assignments and examination roles.
+06 / Syllabus Intelligence
+Make every question traceable to the curriculum.
+Upload and view syllabus PDFs. Structure units, topics and subtopics, map them to subjects and academic years, connect Course Outcomes and define mid-semester or end-semester scope. Surface missing mappings and areas with insufficient approved questions.
+Key capabilities: PDF viewing • Topic hierarchy • Syllabus versioning • Exam-scope mapping • Coverage gap alerts
+07 / Unified Question Bank
+One governed repository for every question.
+Create questions manually or through AI assistance. Organize MCQs, short answers, essays, numerical and case-based questions with marks, difficulty, Bloom’s levels, Course Outcomes, answers and rubrics. Search, filter, edit, archive and review question histories.
+Key capabilities: Structured metadata • Duplicate detection • Approval status • Question variants • Audit history
+08 / Paper Blueprint & Pattern Studio
+Design the examination before generating the paper.
+Create reusable templates for duration, maximum marks, sections, compulsory and optional questions, internal choices, unit weightage, difficulty mix, cognitive levels and outcome coverage. Validate blueprint totals and institution-specific rules.
+Key capabilities: Part A/B/C layouts • Either/or choices • Marks validation • Reusable templates
+09 / Autonomous Paper Generation
+Generate to the blueprint. Keep academics in control.
+Assemble draft examination papers from approved questions using configurable syllabus, difficulty, Bloom’s, marks and outcome constraints. Review alternatives, replace questions, compare paper sets and export approved formats.
+Key capabilities: Set A/B/C/D • Repetition checks • Preview • Authorized substitutions • Word/PDF output
+10 / Academic Quality Intelligence
+More than generation: structured quality review.
+Design checks for syllabus relevance, duplicate meaning, question clarity, answer correctness, Bloom’s consistency, MCQ validity, numerical reasoning and blueprint compliance. Quality signals support reviewers; they do not replace academic verification.
+Key capabilities: Semantic similarity • Ambiguity alerts • Answer review • Constraint checks
+11 / Faculty Review & Approval
+Every decision accountable. Every revision traceable.
+Route questions and papers through faculty editing, reviewer comments, moderation, resubmission and final authorization. Preserve original AI drafts, revisions, approval records, timestamps and release controls.
+Workflow: Draft → Edited → Submitted → Reviewed → Approved → Locked / Released
+12 / Coverage, Bloom’s & OBE Analytics
+Know what the paper measures—not just what it contains.
+Explore question availability by subject, unit and topic. Compare planned and actual Bloom’s K1–K6 distribution. Map questions to Course Outcomes and Programme Outcomes and highlight weak coverage before papers are finalized.
+Key capabilities: Coverage Explorer • Cognitive distribution • CO/PO matrices • Marks-weighted analysis
+13 / Command Center & Reports
+One clear view of examination readiness.
+Give administrators visibility into master-data completeness, question inventory, AI/manual contribution, faculty workload, pending reviews, paper readiness, coverage gaps and examination deadlines. Enable filtered exports for departmental and institutional review.
+Key capabilities: Executive dashboards • Department drill-down • Alerts • Excel/CSV/PDF reporting
+14 / Requests, Formats & Governance
+Built for coordinated examination teams.
+Manage paper requests, assigned setters, deadlines, review queues and release approvals. Configure institution-specific headers, instructions, numbering and page layouts. Design role-based permissions, controlled access, version history and audit trails.
+Key capabilities: Task queues • Branded formats • Access control • Release safeguards
+15 / Who Questra Serves
+Designed for the people behind academic quality.
+Universities and autonomous colleges: standardize examination governance across departments. Controllers of Examinations: improve oversight and consistency. Heads of Department: monitor syllabus and paper readiness. Faculty: accelerate question drafting while retaining editorial control. IQAC/OBE teams: analyze cognitive and outcome alignment.
+Audience CTA: See Questra for Your Institution
+16 / How It Works
+A connected journey from curriculum to examination.
+1. Import academic masters. 2. Upload and map the syllabus. 3. Create manual or AI-assisted questions. 4. Edit and verify answers. 5. Approve the Question Bank. 6. Configure the paper blueprint. 7. Generate and moderate paper sets. 8. Release approved papers. 9. Analyze coverage and outcomes.
+Suggested website visual: nine-step horizontal process with a drill-down product screenshot for each stage.
+17 / Website Navigation & Page Architecture
+A premium, conversion-focused website.
+Top navigation: Platform | AI Question Studio | Question Bank | Paper Generation | Analytics | Solutions | Resources | About | Book Demo. Suggested pages: Home; Platform Overview; AI Question Studio; Syllabus & Masters; Question Bank; Blueprint & Paper Generation; Review & Governance; Analytics & OBE; Solutions by Role; Security & Deployment; Resources/Blog; FAQs; Contact/Demo.
+Footer: Product • Solutions • Resources • Company • Privacy • Terms • Contact • questra.si
+18 / Suggested Homepage Sections
+Tell the story through product outcomes.
+Hero with elegant dashboard visualization; institutional pain points; four outcome pillars; AI Question Studio interactive walkthrough; end-to-end lifecycle infographic; feature modules; governance and academic quality; analytics snapshots; audiences; FAQ; prominent final demo CTA.
+Design direction: premium blue and green accents, generous whitespace, strong typography, authentic product UI and restrained motion.
+19 / Sales CTAs & Campaign Copy
+Turn product curiosity into a meaningful conversation.
+Hero: “Bring intelligence to every question.” CTA: “Book a Live Demo.” Mid-page: “From syllabus to approved paper—see the workflow in action.” CTA: “Explore the Platform.” Final: “Modernize examination preparation without compromising academic control.” CTA: “Schedule a Questra Demo.”
+Supporting line: “Built for examination teams that value quality, transparency and speed.”
+20 / FAQ Copy
+Answer the questions institutions ask first.
+Can faculty edit AI questions? Yes—the planned workflow gives authorized faculty control to revise questions and suggested answers. Can papers follow institutional formats? The blueprint and formatting modules are designed for configurable patterns. Does AI approve papers automatically? No—final authorization remains with designated academic reviewers. Can existing data be imported? Structured Excel/CSV imports are part of the design. Does Questra support OBE? Planned CO/PO mapping and Bloom’s analytics support OBE-oriented review.
+Avoid publishing commitments about live ERP integration, uptime, data residency or compliance without engineering and legal verification.
+21 / Developer Functional Scope
+Translate website promises into verifiable product modules.
+Frontend: React, TypeScript, Vite and React Router. Backend: Python 3.11/3.12 and API services. Database: PostgreSQL normalized relational schema. Modules: Overview; Masters & Imports; Student/Staff; Syllabus; Manual Bank; AI Studio; Templates; Papers; Review; Coverage; Bloom’s; Outcomes; Reports; Requests; Formats; Feature Verification; Exams & Syllabus Map.
+Acceptance criteria: end-to-end subject/topic selection; editable generated questions; persisted revisions; role-controlled approvals; blueprint-constrained paper creation; PDF/Word export; complete auditability.
+22 / Implementation Priorities
+Build the foundation, then scale intelligence.
+Phase 1: Academic masters, syllabus mapping, manual Question Bank, authentication and roles. Phase 2: AI Studio generation/edit/review with source references and quality controls. Phase 3: Templates, paper assembly, approvals and exports. Phase 4: Coverage, Bloom’s, CO/PO analytics, reporting and institution-specific integrations.
+Production gates: AI evaluation, data validation, authorization testing, accessibility, backups, performance, auditability and secure release review.
+Website Content Governance
+Use aspirational language such as “designed to”, “planned”, or “supports” where implementation has not been verified. Replace it with definitive product claims only after product-owner acceptance and production testing. Obtain permission before publishing institutional logos, testimonials or case studies.
+Recommended Closing Statement
+QUESTRA — INTELLIGENCE BEHIND EVERY QUESTION.
+Create with intelligence. Review with confidence. Examine with purpose. Visit questra.si to explore the future of examination preparation.
+2026 UPDATE / STUDENT ACADEMIC INTELLIGENCE PORTAL
+Expanded website sales content, product requirements, user journeys, screen specifications and implementation acceptance criteria.
+This update supplements and retains all 22 original chapters covering institutional dashboards, academic masters, syllabus intelligence, AI Question Studio, manual question banks, blueprints, paper generation, validation, approvals, analytics, security and technical architecture.
+23 / Student Portal — Premium Sales Positioning
+Headline  Every Subject. Every Topic. Every Question. One Intelligent Learning Experience.
+Subheadline  Give every student a personalized academic command center to explore their current subjects, navigate syllabus topics, discover approved practice questions, understand learning outcomes and access authorized previous examination papers.
+Supporting message  Questra connects the institution’s curriculum and assessment intelligence to the student’s everyday preparation. From topic-level revision to Bloom’s-aligned practice and previous Mid-Term and End-Semester papers, learners get a clearer path from syllabus to examination readiness.
+Primary CTA  Explore Student Portal
+Secondary CTA  Book a Live Demonstration
+Trust note  Availability of questions, answer keys and historical papers is controlled by institution policy; student-facing data is published only after authorization.
+24 / Student Dashboard — Personalized Academic Command Center
+Personalization  Authenticated student profile: name, registration number, photograph, institution, batch, degree, department, current semester and academic year. Enrollment drives visible subjects; students cannot switch to another student’s private record.
+Headline metrics  Current subjects; syllabus units; published practice questions; mapped outcomes; available previous papers; topic-level question coverage. Clearly label institutional question coverage versus individual learning progress.
+Subject cards  Subject code and title, unit count, published question count, CO mapping, syllabus coverage and direct links to syllabus, questions and past papers.
+Quick access  My Subjects, Syllabus Explorer, Question Bank, Previous Papers, Learning Analytics and My Profile.
+Alerts  Newly published practice questions, newly released past papers, changed syllabus versions and important academic notices; configurable notification settings.
+Sales copy  Your entire semester, organized around your learning. Know what to study, which questions to practice and how every topic connects to the outcomes that matter.
+25 / My Subjects — Current Semester Workspace
+Core requirements  Display only registered current-semester subjects; support theory, laboratory, elective and other configured subject types. Subject cards show subject code, credits if available, faculty if published, unit count, syllabus PDF and assessment resources.
+Navigation  Open Subject Overview → Unit & Topic Explorer → Question Bank → Past Papers → Analytics. Preserve selected subject in navigation.
+Search and filters  Subject name/code, semester and category. Future-semester content should not be exposed without permission.
+Sales copy  Five subjects or fifteen—one organized place to find what matters for every course.
+26 / Syllabus Explorer — Unit, Topic and Subtopic Intelligence
+Hierarchy  Academic year → curriculum version → subject → unit → chapter/topic → subtopic. Show learning objectives, topic description, question availability and Course Outcome mapping.
+Syllabus PDF  In-browser PDF viewer, permitted download, page reference and document version/date. Preserve source attribution and do not expose staff-only documents.
+Question coverage  For each unit/topic show counts by question type, marks band, difficulty, Bloom’s level and CO. Coverage is based on published eligible questions, not automatically on student mastery.
+Filters  Unit, topic, question type, marks, Bloom’s K1–K6, CO and difficulty; drill down to approved practice questions.
+Sales copy  Turn the syllabus into a navigable learning map—unit by unit, topic by topic, outcome by outcome.
+27 / Student Question Bank — Practice and Discovery
+Question types  MCQ, very short answer, short answer, descriptive, numerical, problem solving, case study and application-based questions, subject to academic configuration.
+Metadata  Question ID, subject, unit, topic, question type, marks, difficulty, Bloom’s level, CO, publication status and optional source/reference.
+Search and discovery  Keyword search; filters by subject, unit, topic, type, marks, difficulty, Bloom’s K1–K6 and CO; sort by topic, marks or recently published.
+Question detail  Full question, diagrams/equations where applicable, optional hint, published model answer and marking guidance only where faculty policy allows.
+Student experience  Bookmark, organize revision lists and record practice completion as a later phase. Avoid exposing secure upcoming-exam questions or staff-only bank items.
+Sales copy  Practice with purpose. Every published question carries academic context—not just an answer.
+28 / Previous Examination Papers — Mid-Term and End-Semester
+Paper library  Separate Mid-Term I, Mid-Term II and End-Semester papers; configurable local naming and examination categories.
+Metadata  Institution, subject code/title, exam type, academic year, semester, exam date, duration, maximum marks, paper set/version and release status.
+Search and filters  Subject, exam type, academic year, semester, date and paper set; show only institution-authorized past papers.
+Viewer  Embedded PDF-style viewer with zoom, page navigation, print/download only when permitted, and accessible alternative document download.
+Publication governance  Release after examination completion and authorized approval; respect embargo, copyright, retention and access controls. Never expose unreleased paper sets or confidential marking schemes.
+Sales copy  Learn from the questions that shaped previous examinations—with a structured, searchable archive of officially released papers.
+29 / Bloom’s Taxonomy and Outcome Analytics for Students
+Bloom’s insights  Show distribution of available published questions across K1 Remember, K2 Understand, K3 Apply, K4 Analyze, K5 Evaluate and K6 Create; support count and marks-weighted views.
+Outcome insights  Show Course Outcomes CO1–CO5 or configured equivalents, mapped questions, marks bands and coverage by unit.
+Analytics distinction  Question availability, syllabus coverage and CO/Bloom’s distribution are content analytics. Student proficiency, readiness or mastery requires actual student attempt/assessment evidence and must be separately labeled.
+Visualizations  Question type doughnut, Bloom’s bar chart, CO coverage bars, unit heatmap, topic question count table and drill-down filters.
+Sales copy  See beyond question counts. Understand the thinking skills and learning outcomes represented in your preparation resources.
+30 / Student Portal Website Landing Page — Ready-to-Use Copy
+Hero eyebrow  INTRODUCING QUESTRA STUDENT INTELLIGENCE
+Hero headline  A Smarter Way to Prepare for Every Examination.
+Hero body  Your subjects, syllabus, topic-wise questions, learning outcomes and previous examination papers—beautifully organized in one secure student portal.
+Value proposition 1  Your Semester, Simplified — See every current subject and its academic resources at a glance.
+Value proposition 2  Syllabus to Questions — Move directly from a unit or topic to relevant, approved practice questions.
+Value proposition 3  Practice with Academic Context — Filter by marks, question type, difficulty, Bloom’s level and Course Outcome.
+Value proposition 4  Learn from Past Papers — Explore authorized Mid-Term and End-Semester question papers.
+Value proposition 5  Clarity Through Analytics — Visualize question coverage, cognitive-level balance and outcome mapping.
+Section headline  One Connected Journey from Classroom Topics to Examination Preparation.
+Institution CTA  Bring Questra Student Intelligence to Your Campus.
+Student CTA  Sign In to Your Student Dashboard
+Footer microcopy  Academic content and availability are managed by participating institutions.
+31 / Complete Website Information Architecture — Revised
+Public navigation  Home | Platform | AI Question Studio | Autonomous Paper Generation | Question Bank | Analytics & OBE | Student Portal | Solutions | Resources | About | Book a Demo
+Platform subpages  Academic Master Data, Syllabus Intelligence, Templates & Patterns, Exams & Syllabus Map, Review & Approval, Coverage Explorer, Bloom’s Analytics, Outcome Mapping, Reports, Requests, Paper Formats and Governance.
+Student Portal public page  Hero, dashboard preview, six feature highlights, workflow, privacy/security explanation, FAQs, institution demo CTA and student sign-in link.
+Authenticated student navigation  Dashboard | My Subjects | Syllabus Explorer | Question Bank | Past Papers | Learning Analytics | Profile | Help.
+Audience landing pages  Examination Controllers, Principals & Management, HoDs, Faculty/Question Setters, Students and University/College IT Teams.
+SEO title  Questra Student Portal | Syllabus, Question Bank & Previous Papers
+SEO description  Explore Questra’s student academic intelligence portal for current subjects, topic-wise syllabus, approved practice questions, Bloom’s levels, Course Outcomes and released exam papers.
+32 / Student Portal Screen Specifications and User Flows
+Screen A — Overview  Authenticated header and profile, semester selector when authorized, KPI cards, current subject cards, notifications and quick links. Empty-state for no active enrollment.
+Screen B — My Subjects  Registered subject table/cards, code, unit count, question count, syllabus coverage, CO count and View Syllabus/View Questions actions.
+Screen C — Syllabus  Subject selector, unit accordion, topic rows, syllabus PDF access, topic question counts, CO and Bloom’s badges.
+Screen D — Question Bank  Search, filter row, question cards, marks/type/CO/Bloom’s tags, details panel and access-controlled answers.
+Screen E — Past Papers  Exam-type tabs, year/subject filters, searchable table, paper preview and policy-aware download/print.
+Screen F — Learning Analytics  Subject filters, question type mix, Bloom’s K1–K6 distribution, CO mapping and unit coverage. Do not imply student performance without attempt data.
+Screen G — Profile & Help  Read-only identity and academic mapping from student master; accessible help, feedback and account support.
+Primary journey  Login → Student dashboard → Select current subject → Open unit/topic → Filter published questions → View question → Open past paper → Review academic coverage.
+Responsive requirement  Desktop sidebar and two-column detail layouts; tablet adaptive cards; mobile bottom or collapsible navigation and full-width filter controls.
+33 / Student Data Model and API Integration
+Entities  Student, Enrollment, AcademicYear, Batch, Degree, Department, Semester, Subject, CurriculumVersion, SyllabusDocument, Unit, Topic, Subtopic, CourseOutcome, BloomLevel, Question, QuestionPublication, Exam, Paper, PaperVersion, PaperRelease, StudentBookmark, AuditEvent.
+Relationships  Student → Enrollment → SubjectOffering; SubjectOffering → CurriculumVersion → Units/Topics; Question → Topic/CO/BloomLevel; QuestionPublication → audience/availability; PaperVersion → Exam/SubjectOffering; PaperRelease → access rules.
+Suggested read endpoints  GET /student/me, /student/subjects, /student/subjects/{id}/syllabus, /student/questions, /student/questions/{id}, /student/papers, /student/papers/{id}/view, /student/analytics.
+Authorization  Server-side per-request student identity and enrollment checks; release-state checks for every question and paper; signed or authorized document access; no trust in client-side subject IDs.
+Privacy and security  Secure sessions, least-privilege RBAC, encryption in transit, audit logs, download policy, rate limits, input validation, access-controlled files and institutional retention rules.
+Integration  Reuse existing academic master data, approved question bank, syllabus mapping, exam metadata, paper release workflow and PostgreSQL schema; add student-specific read models and publication rules without duplicating academic source records.
+34 / Acceptance Criteria, Rollout and Content Governance
+Acceptance 1  A logged-in student sees only enrolled subjects for the selected current academic term.
+Acceptance 2  Subject → unit → topic drill-down shows correct syllabus version and published question counts.
+Acceptance 3  Question filters return correct marks, type, difficulty, Bloom’s and CO metadata; answers obey publication policy.
+Acceptance 4  Mid-Term and End-Semester archives exclude unreleased, future or unauthorized papers even when a URL is guessed.
+Acceptance 5  Analytics distinguish question coverage from student performance and handle missing mapping data without displaying false zeros.
+Acceptance 6  Responsive screens, keyboard navigation, accessible labels, loading/empty/error states and reasonable performance with large question banks.
+Phase 1  Identity and enrollment, overview, subjects, syllabus PDF, published question bank and authorized past papers.
+Phase 2  Advanced Bloom’s/CO analytics, notifications, bookmarks and richer content previews.
+Phase 3  Optional practice attempts, personalized recommendations and measured readiness analytics, subject to validation and academic policy.
+Claims policy  Use proposed, designed or planned language for features not deployed. Avoid unverified accuracy percentages, autonomous quality guarantees, accreditation claims or invented customer testimonials.
+Final Sales Closing
+Questra brings the entire examination intelligence journey together—from institutional academic masters and AI-assisted question creation to approved question papers and a connected student learning experience. Intelligence Behind Every Question.

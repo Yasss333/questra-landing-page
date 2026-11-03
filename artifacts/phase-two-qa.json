@@ -1,0 +1,638 @@
+{
+  "results": [
+    {
+      "route": "/",
+      "width": 1440,
+      "dark": false
+    },
+    {
+      "route": "/",
+      "width": 1440,
+      "dark": true
+    },
+    {
+      "route": "/",
+      "width": 768,
+      "dark": false
+    },
+    {
+      "route": "/",
+      "width": 768,
+      "dark": true
+    },
+    {
+      "route": "/",
+      "width": 390,
+      "dark": false
+    },
+    {
+      "route": "/",
+      "width": 390,
+      "dark": true
+    },
+    {
+      "route": "/platform",
+      "width": 1440,
+      "dark": false
+    },
+    {
+      "route": "/platform",
+      "width": 1440,
+      "dark": true
+    },
+    {
+      "route": "/platform",
+      "width": 768,
+      "dark": false
+    },
+    {
+      "route": "/platform",
+      "width": 768,
+      "dark": true
+    },
+    {
+      "route": "/platform",
+      "width": 390,
+      "dark": false
+    },
+    {
+      "route": "/platform",
+      "width": 390,
+      "dark": true
+    },
+    {
+      "route": "/how-it-works",
+      "width": 1440,
+      "dark": false
+    },
+    {
+      "route": "/how-it-works",
+      "width": 1440,
+      "dark": true
+    },
+    {
+      "route": "/how-it-works",
+      "width": 768,
+      "dark": false
+    },
+    {
+      "route": "/how-it-works",
+      "width": 768,
+      "dark": true
+    },
+    {
+      "route": "/how-it-works",
+      "width": 390,
+      "dark": false
+    },
+    {
+      "route": "/how-it-works",
+      "width": 390,
+      "dark": true
+    },
+    {
+      "route": "/approval-automation",
+      "width": 1440,
+      "dark": false
+    },
+    {
+      "route": "/approval-automation",
+      "width": 1440,
+      "dark": true
+    },
+    {
+      "route": "/approval-automation",
+      "width": 768,
+      "dark": false
+    },
+    {
+      "route": "/approval-automation",
+      "width": 768,
+      "dark": true
+    },
+    {
+      "route": "/approval-automation",
+      "width": 390,
+      "dark": false
+    },
+    {
+      "route": "/approval-automation",
+      "width": 390,
+      "dark": true
+    },
+    {
+      "route": "/academic-setup",
+      "width": 1440,
+      "dark": false
+    },
+    {
+      "route": "/academic-setup",
+      "width": 1440,
+      "dark": true
+    },
+    {
+      "route": "/academic-setup",
+      "width": 768,
+      "dark": false
+    },
+    {
+      "route": "/academic-setup",
+      "width": 768,
+      "dark": true
+    },
+    {
+      "route": "/academic-setup",
+      "width": 390,
+      "dark": false
+    },
+    {
+      "route": "/academic-setup",
+      "width": 390,
+      "dark": true
+    },
+    {
+      "route": "/syllabus-intelligence",
+      "width": 1440,
+      "dark": false
+    },
+    {
+      "route": "/syllabus-intelligence",
+      "width": 1440,
+      "dark": true
+    },
+    {
+      "route": "/syllabus-intelligence",
+      "width": 768,
+      "dark": false
+    },
+    {
+      "route": "/syllabus-intelligence",
+      "width": 768,
+      "dark": true
+    },
+    {
+      "route": "/syllabus-intelligence",
+      "width": 390,
+      "dark": false
+    },
+    {
+      "route": "/syllabus-intelligence",
+      "width": 390,
+      "dark": true
+    },
+    {
+      "route": "/ai-question-studio",
+      "width": 1440,
+      "dark": false
+    },
+    {
+      "route": "/ai-question-studio",
+      "width": 1440,
+      "dark": true
+    },
+    {
+      "route": "/ai-question-studio",
+      "width": 768,
+      "dark": false
+    },
+    {
+      "route": "/ai-question-studio",
+      "width": 768,
+      "dark": true
+    },
+    {
+      "route": "/ai-question-studio",
+      "width": 390,
+      "dark": false
+    },
+    {
+      "route": "/ai-question-studio",
+      "width": 390,
+      "dark": true
+    },
+    {
+      "route": "/question-bank",
+      "width": 1440,
+      "dark": false
+    },
+    {
+      "route": "/question-bank",
+      "width": 1440,
+      "dark": true
+    },
+    {
+      "route": "/question-bank",
+      "width": 768,
+      "dark": false
+    },
+    {
+      "route": "/question-bank",
+      "width": 768,
+      "dark": true
+    },
+    {
+      "route": "/question-bank",
+      "width": 390,
+      "dark": false
+    },
+    {
+      "route": "/question-bank",
+      "width": 390,
+      "dark": true
+    },
+    {
+      "route": "/examination-calendar",
+      "width": 1440,
+      "dark": false
+    },
+    {
+      "route": "/examination-calendar",
+      "width": 1440,
+      "dark": true
+    },
+    {
+      "route": "/examination-calendar",
+      "width": 768,
+      "dark": false
+    },
+    {
+      "route": "/examination-calendar",
+      "width": 768,
+      "dark": true
+    },
+    {
+      "route": "/examination-calendar",
+      "width": 390,
+      "dark": false
+    },
+    {
+      "route": "/examination-calendar",
+      "width": 390,
+      "dark": true
+    },
+    {
+      "route": "/bulk-paper-generation",
+      "width": 1440,
+      "dark": false
+    },
+    {
+      "route": "/bulk-paper-generation",
+      "width": 1440,
+      "dark": true
+    },
+    {
+      "route": "/bulk-paper-generation",
+      "width": 768,
+      "dark": false
+    },
+    {
+      "route": "/bulk-paper-generation",
+      "width": 768,
+      "dark": true
+    },
+    {
+      "route": "/bulk-paper-generation",
+      "width": 390,
+      "dark": false
+    },
+    {
+      "route": "/bulk-paper-generation",
+      "width": 390,
+      "dark": true
+    },
+    {
+      "route": "/quality-validation",
+      "width": 1440,
+      "dark": false
+    },
+    {
+      "route": "/quality-validation",
+      "width": 1440,
+      "dark": true
+    },
+    {
+      "route": "/quality-validation",
+      "width": 768,
+      "dark": false
+    },
+    {
+      "route": "/quality-validation",
+      "width": 768,
+      "dark": true
+    },
+    {
+      "route": "/quality-validation",
+      "width": 390,
+      "dark": false
+    },
+    {
+      "route": "/quality-validation",
+      "width": 390,
+      "dark": true
+    },
+    {
+      "route": "/academic-analytics",
+      "width": 1440,
+      "dark": false
+    },
+    {
+      "route": "/academic-analytics",
+      "width": 1440,
+      "dark": true
+    },
+    {
+      "route": "/academic-analytics",
+      "width": 768,
+      "dark": false
+    },
+    {
+      "route": "/academic-analytics",
+      "width": 768,
+      "dark": true
+    },
+    {
+      "route": "/academic-analytics",
+      "width": 390,
+      "dark": false
+    },
+    {
+      "route": "/academic-analytics",
+      "width": 390,
+      "dark": true
+    },
+    {
+      "route": "/security-governance",
+      "width": 1440,
+      "dark": false
+    },
+    {
+      "route": "/security-governance",
+      "width": 1440,
+      "dark": true
+    },
+    {
+      "route": "/security-governance",
+      "width": 768,
+      "dark": false
+    },
+    {
+      "route": "/security-governance",
+      "width": 768,
+      "dark": true
+    },
+    {
+      "route": "/security-governance",
+      "width": 390,
+      "dark": false
+    },
+    {
+      "route": "/security-governance",
+      "width": 390,
+      "dark": true
+    },
+    {
+      "route": "/faculty-portal",
+      "width": 1440,
+      "dark": false
+    },
+    {
+      "route": "/faculty-portal",
+      "width": 1440,
+      "dark": true
+    },
+    {
+      "route": "/faculty-portal",
+      "width": 768,
+      "dark": false
+    },
+    {
+      "route": "/faculty-portal",
+      "width": 768,
+      "dark": true
+    },
+    {
+      "route": "/faculty-portal",
+      "width": 390,
+      "dark": false
+    },
+    {
+      "route": "/faculty-portal",
+      "width": 390,
+      "dark": true
+    },
+    {
+      "route": "/student-portal",
+      "width": 1440,
+      "dark": false
+    },
+    {
+      "route": "/student-portal",
+      "width": 1440,
+      "dark": true
+    },
+    {
+      "route": "/student-portal",
+      "width": 768,
+      "dark": false
+    },
+    {
+      "route": "/student-portal",
+      "width": 768,
+      "dark": true
+    },
+    {
+      "route": "/student-portal",
+      "width": 390,
+      "dark": false
+    },
+    {
+      "route": "/student-portal",
+      "width": 390,
+      "dark": true
+    },
+    {
+      "route": "/solutions",
+      "width": 1440,
+      "dark": false
+    },
+    {
+      "route": "/solutions",
+      "width": 1440,
+      "dark": true
+    },
+    {
+      "route": "/solutions",
+      "width": 768,
+      "dark": false
+    },
+    {
+      "route": "/solutions",
+      "width": 768,
+      "dark": true
+    },
+    {
+      "route": "/solutions",
+      "width": 390,
+      "dark": false
+    },
+    {
+      "route": "/solutions",
+      "width": 390,
+      "dark": true
+    },
+    {
+      "route": "/about",
+      "width": 1440,
+      "dark": false
+    },
+    {
+      "route": "/about",
+      "width": 1440,
+      "dark": true
+    },
+    {
+      "route": "/about",
+      "width": 768,
+      "dark": false
+    },
+    {
+      "route": "/about",
+      "width": 768,
+      "dark": true
+    },
+    {
+      "route": "/about",
+      "width": 390,
+      "dark": false
+    },
+    {
+      "route": "/about",
+      "width": 390,
+      "dark": true
+    },
+    {
+      "route": "/contact",
+      "width": 1440,
+      "dark": false
+    },
+    {
+      "route": "/contact",
+      "width": 1440,
+      "dark": true
+    },
+    {
+      "route": "/contact",
+      "width": 768,
+      "dark": false
+    },
+    {
+      "route": "/contact",
+      "width": 768,
+      "dark": true
+    },
+    {
+      "route": "/contact",
+      "width": 390,
+      "dark": false
+    },
+    {
+      "route": "/contact",
+      "width": 390,
+      "dark": true
+    },
+    {
+      "route": "/faq",
+      "width": 1440,
+      "dark": false
+    },
+    {
+      "route": "/faq",
+      "width": 1440,
+      "dark": true
+    },
+    {
+      "route": "/faq",
+      "width": 768,
+      "dark": false
+    },
+    {
+      "route": "/faq",
+      "width": 768,
+      "dark": true
+    },
+    {
+      "route": "/faq",
+      "width": 390,
+      "dark": false
+    },
+    {
+      "route": "/faq",
+      "width": 390,
+      "dark": true
+    },
+    {
+      "route": "/product-screens",
+      "width": 1440,
+      "dark": false
+    },
+    {
+      "route": "/product-screens",
+      "width": 1440,
+      "dark": true
+    },
+    {
+      "route": "/product-screens",
+      "width": 768,
+      "dark": false
+    },
+    {
+      "route": "/product-screens",
+      "width": 768,
+      "dark": true
+    },
+    {
+      "route": "/product-screens",
+      "width": 390,
+      "dark": false
+    },
+    {
+      "route": "/product-screens",
+      "width": 390,
+      "dark": true
+    },
+    {
+      "route": "/book-demo",
+      "width": 1440,
+      "dark": false
+    },
+    {
+      "route": "/book-demo",
+      "width": 1440,
+      "dark": true
+    },
+    {
+      "route": "/book-demo",
+      "width": 768,
+      "dark": false
+    },
+    {
+      "route": "/book-demo",
+      "width": 768,
+      "dark": true
+    },
+    {
+      "route": "/book-demo",
+      "width": 390,
+      "dark": false
+    },
+    {
+      "route": "/book-demo",
+      "width": 390,
+      "dark": true
+    }
+  ],
+  "errors": [],
+  "links": 48,
+  "form": "Draft preparation, required fields, optional mobile/date, reset",
+  "sitemap": "All routes present"
+}

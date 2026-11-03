@@ -9,7 +9,9 @@ export const metadata = marketingMetadata(
   "Syllabus ingestion, question banks, AI-assisted generation, blueprinting, requests, approvals, validation and secure release.",
 )
 const detailLinks: Record<string, string> = {
-  "academic-setup": "/how-it-works#institution-setup",
+  "academic-setup": "/academic-setup",
+  calendar: "/examination-calendar",
+  validation: "/quality-validation",
   syllabus: "/syllabus-intelligence",
   "question-studio": "/ai-question-studio",
   "paper-intelligence": "/bulk-paper-generation",
@@ -18,7 +20,7 @@ const detailLinks: Record<string, string> = {
   "semester-approval": "/approval-automation#end-semester",
   reports: "/academic-analytics",
   governance: "/security-governance",
-  portals: "/student-portal",
+  portals: "/faculty-portal",
 }
 export default function PlatformPage() {
   return (
@@ -50,8 +52,8 @@ export default function PlatformPage() {
           governed workflow.
         </p>
         <p className={styles.note}>
-          This overview describes the product blueprint. Confirm released
-          capabilities and institution-specific configurations in your demo.
+          Explore the connected workflow and configure it around your
+          institution’s academic structure, policies and responsibilities.
         </p>
         <div className={styles.featureGrid}>
           {blueprintFeatures.map(([id, title, text], index) => (

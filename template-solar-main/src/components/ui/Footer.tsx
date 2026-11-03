@@ -6,12 +6,14 @@ const groups = [
   [
     "Platform",
     [
-      ["Academic Setup", "/platform#academic-setup"],
+      ["Academic Setup", "/academic-setup"],
       ["Question Bank", "/question-bank"],
       ["AI Question Studio", "/ai-question-studio"],
       ["Paper Generation", "/bulk-paper-generation"],
       ["Approval Engine", "/approval-automation"],
-      ["Student & Faculty Portals", "/platform#portals"],
+      ["Faculty Portal", "/faculty-portal"],
+      ["Student Portal", "/student-portal"],
+      ["Calendar & Patterns", "/examination-calendar"],
     ],
   ],
   [
@@ -19,17 +21,17 @@ const groups = [
     [
       ["Syllabus Coverage", "/syllabus-intelligence"],
       ["Bloom’s Analytics", "/academic-analytics"],
-      ["CO/PO Mapping", "/platform#syllabus"],
-      ["Quality Validation", "/platform#validation"],
-      ["Reports", "/platform#reports"],
+      ["CO/PO Mapping", "/academic-analytics#outcome-mapping"],
+      ["Quality Validation", "/quality-validation"],
+      ["Reports", "/academic-analytics#reports"],
     ],
   ],
   [
     "Resources",
     [
       ["How It Works", "/how-it-works"],
-      ["Product Screens", "/#product-screens"],
-      ["FAQs", "/#faq"],
+      ["Product Screens", "/product-screens"],
+      ["FAQs", "/faq"],
       ["Security & Privacy", "/security-governance"],
     ],
   ],
@@ -38,7 +40,7 @@ const groups = [
     [
       ["About Questra", "/about"],
       ["Solutions", "/solutions"],
-      ["Contact", "/book-demo"],
+      ["Contact", "/contact"],
       ["Request Demo", "/book-demo"],
     ],
   ],

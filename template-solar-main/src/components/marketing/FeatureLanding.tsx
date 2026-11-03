@@ -1,6 +1,6 @@
 import Link from "next/link"
 import PageIntro from "@/components/marketing/PageIntro"
-import { ClosingCTA } from "@/components/marketing/ProductContent"
+import { PriorityClosing } from "@/components/marketing/PrioritySections"
 import { pageStructuredData } from "@/app/marketing-metadata"
 import styles from "./ContentPages.module.css"
 
@@ -45,7 +45,11 @@ export default function FeatureLanding({
         title={content.title}
         description={content.description}
       />
-      <section className={styles.section} aria-labelledby="capabilities-heading">
+      <section
+        id={path === "/academic-analytics" ? "outcome-mapping" : undefined}
+        className={styles.section}
+        aria-labelledby="capabilities-heading"
+      >
         <span className={styles.eyebrow}>{content.sectionEyebrow}</span>
         <h2 id="capabilities-heading">{content.sectionTitle}</h2>
         <p className={styles.intro}>{content.sectionIntro}</p>
@@ -63,9 +67,15 @@ export default function FeatureLanding({
         {content.note && <p className={styles.note}>{content.note}</p>}
       </section>
       {content.steps && (
-        <section className={styles.section} aria-labelledby="journey-heading">
+        <section
+          id={path === "/academic-analytics" ? "reports" : undefined}
+          className={styles.section}
+          aria-labelledby="journey-heading"
+        >
           <span className={styles.eyebrow}>A connected workflow</span>
-          <h2 id="journey-heading">From the first step to a reviewed result.</h2>
+          <h2 id="journey-heading">
+            From the first step to a reviewed result.
+          </h2>
           <ol className={`${styles.grid} ${styles.stepGrid}`}>
             {content.steps.map(([title, description], index) => (
               <li className={styles.card} key={title}>
@@ -85,7 +95,10 @@ export default function FeatureLanding({
           <h2 id="related-heading">Continue exploring the platform.</h2>
           <div className={styles.grid}>
             {content.related.map(([title, href]) => (
-              <article className={`${styles.card} ${styles.relatedCard}`} key={href}>
+              <article
+                className={`${styles.card} ${styles.relatedCard}`}
+                key={href}
+              >
                 <h3>{title}</h3>
                 <Link className={styles.link} href={href}>
                   Explore {title.toLowerCase()} →
@@ -95,7 +108,7 @@ export default function FeatureLanding({
           </div>
         </section>
       )}
-      <ClosingCTA />
+      <PriorityClosing />
     </main>
   )
 }

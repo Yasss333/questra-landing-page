@@ -1,0 +1,1037 @@
+{
+  "testedAt": "2026-10-26T14:51:39.182Z",
+  "target": "http://127.0.0.1:3001",
+  "engine": "Installed Google Chrome via user-approved Playwright fallback",
+  "completed": true,
+  "results": [
+    {
+      "name": "Page layout 320px light",
+      "status": "passed",
+      "ms": 817,
+      "detail": {
+        "sections": 9,
+        "viewport": 320,
+        "touch": true
+      }
+    },
+    {
+      "name": "Navigation 320px light",
+      "status": "passed",
+      "ms": 212
+    },
+    {
+      "name": "Page layout 320px dark",
+      "status": "passed",
+      "ms": 505,
+      "detail": {
+        "sections": 9,
+        "viewport": 320,
+        "touch": true
+      }
+    },
+    {
+      "name": "Navigation 320px dark",
+      "status": "passed",
+      "ms": 273
+    },
+    {
+      "name": "Page layout 360px light",
+      "status": "passed",
+      "ms": 510,
+      "detail": {
+        "sections": 9,
+        "viewport": 360,
+        "touch": true
+      }
+    },
+    {
+      "name": "Navigation 360px light",
+      "status": "passed",
+      "ms": 253
+    },
+    {
+      "name": "Page layout 360px dark",
+      "status": "passed",
+      "ms": 607,
+      "detail": {
+        "sections": 9,
+        "viewport": 360,
+        "touch": true
+      }
+    },
+    {
+      "name": "Navigation 360px dark",
+      "status": "passed",
+      "ms": 255
+    },
+    {
+      "name": "Page layout 390px light",
+      "status": "passed",
+      "ms": 571,
+      "detail": {
+        "sections": 9,
+        "viewport": 390,
+        "touch": true
+      }
+    },
+    {
+      "name": "Navigation 390px light",
+      "status": "passed",
+      "ms": 292
+    },
+    {
+      "name": "Page layout 390px dark",
+      "status": "passed",
+      "ms": 581,
+      "detail": {
+        "sections": 9,
+        "viewport": 390,
+        "touch": true
+      }
+    },
+    {
+      "name": "Navigation 390px dark",
+      "status": "passed",
+      "ms": 278
+    },
+    {
+      "name": "Page layout 430px light",
+      "status": "passed",
+      "ms": 555,
+      "detail": {
+        "sections": 9,
+        "viewport": 430,
+        "touch": true
+      }
+    },
+    {
+      "name": "Navigation 430px light",
+      "status": "passed",
+      "ms": 310
+    },
+    {
+      "name": "Page layout 430px dark",
+      "status": "passed",
+      "ms": 573,
+      "detail": {
+        "sections": 9,
+        "viewport": 430,
+        "touch": true
+      }
+    },
+    {
+      "name": "Navigation 430px dark",
+      "status": "passed",
+      "ms": 253
+    },
+    {
+      "name": "Page layout 768px light",
+      "status": "passed",
+      "ms": 514,
+      "detail": {
+        "sections": 9,
+        "viewport": 768,
+        "touch": false
+      }
+    },
+    {
+      "name": "Navigation 768px light",
+      "status": "passed",
+      "ms": 276
+    },
+    {
+      "name": "Page layout 768px dark",
+      "status": "passed",
+      "ms": 569,
+      "detail": {
+        "sections": 9,
+        "viewport": 768,
+        "touch": false
+      }
+    },
+    {
+      "name": "Navigation 768px dark",
+      "status": "passed",
+      "ms": 283
+    },
+    {
+      "name": "Page layout 820px light",
+      "status": "passed",
+      "ms": 506,
+      "detail": {
+        "sections": 9,
+        "viewport": 820,
+        "touch": false
+      }
+    },
+    {
+      "name": "Navigation 820px light",
+      "status": "passed",
+      "ms": 235
+    },
+    {
+      "name": "Page layout 820px dark",
+      "status": "passed",
+      "ms": 600,
+      "detail": {
+        "sections": 9,
+        "viewport": 820,
+        "touch": false
+      }
+    },
+    {
+      "name": "Navigation 820px dark",
+      "status": "passed",
+      "ms": 195
+    },
+    {
+      "name": "Page layout 1024px light",
+      "status": "passed",
+      "ms": 558,
+      "detail": {
+        "sections": 9,
+        "viewport": 1024,
+        "touch": false
+      }
+    },
+    {
+      "name": "Navigation 1024px light",
+      "status": "passed",
+      "ms": 241
+    },
+    {
+      "name": "Page layout 1024px dark",
+      "status": "passed",
+      "ms": 543,
+      "detail": {
+        "sections": 9,
+        "viewport": 1024,
+        "touch": false
+      }
+    },
+    {
+      "name": "Navigation 1024px dark",
+      "status": "passed",
+      "ms": 194
+    },
+    {
+      "name": "Page layout 1280px light",
+      "status": "passed",
+      "ms": 602,
+      "detail": {
+        "sections": 9,
+        "viewport": 1280,
+        "touch": false
+      }
+    },
+    {
+      "name": "Navigation 1280px light",
+      "status": "passed",
+      "ms": 222
+    },
+    {
+      "name": "Page layout 1280px dark",
+      "status": "passed",
+      "ms": 606,
+      "detail": {
+        "sections": 9,
+        "viewport": 1280,
+        "touch": false
+      }
+    },
+    {
+      "name": "Navigation 1280px dark",
+      "status": "passed",
+      "ms": 188
+    },
+    {
+      "name": "Page layout 1440px light",
+      "status": "passed",
+      "ms": 521,
+      "detail": {
+        "sections": 9,
+        "viewport": 1440,
+        "touch": false
+      }
+    },
+    {
+      "name": "Navigation 1440px light",
+      "status": "passed",
+      "ms": 190
+    },
+    {
+      "name": "Page layout 1440px dark",
+      "status": "passed",
+      "ms": 502,
+      "detail": {
+        "sections": 9,
+        "viewport": 1440,
+        "touch": false
+      }
+    },
+    {
+      "name": "Navigation 1440px dark",
+      "status": "passed",
+      "ms": 198
+    },
+    {
+      "name": "Page layout 1920px light",
+      "status": "passed",
+      "ms": 522,
+      "detail": {
+        "sections": 9,
+        "viewport": 1920,
+        "touch": false
+      }
+    },
+    {
+      "name": "Navigation 1920px light",
+      "status": "passed",
+      "ms": 205
+    },
+    {
+      "name": "Page layout 1920px dark",
+      "status": "passed",
+      "ms": 528,
+      "detail": {
+        "sections": 9,
+        "viewport": 1920,
+        "touch": false
+      }
+    },
+    {
+      "name": "Navigation 1920px dark",
+      "status": "passed",
+      "ms": 192
+    },
+    {
+      "name": "Module Overview 390px light",
+      "status": "passed",
+      "ms": 141
+    },
+    {
+      "name": "Module Master data 390px light",
+      "status": "passed",
+      "ms": 98
+    },
+    {
+      "name": "Module Question bank 390px light",
+      "status": "passed",
+      "ms": 102
+    },
+    {
+      "name": "Module AI question studio 390px light",
+      "status": "passed",
+      "ms": 88
+    },
+    {
+      "name": "Module Coverage explorer 390px light",
+      "status": "passed",
+      "ms": 78
+    },
+    {
+      "name": "Module Question papers 390px light",
+      "status": "passed",
+      "ms": 92
+    },
+    {
+      "name": "Module Review & approval 390px light",
+      "status": "passed",
+      "ms": 88
+    },
+    {
+      "name": "Module Bloom’s analytics 390px light",
+      "status": "passed",
+      "ms": 67
+    },
+    {
+      "name": "Module Outcome mapping 390px light",
+      "status": "passed",
+      "ms": 58
+    },
+    {
+      "name": "Module Reports 390px light",
+      "status": "passed",
+      "ms": 75
+    },
+    {
+      "name": "Module Student portal 390px light",
+      "status": "passed",
+      "ms": 88
+    },
+    {
+      "name": "Master Summary 390px light",
+      "status": "passed",
+      "ms": 41
+    },
+    {
+      "name": "Master Batches 390px light",
+      "status": "passed",
+      "ms": 54
+    },
+    {
+      "name": "Master Degrees 390px light",
+      "status": "passed",
+      "ms": 68
+    },
+    {
+      "name": "Master Departments 390px light",
+      "status": "passed",
+      "ms": 78
+    },
+    {
+      "name": "Master Subjects 390px light",
+      "status": "passed",
+      "ms": 94
+    },
+    {
+      "name": "Master Syllabus PDFs 390px light",
+      "status": "passed",
+      "ms": 84
+    },
+    {
+      "name": "Master Students 390px light",
+      "status": "passed",
+      "ms": 90
+    },
+    {
+      "name": "Master Staff mapping 390px light",
+      "status": "passed",
+      "ms": 79
+    },
+    {
+      "name": "Module Overview 390px dark",
+      "status": "passed",
+      "ms": 149
+    },
+    {
+      "name": "Module Master data 390px dark",
+      "status": "passed",
+      "ms": 71
+    },
+    {
+      "name": "Module Question bank 390px dark",
+      "status": "passed",
+      "ms": 117
+    },
+    {
+      "name": "Module AI question studio 390px dark",
+      "status": "passed",
+      "ms": 73
+    },
+    {
+      "name": "Module Coverage explorer 390px dark",
+      "status": "passed",
+      "ms": 83
+    },
+    {
+      "name": "Module Question papers 390px dark",
+      "status": "passed",
+      "ms": 135
+    },
+    {
+      "name": "Module Review & approval 390px dark",
+      "status": "passed",
+      "ms": 85
+    },
+    {
+      "name": "Module Bloom’s analytics 390px dark",
+      "status": "passed",
+      "ms": 79
+    },
+    {
+      "name": "Module Outcome mapping 390px dark",
+      "status": "passed",
+      "ms": 98
+    },
+    {
+      "name": "Module Reports 390px dark",
+      "status": "passed",
+      "ms": 93
+    },
+    {
+      "name": "Module Student portal 390px dark",
+      "status": "passed",
+      "ms": 81
+    },
+    {
+      "name": "Master Summary 390px dark",
+      "status": "passed",
+      "ms": 28
+    },
+    {
+      "name": "Master Batches 390px dark",
+      "status": "passed",
+      "ms": 79
+    },
+    {
+      "name": "Master Degrees 390px dark",
+      "status": "passed",
+      "ms": 73
+    },
+    {
+      "name": "Master Departments 390px dark",
+      "status": "passed",
+      "ms": 78
+    },
+    {
+      "name": "Master Subjects 390px dark",
+      "status": "passed",
+      "ms": 70
+    },
+    {
+      "name": "Master Syllabus PDFs 390px dark",
+      "status": "passed",
+      "ms": 60
+    },
+    {
+      "name": "Master Students 390px dark",
+      "status": "passed",
+      "ms": 86
+    },
+    {
+      "name": "Master Staff mapping 390px dark",
+      "status": "passed",
+      "ms": 67
+    },
+    {
+      "name": "Module Overview 820px light",
+      "status": "passed",
+      "ms": 149
+    },
+    {
+      "name": "Module Master data 820px light",
+      "status": "passed",
+      "ms": 111
+    },
+    {
+      "name": "Module Question bank 820px light",
+      "status": "passed",
+      "ms": 120
+    },
+    {
+      "name": "Module AI question studio 820px light",
+      "status": "passed",
+      "ms": 70
+    },
+    {
+      "name": "Module Coverage explorer 820px light",
+      "status": "passed",
+      "ms": 91
+    },
+    {
+      "name": "Module Question papers 820px light",
+      "status": "passed",
+      "ms": 140
+    },
+    {
+      "name": "Module Review & approval 820px light",
+      "status": "passed",
+      "ms": 98
+    },
+    {
+      "name": "Module Bloom’s analytics 820px light",
+      "status": "passed",
+      "ms": 133
+    },
+    {
+      "name": "Module Outcome mapping 820px light",
+      "status": "passed",
+      "ms": 83
+    },
+    {
+      "name": "Module Reports 820px light",
+      "status": "passed",
+      "ms": 122
+    },
+    {
+      "name": "Module Student portal 820px light",
+      "status": "passed",
+      "ms": 119
+    },
+    {
+      "name": "Master Summary 820px light",
+      "status": "passed",
+      "ms": 52
+    },
+    {
+      "name": "Master Batches 820px light",
+      "status": "passed",
+      "ms": 62
+    },
+    {
+      "name": "Master Degrees 820px light",
+      "status": "passed",
+      "ms": 62
+    },
+    {
+      "name": "Master Departments 820px light",
+      "status": "passed",
+      "ms": 66
+    },
+    {
+      "name": "Master Subjects 820px light",
+      "status": "passed",
+      "ms": 71
+    },
+    {
+      "name": "Master Syllabus PDFs 820px light",
+      "status": "passed",
+      "ms": 60
+    },
+    {
+      "name": "Master Students 820px light",
+      "status": "passed",
+      "ms": 58
+    },
+    {
+      "name": "Master Staff mapping 820px light",
+      "status": "passed",
+      "ms": 56
+    },
+    {
+      "name": "Module Overview 820px dark",
+      "status": "passed",
+      "ms": 137
+    },
+    {
+      "name": "Module Master data 820px dark",
+      "status": "passed",
+      "ms": 104
+    },
+    {
+      "name": "Module Question bank 820px dark",
+      "status": "passed",
+      "ms": 111
+    },
+    {
+      "name": "Module AI question studio 820px dark",
+      "status": "passed",
+      "ms": 85
+    },
+    {
+      "name": "Module Coverage explorer 820px dark",
+      "status": "passed",
+      "ms": 78
+    },
+    {
+      "name": "Module Question papers 820px dark",
+      "status": "passed",
+      "ms": 101
+    },
+    {
+      "name": "Module Review & approval 820px dark",
+      "status": "passed",
+      "ms": 85
+    },
+    {
+      "name": "Module Bloom’s analytics 820px dark",
+      "status": "passed",
+      "ms": 99
+    },
+    {
+      "name": "Module Outcome mapping 820px dark",
+      "status": "passed",
+      "ms": 112
+    },
+    {
+      "name": "Module Reports 820px dark",
+      "status": "passed",
+      "ms": 113
+    },
+    {
+      "name": "Module Student portal 820px dark",
+      "status": "passed",
+      "ms": 99
+    },
+    {
+      "name": "Master Summary 820px dark",
+      "status": "passed",
+      "ms": 42
+    },
+    {
+      "name": "Master Batches 820px dark",
+      "status": "passed",
+      "ms": 71
+    },
+    {
+      "name": "Master Degrees 820px dark",
+      "status": "passed",
+      "ms": 69
+    },
+    {
+      "name": "Master Departments 820px dark",
+      "status": "passed",
+      "ms": 87
+    },
+    {
+      "name": "Master Subjects 820px dark",
+      "status": "passed",
+      "ms": 84
+    },
+    {
+      "name": "Master Syllabus PDFs 820px dark",
+      "status": "passed",
+      "ms": 81
+    },
+    {
+      "name": "Master Students 820px dark",
+      "status": "passed",
+      "ms": 65
+    },
+    {
+      "name": "Master Staff mapping 820px dark",
+      "status": "passed",
+      "ms": 97
+    },
+    {
+      "name": "Module Overview 1440px light",
+      "status": "passed",
+      "ms": 137
+    },
+    {
+      "name": "Module Master data 1440px light",
+      "status": "passed",
+      "ms": 142
+    },
+    {
+      "name": "Module Question bank 1440px light",
+      "status": "passed",
+      "ms": 120
+    },
+    {
+      "name": "Module AI question studio 1440px light",
+      "status": "passed",
+      "ms": 47
+    },
+    {
+      "name": "Module Coverage explorer 1440px light",
+      "status": "passed",
+      "ms": 70
+    },
+    {
+      "name": "Module Question papers 1440px light",
+      "status": "passed",
+      "ms": 97
+    },
+    {
+      "name": "Module Review & approval 1440px light",
+      "status": "passed",
+      "ms": 84
+    },
+    {
+      "name": "Module Bloom’s analytics 1440px light",
+      "status": "passed",
+      "ms": 66
+    },
+    {
+      "name": "Module Outcome mapping 1440px light",
+      "status": "passed",
+      "ms": 99
+    },
+    {
+      "name": "Module Reports 1440px light",
+      "status": "passed",
+      "ms": 101
+    },
+    {
+      "name": "Module Student portal 1440px light",
+      "status": "passed",
+      "ms": 91
+    },
+    {
+      "name": "Master Summary 1440px light",
+      "status": "passed",
+      "ms": 58
+    },
+    {
+      "name": "Master Batches 1440px light",
+      "status": "passed",
+      "ms": 49
+    },
+    {
+      "name": "Master Degrees 1440px light",
+      "status": "passed",
+      "ms": 72
+    },
+    {
+      "name": "Master Departments 1440px light",
+      "status": "passed",
+      "ms": 36
+    },
+    {
+      "name": "Master Subjects 1440px light",
+      "status": "passed",
+      "ms": 56
+    },
+    {
+      "name": "Master Syllabus PDFs 1440px light",
+      "status": "passed",
+      "ms": 87
+    },
+    {
+      "name": "Master Students 1440px light",
+      "status": "passed",
+      "ms": 71
+    },
+    {
+      "name": "Master Staff mapping 1440px light",
+      "status": "passed",
+      "ms": 71
+    },
+    {
+      "name": "Module Overview 1440px dark",
+      "status": "passed",
+      "ms": 188
+    },
+    {
+      "name": "Module Master data 1440px dark",
+      "status": "passed",
+      "ms": 94
+    },
+    {
+      "name": "Module Question bank 1440px dark",
+      "status": "passed",
+      "ms": 89
+    },
+    {
+      "name": "Module AI question studio 1440px dark",
+      "status": "passed",
+      "ms": 79
+    },
+    {
+      "name": "Module Coverage explorer 1440px dark",
+      "status": "passed",
+      "ms": 77
+    },
+    {
+      "name": "Module Question papers 1440px dark",
+      "status": "passed",
+      "ms": 107
+    },
+    {
+      "name": "Module Review & approval 1440px dark",
+      "status": "passed",
+      "ms": 83
+    },
+    {
+      "name": "Module Bloom’s analytics 1440px dark",
+      "status": "passed",
+      "ms": 94
+    },
+    {
+      "name": "Module Outcome mapping 1440px dark",
+      "status": "passed",
+      "ms": 102
+    },
+    {
+      "name": "Module Reports 1440px dark",
+      "status": "passed",
+      "ms": 84
+    },
+    {
+      "name": "Module Student portal 1440px dark",
+      "status": "passed",
+      "ms": 77
+    },
+    {
+      "name": "Master Summary 1440px dark",
+      "status": "passed",
+      "ms": 41
+    },
+    {
+      "name": "Master Batches 1440px dark",
+      "status": "passed",
+      "ms": 59
+    },
+    {
+      "name": "Master Degrees 1440px dark",
+      "status": "passed",
+      "ms": 42
+    },
+    {
+      "name": "Master Departments 1440px dark",
+      "status": "passed",
+      "ms": 48
+    },
+    {
+      "name": "Master Subjects 1440px dark",
+      "status": "passed",
+      "ms": 45
+    },
+    {
+      "name": "Master Syllabus PDFs 1440px dark",
+      "status": "passed",
+      "ms": 52
+    },
+    {
+      "name": "Master Students 1440px dark",
+      "status": "passed",
+      "ms": 47
+    },
+    {
+      "name": "Master Staff mapping 1440px dark",
+      "status": "passed",
+      "ms": 51
+    },
+    {
+      "name": "FAQ expansion and keyboard operation",
+      "status": "passed",
+      "ms": 222
+    },
+    {
+      "name": "Desktop menu ArrowDown, Escape, and outside-click dismissal",
+      "status": "passed",
+      "ms": 399
+    },
+    {
+      "name": "Skip link reaches the main content",
+      "status": "passed",
+      "ms": 277
+    },
+    {
+      "name": "Theme toggle persists across reload",
+      "status": "failed",
+      "error": "expect(locator).toBeVisible() failed\n\nLocator: getByRole('button', { name: 'Switch to light mode' })\nExpected: visible\nTimeout: 5000ms\nError: element(s) not found\n\nCall log:\n  - Expect \"to.be.visible\" with timeout 5000ms\n  - waiting for getByRole('button', { name: 'Switch to light mode' })\n"
+    },
+    {
+      "name": "Reduced motion stops the moving grid",
+      "status": "passed",
+      "ms": 105
+    },
+    {
+      "name": "Native invalid enquiry blocks empty and malformed fields",
+      "status": "passed",
+      "ms": 230
+    },
+    {
+      "name": "Enquiry rejects whitespace-only names and institutions",
+      "status": "passed",
+      "ms": 129
+    },
+    {
+      "name": "Unicode enquiry, maximum message, mailto encoding, stale draft reset",
+      "status": "passed",
+      "ms": 205
+    },
+    {
+      "name": "Academic filters, empty state, and pagination",
+      "status": "passed",
+      "ms": 528
+    },
+    {
+      "name": "Details dialog focus trap, nested editor focus, Escape restoration",
+      "status": "failed",
+      "error": "locator.click: Timeout 5000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('#dashboard-preview').getByRole('button', { name: 'View question Q-1001' })\u001b[22m\n"
+    },
+    {
+      "name": "Question drafts reject whitespace and safely render arbitrary text",
+      "status": "passed",
+      "ms": 757
+    },
+    {
+      "name": "Generated draft → review → approval → release → withdrawal",
+      "status": "passed",
+      "ms": 1639
+    },
+    {
+      "name": "Master Data tab keyboard navigation and staff mapping",
+      "status": "passed",
+      "ms": 496
+    },
+    {
+      "name": "Student profile edit, duplicate review, and invalid master name",
+      "status": "passed",
+      "ms": 576
+    },
+    {
+      "name": "Outcome assignment updates completion and heatmap drill-down works",
+      "status": "passed",
+      "ms": 303
+    },
+    {
+      "name": "Paper assembly → review → moderation → approval → immutable lock",
+      "status": "passed",
+      "ms": 1301
+    },
+    {
+      "name": "Review requires a comment for requested changes and records audit history",
+      "status": "passed",
+      "ms": 445
+    },
+    {
+      "name": "Empty academic scope disables generation and shows truthful queues",
+      "status": "passed",
+      "ms": 667
+    },
+    {
+      "name": "Report download, preview, persistence across modules, and reset",
+      "status": "passed",
+      "ms": 1101
+    },
+    {
+      "name": "Rapid navigation stress: 110 module transitions",
+      "status": "passed",
+      "ms": 10416,
+      "detail": {
+        "transitions": 110,
+        "ms": 10326
+      }
+    },
+    {
+      "name": "Browser reload resets temporary sample mutations",
+      "status": "passed",
+      "ms": 587
+    },
+    {
+      "name": "Unknown route returns a working 404 and recovery link",
+      "status": "passed",
+      "ms": 311
+    },
+    {
+      "name": "Phone landscape layout and scrollable mobile menu",
+      "status": "passed",
+      "ms": 224
+    },
+    {
+      "name": "Theme remains usable when browser storage is blocked",
+      "status": "passed",
+      "ms": 719
+    },
+    {
+      "name": "Four simultaneous isolated user contexts",
+      "status": "passed",
+      "ms": 1694
+    },
+    {
+      "name": "No uncaught browser exceptions or HTTP 5xx responses",
+      "status": "passed",
+      "ms": 2
+    }
+  ],
+  "errors": [],
+  "screenshots": [
+    "C:\\Users\\yashm\\OneDrive\\Documents\\ChatGPT\\Questra_landing_page\\artifacts\\qa-browser-2026-10-26\\hero-390-light.png",
+    "C:\\Users\\yashm\\OneDrive\\Documents\\ChatGPT\\Questra_landing_page\\artifacts\\qa-browser-2026-10-26\\platform-390-light.png",
+    "C:\\Users\\yashm\\OneDrive\\Documents\\ChatGPT\\Questra_landing_page\\artifacts\\qa-browser-2026-10-26\\student-390-light.png",
+    "C:\\Users\\yashm\\OneDrive\\Documents\\ChatGPT\\Questra_landing_page\\artifacts\\qa-browser-2026-10-26\\dashboard-390-light.png",
+    "C:\\Users\\yashm\\OneDrive\\Documents\\ChatGPT\\Questra_landing_page\\artifacts\\qa-browser-2026-10-26\\hero-390-dark.png",
+    "C:\\Users\\yashm\\OneDrive\\Documents\\ChatGPT\\Questra_landing_page\\artifacts\\qa-browser-2026-10-26\\platform-390-dark.png",
+    "C:\\Users\\yashm\\OneDrive\\Documents\\ChatGPT\\Questra_landing_page\\artifacts\\qa-browser-2026-10-26\\student-390-dark.png",
+    "C:\\Users\\yashm\\OneDrive\\Documents\\ChatGPT\\Questra_landing_page\\artifacts\\qa-browser-2026-10-26\\dashboard-390-dark.png",
+    "C:\\Users\\yashm\\OneDrive\\Documents\\ChatGPT\\Questra_landing_page\\artifacts\\qa-browser-2026-10-26\\hero-1440-light.png",
+    "C:\\Users\\yashm\\OneDrive\\Documents\\ChatGPT\\Questra_landing_page\\artifacts\\qa-browser-2026-10-26\\platform-1440-light.png",
+    "C:\\Users\\yashm\\OneDrive\\Documents\\ChatGPT\\Questra_landing_page\\artifacts\\qa-browser-2026-10-26\\student-1440-light.png",
+    "C:\\Users\\yashm\\OneDrive\\Documents\\ChatGPT\\Questra_landing_page\\artifacts\\qa-browser-2026-10-26\\dashboard-1440-light.png",
+    "C:\\Users\\yashm\\OneDrive\\Documents\\ChatGPT\\Questra_landing_page\\artifacts\\qa-browser-2026-10-26\\hero-1440-dark.png",
+    "C:\\Users\\yashm\\OneDrive\\Documents\\ChatGPT\\Questra_landing_page\\artifacts\\qa-browser-2026-10-26\\platform-1440-dark.png",
+    "C:\\Users\\yashm\\OneDrive\\Documents\\ChatGPT\\Questra_landing_page\\artifacts\\qa-browser-2026-10-26\\student-1440-dark.png",
+    "C:\\Users\\yashm\\OneDrive\\Documents\\ChatGPT\\Questra_landing_page\\artifacts\\qa-browser-2026-10-26\\dashboard-1440-dark.png",
+    "C:\\Users\\yashm\\OneDrive\\Documents\\ChatGPT\\Questra_landing_page\\artifacts\\qa-browser-2026-10-26\\staff-mapping-390-light.png",
+    "C:\\Users\\yashm\\OneDrive\\Documents\\ChatGPT\\Questra_landing_page\\artifacts\\qa-browser-2026-10-26\\review-390-light.png",
+    "C:\\Users\\yashm\\OneDrive\\Documents\\ChatGPT\\Questra_landing_page\\artifacts\\qa-browser-2026-10-26\\staff-mapping-390-dark.png",
+    "C:\\Users\\yashm\\OneDrive\\Documents\\ChatGPT\\Questra_landing_page\\artifacts\\qa-browser-2026-10-26\\review-390-dark.png",
+    "C:\\Users\\yashm\\OneDrive\\Documents\\ChatGPT\\Questra_landing_page\\artifacts\\qa-browser-2026-10-26\\failure-158.png",
+    "C:\\Users\\yashm\\OneDrive\\Documents\\ChatGPT\\Questra_landing_page\\artifacts\\qa-browser-2026-10-26\\failure-164.png"
+  ]
+}
