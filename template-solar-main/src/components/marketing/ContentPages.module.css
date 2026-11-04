@@ -13,14 +13,14 @@
 }
 .eyebrow {
   color: #19a889;
-  font-size: 15px;
+  font-size: 16px;
   font-weight: 700;
   letter-spacing: 0.16em;
   text-transform: uppercase;
 }
 .hero h1 {
   max-width: 960px;
-  font-size: clamp(42px, 5.7vw, 78px);
+  font-size: clamp(40px, 5.7vw, 76px);
   line-height: 1.08;
   letter-spacing: -0.055em;
   margin: 24px 0;
@@ -29,7 +29,7 @@
 .hero p,
 .intro {
   max-width: 730px;
-  font-size: 19px;
+  font-size: 18px;
   line-height: 1.8;
   opacity: 0.8;
 }
@@ -46,11 +46,11 @@
   color: white;
   padding: 14px 22px;
   border-radius: 10px;
-  font-size: 15px;
+  font-size: 16px;
   font-weight: 600;
 }
 .link {
-  font-size: 15px;
+  font-size: 16px;
   font-weight: 600;
   text-decoration: underline;
   text-underline-offset: 5px;
@@ -59,7 +59,7 @@
   padding: 64px 0;
 }
 .section h2 {
-  font-size: clamp(30px, 3.5vw, 46px);
+  font-size: clamp(28px, 3.5vw, 44px);
   letter-spacing: -0.04em;
   line-height: 1.15;
   margin: 16px 0 22px;
@@ -80,7 +80,7 @@
   background: #8b9bb508;
 }
 .card h3 {
-  font-size: 20px;
+  font-size: 19px;
   line-height: 1.4;
   font-weight: 600;
   margin: 15px 0 12px;
@@ -125,7 +125,7 @@
   padding: 24px 18px;
   background: #102442;
   color: #fff;
-  font-size: 15px;
+  font-size: 16px;
 }
 .portalBrand {
   display: flex;
@@ -137,7 +137,7 @@
 }
 .portalBrand small {
   color: #c4d0e2;
-  font-size: 15px;
+  font-size: 16px;
   font-weight: 400;
 }
 .portalSidebar > span:not(.portalBrand) {
@@ -160,12 +160,12 @@
   gap: 16px;
   padding-bottom: 16px;
   border-bottom: 1px solid #8b9bb533;
-  font-size: 15px;
+  font-size: 16px;
   font-weight: 600;
 }
 .portalTopbar span + span {
   color: #64748b;
-  font-size: 15px;
+  font-size: 16px;
   font-weight: 500;
 }
 .portalWelcome {
@@ -173,20 +173,20 @@
 }
 .portalWelcome > span {
   color: #19a889;
-  font-size: 15px;
+  font-size: 16px;
   font-weight: 700;
   letter-spacing: 0.13em;
 }
 .portalWelcome h3 {
   max-width: 580px;
   margin: 12px 0 8px;
-  font-size: clamp(22px, 2.7vw, 33px);
+  font-size: clamp(21px, 2.7vw, 31px);
   line-height: 1.2;
   letter-spacing: -0.035em;
 }
 .portalWelcome p {
   color: #64748b;
-  font-size: 15px;
+  font-size: 16px;
   line-height: 1.6;
 }
 .portalSubjects {
@@ -213,11 +213,11 @@
   gap: 6px;
 }
 .portalSubjects article strong {
-  font-size: 15px;
+  font-size: 16px;
 }
 .portalSubjects article small {
   color: #64748b;
-  font-size: 15px;
+  font-size: 16px;
   line-height: 1.5;
 }
 .portalSubjects article > span:last-child {
@@ -233,13 +233,13 @@
 .portalDisclosure {
   margin-top: 16px;
   color: #64748b;
-  font-size: 15px;
+  font-size: 16px;
   line-height: 1.6;
 }
 .portalFigure figcaption {
   margin-top: 12px;
   color: #64748b;
-  font-size: 15px;
+  font-size: 16px;
   line-height: 1.6;
 }
 .portalFaq {
@@ -260,12 +260,12 @@
   max-width: 760px;
   margin: 12px 0 0;
   color: #64748b;
-  font-size: 15px;
+  font-size: 16px;
   line-height: 1.8;
 }
 .number {
   color: #19a889;
-  font-size: 15px;
+  font-size: 16px;
   font-weight: 700;
   letter-spacing: 0.1em;
 }
@@ -274,7 +274,7 @@
 }
 .note {
   margin-top: 24px;
-  font-size: 15px;
+  font-size: 16px;
   line-height: 1.8;
   opacity: 0.8;
 }
@@ -286,7 +286,7 @@
   margin-top: 28px;
 }
 .banner h3 {
-  font-size: 26px;
+  font-size: 24px;
   margin-bottom: 12px;
   font-weight: 600;
 }

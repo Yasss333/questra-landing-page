@@ -58,7 +58,7 @@
 .orbit { position: absolute; inset: -5px; border: 1px dashed var(--theme-border, #cbdcf2); border-radius: 50%; transition: transform .7s; }
 .satellite { position: absolute; width: 5px; height: 5px; border-radius: 50%; background: #19a889; top: 0; right: 5px; }
 .satellite:last-child { top: auto; right: auto; bottom: 0; left: 4px; }
-.number { font-size: 15px; font-weight: 650; letter-spacing: .08em; color: var(--theme-accent, #084db5); }
+.number { font-size: 16px; font-weight: 650; letter-spacing: .08em; color: var(--theme-accent, #084db5); }
 .card h3 { font-size: 17px; line-height: 1.5; font-weight: 600; margin: 20px 0 0; max-width: 240px; }
 .connector { position: absolute; right: -34px; top: calc(var(--circle-size) / 2 - 12px); color: var(--theme-accent, #084db5); pointer-events: none; }
 .step:nth-child(4) .connector, .step:nth-child(5) .connector { right: auto; left: -34px; transform: rotate(180deg); }
@@ -91,8 +91,8 @@
   .art { width: 34px; height: 34px; }
   .face svg { width: 25px; height: 25px; }
   .backplate { inset: 4px 6px; }
-  .number { font-size: 14px; }
-  .card h3 { font-size: 15px; line-height: 1.45; margin-top: 15px; overflow-wrap: anywhere; }
+  .number { font-size: 15px; }
+  .card h3 { font-size: 16px; line-height: 1.45; margin-top: 15px; overflow-wrap: anywhere; }
   .connector { width: 16px; right: -15px; }
   .step:nth-child(4) .connector, .step:nth-child(5) .connector { left: -15px; }
   .step:nth-child(3)::after { right: -13px; width: calc((100% - var(--circle-size)) / 2 + 13px); }

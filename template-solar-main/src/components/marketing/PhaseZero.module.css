@@ -61,7 +61,7 @@
   align-items: center;
   gap: 9px;
   color: var(--theme-accent);
-  font-size: 15px;
+  font-size: 16px;
   font-weight: 650;
   letter-spacing: 0.1em;
   line-height: 1.7;
@@ -75,7 +75,7 @@
 }
 .hero h1 {
   margin: 24px 0 24px;
-  font-size: clamp(42px, 3.85vw, 64px);
+  font-size: clamp(40px, 3.85vw, 62px);
   line-height: 1.12;
   letter-spacing: -0.045em;
   font-weight: 650;
@@ -94,7 +94,7 @@
   letter-spacing: inherit;
 }
 .heroSubhead {
-  font-size: clamp(20px, 1.5vw, 25px);
+  font-size: clamp(19px, 1.5vw, 23px);
   font-weight: 550;
   line-height: 1.45;
   letter-spacing: -0.025em;
@@ -121,7 +121,7 @@
   justify-content: center;
   gap: 10px;
   min-height: 48px;
-  font-size: 15px;
+  font-size: 16px;
   font-weight: 600;
   text-decoration: none;
 }
@@ -157,7 +157,7 @@
   gap: 16px;
   flex-wrap: wrap;
   margin-top: 26px;
-  font-size: 15px;
+  font-size: 16px;
   line-height: 1.6;
   color: var(--theme-muted);
 }
@@ -192,7 +192,7 @@
   padding: 13px 15px;
   border-bottom: 1px solid #e9eaf0;
   background: #fff;
-  font-size: 15px;
+  font-size: 16px;
 }
 .browserDots {
   display: flex;
@@ -211,7 +211,7 @@
   background: #bcd9cc;
 }
 .previewTag {
-  font-size: 15px;
+  font-size: 16px;
   letter-spacing: 0.07em;
   color: #64748b;
 }
@@ -289,12 +289,12 @@
   gap: 13px;
 }
 .slideControls strong {
-  font-size: 15px;
+  font-size: 16px;
   font-weight: 550;
 }
 .slideCount {
   color: #64748b;
-  font-size: 15px;
+  font-size: 16px;
   letter-spacing: 0.1em;
 }
 .controls {
@@ -354,7 +354,7 @@
   background: #084db5;
 }
 .previewNote {
-  font-size: 15px;
+  font-size: 16px;
   color: #64748b;
   text-align: center;
   padding: 2px 12px 10px;
@@ -366,7 +366,7 @@
 }
 .section h1,
 .section h2 {
-  font-size: clamp(30px, 3vw, 45px);
+  font-size: clamp(28px, 3vw, 43px);
   line-height: 1.18;
   font-weight: 600;
   letter-spacing: -0.04em;
@@ -399,10 +399,10 @@
 }
 .pillar > span {
   color: var(--theme-accent);
-  font-size: 15px;
+  font-size: 16px;
 }
 .pillar h3 {
-  font-size: 19px;
+  font-size: 18px;
   letter-spacing: -0.025em;
   font-weight: 600;
   margin: 17px 0 10px;
@@ -442,7 +442,7 @@
   width: 42px;
   height: 42px;
   border-radius: 50%;
-  font-size: 15px;
+  font-size: 16px;
 }
 .journey h3 {
   font-size: 17px;
@@ -477,11 +477,11 @@
   padding: 28px;
 }
 .approvalCard > span {
-  font-size: 15px;
+  font-size: 16px;
   color: var(--theme-accent);
 }
 .approvalCard h3 {
-  font-size: 24px;
+  font-size: 22px;
   font-weight: 600;
   letter-spacing: -0.03em;
   margin: 14px 0;
@@ -505,7 +505,7 @@
   gap: 10px;
 }
 .approvalCard li span {
-  font-size: 15px;
+  font-size: 16px;
   color: var(--theme-accent);
 }
 .outcome {
@@ -527,7 +527,7 @@
   padding: 25px 0;
 }
 .feature > span {
-  font-size: 15px;
+  font-size: 16px;
   color: var(--theme-accent);
 }
 .feature h3 {
@@ -676,7 +676,7 @@
   display: flex;
   align-items: center;
   gap: 4px;
-  font-size: 15px;
+  font-size: 16px;
   padding: 12px 10px;
   border-radius: 6px;
   cursor: pointer;
@@ -705,7 +705,7 @@
 }
 .dropdown a {
   display: block;
-  font-size: 15px;
+  font-size: 16px;
   padding: 13px 12px;
   border-radius: 5px;
 }
@@ -723,7 +723,7 @@
   gap: 10px;
 }
 .navCta {
-  font-size: 15px;
+  font-size: 16px;
   min-height: 40px;
   white-space: nowrap;
   padding: 10px 13px;
@@ -758,25 +758,25 @@
   gap: 30px;
 }
 .footer h2 {
-  font-size: 15px;
+  font-size: 16px;
   font-weight: 650;
   margin-bottom: 17px;
 }
 .footer a:not(:first-child),
 .footerGroup a {
   display: block;
-  font-size: 15px;
+  font-size: 16px;
   color: var(--theme-muted);
   margin: 12px 0;
 }
 .footer p {
   margin: 20px 0 10px;
-  font-size: 15px;
+  font-size: 16px;
   color: var(--theme-muted);
   line-height: 1.9;
 }
 .footer small {
-  font-size: 15px;
+  font-size: 16px;
   color: var(--theme-accent);
 }
 .footerBottom {
@@ -787,7 +787,7 @@
   display: flex;
   justify-content: space-between;
   gap: 20px;
-  font-size: 15px;
+  font-size: 16px;
   color: var(--theme-muted);
 }
 .main a:focus-visible,
@@ -821,7 +821,7 @@
   }
   .nav button,
   .nav > a {
-    font-size: 15px;
+    font-size: 16px;
     padding: 12px 7px;
   }
   .headerInner > a img {
@@ -831,10 +831,10 @@
     gap: 6px;
   }
   .navCta {
-    font-size: 15px;
+    font-size: 16px;
   }
   .hero h1 {
-    font-size: 45px;
+    font-size: 43px;
   }
   .heroShape {
     width: 58%;
@@ -855,7 +855,7 @@
     margin-left: auto;
   }
   .navCta {
-    font-size: 15px;
+    font-size: 16px;
   }
   .mobileNav {
     display: block;
@@ -866,7 +866,7 @@
   }
   .mobileNav > a {
     display: block;
-    font-size: 15px;
+    font-size: 16px;
     padding: 14px 0;
   }
   .mobileGroup > button {
@@ -874,7 +874,7 @@
     justify-content: space-between;
     width: 100%;
     padding: 15px 0;
-    font-size: 15px;
+    font-size: 16px;
     cursor: pointer;
   }
   .mobileGroup > div {
@@ -882,7 +882,7 @@
   }
   .mobileGroup a {
     display: block;
-    font-size: 15px;
+    font-size: 16px;
     padding: 12px 0;
     color: #64748b;
   }
@@ -897,7 +897,7 @@
     max-width: 650px;
   }
   .hero h1 {
-    font-size: 60px;
+    font-size: 58px;
   }
   .heroShape {
     width: 85%;
@@ -944,7 +944,7 @@
     gap: 3px;
   }
   .navCta {
-    font-size: 15px;
+    font-size: 16px;
     padding: 8px 10px;
     min-height: 36px;
     max-width: 130px;
@@ -962,15 +962,15 @@
     gap: 20px;
   }
   .hero h1 {
-    font-size: clamp(35px, 8.7vw, 50px);
+    font-size: clamp(33px, 8.7vw, 48px);
     margin-top: 19px;
   }
   .eyebrow {
-    font-size: 15px;
+    font-size: 16px;
     letter-spacing: 0.065em;
   }
   .heroSubhead {
-    font-size: 21px;
+    font-size: 20px;
   }
   .heroDescription {
     font-size: 17px;
@@ -982,7 +982,7 @@
   }
   .heroChecks {
     gap: 12px;
-    font-size: 15px;
+    font-size: 16px;
   }
   .heroVisual {
     margin-top: 15px;
@@ -993,10 +993,10 @@
   }
   .browserBar {
     padding: 10px;
-    font-size: 15px;
+    font-size: 16px;
   }
   .previewTag {
-    font-size: 15px;
+    font-size: 16px;
   }
   .slideControls {
     padding: 7px 9px 0;
@@ -1004,27 +1004,27 @@
     row-gap: 8px;
   }
   .slideControls strong {
-    font-size: 15px;
+    font-size: 16px;
   }
   .slideControls > div:first-child {
     gap: 6px;
   }
   .slideCount {
-    font-size: 15px;
+    font-size: 16px;
   }
   .controls button {
     width: 36px;
     height: 36px;
   }
   .previewNote {
-    font-size: 15px;
+    font-size: 16px;
   }
   .section {
     width: calc(100% - 40px);
     padding: 52px 0;
   }
   .intro {
-    font-size: 15px;
+    font-size: 16px;
   }
   .pillars {
     gap: 25px 20px;
@@ -1054,7 +1054,7 @@
   .comparison td {
     padding: 12px 10px;
     min-width: 130px;
-    font-size: 15px;
+    font-size: 16px;
   }
   .comparison th:first-child,
   .comparison td:first-child {
@@ -1064,7 +1064,7 @@
     padding: 40px 20px;
   }
   .closing p {
-    font-size: 15px;
+    font-size: 16px;
   }
   .footer {
     padding: 40px 20px 20px;
