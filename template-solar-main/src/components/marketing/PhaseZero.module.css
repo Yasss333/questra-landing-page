@@ -1087,3 +1087,6 @@
     animation: none;
   }
 }
+
+.roles .roleSpotlight { padding: 24px; }
+.roles .roleSpotlight h3 { margin-top: 0; }

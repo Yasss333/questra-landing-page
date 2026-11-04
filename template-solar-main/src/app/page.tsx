@@ -33,8 +33,8 @@ export default function Home() {
         <span className={styles.eyebrow}>EXPLORE THE WORKSPACE</span>
         <h2>Try the interactive preview.</h2>
         <p className={styles.note}>
-          Overview, Master data and Question bank are available with sample
-          records. Explore the complete product in a guided demo.
+          Command Center, Academic Master and Faculty Workspace are available
+          with sample records. Explore the complete product in a guided demo.
         </p>
       </section>
       <DashboardPreview />

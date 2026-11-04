@@ -4,15 +4,12 @@ import Link from "next/link"
 import { useEffect, useRef, useState, type ReactNode } from "react"
 import {
   RiArrowRightLine,
-  RiBarChartLine,
   RiCheckLine,
   RiCloseLine,
   RiDashboardLine,
   RiDatabase2Line,
   RiFileChartLine,
   RiFileList3Line,
-  RiGraduationCapLine,
-  RiNodeTree,
   RiLockLine,
   RiPieChartLine,
   RiQuestionAnswerLine,
@@ -26,7 +23,6 @@ import DashboardCursor from "./DashboardCursor"
 import {
   DemoContext,
   type DemoContextValue,
-  useDemo,
 } from "./dashboard/DemoContext"
 import {
   batches,
@@ -37,7 +33,6 @@ import {
   initialStudents,
   initialSubjects,
   matchesScope,
-  percent,
   type Paper,
   type DemoReport,
   type Question,
@@ -47,23 +42,30 @@ import {
   type Subject,
   type View,
 } from "./dashboard/demo-data"
-import { GrowthChart, Metrics, Panel, styles } from "./dashboard/DashboardKit"
-import MasterDataView from "./dashboard/MasterDataView"
-import QuestionBankView, { QuestionTable } from "./dashboard/QuestionViews"
+import { styles } from "./dashboard/DashboardKit"
+import DocumentDashboardScreens from "./dashboard/DocumentDashboardScreens"
 
 const navigation = [
-  { label: "Overview", icon: RiDashboardLine },
-  { label: "Master data", icon: RiDatabase2Line },
-  { label: "Question bank", icon: RiQuestionAnswerLine },
-  { label: "AI question studio", icon: RiSparklingLine },
-  { label: "Coverage explorer", icon: RiPieChartLine },
-  { label: "Question papers", icon: RiFileList3Line },
-  { label: "Review & approval", icon: RiShieldCheckLine },
-  { label: "Bloom’s analytics", icon: RiBarChartLine },
-  { label: "Outcome mapping", icon: RiNodeTree },
-  { label: "Reports", icon: RiFileChartLine },
-  { label: "Student portal", icon: RiGraduationCapLine },
+  { label: "Overview", title: "Institutional Command Center", icon: RiDashboardLine },
+  { label: "Master data", title: "Academic Master Dashboard", icon: RiDatabase2Line },
+  { label: "Question bank", title: "Faculty Workspace", icon: RiQuestionAnswerLine },
+  { label: "AI question studio", title: "AI Question Studio", icon: RiSparklingLine },
+  { label: "Question papers", title: "Paper Blueprint Builder", icon: RiFileList3Line },
+  { label: "Review & approval", title: "Approval Cockpit", icon: RiShieldCheckLine },
+  { label: "Coverage explorer", title: "Quality Validation", icon: RiPieChartLine },
+  { label: "Reports", title: "Examination Calendar", icon: RiFileChartLine },
 ] as const
+const screenTitle = (view: View) => navigation.find((item) => item.label === view)?.title ?? view
+const screenDetails: Partial<Record<View, string>> = {
+  Overview: "Setup completeness, active exams, approval backlog, risk alerts.",
+  "Master data": "Batch, degree, department, subject, syllabus, staff/student readiness.",
+  "Question bank": "Allocated subjects, drafts, assigned review tasks, due dates.",
+  "AI question studio": "Source syllabus, controls, generated candidates, edit/submit.",
+  "Question papers": "Marks, section patterns, choices, coverage and rule preview.",
+  "Review & approval": "Level 1–2–3 stage progress, comments, pending actions, audit timeline.",
+  "Coverage explorer": "Pass/warning/block issues with correction actions.",
+  Reports: "Mid-term and end-semester deadlines, release status.",
+}
 const previewViews: readonly View[] = [
   "Overview",
   "Master data",
@@ -83,167 +85,20 @@ function LockedPreview({ view }: { view: View }) {
         <RiLockLine size={28} aria-hidden="true" />
       </span>
       <span className={styles.eyebrow}>THE FULL EXPERIENCE AWAITS</span>
-      <h4>Discover {view} in action.</h4>
+      <h4>Discover {screenTitle(view)} in action.</h4>
       <p>
-        Explore how Questra brings it all together in a guided walkthrough
-        tailored to your institution.
+        {screenDetails[view]}
       </p>
       <Link className={styles.unlockCta} href="/book-demo">
         Book a demo to explore <RiArrowRightLine size={16} aria-hidden="true" />
       </Link>
       <small>
-        Overview, Master data, and Question bank are open for you to try.
+        Command Center, Academic Master and Faculty Workspace are open for you to try.
       </small>
     </div>
   )
 }
 
-const descriptions: Record<View, string> = {
-  Overview: "A clear view of your academic workspace.",
-  "Master data": "Academic structure, completeness, and subject mapping.",
-  "Question bank": "Every question, with its complete academic context.",
-  "AI question studio":
-    "From syllabus context to faculty-reviewed question drafts.",
-  "Coverage explorer": "Find exactly where more questions are needed.",
-  "Question papers": "From blueprint to final paper, every stage visible.",
-  "Review & approval": "Academic oversight at every checkpoint.",
-  "Bloom’s analytics":
-    "Balance recall, application, and higher-order thinking.",
-  "Outcome mapping": "Connect questions to measurable course outcomes.",
-  Reports: "Turn assessment activity into institutional insight.",
-  "Student portal":
-    "Explore approved practice content released by your institution.",
-}
-function Overview() {
-  const demo = useDemo()
-  const approved = demo.scopedQuestions.filter((q) => q.status === "Approved")
-  const coverage = percent(approved.length, demo.scopedSubjects.length * 30)
-  const review = demo.scopedPapers.filter((p) =>
-    /review|approval/.test(p.status),
-  ).length
-  return (
-    <div className={styles.viewStack}>
-      <Metrics
-        items={[
-          {
-            label: "Current subjects",
-            value: demo.scopedSubjects.length,
-            note: "In your academic selection",
-          },
-          {
-            label: "Approved questions",
-            value: approved.length,
-            note: `${demo.scopedQuestions.length} total in the bank`,
-          },
-          {
-            label: "Content coverage",
-            value: `${coverage}%`,
-            note: "Approved / blueprint target",
-          },
-          {
-            label: "Papers in review",
-            value: review,
-            note: "Faculty through final approval",
-          },
-        ]}
-      />
-      <div className={styles.chartGrid}>
-        <GrowthChart total={approved.length} />
-        <Panel
-          title="Syllabus coverage"
-          action={
-            <button onClick={() => demo.navigate("Coverage explorer")}>
-              View all <RiArrowRightLine size={12} />
-            </button>
-          }
-        >
-          <div className={styles.coverageList}>
-            {demo.scopedSubjects.slice(0, 5).map((subject) => {
-              const value = percent(
-                approved.filter((q) => q.subjectId === subject.id).length,
-                30,
-              )
-              return (
-                <button
-                  key={subject.id}
-                  onClick={() => {
-                    demo.navigate("Question bank")
-                    demo.setSearch(subject.name)
-                  }}
-                >
-                  <span>
-                    {subject.name}
-                    <strong>{value}%</strong>
-                  </span>
-                  <span className={styles.track}>
-                    <span style={{ width: `${value}%` }} />
-                  </span>
-                </button>
-              )
-            })}
-            {!demo.scopedSubjects.length && (
-              <p className={styles.empty}>
-                No subjects match these academic filters.
-              </p>
-            )}
-          </div>
-          <p className={styles.coverageNote}>
-            Approved question coverage against the sample blueprint. This does
-            not measure student proficiency.
-          </p>
-        </Panel>
-      </div>
-      <Panel
-        title="Recent questions"
-        action={
-          <button onClick={() => demo.navigate("Question bank")}>
-            View all <RiArrowRightLine size={12} />
-          </button>
-        }
-      >
-        <QuestionTable
-          compact
-          questions={demo.scopedQuestions.slice(-3).reverse()}
-        />
-      </Panel>
-      <div className={styles.overviewActions}>
-        <button onClick={() => demo.navigate("Master data")}>
-          <i data-color="blue">
-            <RiDatabase2Line size={18} />
-          </i>
-          <span>
-            <strong>Check master readiness</strong>
-            <small>Syllabus, students & faculty mapping</small>
-          </span>
-          <RiArrowRightLine size={15} />
-        </button>
-        <button onClick={() => demo.navigate("Review & approval")}>
-          <i data-color="green">
-            <RiShieldCheckLine size={18} />
-          </i>
-          <span>
-            <strong>{review} papers need a decision</strong>
-            <small>Keep your examination workflow moving</small>
-          </span>
-          <RiArrowRightLine size={15} />
-        </button>
-        <button onClick={() => demo.navigate("Outcome mapping")}>
-          <i data-color="purple">
-            <RiNodeTree size={18} />
-          </i>
-          <span>
-            <strong>
-              {demo.scopedQuestions.filter((q) => !q.outcome).length} questions
-              need mapping
-            </strong>
-            <small>Connect content with course outcomes</small>
-          </span>
-          <RiArrowRightLine size={15} />
-        </button>
-      </div>
-    </div>
-  )
-}
 export default function DashboardPreview() {
   const [view, setView] = useState<View>("Overview")
   const [search, setSearch] = useState("")
@@ -419,9 +274,9 @@ export default function DashboardPreview() {
     },
   ]
   const content: Partial<Record<View, ReactNode>> = {
-    Overview: <Overview />,
-    "Master data": <MasterDataView />,
-    "Question bank": <QuestionBankView />,
+    Overview: <DocumentDashboardScreens screen="command" />,
+    "Master data": <DocumentDashboardScreens screen="master" />,
+    "Question bank": <DocumentDashboardScreens screen="faculty" />,
   }
 
   return (
@@ -437,7 +292,7 @@ export default function DashboardPreview() {
           </span>
           <h2>Your academic workspace. At a glance.</h2>
           <p>
-            Try Overview, Master data, and Question bank. Discover the full
+            Explore Command Center, Academic Master and Faculty Workspace. Discover the full
             examination workflow in a live demo.
           </p>
         </div>
@@ -452,7 +307,7 @@ export default function DashboardPreview() {
             </div>
             <span className={styles.workspaceLabel}>ACADEMIC WORKSPACE</span>
             <nav>
-              {navigation.map(({ label, icon: Icon }) => (
+              {navigation.map(({ label, title, icon: Icon }) => (
                 <button
                   key={label}
                   type="button"
@@ -460,13 +315,13 @@ export default function DashboardPreview() {
                   aria-current={view === label ? "page" : undefined}
                   aria-label={
                     !isPreviewView(label)
-                      ? `${label} — available in a live demo`
+                      ? `${title} — available in a live demo`
                       : undefined
                   }
                   onClick={() => navigate(label)}
                 >
                   <Icon size={17} aria-hidden="true" />
-                  <span>{label}</span>
+                  <span>{title}</span>
                   {!isPreviewView(label) ? (
                     <RiLockLine
                       size={13}
@@ -502,7 +357,7 @@ export default function DashboardPreview() {
                 <input
                   aria-label="Search dashboard records"
                   disabled={!isPreviewView(view)}
-                  placeholder="Search subjects, questions, records…"
+                  placeholder="Search dashboard records…"
                   value={search}
                   onChange={(e) => {
                     setSearch(e.target.value)
@@ -527,18 +382,12 @@ export default function DashboardPreview() {
               <div className={styles.pageHeading}>
                 <div>
                   <div className={styles.breadcrumb}>
-                    Workspace <span>/</span> {view}
+                    Workspace <span>/</span> {screenTitle(view)}
                   </div>
                   <h3>
-                    {view === "Overview"
-                      ? "Academic overview"
-                      : view === "Master data"
-                        ? "Master data intelligence"
-                        : view === "Reports"
-                          ? "Reports & intelligence"
-                          : view}
+                    {screenTitle(view)}
                   </h3>
-                  <p>{descriptions[view]}</p>
+                  <p>{screenDetails[view]}</p>
                 </div>
                 <span className={styles.term}>
                   <span className={styles.sampleIndicator} /> Sample data

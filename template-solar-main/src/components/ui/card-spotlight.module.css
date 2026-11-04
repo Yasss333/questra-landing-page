@@ -1,0 +1,55 @@
+.card {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  border: 1px solid var(--theme-border, #dce4ef);
+  border-radius: 16px;
+  background: var(--theme-surface, #fff);
+  color: var(--theme-text, #102442);
+  transition:
+    border-color 0.3s,
+    box-shadow 0.3s;
+}
+.effect {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  opacity: 0;
+  background: linear-gradient(130deg, #084db512, #19a88910);
+  transition: opacity 0.3s;
+}
+.dots {
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(
+    circle,
+    var(--theme-accent, #084db5) 0.8px,
+    transparent 1px
+  );
+  background-size: 12px 12px;
+  opacity: 0.14;
+}
+.content {
+  position: relative;
+  height: 100%;
+}
+.card[data-active] {
+  border-color: var(--theme-accent, #084db5);
+  box-shadow: 0 12px 28px -22px #084db580;
+}
+.card[data-active] .effect {
+  opacity: 1;
+}
+.card:focus-within {
+  border-color: var(--theme-accent, #084db5);
+}
+@media (prefers-reduced-motion: reduce) {
+  .card,
+  .effect {
+    transition: none;
+  }
+  .effect {
+    display: none;
+  }
+}

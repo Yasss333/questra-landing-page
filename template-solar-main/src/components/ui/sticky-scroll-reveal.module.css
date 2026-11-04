@@ -1,0 +1,123 @@
+.layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  align-items: start;
+  gap: clamp(32px, 6vw, 88px);
+  margin: 38px 0;
+}
+.steps {
+  min-width: 0;
+}
+.step {
+  min-height: 48vh;
+  padding: 44px 0;
+  border-top: 1px solid var(--theme-border, #dce4ef);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  box-sizing: border-box;
+}
+.number {
+  color: var(--theme-muted, #64748b);
+  font-size: 13px;
+  letter-spacing: 0.12em;
+  transition: color 0.35s;
+}
+.step h3 {
+  font-size: clamp(24px, 2.8vw, 34px);
+  letter-spacing: -0.035em;
+  line-height: 1.2;
+  margin: 20px 0;
+}
+.step p {
+  font-size: 17px;
+  line-height: 1.8;
+  color: var(--theme-muted, #64748b);
+  max-width: 450px;
+  margin: 0;
+}
+.step[data-active="true"] .number {
+  color: var(--theme-accent, #084db5);
+}
+.visual {
+  position: sticky;
+  top: 125px;
+  margin-top: 24px;
+  min-width: 0;
+}
+.imageStack {
+  position: relative;
+  aspect-ratio: 1;
+  border-radius: 24px;
+  background: #102442;
+  border: 1px solid var(--theme-border, #dce4ef);
+  overflow: hidden;
+  box-shadow: 0 25px 60px -35px #084db560;
+}
+.image {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  transition: opacity 0.55s ease;
+}
+.image[data-active="true"] {
+  opacity: 1;
+}
+.image img {
+  object-fit: cover;
+}
+.caption {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  margin-top: 18px;
+  color: var(--theme-text, #102442);
+  font-size: 14px;
+  font-weight: 600;
+}
+.caption span:last-child {
+  color: var(--theme-accent, #084db5);
+  white-space: nowrap;
+}
+.disclaimer {
+  display: block;
+  margin-top: 8px;
+  font-size: 12px;
+  color: var(--theme-muted, #64748b);
+}
+.mobileImage {
+  display: none;
+}
+@media (max-width: 760px) {
+  .layout {
+    display: block;
+  }
+  .visual {
+    display: none;
+  }
+  .step {
+    min-height: 0;
+    padding: 30px 0;
+  }
+  .mobileImage {
+    display: block;
+    margin-top: 24px;
+  }
+  .mobileImage img {
+    width: 100%;
+    height: auto;
+    border-radius: 18px;
+  }
+  .step h3 {
+    font-size: 26px;
+  }
+  .step p {
+    font-size: 16px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .image,
+  .number {
+    transition: none;
+  }
+}

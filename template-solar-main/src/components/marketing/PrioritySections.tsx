@@ -1,4 +1,6 @@
 import Link from "next/link"
+import { HoverEffect } from "@/components/ui/card-hover-effect"
+import { StickyScroll } from "@/components/ui/sticky-scroll-reveal"
 import FeatureBento from "./FeatureBento"
 import WorkflowJourney from "./WorkflowJourney"
 import { ArrowRight } from "lucide-react"
@@ -71,7 +73,7 @@ export function PriorityApprovals({
         Every Question Accountable. Every Paper Approved. Every Step Traceable.
       </Heading>
       <p className={styles.intro}>{approvalCopy}</p>
-      <div className={styles.approvalGrid}>
+      <HoverEffect className={styles.approvalGrid}>
         {approvalRoutes.map((route, index) => (
           <article
             id={detailed ? route.id : undefined}
@@ -101,7 +103,7 @@ export function PriorityApprovals({
             )}
           </article>
         ))}
-      </div>
+      </HoverEffect>
       <p className={styles.note}>
         Institutions configure the required stages and reviewers. These pathways
         explain the product workflow; confirm availability and institutional
@@ -214,22 +216,29 @@ export function RolesAndValidation() {
       <span className={styles.eyebrow}>PEOPLE, PRECISION & GOVERNANCE</span>
       <h2>Validation & Quality Intelligence</h2>
       <p className={styles.intro}>{blueprintFeatures[8][2]}</p>
-      <div className={styles.roles}>
-        {roles.map(([title, text]) => (
-          <article key={title}>
-            <h3>{title}</h3>
-            <p>{text}</p>
-          </article>
-        ))}
-        <article>
-          <h3>Security, Governance & Integrations</h3>
-          <p>
-            Academic approval remains with authorized people. Students may view
-            permitted syllabus and academic learning resources, not confidential
-            papers.
-          </p>
-        </article>
-      </div>
+      <StickyScroll
+        content={[
+          ...roles.map(([title, description], index) => ({
+            title,
+            description,
+            image: `/images/stakeholders/${["management", "examinations", "department", "faculty", "reviewers"][index]}.png`,
+            alt: [
+              "Conceptual campus oversight illustration",
+              "Conceptual examination calendar and sealed documents",
+              "Conceptual department subject folders",
+              "Conceptual faculty notebook and question drafts",
+              "Conceptual manuscript review illustration",
+            ][index],
+          })),
+          {
+            title: "Security, Governance & Integrations",
+            description:
+              "Academic approval remains with authorized people. Students may view permitted syllabus and academic learning resources, not confidential papers.",
+            image: "/images/stakeholders/governance.png",
+            alt: "Conceptual protective shield around academic documents",
+          },
+        ]}
+      />
       <Link href="/solutions" className={styles.sectionLink}>
         Explore solutions by role
         <ArrowRight size={15} />

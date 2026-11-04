@@ -1,0 +1,26 @@
+.slot {
+  position: relative;
+  isolation: isolate;
+  min-width: 0;
+}
+.slot > article {
+  position: relative;
+  height: 100%;
+  box-sizing: border-box;
+}
+.highlight {
+  position: absolute;
+  inset: -7px;
+  border-radius: 17px;
+  background: var(--theme-blue-surface, #edf4ff);
+  border: 1px solid var(--theme-accent, #084db5);
+  opacity: 0.65;
+  z-index: -1;
+  pointer-events: none;
+  box-shadow: 0 14px 32px -24px #084db580;
+}
+@media (prefers-reduced-motion: reduce) {
+  .highlight {
+    transition: none;
+  }
+}

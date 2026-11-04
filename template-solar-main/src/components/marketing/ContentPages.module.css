@@ -366,3 +366,6 @@
   border-radius: 12px;
   color: var(--theme-accent, #084db5);
 }
+
+.card { min-width: 0; overflow-wrap: anywhere; }
+@media (max-width:600px) { .grid { grid-template-columns: minmax(0, 1fr); } }

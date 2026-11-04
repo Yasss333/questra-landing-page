@@ -1,4 +1,5 @@
 import Link from "next/link"
+import { Features } from "@/components/ui/features-8"
 import PageIntro from "@/components/marketing/PageIntro"
 import { PriorityClosing } from "@/components/marketing/PrioritySections"
 import { pageStructuredData } from "@/app/marketing-metadata"
@@ -52,18 +53,10 @@ export default function FeatureLanding({
       >
         <span className={styles.eyebrow}>{content.sectionEyebrow}</span>
         <h2 id="capabilities-heading">{content.sectionTitle}</h2>
-        <p className={styles.intro}>{content.sectionIntro}</p>
-        <div className={styles.grid}>
-          {content.cards.map(([title, description], index) => (
-            <article className={styles.card} key={title}>
-              <span className={styles.number}>
-                {String(index + 1).padStart(2, "0")}
-              </span>
-              <h3>{title}</h3>
-              {description && <p>{description}</p>}
-            </article>
-          ))}
-        </div>
+        {content.sectionIntro && (
+          <p className={styles.intro}>{content.sectionIntro}</p>
+        )}
+        <Features cards={content.cards} path={path} />
         {content.note && <p className={styles.note}>{content.note}</p>}
       </section>
       {content.steps && (
