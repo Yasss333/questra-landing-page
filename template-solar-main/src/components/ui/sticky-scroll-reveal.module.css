@@ -19,18 +19,18 @@
 }
 .number {
   color: var(--theme-muted, #64748b);
-  font-size: 13px;
+  font-size: 15px;
   letter-spacing: 0.12em;
   transition: color 0.35s;
 }
 .step h3 {
-  font-size: clamp(24px, 2.8vw, 34px);
+  font-size: clamp(26px, 2.8vw, 36px);
   letter-spacing: -0.035em;
   line-height: 1.2;
   margin: 20px 0;
 }
 .step p {
-  font-size: 17px;
+  font-size: 18px;
   line-height: 1.8;
   color: var(--theme-muted, #64748b);
   max-width: 450px;
@@ -72,7 +72,7 @@
   gap: 12px;
   margin-top: 18px;
   color: var(--theme-text, #102442);
-  font-size: 14px;
+  font-size: 15px;
   font-weight: 600;
 }
 .caption span:last-child {
@@ -82,7 +82,7 @@
 .disclaimer {
   display: block;
   margin-top: 8px;
-  font-size: 12px;
+  font-size: 14px;
   color: var(--theme-muted, #64748b);
 }
 .mobileImage {
@@ -109,10 +109,10 @@
     border-radius: 18px;
   }
   .step h3 {
-    font-size: 26px;
+    font-size: 28px;
   }
   .step p {
-    font-size: 16px;
+    font-size: 17px;
   }
 }
 @media (prefers-reduced-motion: reduce) {

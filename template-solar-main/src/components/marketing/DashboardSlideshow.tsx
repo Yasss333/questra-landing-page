@@ -1,6 +1,6 @@
 "use client"
 import Image from "next/image"
-import { useEffect, useState } from "react"
+import { useEffect, useRef, useState } from "react"
 import { useReducedMotion } from "motion/react"
 import {
   ChevronLeft,
@@ -8,9 +8,9 @@ import {
   GraduationCap,
   Pause,
   Play,
-  Square,
 } from "lucide-react"
 import styles from "./PhaseZero.module.css"
+import controls from "./DashboardSlideshow.module.css"
 const slides = [
   {
     file: "question-bank",
@@ -64,6 +64,18 @@ const slides = [
 ]
 export default function DashboardSlideshow() {
   const [active, setActive] = useState(0)
+  const frame = useRef<HTMLDivElement>(null)
+  const viewport = useRef<HTMLDivElement>(null)
+  const drag = useRef<{
+    x: number
+    y: number
+    width: number
+    height: number
+    maxWidth: number
+  } | null>(null)
+  const [size, setSize] = useState<{ width: number; height: number } | null>(
+    null,
+  )
   const [playing, setPlaying] = useState(true)
   const [interacting, setInteracting] = useState(false)
   const reducedMotion = useReducedMotion()
@@ -75,7 +87,7 @@ export default function DashboardSlideshow() {
     if (!autoplay || (interacting && !motionOptIn)) return
     const timer = window.setInterval(() => {
       if (!document.hidden) setActive((index) => (index + 1) % slides.length)
-    }, 2000)
+    }, 1500)
     return () => window.clearInterval(timer)
   }, [autoplay, interacting, motionOptIn])
   function select(index: number) {
@@ -84,7 +96,9 @@ export default function DashboardSlideshow() {
   }
   return (
     <div
-      className={styles.showcase}
+      ref={frame}
+      className={`${styles.showcase} ${controls.frame}`}
+      style={size ? { width: size.width } : undefined}
       role="region"
       aria-roledescription="carousel"
       aria-label="Questra dashboard previews"
@@ -106,7 +120,9 @@ export default function DashboardSlideshow() {
         <span className={styles.previewTag}>PRODUCT CONCEPT</span>
       </div>
       <div
+        ref={viewport}
         className={styles.slideViewport}
+        style={size ? { height: size.height, aspectRatio: "auto" } : undefined}
         aria-live={autoplay ? "off" : "polite"}
       >
         {slides.map((slide, index) => (
@@ -117,7 +133,7 @@ export default function DashboardSlideshow() {
             aria-hidden={index !== active}
           >
             <div
-              className={styles.slideImage}
+              className={`${styles.slideImage} ${controls.image}`}
               style={{ aspectRatio: `${slide.width}/${slide.height}` }}
             >
               <Image
@@ -141,62 +157,127 @@ export default function DashboardSlideshow() {
           </div>
         ))}
       </div>
-      <div className={styles.slideControls}>
-        <div>
-          <span className={styles.slideCount}>0{active + 1} / 07</span>
-          <strong>{slides[active].title}</strong>
-        </div>
-        <div className={styles.controls}>
-          <button
-            type="button"
-            onClick={() => select(active - 1)}
-            aria-label="Previous dashboard"
-            title="Previous dashboard"
-          >
-            <ChevronLeft size={16} />
-          </button>
-          <button
-            type="button"
-            onClick={() => {
-              setMotionOptIn(true)
-              setInteracting(false)
-              setPlaying(!autoplay)
-            }}
-            aria-label={autoplay ? "Pause slideshow" : "Play slideshow"}
-            title={autoplay ? "Pause slideshow" : "Play slideshow"}
-            className={styles.darkControl}
-          >
-            {autoplay ? <Pause size={14} /> : <Play size={14} />}
-          </button>
-          <button
-            type="button"
-            onClick={() => select(active + 1)}
-            aria-label="Next dashboard"
-            title="Next dashboard"
-          >
-            <ChevronRight size={16} />
-          </button>
-          <button
-            type="button"
-            onClick={() => setPlaying(false)}
-            aria-label="Stop slideshow"
-            title="Stop slideshow"
-          >
-            <Square size={14} fill="currentColor" />
-          </button>
-        </div>
+      <button
+        type="button"
+        className={`${controls.sideButton} ${controls.previous}`}
+        onClick={() => select(active - 1)}
+        aria-label="Previous dashboard"
+      >
+        <ChevronLeft size={20} />
+      </button>
+      <div className={controls.rightControls}>
+        <button
+          type="button"
+          className={controls.sideButton}
+          onClick={() => select(active + 1)}
+          aria-label="Next dashboard"
+        >
+          <ChevronRight size={20} />
+        </button>
+        <button
+          type="button"
+          className={controls.sideButton}
+          onClick={() => {
+            setMotionOptIn(true)
+            setInteracting(false)
+            setPlaying(!autoplay)
+          }}
+          aria-label={autoplay ? "Pause slideshow" : "Play slideshow"}
+        >
+          {autoplay ? <Pause size={16} /> : <Play size={16} />}
+        </button>
       </div>
-      <div className={styles.slideDots}>
-        {slides.map((slide, index) => (
-          <button
-            key={slide.file}
-            type="button"
-            onClick={() => select(index)}
-            aria-label={`Show ${slide.title}`}
-            aria-pressed={active === index}
-          />
-        ))}
-      </div>
+      <button
+        type="button"
+        className={controls.resize}
+        aria-label="Resize dashboard preview"
+        title="Drag to resize. Arrow keys resize; Home resets."
+        onPointerDown={(event) => {
+          if (event.button !== 0 || !frame.current || !viewport.current) return
+          event.preventDefault()
+          const rect = frame.current.getBoundingClientRect()
+          drag.current = {
+            x: event.clientX,
+            y: event.clientY,
+            width: rect.width,
+            height: viewport.current.clientHeight,
+            maxWidth: frame.current.parentElement?.clientWidth ?? rect.width,
+          }
+          event.currentTarget.setPointerCapture(event.pointerId)
+          setPlaying(false)
+        }}
+        onPointerMove={(event) => {
+          const start = drag.current
+          if (!start) return
+          setSize({
+            width: Math.max(
+              Math.min(360, start.maxWidth),
+              Math.min(start.maxWidth, start.width + event.clientX - start.x),
+            ),
+            height: Math.max(
+              220,
+              Math.min(540, start.height + event.clientY - start.y),
+            ),
+          })
+        }}
+        onPointerUp={() => {
+          drag.current = null
+        }}
+        onPointerCancel={() => {
+          drag.current = null
+        }}
+        onLostPointerCapture={() => {
+          drag.current = null
+        }}
+        onKeyDown={(event) => {
+          if (event.key === "Home") {
+            event.preventDefault()
+            setSize(null)
+            return
+          }
+          if (
+            !["ArrowUp", "ArrowDown", "ArrowLeft", "ArrowRight"].includes(
+              event.key,
+            ) ||
+            !frame.current ||
+            !viewport.current
+          )
+            return
+          event.preventDefault()
+          const maxWidth =
+            frame.current.parentElement?.clientWidth ??
+            frame.current.clientWidth
+          setSize({
+            width: Math.max(
+              Math.min(360, maxWidth),
+              Math.min(
+                maxWidth,
+                frame.current.getBoundingClientRect().width +
+                  (event.key === "ArrowRight"
+                    ? 24
+                    : event.key === "ArrowLeft"
+                      ? -24
+                      : 0),
+              ),
+            ),
+            height: Math.max(
+              220,
+              Math.min(
+                540,
+                viewport.current.clientHeight +
+                  (event.key === "ArrowDown"
+                    ? 24
+                    : event.key === "ArrowUp"
+                      ? -24
+                      : 0),
+              ),
+            ),
+          })
+          setPlaying(false)
+        }}
+      >
+        <span aria-hidden="true">◢</span>
+      </button>
       <p className={styles.previewNote}>
         Illustrative product views. Sample data, not institutional results.
       </p>

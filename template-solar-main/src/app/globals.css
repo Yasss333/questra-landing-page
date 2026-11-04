@@ -244,3 +244,6 @@ html[data-magicui-theme-vt="active"]::view-transition-new(root) {
     opacity: 100;
   }
 }
+
+/* Slightly larger rem-based text, retaining browser text-size preferences. */
+html { font-size: 106.25%; }

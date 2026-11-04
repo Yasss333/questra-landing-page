@@ -26,17 +26,17 @@
   align-items: center;
   justify-content: space-between;
   color: var(--theme-accent, #084db5);
-  font-size: 13px;
+  font-size: 15px;
   letter-spacing: 0.08em;
 }
 .copy h3 {
-  font-size: 21px;
+  font-size: 22px;
   line-height: 1.35;
   margin: 14px 0 12px;
   color: var(--theme-text, #102442);
 }
 .copy p {
-  font-size: 16px;
+  font-size: 17px;
   line-height: 1.75;
   color: var(--theme-muted, #64748b);
   margin: 0;
@@ -277,7 +277,7 @@
     padding: 22px;
   }
   .copy h3 {
-    font-size: 20px;
+    font-size: 21px;
   }
   .art {
     min-height: 165px;
