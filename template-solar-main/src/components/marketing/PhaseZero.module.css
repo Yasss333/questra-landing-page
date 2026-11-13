@@ -515,33 +515,20 @@
   line-height: 1.85;
   color: var(--theme-muted);
 }
-.comparison {
-  overflow-x: auto;
-  margin-top: 30px;
+.journeyCards {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 20px;
+  margin-top: 34px;
 }
-.comparison table {
-  width: 100%;
-  border-collapse: collapse;
-  font-size: 17px;
-  line-height: 1.8;
-}
-.comparison th,
-.comparison td {
-  text-align: left;
-  padding: 20px;
-  border-bottom: 1px solid var(--theme-border);
-  vertical-align: top;
-}
-.comparison th {
-  background: var(--theme-blue-surface);
+.journeyCards dt {
+  margin-top: 16px;
   font-weight: 600;
 }
-.comparison td:first-child {
-  font-weight: 550;
-  width: 20%;
-}
-.comparison td {
-  width: 40%;
+.journeyCards dd {
+  margin: 4px 0 0;
+  color: var(--theme-muted);
+  line-height: 1.65;
 }
 .roles {
   display: grid;
@@ -998,7 +985,8 @@
   .pillar p {
     font-size: 17px;
   }
-  .approvalGrid {
+  .approvalGrid,
+  .journeyCards {
     grid-template-columns: 1fr;
   }
   .featureGrid {
@@ -1012,16 +1000,6 @@
   }
   .journey h3 {
     font-size: 17px;
-  }
-  .comparison th,
-  .comparison td {
-    padding: 12px 10px;
-    min-width: 130px;
-    font-size: 16px;
-  }
-  .comparison th:first-child,
-  .comparison td:first-child {
-    min-width: 90px;
   }
   .closing {
     padding: 40px 20px;

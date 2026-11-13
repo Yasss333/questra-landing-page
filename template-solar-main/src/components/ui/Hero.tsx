@@ -25,18 +25,6 @@ export function Hero() {
             ensuring every paper is controlled, transparent, efficient and
             academically aligned.
           </p>
-          <div className={styles.heroActions}>
-            <Link className={styles.primaryButton} href="/book-demo">
-              <span className={styles.buttonCircle}>
-                <ArrowRight size={17} />
-              </span>
-              Request a 30-Minute Live Demo
-            </Link>
-            <Link className={styles.secondaryButton} href="/how-it-works">
-              <Play size={15} />
-              View How Questra Works
-            </Link>
-          </div>
           <div className={styles.heroChecks}>
             <span>
               <Check />
@@ -50,6 +38,18 @@ export function Hero() {
               <Check />
               Institution-governed
             </span>
+          </div>
+          <div className={styles.heroActions}>
+            <Link className={styles.primaryButton} href="/book-demo">
+              <span className={styles.buttonCircle}>
+                <ArrowRight size={17} />
+              </span>
+              Request a 30-Minute Live Demo
+            </Link>
+            <Link className={styles.secondaryButton} href="/how-it-works">
+              <Play size={15} />
+              View How Questra Works
+            </Link>
           </div>
         </div>
         <div id="product-screens" className={styles.heroVisual}>

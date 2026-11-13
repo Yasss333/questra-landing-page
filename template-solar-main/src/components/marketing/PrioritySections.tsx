@@ -125,61 +125,50 @@ export function FeatureIndex() {
   )
 }
 export function ExamComparison() {
+  const journeys = [
+    {
+      title: "Mid-term paper",
+      href: "/approval-automation#mid-term",
+      preparation: "Faculty or paper setters submit papers tied to exam schedules and syllabus coverage.",
+      review: "Subject reviewer → department approver → exam cell",
+      controls: "Change requests, deadline alerts and final approval evidence.",
+      outcome: "Validated, approved mid-term paper",
+    },
+    {
+      title: "End-semester paper",
+      href: "/approval-automation#end-semester",
+      preparation: "Authorized paper setters prepare papers under institution-defined authorization chains.",
+      review: "Independent moderator → examination authority → final controller",
+      controls: "Restricted preview, independent review, access logs and version immutability.",
+      outcome: "Restricted, sealed final paper",
+    },
+  ]
+
   return (
-    <section className={styles.blush}>
+    <section className={styles.blush} aria-labelledby="exam-journeys-heading">
       <div className={styles.section}>
         <span className={styles.eyebrow}>TWO EXAMINATION JOURNEYS</span>
-        <h2>Mid-term and end-semester.</h2>
-        <div className={styles.comparison}>
-          <table>
-            <caption className={styles.srOnly}>
-              Mid-term and end-semester workflow comparison
-            </caption>
-            <thead>
-              <tr>
-                <th scope="col">Workflow</th>
-                <th scope="col">Mid-term paper</th>
-                <th scope="col">End-semester paper</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <th scope="row">Preparation</th>
-                <td>
-                  Faculty or paper setters submit papers tied to exam schedules
-                  and syllabus coverage.
-                </td>
-                <td>
-                  Authorized paper setters prepare papers under
-                  institution-defined authorization chains.
-                </td>
-              </tr>
-              <tr>
-                <th scope="row">Review</th>
-                <td>Subject reviewer → department approver → exam cell</td>
-                <td>
-                  Independent moderator → examination authority → final
-                  controller
-                </td>
-              </tr>
-              <tr>
-                <th scope="row">Controls</th>
-                <td>
-                  Change requests, deadline alerts and final approval evidence.
-                </td>
-                <td>
-                  Restricted preview, independent review, access logs and
-                  version immutability.
-                </td>
-              </tr>
-              <tr>
-                <th scope="row">Outcome</th>
-                <td>Validated, approved mid-term paper</td>
-                <td>Restricted, sealed final paper</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
+        <h2 id="exam-journeys-heading">Mid-term and end-semester.</h2>
+        <HoverEffect className={styles.journeyCards}>
+          {journeys.map(({ title, href, preparation, review, controls, outcome }) => (
+            <article className={styles.approvalCard} key={title}>
+              <h3>{title}</h3>
+              <dl>
+                <dt>Preparation</dt>
+                <dd>{preparation}</dd>
+                <dt>Review</dt>
+                <dd>{review}</dd>
+                <dt>Controls</dt>
+                <dd>{controls}</dd>
+                <dt>Outcome</dt>
+                <dd>{outcome}</dd>
+              </dl>
+              <Link className={styles.sectionLink} href={href}>
+                Explore this flow <ArrowRight size={14} aria-hidden="true" />
+              </Link>
+            </article>
+          ))}
+        </HoverEffect>
       </div>
     </section>
   )

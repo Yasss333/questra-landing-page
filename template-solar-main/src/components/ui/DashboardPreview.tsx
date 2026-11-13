@@ -1,6 +1,7 @@
 "use client"
 
 import Link from "next/link"
+import { DiaTextReveal } from "@/registry/magicui/dia-text-reveal"
 import { useEffect, useRef, useState, type ReactNode } from "react"
 import {
   RiArrowRightLine,
@@ -290,7 +291,9 @@ export default function DashboardPreview() {
           <span className={styles.eyebrow}>
             <span /> EXPLORE THE EXPERIENCE
           </span>
-          <h2>Your academic workspace. At a glance.</h2>
+          <h2>
+            <DiaTextReveal text="Your academic workspace. At a glance." />
+          </h2>
           <p>
             Explore Command Center, Academic Master and Faculty Workspace. Discover the full
             examination workflow in a live demo.

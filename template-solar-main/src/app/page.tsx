@@ -22,21 +22,10 @@ export default function Home() {
         }}
       />
       <Hero />
-      <section
-        className={styles.section}
-        aria-label="Interactive product preview"
-      >
-        <span className={styles.eyebrow}>EXPLORE THE WORKSPACE</span>
-        <h2>Try the interactive preview.</h2>
-        <p className={styles.note}>
-          Command Center, Academic Master and Faculty Workspace are available
-          with sample records. Explore the complete product in a guided demo.
-        </p>
-      </section>
       <DashboardPreview />
       <FeatureIndex />
-      <Positioning />
       <ExactWorkflow />
+      <Positioning />
       <PriorityApprovals />
       <ExamComparison />
       <RolesAndValidation />
