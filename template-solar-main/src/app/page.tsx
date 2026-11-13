@@ -22,16 +22,16 @@ export default function Home() {
         }}
       />
       <Hero />
-      <DashboardPreview />
       <FeatureIndex />
-      <ExactWorkflow />
       <Positioning />
       <PriorityApprovals />
       <ExamComparison />
+      <DashboardPreview />
+      <ExactWorkflow />
       <RolesAndValidation />
 
-      <FAQ />
       <PriorityClosing heading="Questra ensures curriculum-aware, faculty-controlled and institution-governed examination management." />
+      <FAQ />
     </main>
   )
 }
