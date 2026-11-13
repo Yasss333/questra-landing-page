@@ -115,11 +115,7 @@ export function PriorityApprovals({
 export function FeatureIndex() {
   return (
     <section id="platform" className={styles.section}>
-      <span className={styles.eyebrow}>THE CONNECTED PLATFORM</span>
-      <h2>
-        From Syllabus to Final Approval — End-to-End AI-Powered Question Paper
-        Automation
-      </h2>
+      <h2>Premium Features</h2>
       <FeatureBento />
       <Link className={styles.sectionLink} href="/how-it-works">
         See how it works
@@ -252,16 +248,14 @@ export function RolesAndValidation() {
     </section>
   )
 }
-export function PriorityClosing() {
+export function PriorityClosing({
+  heading = "Your institution has the curriculum. Questra brings the intelligence, governance and automation to transform it into examination-ready question papers.",
+}: { heading?: string } = {}) {
   return (
     <section id="demo" className={styles.section}>
       <div className={styles.closing}>
         <span className={styles.eyebrow}>REQUEST A 30-MINUTE LIVE DEMO</span>
-        <h2>
-          Your institution has the curriculum. Questra brings the intelligence,
-          governance and automation to transform it into examination-ready
-          question papers.
-        </h2>
+        <h2>{heading}</h2>
         <p>
           Discover a more controlled, transparent and efficient way to create,
           review, validate and approve every paper.

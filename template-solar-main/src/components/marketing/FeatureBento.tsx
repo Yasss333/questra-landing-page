@@ -12,11 +12,74 @@ import {
   ShieldCheck,
   ChartNoAxesCombined,
   Fingerprint,
+  Upload,
   Users,
 } from "lucide-react"
 import { featureRoutes } from "./phaseTwoContent"
 import { blueprintFeatures } from "./blueprint"
 import styles from "./FeatureBento.module.css"
+
+const featuredCards = [
+  {
+    index: 4,
+    title: "Autonomous Question Paper Generation",
+    description: "Generate question papers with multiple patterns and greater complexity for Mid-Term and End-Semester examinations.",
+  },
+  {
+    index: 1,
+    title: "Outcome & Bloom’s Taxonomy Alignment",
+    description: "Ensure proper distribution of outcomes and Bloom’s levels across every paper.",
+    href: "/academic-analytics",
+  },
+  {
+    index: 8,
+    title: "Advanced Validation Before Finalisation",
+    description: "Verify marks, patterns, syllabus coverage, complexity, duplication, and outcome distribution.",
+  },
+  {
+    index: 2,
+    title: "AI-Powered Question Creation",
+    description: "Generate topic- and unit-based questions from the subject syllabus using Artificial Intelligence.",
+  },
+  {
+    index: 2,
+    title: "Flexible Question Import",
+    description: "Import questions from digital media and configure them using academic rules.",
+    href: "/question-bank",
+    icon: Upload,
+  },
+  {
+    index: 0,
+    title: "Master Wizard Onboarding",
+    description: "Simplified setup for academic structure, question bank, blueprint definition, review workflow, validation and approval.",
+  },
+  {
+    index: 5,
+    title: "Multi-Level Review & Approval",
+    description: "Fully autonomous engine configuration with structured multi-level review and approval process.",
+    href: "/approval-automation",
+  },
+  {
+    index: 11,
+    title: "Role-Based Secure Portals",
+    description: "Dedicated access for faculty, students, Controller of Examinations, and management with strong governance.",
+    href: "/security-governance",
+  },
+  {
+    index: 9,
+    title: "Dynamic Dashboards & Alerts",
+    description: "Extensive dashboards and alerts for pre-approval checks and system intelligence.",
+  },
+]
+
+const cards = [
+  ...featuredCards,
+  ...[3, 1, 10].map((index) => {
+    const [, title, description] = blueprintFeatures[index]
+    return { index, title, description, href: featureRoutes[index] }
+  }),
+]
+
 const icons = [
   Building2,
   BookOpen,
@@ -45,7 +108,7 @@ const labels = [
   "Control built into the workflow",
   "One platform. Every stakeholder.",
 ]
-function Illustration({ index }: { index: number }) {
+function Illustration({ index, importing }: { index: number; importing: boolean }) {
   const Icon = icons[index]
   return (
     <div className={styles.scene} aria-hidden="true">
@@ -67,11 +130,11 @@ function Illustration({ index }: { index: number }) {
         </div>
       ) : index === 2 ? (
         <div className={styles.sheet}>
-          <Sparkles className={styles.spark} size={32} />
+          {importing ? <Upload className={styles.spark} size={32} /> : <Sparkles className={styles.spark} size={32} />}
           <i />
           <i />
           <i />
-          <span>AI + academic judgment</span>
+          <span>{importing ? "Import · Configure" : "AI + academic judgment"}</span>
         </div>
       ) : index === 3 ? (
         <div className={styles.calendar}>
@@ -147,33 +210,36 @@ function Illustration({ index }: { index: number }) {
 export default function FeatureBento() {
   return (
     <div className={styles.grid}>
-      {blueprintFeatures.map(([id, title, description], index) => {
-        const Icon = icons[index]
+      {cards.map((card, position) => {
+        const { index, title, description } = card
+        const customIcon = "icon" in card ? card.icon : undefined
+        const Icon = customIcon ?? icons[index]
+        const href = card.href ?? featureRoutes[index]
         return (
           <article
-            key={id}
-            className={`${styles.card} ${[0, 4, 7, 11].includes(index) ? styles.wide : ""}`}
-            data-tone={index % 3}
+            key={title}
+            className={`${styles.card} ${[0, 3, 6, 9].includes(position) ? styles.wide : ""}`}
+            data-tone={position % 3}
           >
             <div className={styles.art}>
               <span className={styles.number}>
-                {String(index + 1).padStart(2, "0")} / QUESTRA
+                {String(position + 1).padStart(2, "0")} / QUESTRA
               </span>
-              <Illustration index={index} />
-              <span className={styles.artLabel}>{labels[index]}</span>
+              <Illustration index={index} importing={customIcon === Upload} />
+              <span className={styles.artLabel}>{customIcon === Upload ? "Bring existing questions into the bank" : labels[index]}</span>
             </div>
             <div className={styles.copy}>
               <Icon className={styles.icon} size={23} aria-hidden="true" />
               <h3>
-                {featureRoutes[index] ? (
-                  <Link href={featureRoutes[index]}>{title}</Link>
+                {href ? (
+                  <Link href={href}>{title}</Link>
                 ) : (
                   title
                 )}
               </h3>
               <p>{description}</p>
-              {featureRoutes[index] && (
-                <Link className={styles.cta} href={featureRoutes[index]}>
+              {href && (
+                <Link className={styles.cta} href={href}>
                   Explore capability <ArrowRight size={15} aria-hidden="true" />
                 </Link>
               )}

@@ -22,10 +22,6 @@ export default function Home() {
         }}
       />
       <Hero />
-      <Positioning />
-      <ExactWorkflow />
-      <PriorityApprovals />
-      <ExamComparison />
       <section
         className={styles.section}
         aria-label="Interactive product preview"
@@ -39,10 +35,14 @@ export default function Home() {
       </section>
       <DashboardPreview />
       <FeatureIndex />
+      <Positioning />
+      <ExactWorkflow />
+      <PriorityApprovals />
+      <ExamComparison />
       <RolesAndValidation />
 
       <FAQ />
-      <PriorityClosing />
+      <PriorityClosing heading="Questra ensures curriculum-aware, faculty-controlled and institution-governed examination management." />
     </main>
   )
 }

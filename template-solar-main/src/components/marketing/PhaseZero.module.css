@@ -31,9 +31,9 @@
   width: min(1440px, calc(100% - 96px));
   margin: auto;
   display: grid;
-  grid-template-columns: 0.92fr 1.18fr;
+  grid-template-columns: minmax(0, 0.92fr) minmax(0, 1.18fr);
   gap: 52px;
-  align-items: center;
+  align-items: start;
   position: relative;
 }
 .heroShape {
@@ -81,17 +81,8 @@
   font-weight: 650;
   color: var(--theme-text);
 }
-.typedLine {
-  display: block;
-  min-height: 1.2em;
+.heroHighlight {
   color: var(--theme-accent);
-  white-space: nowrap;
-}
-.typing {
-  font-size: inherit;
-  font-weight: inherit;
-  line-height: inherit !important;
-  letter-spacing: inherit;
 }
 .heroSubhead {
   font-size: clamp(19px, 1.5vw, 23px);
@@ -184,15 +175,9 @@
   overflow: hidden;
 }
 .browserBar {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  align-items: center;
-  gap: 10px;
   padding: 13px 15px;
   border-bottom: 1px solid #e9eaf0;
   background: #fff;
-  font-size: 16px;
 }
 .browserDots {
   display: flex;
@@ -209,11 +194,6 @@
 }
 .browserDots i:nth-child(3) {
   background: #bcd9cc;
-}
-.previewTag {
-  font-size: 16px;
-  letter-spacing: 0.07em;
-  color: #64748b;
 }
 .slideViewport {
   aspect-ratio: 3/2;
@@ -352,12 +332,6 @@
 }
 .slideDots button[aria-pressed="true"]::after {
   background: #084db5;
-}
-.previewNote {
-  font-size: 16px;
-  color: #64748b;
-  text-align: center;
-  padding: 2px 12px 10px;
 }
 .section {
   width: min(1200px, calc(100% - 80px));
@@ -886,28 +860,8 @@
     padding: 12px 0;
     color: #64748b;
   }
-  .heroInner {
-    grid-template-columns: 1fr;
-    max-width: 760px;
-  }
   .hero {
     padding: 140px 0 55px;
-  }
-  .heroCopy {
-    max-width: 650px;
-  }
-  .hero h1 {
-    font-size: 58px;
-  }
-  .heroShape {
-    width: 85%;
-    height: 47%;
-    top: auto;
-    bottom: 0;
-    right: -30%;
-  }
-  .heroVisual {
-    margin-top: 25px;
   }
   .pillars {
     grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -924,6 +878,25 @@
   }
   .footerBrand {
     grid-column: 1/-1;
+  }
+}
+@media (max-width: 900px) {
+  .heroInner {
+    grid-template-columns: minmax(0, 1fr);
+    max-width: 760px;
+  }
+  .heroCopy {
+    max-width: 650px;
+  }
+  .hero h1 {
+    font-size: clamp(43px, 8vw, 58px);
+  }
+  .heroShape {
+    width: 85%;
+    height: 47%;
+    top: auto;
+    bottom: 0;
+    right: -30%;
   }
 }
 @media (max-width: 600px) {
@@ -984,19 +957,12 @@
     gap: 12px;
     font-size: 16px;
   }
-  .heroVisual {
-    margin-top: 15px;
-  }
   .heroShape {
     width: 110%;
     height: 29%;
   }
   .browserBar {
     padding: 10px;
-    font-size: 16px;
-  }
-  .previewTag {
-    font-size: 16px;
   }
   .slideControls {
     padding: 7px 9px 0;
@@ -1015,9 +981,6 @@
   .controls button {
     width: 36px;
     height: 36px;
-  }
-  .previewNote {
-    font-size: 16px;
   }
   .section {
     width: calc(100% - 40px);
@@ -1082,9 +1045,6 @@
   .slide,
   .primaryButton {
     transition: none;
-  }
-  .typing {
-    animation: none;
   }
 }
 

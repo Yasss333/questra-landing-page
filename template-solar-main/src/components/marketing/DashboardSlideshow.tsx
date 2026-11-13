@@ -110,14 +110,12 @@ export default function DashboardSlideshow() {
           setInteracting(false)
       }}
     >
-      <div className={styles.browserBar}>
+      <div className={styles.browserBar} aria-hidden="true">
         <span className={styles.browserDots}>
           <i />
           <i />
           <i />
         </span>
-        <span>Questra · Examination workspace</span>
-        <span className={styles.previewTag}>PRODUCT CONCEPT</span>
       </div>
       <div
         ref={viewport}
@@ -278,9 +276,6 @@ export default function DashboardSlideshow() {
       >
         <span aria-hidden="true">◢</span>
       </button>
-      <p className={styles.previewNote}>
-        Illustrative product views. Sample data, not institutional results.
-      </p>
     </div>
   )
 }

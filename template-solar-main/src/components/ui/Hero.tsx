@@ -1,15 +1,8 @@
-"use client"
 import Link from "next/link"
-import { useEffect, useState } from "react"
 import { ArrowRight, Check, Play } from "lucide-react"
-import { useReducedMotion } from "motion/react"
-import { TypingAnimation } from "@/registry/magicui/typing-animation"
 import DashboardSlideshow from "../marketing/DashboardSlideshow"
 import styles from "../marketing/PhaseZero.module.css"
 export function Hero() {
-  const reducedMotion = useReducedMotion()
-  const [mounted, setMounted] = useState(false)
-  useEffect(() => setMounted(true), [])
   return (
     <section id="home" className={styles.hero} aria-labelledby="hero-heading">
       <div className={styles.heroShape} aria-hidden="true" />
@@ -19,39 +12,18 @@ export function Hero() {
             <span />
             THE INTELLIGENT EXAMINATION AUTOMATION PLATFORM
           </span>
-          <h1 id="hero-heading" aria-label="From Syllabus to Final Approval.">
-            <span className={styles.srOnly}>
-              From Syllabus to Final Approval.
-            </span>
-            <span aria-hidden="true">
-              From Syllabus to
-              <br />
-              <span className={styles.typedLine}>
-                {!mounted || reducedMotion ? (
-                  "Final Approval."
-                ) : (
-                  <TypingAnimation
-                    className={styles.typing}
-                    loop
-                    typeSpeed={95}
-                    deleteSpeed={55}
-                    pauseDelay={1800}
-                  >
-                    Final Approval.
-                  </TypingAnimation>
-                )}
-              </span>
-            </span>
+          <h1 id="hero-heading">
+            Fully Autonomous <span className={styles.heroHighlight}>Question Paper</span>{" "}
+            Generation System
           </h1>
           <h2 className={styles.heroSubhead}>
-            End-to-End AI-Powered Question Paper Automation.
+            Built for Higher Educational Institutions with hierarchy-based faculty accountability.
           </h2>
           <p className={styles.heroDescription}>
-            Import your curriculum. Build a structured question bank. Generate
-            syllabus-aligned questions. Configure mid-term and semester paper
-            patterns. Route questions and papers through automated, role-based
-            approvals. Validate every paper against your institution’s academic
-            rules before secure release.
+            Questra transforms institutional curriculum into examination-ready
+            question papers through intelligence, governance and automation —
+            ensuring every paper is controlled, transparent, efficient and
+            academically aligned.
           </p>
           <div className={styles.heroActions}>
             <Link className={styles.primaryButton} href="/book-demo">
