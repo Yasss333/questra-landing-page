@@ -1,7 +1,7 @@
 import Link from "next/link"
 import QuestraLogo from "../marketing/QuestraLogo"
 import styles from "../marketing/PhaseZero.module.css"
-import { siteConfig } from "@/app/siteConfig"
+const footerEmail = "psk@voicedots.ai"
 const groups = [
   [
     "Platform",
@@ -52,8 +52,8 @@ export default function Footer() {
           </Link>
           <p>Questra.si — Intelligence Behind Every Question.</p>
           <small>A Product of Voicedots AI</small>
-          <Link href={`mailto:${siteConfig.contactEmail}`}>
-            {siteConfig.contactEmail}
+          <Link href={`mailto:${footerEmail}`}>
+            {footerEmail}
           </Link>
         </div>
         {groups.map(([name, links]) => (
