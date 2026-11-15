@@ -1,23 +1,28 @@
-import Link from "next/link"
 import {
   BookOpen,
+  ScanLine,
   Sparkles,
   Files,
-  Send,
   ShieldCheck,
-  LockKeyhole,
+  ChartNoAxesCombined,
   ArrowRight,
 } from "lucide-react"
-import { journey } from "./blueprint"
 import styles from "./WorkflowJourney.module.css"
-const icons = [BookOpen, Sparkles, Files, Send, ShieldCheck, LockKeyhole]
-const hrefs = [
-  "/academic-setup",
-  "/ai-question-studio",
-  "/bulk-paper-generation",
-  "/approval-automation",
-  "/quality-validation",
-  "/security-governance",
+const journey = [
+  "Academic Intelligence",
+  "Autonomous Question Paper Generation",
+  "Intelligent Answer Sheet Digitization",
+  "AI-Assisted Answer Evaluation",
+  "Faculty-Governed Moderation",
+  "Academic Performance Intelligence",
+]
+const icons = [
+  BookOpen,
+  Files,
+  ScanLine,
+  Sparkles,
+  ShieldCheck,
+  ChartNoAxesCombined,
 ]
 export default function WorkflowJourney() {
   return (
@@ -26,24 +31,27 @@ export default function WorkflowJourney() {
         const Icon = icons[index]
         return (
           <li key={title} className={styles.step}>
-            <Link className={styles.card} href={hrefs[index]}>
+            <div className={styles.card}>
               <div className={styles.circle}>
-              <div className={styles.art} aria-hidden="true">
-                <div className={styles.orbit} />
-                <div className={styles.backplate} />
-                <div className={styles.face}>
-                  <Icon size={34} strokeWidth={1.4} />
+                <div className={styles.art} aria-hidden="true">
+                  <div className={styles.orbit} />
+                  <div className={styles.backplate} />
+                  <div className={styles.face}>
+                    <Icon size={34} strokeWidth={1.4} />
+                  </div>
+                  <i className={styles.satellite} />
+                  <i className={styles.satellite} />
                 </div>
-                <i className={styles.satellite} />
-                <i className={styles.satellite} />
-              </div>
-              <span className={styles.number}>0{index + 1}</span>
+                <span className={styles.number}>0{index + 1}</span>
               </div>
               <h3>{title}</h3>
-
-            </Link>
+            </div>
             {index < journey.length - 1 && (
-              <ArrowRight className={styles.connector} size={24} aria-hidden="true" />
+              <ArrowRight
+                className={styles.connector}
+                size={24}
+                aria-hidden="true"
+              />
             )}
           </li>
         )

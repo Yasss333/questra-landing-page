@@ -53,7 +53,7 @@ export function StickyScroll({ content }: { content: readonly StickyItem[] }) {
           </article>
         ))}
       </div>
-      <aside className={styles.visual} aria-label="Stakeholder illustrations">
+      <aside className={styles.visual} aria-label="Master Wizard illustrations">
         <div className={styles.imageStack}>
           {content.map((item, index) => (
             <div

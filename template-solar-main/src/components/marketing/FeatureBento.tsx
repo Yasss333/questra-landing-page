@@ -1,6 +1,4 @@
-import Link from "next/link"
 import {
-  ArrowRight,
   Building2,
   BookOpen,
   Sparkles,
@@ -15,70 +13,70 @@ import {
   Upload,
   Users,
 } from "lucide-react"
-import { featureRoutes } from "./phaseTwoContent"
-import { blueprintFeatures } from "./blueprint"
 import styles from "./FeatureBento.module.css"
 
-const featuredCards = [
-  {
-    index: 4,
-    title: "Autonomous Question Paper Generation",
-    description: "Generate question papers with multiple patterns and greater complexity for Mid-Term and End-Semester examinations.",
-  },
-  {
-    index: 1,
-    title: "Outcome & Bloom’s Taxonomy Alignment",
-    description: "Ensure proper distribution of outcomes and Bloom’s levels across every paper.",
-    href: "/academic-analytics",
-  },
-  {
-    index: 8,
-    title: "Advanced Validation Before Finalisation",
-    description: "Verify marks, patterns, syllabus coverage, complexity, duplication, and outcome distribution.",
-  },
-  {
-    index: 2,
-    title: "AI-Powered Question Creation",
-    description: "Generate topic- and unit-based questions from the subject syllabus using Artificial Intelligence.",
-  },
-  {
-    index: 2,
-    title: "Flexible Question Import",
-    description: "Import questions from digital media and configure them using academic rules.",
-    href: "/question-bank",
-    icon: Upload,
-  },
-  {
-    index: 0,
-    title: "Master Wizard Onboarding",
-    description: "Simplified setup for academic structure, question bank, blueprint definition, review workflow, validation and approval.",
-  },
-  {
-    index: 5,
-    title: "Multi-Level Review & Approval",
-    description: "Fully autonomous engine configuration with structured multi-level review and approval process.",
-    href: "/approval-automation",
-  },
-  {
-    index: 11,
-    title: "Role-Based Secure Portals",
-    description: "Dedicated access for faculty, students, Controller of Examinations, and management with strong governance.",
-    href: "/security-governance",
-  },
-  {
-    index: 9,
-    title: "Dynamic Dashboards & Alerts",
-    description: "Extensive dashboards and alerts for pre-approval checks and system intelligence.",
-  },
-]
-
 const cards = [
-  ...featuredCards,
-  ...[3, 1, 10].map((index) => {
-    const [, title, description] = blueprintFeatures[index]
-    return { index, title, description, href: featureRoutes[index] }
-  }),
-]
+  [
+    2,
+    "EvalScan — Intelligent Answer Sheet Digitization",
+    "Upload scanned scripts in bulk, identify them by QR or barcode, and flag missing, duplicate or unreadable pages.",
+  ],
+  [
+    4,
+    "EvalVision — AI Handwriting Recognition",
+    "Recognize handwriting, equations and question structure. Faculty verify uncertain extracts, with multilingual recognition where supported.",
+  ],
+  [
+    2,
+    "EvalIQ Studio — AI-Assisted Answer Evaluation",
+    "Suggest rubric-based marks and partial credit against approved model answers. Faculty verify or override each suggestion.",
+  ],
+  [
+    11,
+    "Digital Faculty Evaluation Workspace",
+    "Review scripts beside approved rubrics, annotate answers, enter marks and submit evaluations for moderation.",
+  ],
+  [
+    8,
+    "FairMark AI — Evaluation Quality Intelligence",
+    "Flag valuation differences, overlooked answers and low-confidence suggestions for faculty review.",
+  ],
+  [
+    5,
+    "Multi-Level Valuation & Academic Moderation",
+    "Configure single, double or triple valuation with independent examiners, escalation thresholds and COE authorization.",
+  ],
+  [
+    7,
+    "ResultIQ — Autonomous Result Processing",
+    "Consolidate verified marks, apply institutional grading rules and control when approved results are published.",
+  ],
+  [
+    1,
+    "OutcomeIQ — CO/PO Attainment Intelligence",
+    "Connect question-wise marks to CO/PO attainment and report outcomes by student, subject or department.",
+  ],
+  [
+    9,
+    "BloomIQ — Cognitive Competency Analytics",
+    "Analyze evaluated answers across the six Bloom’s levels to identify cognitive learning gaps.",
+  ],
+  [
+    0,
+    "CompetencyDNA — 360° Student Intelligence",
+    "Build student competency profiles from verified results, highlighting topic strengths, gaps and progress.",
+  ],
+  [
+    6,
+    "QuestionLoop — Continuous Assessment Intelligence",
+    "Use observed difficulty and response patterns to identify questions and blueprints for faculty review.",
+  ],
+  [
+    9,
+    "LearnNext AI — Personalized Academic Improvement",
+    "Use approved results to recommend targeted practice and track faculty or mentor interventions.",
+  ],
+] as const
 
 const icons = [
   Building2,
@@ -94,21 +92,13 @@ const icons = [
   Fingerprint,
   Users,
 ]
-const labels = [
-  "A connected academic foundation",
-  "Every topic in context",
-  "Faculty-led intelligence",
-  "A rhythm for every examination",
-  "From blueprint to paper",
-  "The right reviewer, automatically",
-  "Keep every request moving",
-  "Confidence at the final stage",
-  "Quality at every checkpoint",
-  "See the bigger picture",
-  "Control built into the workflow",
-  "One platform. Every stakeholder.",
-]
-function Illustration({ index, importing }: { index: number; importing: boolean }) {
+function Illustration({
+  index,
+  importing,
+}: {
+  index: number
+  importing: boolean
+}) {
   const Icon = icons[index]
   return (
     <div className={styles.scene} aria-hidden="true">
@@ -130,11 +120,17 @@ function Illustration({ index, importing }: { index: number; importing: boolean 
         </div>
       ) : index === 2 ? (
         <div className={styles.sheet}>
-          {importing ? <Upload className={styles.spark} size={32} /> : <Sparkles className={styles.spark} size={32} />}
+          {importing ? (
+            <Upload className={styles.spark} size={32} />
+          ) : (
+            <Sparkles className={styles.spark} size={32} />
+          )}
           <i />
           <i />
           <i />
-          <span>{importing ? "Import · Configure" : "AI + academic judgment"}</span>
+          <span>
+            {importing ? "Scan · Index · Verify" : "AI + academic judgment"}
+          </span>
         </div>
       ) : index === 3 ? (
         <div className={styles.calendar}>
@@ -168,13 +164,13 @@ function Illustration({ index, importing }: { index: number; importing: boolean 
             {index === 5
               ? "Submit · Review · Approve"
               : index === 6
-                ? "Request · Route · Review"
-                : "Moderate · Authorize · Release"}
+                ? "Measure · Review · Refine"
+                : "Consolidate · Approve · Release"}
           </small>
         </div>
       ) : index === 8 ? (
         <div className={styles.checks}>
-          {["Pattern", "Coverage", "Outcomes"].map((t) => (
+          {["Mark deviations", "Missing marks", "AI confidence"].map((t) => (
             <span key={t}>
               <ShieldCheck size={18} />
               {t}
@@ -210,11 +206,9 @@ function Illustration({ index, importing }: { index: number; importing: boolean 
 export default function FeatureBento() {
   return (
     <div className={styles.grid}>
-      {cards.map((card, position) => {
-        const { index, title, description } = card
-        const customIcon = "icon" in card ? card.icon : undefined
-        const Icon = customIcon ?? icons[index]
-        const href = card.href ?? featureRoutes[index]
+      {cards.map(([index, title, description], position) => {
+        const importing = position === 0
+        const Icon = importing ? Upload : icons[index]
         return (
           <article
             key={title}
@@ -222,27 +216,12 @@ export default function FeatureBento() {
             data-tone={position % 3}
           >
             <div className={styles.art}>
-              <span className={styles.number}>
-                {String(position + 1).padStart(2, "0")} / QUESTRA
-              </span>
-              <Illustration index={index} importing={customIcon === Upload} />
-              <span className={styles.artLabel}>{customIcon === Upload ? "Bring existing questions into the bank" : labels[index]}</span>
+              <Illustration index={index} importing={importing} />
             </div>
             <div className={styles.copy}>
               <Icon className={styles.icon} size={23} aria-hidden="true" />
-              <h3>
-                {href ? (
-                  <Link href={href}>{title}</Link>
-                ) : (
-                  title
-                )}
-              </h3>
+              <h3>{title}</h3>
               <p>{description}</p>
-              {href && (
-                <Link className={styles.cta} href={href}>
-                  Explore capability <ArrowRight size={15} aria-hidden="true" />
-                </Link>
-              )}
             </div>
           </article>
         )

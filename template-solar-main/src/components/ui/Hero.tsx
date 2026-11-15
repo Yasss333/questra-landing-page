@@ -13,11 +13,15 @@ export function Hero() {
             THE INTELLIGENT EXAMINATION AUTOMATION PLATFORM
           </span>
           <h1 id="hero-heading">
-            Fully Autonomous <span className={styles.heroHighlight}>Question Paper</span>{" "}
-            Generation System
+            The Future of Intelligence:{" "}
+            <span className={styles.heroHighlight}>
+              Examination, Evaluation,
+            </span>{" "}
+            and All Those Things.
           </h1>
           <h2 className={styles.heroSubhead}>
-            Built for Higher Educational Institutions with hierarchy-based faculty accountability.
+            Built for Higher Educational Institutions with hierarchy-based
+            faculty accountability.
           </h2>
           <p className={styles.heroDescription}>
             Questra transforms institutional curriculum into examination-ready

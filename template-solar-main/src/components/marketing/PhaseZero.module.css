@@ -465,6 +465,13 @@
   line-height: 1.9;
   color: var(--theme-muted);
 }
+.approvalCard ul {
+  padding-inline-start: 1.25em;
+  list-style: disc;
+}
+.approvalCard ul li {
+  display: list-item;
+}
 .approvalCard ol {
   padding: 0;
   list-style: none;

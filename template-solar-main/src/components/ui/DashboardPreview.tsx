@@ -2,524 +2,303 @@
 
 import Link from "next/link"
 import { DiaTextReveal } from "@/registry/magicui/dia-text-reveal"
-import { useEffect, useRef, useState, type ReactNode } from "react"
+import { useState } from "react"
 import {
   RiArrowRightLine,
-  RiCheckLine,
-  RiCloseLine,
   RiDashboardLine,
   RiDatabase2Line,
   RiFileChartLine,
-  RiFileList3Line,
   RiLockLine,
   RiPieChartLine,
   RiQuestionAnswerLine,
   RiRestartLine,
   RiSearchLine,
   RiShieldCheckLine,
-  RiSparklingLine,
 } from "@remixicon/react"
 import QuestraLogo from "../marketing/QuestraLogo"
 import DashboardCursor from "./DashboardCursor"
-import {
-  DemoContext,
-  type DemoContextValue,
-} from "./dashboard/DemoContext"
-import {
-  batches,
-  createPapers,
-  createQuestions,
-  emptyScope,
-  initialStaff,
-  initialStudents,
-  initialSubjects,
-  matchesScope,
-  type Paper,
-  type DemoReport,
-  type Question,
-  type Scope,
-  type Staff,
-  type Student,
-  type Subject,
-  type View,
-} from "./dashboard/demo-data"
-import { styles } from "./dashboard/DashboardKit"
-import DocumentDashboardScreens from "./dashboard/DocumentDashboardScreens"
+import { Metrics, Panel, Table, styles } from "./dashboard/DashboardKit"
 
-const navigation = [
-  { label: "Overview", title: "Institutional Command Center", icon: RiDashboardLine },
-  { label: "Master data", title: "Academic Master Dashboard", icon: RiDatabase2Line },
-  { label: "Question bank", title: "Faculty Workspace", icon: RiQuestionAnswerLine },
-  { label: "AI question studio", title: "AI Question Studio", icon: RiSparklingLine },
-  { label: "Question papers", title: "Paper Blueprint Builder", icon: RiFileList3Line },
-  { label: "Review & approval", title: "Approval Cockpit", icon: RiShieldCheckLine },
-  { label: "Coverage explorer", title: "Quality Validation", icon: RiPieChartLine },
-  { label: "Reports", title: "Examination Calendar", icon: RiFileChartLine },
-] as const
-const screenTitle = (view: View) => navigation.find((item) => item.label === view)?.title ?? view
-const screenDetails: Partial<Record<View, string>> = {
-  Overview: "Setup completeness, active exams, approval backlog, risk alerts.",
-  "Master data": "Batch, degree, department, subject, syllabus, staff/student readiness.",
-  "Question bank": "Allocated subjects, drafts, assigned review tasks, due dates.",
-  "AI question studio": "Source syllabus, controls, generated candidates, edit/submit.",
-  "Question papers": "Marks, section patterns, choices, coverage and rule preview.",
-  "Review & approval": "Level 1–2–3 stage progress, comments, pending actions, audit timeline.",
-  "Coverage explorer": "Pass/warning/block issues with correction actions.",
-  Reports: "Mid-term and end-semester deadlines, release status.",
-}
-const previewViews: readonly View[] = [
-  "Overview",
-  "Master data",
-  "Question bank",
+type Entry = readonly [string, string]
+const navigation: {
+  icon: typeof RiDashboardLine
+  title: string
+  navLabel: string
+  description: string
+  highlights: string
+  metrics?: readonly Entry[]
+  panel?: string
+  rows?: readonly Entry[]
+}[] = [
+  {
+    icon: RiDashboardLine,
+    title: "Controller of Examinations Dashboard",
+    navLabel: "COE Overview",
+    description:
+      "Centralized visibility into answer script uploads, evaluator assignments, valuation progress, discrepancies, moderation, approval status and result readiness.",
+    highlights:
+      "Total scripts, evaluation completion, department-wise progress, pending approvals, valuation discrepancies and examination result readiness.",
+    metrics: [
+      ["Total scripts", "120"],
+      ["Evaluation completion", "75%"],
+      ["Pending approvals", "15"],
+      ["Valuation discrepancies", "5"],
+      ["Result readiness", "60%"],
+    ],
+    panel: "Department-wise progress",
+    rows: [
+      ["Computer Science", "36 of 48 evaluated"],
+      ["Electronics", "30 of 40 evaluated"],
+      ["Mathematics", "24 of 32 evaluated"],
+    ],
+  },
+  {
+    icon: RiQuestionAnswerLine,
+    title: "Faculty Evaluation Dashboard",
+    navLabel: "Faculty Review",
+    description:
+      "Manage assigned scripts, review AI suggestions, apply approved marking criteria, annotate responses, submit marks and monitor pending evaluations.",
+    highlights:
+      "Allocated scripts, evaluated scripts, pending scripts, flagged answers, evaluation hours and completion percentage.",
+    metrics: [
+      ["Allocated scripts", "40"],
+      ["Evaluated scripts", "30"],
+      ["Pending scripts", "10"],
+      ["Flagged answers", "3"],
+      ["Evaluation hours", "6"],
+      ["Completion percentage", "75%"],
+    ],
+    panel: "Script evaluation progress",
+    rows: [
+      ["Engineering Mathematics", "18 of 24 evaluated"],
+      ["Applied Mathematics", "12 of 16 evaluated"],
+    ],
+  },
+  {
+    icon: RiShieldCheckLine,
+    title: "Chief Examiner & Moderation Dashboard",
+    navLabel: "Moderation",
+    description:
+      "Monitor valuation differences, examiner workloads, quality exceptions, moderation requests and final marking approvals.",
+    highlights:
+      "First/second valuation variance, scripts awaiting moderation, unusual scoring patterns and reconciliation status.",
+    metrics: [
+      ["First/second valuation variance", "6 marks"],
+      ["Scripts awaiting moderation", "5"],
+      ["Unusual scoring patterns", "2"],
+      ["Reconciled scripts", "3 of 8"],
+    ],
+    panel: "Reconciliation status",
+    rows: [
+      ["Independent valuation difference", "Awaiting moderation"],
+      ["Missing mark flagged", "Under review"],
+      ["Mark discrepancy", "Reconciled"],
+    ],
+  },
+  {
+    icon: RiDatabase2Line,
+    title: "Student Performance Dashboard",
+    navLabel: "Student Progress",
+    description:
+      "Offer students access to approved examination results, question-wise performance, topic-level progress, competency insights and improvement guidance.",
+    highlights:
+      "Subject scores, CO attainment, Bloom's performance, learning gaps and recommended next actions.",
+  },
+  {
+    icon: RiFileChartLine,
+    title: "HOD & Management Dashboard",
+    navLabel: "HoD & Mgmt.",
+    description:
+      "Understand department-wise academic quality, course performance, learning outcome attainment, assessment effectiveness and student improvement trends.",
+    highlights:
+      "Department attainment, subject difficulty trends, student competency distribution and academic improvement metrics.",
+  },
+  {
+    icon: RiPieChartLine,
+    title: "Autonomous Evaluation Operations Dashboard",
+    navLabel: "Evaluation Ops",
+    description:
+      "Track answer recognition, AI processing, upload exceptions, pending faculty reviews, workflow progress and system performance.",
+    highlights:
+      "Processing status, recognition failures, exception queues, workflow health and completion timelines.",
+  },
 ]
-const isPreviewView = (view: View) => previewViews.includes(view)
-
-function LockedPreview({ view }: { view: View }) {
-  return (
-    <div className={styles.lockedPreview}>
-      <div className={styles.lockArtwork} aria-hidden="true">
-        <span />
-        <span />
-        <span />
-      </div>
-      <span className={styles.lockIcon}>
-        <RiLockLine size={28} aria-hidden="true" />
-      </span>
-      <span className={styles.eyebrow}>THE FULL EXPERIENCE AWAITS</span>
-      <h4>Discover {screenTitle(view)} in action.</h4>
-      <p>
-        {screenDetails[view]}
-      </p>
-      <Link className={styles.unlockCta} href="/book-demo">
-        Book a demo to explore <RiArrowRightLine size={16} aria-hidden="true" />
-      </Link>
-      <small>
-        Command Center, Academic Master and Faculty Workspace are open for you to try.
-      </small>
-    </div>
-  )
-}
 
 export default function DashboardPreview() {
-  const [view, setView] = useState<View>("Overview")
+  const [view, setView] = useState(0)
   const [search, setSearch] = useState("")
-  const [scope, setScope] = useState<Scope>({ ...emptyScope })
-  const [subjects, setSubjects] = useState<Subject[]>(() =>
-    initialSubjects.map((s) => ({ ...s })),
+  const screen = navigation[view]
+  const query = search.trim().toLowerCase()
+  const rows = screen.rows?.filter((row) =>
+    row.join(" ").toLowerCase().includes(query),
   )
-  const [questions, setQuestions] = useState<Question[]>(createQuestions)
-  const [papers, setPapers] = useState<Paper[]>(() =>
-    createPapers(createQuestions()),
-  )
-  const [staff, setStaff] = useState<Staff[]>(() =>
-    initialStaff.map((s) => ({ ...s, subjects: [...s.subjects] })),
-  )
-  const [students, setStudents] = useState<Student[]>(() =>
-    initialStudents.map((s) => ({ ...s })),
-  )
-  const [reportHistory, setReportHistory] = useState<
-    { report: DemoReport; at: string }[]
-  >([])
-  const [dialog, setDialog] = useState<{
-    title: string
-    body: ReactNode
-    subtitle?: string
-  } | null>(null)
-  const [toast, setToast] = useState("")
-  const modalRef = useRef<HTMLDivElement>(null)
-  const closeRef = useRef<HTMLButtonElement>(null)
-  const triggerRef = useRef<HTMLElement | null>(null)
-  const toastTimer = useRef<ReturnType<typeof setTimeout> | null>(null)
-  const open = Boolean(dialog)
-  const dialogTitle = dialog?.title
-  useEffect(() => {
-    if (dialogTitle) closeRef.current?.focus()
-  }, [dialogTitle])
-  useEffect(() => {
-    if (!open) return
-    closeRef.current?.focus()
-    const previousOverflow = document.body.style.overflow
-    document.body.style.overflow = "hidden"
-    const handleKey = (event: KeyboardEvent) => {
-      if (event.key === "Escape") {
-        setDialog(null)
-        return
-      }
-      if (event.key === "Tab") {
-        const elements = modalRef.current?.querySelectorAll<HTMLElement>(
-          'button:not(:disabled), input:not(:disabled), select:not(:disabled), textarea:not(:disabled), a[href], [tabindex="0"]',
-        )
-        if (!elements?.length) return
-        const first = elements[0]
-        const last = elements[elements.length - 1]
-        if (event.shiftKey && document.activeElement === first) {
-          event.preventDefault()
-          last.focus()
-        }
-        if (!event.shiftKey && document.activeElement === last) {
-          event.preventDefault()
-          first.focus()
-        }
-      }
-    }
-    document.addEventListener("keydown", handleKey)
-    return () => {
-      document.body.style.overflow = previousOverflow
-      document.removeEventListener("keydown", handleKey)
-      if (triggerRef.current?.isConnected) triggerRef.current.focus()
-    }
-  }, [open])
-  useEffect(
-    () => () => {
-      if (toastTimer.current) clearTimeout(toastTimer.current)
-    },
-    [],
-  )
-  const notify = (text: string) => {
-    setToast(text)
-    if (toastTimer.current) clearTimeout(toastTimer.current)
-    toastTimer.current = setTimeout(() => setToast(""), 5500)
-  }
-  const navigate = (next: View) => {
-    setView(next)
+
+  function navigate(index: number) {
+    setView(index)
     setSearch("")
-    setDialog(null)
-  }
-  const scopedSubjects = subjects.filter((s) => matchesScope(s, scope))
-  const subjectIds = new Set(scopedSubjects.map((s) => s.id))
-  const context: DemoContextValue = {
-    reportHistory,
-    setReportHistory,
-    view,
-    navigate,
-    search,
-    setSearch,
-    scope,
-    subjects,
-    setSubjects,
-    scopedSubjects,
-    questions,
-    setQuestions,
-    scopedQuestions: questions.filter((q) => subjectIds.has(q.subjectId)),
-    papers,
-    setPapers,
-    scopedPapers: papers.filter((p) => subjectIds.has(p.subjectId)),
-    staff,
-    setStaff,
-    students,
-    setStudents,
-    showDialog: (title, body, subtitle) => {
-      // Stored dialog actions can hold an older context; inspect the live
-      // dialog ref so replacing its contents preserves the original opener.
-      if (!modalRef.current)
-        triggerRef.current = document.activeElement as HTMLElement
-      setDialog({ title, body, subtitle })
-    },
-    closeDialog: () => setDialog(null),
-    notify,
-  }
-  const reset = () => {
-    const nextQuestions = createQuestions()
-    setSubjects(initialSubjects.map((s) => ({ ...s })))
-    setQuestions(nextQuestions)
-    setPapers(createPapers(nextQuestions))
-    setStaff(initialStaff.map((s) => ({ ...s, subjects: [...s.subjects] })))
-    setStudents(initialStudents.map((s) => ({ ...s })))
-    setReportHistory([])
-    setScope({ ...emptyScope })
-    setSearch("")
-    setView("Overview")
-    setDialog(null)
-    notify("Demo reset. All sample records have been restored.")
-  }
-  const filters: {
-    key: keyof Scope
-    label: string
-    options: { value: string; label: string }[]
-  }[] = [
-    {
-      key: "batch",
-      label: "Batch year",
-      options: batches.map((v) => ({ value: v, label: v })),
-    },
-    {
-      key: "degree",
-      label: "Degree",
-      options: [...new Set(subjects.map((s) => s.degree))].map((v) => ({
-        value: v,
-        label: v,
-      })),
-    },
-    {
-      key: "department",
-      label: "Department",
-      options: [...new Set(subjects.map((s) => s.department))].map((v) => ({
-        value: v,
-        label: v,
-      })),
-    },
-    {
-      key: "semester",
-      label: "Semester",
-      options: [...new Set(subjects.map((s) => s.semester))].map((v) => ({
-        value: v,
-        label: v,
-      })),
-    },
-    {
-      key: "subject",
-      label: "Subject",
-      options: subjects
-        .filter((s) => matchesScope(s, { ...scope, subject: "" }))
-        .map((s) => ({ value: s.id, label: s.name })),
-    },
-  ]
-  const content: Partial<Record<View, ReactNode>> = {
-    Overview: <DocumentDashboardScreens screen="command" />,
-    "Master data": <DocumentDashboardScreens screen="master" />,
-    "Question bank": <DocumentDashboardScreens screen="faculty" />,
   }
 
   return (
-    <DemoContext.Provider value={context}>
-      <section
-        id="dashboard-preview"
-        aria-label="Interactive Questra dashboard preview"
-        className={styles.section}
-      >
-        <div className={styles.intro}>
-          <span className={styles.eyebrow}>
-            <span /> EXPLORE THE EXPERIENCE
-          </span>
-          <h2>
-            <DiaTextReveal text="Your academic workspace. At a glance." />
-          </h2>
-          <p>
-            Explore Command Center, Academic Master and Faculty Workspace. Discover the full
-            examination workflow in a live demo.
-          </p>
-        </div>
-        <div className={styles.frame}>
-          <DashboardCursor />
-          <aside
-            className={styles.sidebar}
-            aria-label="Dashboard preview navigation"
-          >
-            <div className={styles.brand}>
-              <QuestraLogo width={156} />
-            </div>
-            <span className={styles.workspaceLabel}>ACADEMIC WORKSPACE</span>
-            <nav>
-              {navigation.map(({ label, title, icon: Icon }) => (
+    <section
+      id="dashboard-preview"
+      aria-label="Interactive Questra EvalIQ dashboard preview"
+      className={styles.section}
+    >
+      <div className={styles.intro}>
+        <span className={styles.eyebrow}>
+          <span /> 03 · EVALIQ ROLE DASHBOARDS
+        </span>
+        <h2>
+          <DiaTextReveal text="Intelligent Dashboards for Every Academic Role" />
+        </h2>
+        <p>
+          Try sample views for Controllers of Examinations, faculty evaluators
+          and chief examiners. Explore the other role dashboards in a live demo.
+        </p>
+      </div>
+      <div className={styles.frame}>
+        <DashboardCursor />
+        <aside
+          className={styles.sidebar}
+          aria-label="Dashboard preview navigation"
+        >
+          <div className={styles.brand}>
+            <QuestraLogo width={156} />
+          </div>
+          <span className={styles.workspaceLabel}>EVALIQ WORKSPACE</span>
+          <nav>
+            {navigation.map(
+              ({ title, navLabel, icon: Icon, metrics }, index) => (
                 <button
-                  key={label}
+                  key={title}
                   type="button"
-                  className={view === label ? styles.activeNav : ""}
-                  aria-current={view === label ? "page" : undefined}
+                  className={view === index ? styles.activeNav : ""}
+                  aria-current={view === index ? "page" : undefined}
                   aria-label={
-                    !isPreviewView(label)
-                      ? `${title} — available in a live demo`
+                    !metrics
+                      ? `${navLabel} — available in a live demo`
                       : undefined
                   }
-                  onClick={() => navigate(label)}
+                  title={title}
+                  onClick={() => navigate(index)}
                 >
                   <Icon size={17} aria-hidden="true" />
-                  <span>{title}</span>
-                  {!isPreviewView(label) ? (
+                  <span>{navLabel}</span>
+                  {!metrics ? (
                     <RiLockLine
                       size={13}
                       className={styles.navLock}
                       aria-hidden="true"
                     />
                   ) : (
-                    view === label && <span className={styles.navDot} />
+                    view === index && <span className={styles.navDot} />
                   )}
                 </button>
-              ))}
-            </nav>
-            <div className={styles.sidebarNote}>
-              <RiShieldCheckLine size={20} aria-hidden="true" />
-              <strong>Faculty in control</strong>
-              <p>Every question. Reviewed before release.</p>
-              <span>
-                <span /> Sample workspace
+              ),
+            )}
+          </nav>
+          <div className={styles.sidebarNote}>
+            <RiShieldCheckLine size={20} aria-hidden="true" />
+            <strong>Faculty in control</strong>
+            <p>Faculty verify marks before results are released.</p>
+            <span>
+              <span /> Sample workspace
+            </span>
+          </div>
+          <div className={styles.profile}>
+            <span className={styles.avatar}>AS</span>
+            <span>
+              <strong>Academic administrator</strong>
+              <small>Questra · Demo institution</small>
+            </span>
+          </div>
+        </aside>
+        <div className={styles.workspace}>
+          <header className={styles.topbar}>
+            <label className={styles.search}>
+              <RiSearchLine size={16} aria-hidden="true" />
+              <input
+                aria-label="Search dashboard records"
+                disabled={!screen.rows}
+                placeholder="Search sample records…"
+                value={search}
+                onChange={(event) => setSearch(event.target.value)}
+              />
+            </label>
+            <span className={styles.previewLabel}>
+              <span /> Selected preview
+            </span>
+            <span className={styles.headerAvatar}>AS</span>
+          </header>
+          <div className={styles.content}>
+            <div className={styles.pageHeading}>
+              <div>
+                <div className={styles.breadcrumb}>
+                  Workspace <span>/</span> {screen.title}
+                </div>
+                <h3>{screen.title}</h3>
+                <p>{screen.description}</p>
+              </div>
+              <span className={styles.term}>
+                <span className={styles.sampleIndicator} /> Sample data
               </span>
             </div>
-            <div className={styles.profile}>
-              <span className={styles.avatar}>AS</span>
-              <span>
-                <strong>Academic administrator</strong>
-                <small>Questra · Demo institution</small>
-              </span>
-            </div>
-          </aside>
-          <div className={styles.workspace}>
-            <header className={styles.topbar}>
-              <label className={styles.search}>
-                <RiSearchLine size={16} aria-hidden="true" />
-                <input
-                  aria-label="Search dashboard records"
-                  disabled={!isPreviewView(view)}
-                  placeholder="Search dashboard records…"
-                  value={search}
-                  onChange={(e) => {
-                    setSearch(e.target.value)
-                    if (
-                      [
-                        "Overview",
-                        "AI question studio",
-                        "Bloom’s analytics",
-                        "Outcome mapping",
-                      ].includes(view)
-                    )
-                      setView("Question bank")
-                  }}
-                />
-              </label>
-              <span className={styles.previewLabel}>
-                <span /> Selected preview
-              </span>
-              <span className={styles.headerAvatar}>AS</span>
-            </header>
-            <div className={styles.content}>
-              <div className={styles.pageHeading}>
-                <div>
-                  <div className={styles.breadcrumb}>
-                    Workspace <span>/</span> {screenTitle(view)}
+            <div key={view} className={styles.moduleContent}>
+              {screen.metrics ? (
+                <div className={styles.viewStack}>
+                  <Metrics
+                    items={screen.metrics.map(([label, value]) => ({
+                      label,
+                      value,
+                      note: "Sample data",
+                    }))}
+                  />
+                  <Panel title={screen.panel ?? screen.title}>
+                    <Table
+                      label={screen.panel ?? screen.title}
+                      headers={["Sample record", "Status"]}
+                      rows={(rows ?? []).map(([name, status]) => [
+                        name,
+                        status,
+                      ])}
+                      empty="No sample records match your search."
+                    />
+                  </Panel>
+                </div>
+              ) : (
+                <div className={styles.lockedPreview}>
+                  <div className={styles.lockArtwork} aria-hidden="true">
+                    <span />
+                    <span />
+                    <span />
                   </div>
-                  <h3>
-                    {screenTitle(view)}
-                  </h3>
-                  <p>{screenDetails[view]}</p>
-                </div>
-                <span className={styles.term}>
-                  <span className={styles.sampleIndicator} /> Sample data
-                </span>
-              </div>
-              {isPreviewView(view) && (
-                <div className={styles.academicFilters}>
-                  {filters.map((filter) => (
-                    <label key={filter.key}>
-                      {filter.label}
-                      <select
-                        aria-label={`Dashboard ${filter.label.toLowerCase()}`}
-                        value={scope[filter.key]}
-                        onChange={(e) =>
-                          setScope((current) => ({
-                            ...current,
-                            [filter.key]: e.target.value,
-                            ...(filter.key !== "subject"
-                              ? { subject: "" }
-                              : {}),
-                          }))
-                        }
-                      >
-                        <option value="">
-                          All{" "}
-                          {filter.label === "Batch year"
-                            ? "batches"
-                            : filter.label === "Degree"
-                              ? "degrees"
-                              : filter.label === "Department"
-                                ? "departments"
-                                : filter.label === "Semester"
-                                  ? "semesters"
-                                  : "subjects"}
-                        </option>
-                        {filter.options.map((o) => (
-                          <option key={o.value} value={o.value}>
-                            {o.label}
-                          </option>
-                        ))}
-                      </select>
-                    </label>
-                  ))}
-                  <button
-                    className={styles.filterReset}
-                    onClick={() => {
-                      setScope({ ...emptyScope })
-                      setSearch("")
-                    }}
-                    aria-label="Reset academic filters"
-                  >
-                    <RiRestartLine size={16} />
-                  </button>
+                  <span className={styles.lockIcon}>
+                    <RiLockLine size={28} aria-hidden="true" />
+                  </span>
+                  <p>{screen.highlights}</p>
+                  <Link className={styles.unlockCta} href="/book-demo">
+                    Book a demo to explore{" "}
+                    <RiArrowRightLine size={16} aria-hidden="true" />
+                  </Link>
                 </div>
               )}
-              <div key={view} className={styles.moduleContent}>
-                {isPreviewView(view) ? (
-                  content[view]
-                ) : (
-                  <LockedPreview view={view} />
-                )}
-              </div>
-              <div className={styles.workspaceFooter}>
-                <span>
-                  <span /> Illustrative data · Changes reset on reload
-                </span>
-                <button onClick={reset}>
-                  <RiRestartLine size={11} /> Reset demo
-                </button>
-              </div>
+            </div>
+            <div className={styles.workspaceFooter}>
+              <span>
+                <span /> Illustrative sample data
+              </span>
+              <button onClick={() => navigate(0)}>
+                <RiRestartLine size={11} /> Reset demo
+              </button>
             </div>
           </div>
         </div>
-        <div className={styles.caption}>
-          <span className={styles.captionDot} /> A little less admin. A lot more
-          academic clarity.
-          <span className={styles.captionTag}>Click around to explore</span>
-        </div>
-        {dialog && (
-          <div
-            className={styles.detailOverlay}
-            onMouseDown={(e) => {
-              if (e.target === e.currentTarget) setDialog(null)
-            }}
-          >
-            <div
-              ref={modalRef}
-              className={styles.detailPanel}
-              role="dialog"
-              aria-modal="true"
-              aria-labelledby="dashboard-dialog-title"
-            >
-              <button
-                ref={closeRef}
-                className={styles.closeDetail}
-                onClick={() => setDialog(null)}
-                aria-label="Close dashboard details"
-              >
-                <RiCloseLine size={20} />
-              </button>
-              <span className={styles.eyebrow}>QUESTRA · SAMPLE WORKSPACE</span>
-              <h3 id="dashboard-dialog-title">{dialog.title}</h3>
-              {dialog.subtitle && (
-                <p className={styles.dialogSubtitle}>{dialog.subtitle}</p>
-              )}
-              <div className={styles.dialogBody}>{dialog.body}</div>
-            </div>
-          </div>
-        )}
-        <div
-          className={styles.toastRegion}
-          role="status"
-          aria-live="polite"
-          aria-atomic="true"
-        >
-          {toast && (
-            <div className={styles.toast}>
-              <RiCheckLine size={16} />
-              <span>{toast}</span>
-              <button
-                aria-label="Dismiss notification"
-                onClick={() => setToast("")}
-              >
-                <RiCloseLine size={15} />
-              </button>
-            </div>
-          )}
-        </div>
-      </section>
-    </DemoContext.Provider>
+      </div>
+      <div className={styles.caption}>
+        <span className={styles.captionDot} /> A little less admin. A lot more
+        academic clarity.
+        <span className={styles.captionTag}>Click around to explore</span>
+      </div>
+    </section>
   )
 }
