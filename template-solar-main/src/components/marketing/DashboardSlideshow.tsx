@@ -11,55 +11,85 @@ import {
 } from "lucide-react"
 import styles from "./PhaseZero.module.css"
 import controls from "./DashboardSlideshow.module.css"
-const slides = [
+const slides: {
+  file: string
+  title: string
+  width: number
+  height: number
+  brandWidth?: string
+}[] = [
   {
-    file: "question-bank",
+    file: "question-bank.png",
     title: "Question Bank",
     width: 1536,
     height: 1024,
     brandWidth: "15.5%",
   },
   {
-    file: "syllabus",
+    file: "syllabus.png",
     title: "Syllabus Library & PDF Viewer",
     width: 1600,
     height: 900,
     brandWidth: "17.8%",
   },
   {
-    file: "students",
+    file: "students.png",
     title: "Master Data Intelligence",
     width: 1600,
     height: 900,
     brandWidth: "13.5%",
   },
   {
-    file: "outcomes",
+    file: "outcomes.png",
     title: "Outcome Mapping",
     width: 1536,
     height: 1024,
     brandWidth: "13.7%",
   },
   {
-    file: "blooms",
+    file: "blooms.png",
     title: "Bloom’s Analytics",
     width: 1536,
     height: 1024,
     brandWidth: "14%",
   },
   {
-    file: "coverage",
+    file: "coverage.png",
     title: "Coverage Explorer",
     width: 1536,
     height: 1024,
     brandWidth: "15%",
   },
   {
-    file: "approvals",
+    file: "approvals.png",
     title: "Review & Approval",
     width: 1536,
     height: 1024,
     brandWidth: "15.2%",
+  },
+  {
+    file: "evaliq-overview.jpg",
+    title: "EvalIQ Evaluation Overview",
+    width: 1265,
+    height: 823,
+  },
+  {
+    file: "evaliq-staff-workspace.png",
+    title: "EvalIQ Staff Evaluation Workspace",
+    width: 1280,
+    height: 675,
+  },
+  {
+    file: "evaliq-controller-overview.png",
+    title: "EvalIQ Controller Dashboard",
+    width: 1280,
+    height: 825,
+  },
+  {
+    file: "evaliq-ai-studio.png",
+    title: "EvalIQ AI Evaluation Studio",
+    width: 1280,
+    height: 690,
   },
 ]
 export default function DashboardSlideshow() {
@@ -135,22 +165,24 @@ export default function DashboardSlideshow() {
               style={{ aspectRatio: `${slide.width}/${slide.height}` }}
             >
               <Image
-                src={`/images/hero-dashboards/${slide.file}.png`}
+                src={`/images/hero-dashboards/${slide.file}`}
                 alt={`Questra ${slide.title} — illustrative dashboard supplied for the product preview`}
                 fill
                 sizes="(max-width: 1000px) 95vw, 58vw"
                 priority={index === 0}
               />
-              <div
-                className={styles.imageBrand}
-                style={{ width: slide.brandWidth }}
-                aria-hidden="true"
-              >
-                <GraduationCap />
-                <span>
-                  Questra<small>Examination Intelligence</small>
-                </span>
-              </div>
+              {slide.brandWidth && (
+                <div
+                  className={styles.imageBrand}
+                  style={{ width: slide.brandWidth }}
+                  aria-hidden="true"
+                >
+                  <GraduationCap />
+                  <span>
+                    Questra<small>Examination Intelligence</small>
+                  </span>
+                </div>
+              )}
             </div>
           </div>
         ))}
