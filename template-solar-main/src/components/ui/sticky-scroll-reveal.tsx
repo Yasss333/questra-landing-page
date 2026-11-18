@@ -7,6 +7,7 @@ export type StickyItem = {
   description: string
   image: string
   alt: string
+  photo?: boolean
 }
 export function StickyScroll({ content }: { content: readonly StickyItem[] }) {
   const [active, setActive] = useState(0)
@@ -53,7 +54,7 @@ export function StickyScroll({ content }: { content: readonly StickyItem[] }) {
           </article>
         ))}
       </div>
-      <aside className={styles.visual} aria-label="Master Wizard illustrations">
+      <aside className={styles.visual} aria-label="Master Wizard visuals">
         <div className={styles.imageStack}>
           {content.map((item, index) => (
             <div
@@ -78,9 +79,11 @@ export function StickyScroll({ content }: { content: readonly StickyItem[] }) {
             {String(content.length).padStart(2, "0")}
           </span>
         </div>
-        <small className={styles.disclaimer}>
-          AI-generated conceptual illustration
-        </small>
+        {!content[active].photo && (
+          <small className={styles.disclaimer}>
+            AI-generated conceptual illustration
+          </small>
+        )}
       </aside>
     </div>
   )

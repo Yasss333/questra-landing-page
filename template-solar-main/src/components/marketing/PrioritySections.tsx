@@ -191,74 +191,44 @@ export function EvaluationGovernance() {
 export function EvalIQMasterWizard() {
   const steps = [
     {
-      title: "Select Examination",
+      title: "Select Examination & Link Question Paper",
       description:
-        "Choose batch year, degree, department, semester, subject and examination.",
-      image: "/images/stakeholders/examinations.png",
-      alt: "",
+        "Choose batch year, degree, department, semester, subject and examination. Link the approved Questra question paper with its patterns and question mappings.",
+      image: "/images/master-wizard/examination-planning.webp",
+      alt: "Administrator organizing documents beside a laptop",
+      photo: true,
     },
     {
-      title: "Link Question Paper",
+      title: "Configure Answer Key & Evaluation Rules",
       description:
-        "Retrieve the approved Questra question paper with patterns and question mappings.",
-      image: "/images/stakeholders/management.png",
-      alt: "",
+        "Attach approved model answers, rubrics and partial-credit criteria. Define the valuation method, permitted mark variations, moderation thresholds and academic regulations.",
+      image: "/images/master-wizard/answer-marking.webp",
+      alt: "Marking a completed answer sheet with a red pen",
+      photo: true,
     },
     {
-      title: "Configure Answer Key",
+      title: "Assign Staff & Define Approval Hierarchy",
       description:
-        "Attach approved model answers, evaluation rubrics and partial-credit criteria.",
-      image: "/images/stakeholders/faculty.png",
-      alt: "",
+        "Assign eligible examiners, chief examiners and moderation authorities. Configure evaluation submission, moderation, verification and COE approval stages.",
+      image: "/images/master-wizard/staff-meeting.webp",
+      alt: "Colleagues discussing documents around a meeting table",
+      photo: true,
     },
     {
-      title: "Define Evaluation Rules",
+      title: "Identify Answer Sheets & Enable AI Assistance",
       description:
-        "Select valuation method, permitted mark variations, moderation thresholds and academic regulations.",
-      image: "/images/stakeholders/governance.png",
-      alt: "",
+        "Define scanning formats, barcode or QR-based mapping and anonymity rules. Configure supported answer recognition, AI suggestions and confidence-based faculty review.",
+      image: "/images/master-wizard/answer-sheet-scanning.webp",
+      alt: "Placing a document on a flatbed scanner",
+      photo: true,
     },
     {
-      title: "Configure Staff Allocation",
+      title: "Configure Results, Validate & Activate",
       description:
-        "Assign eligible examiners, chief examiners and moderation authorities.",
-      image: "/images/stakeholders/department.png",
-      alt: "",
-    },
-    {
-      title: "Configure Answer Sheet Identification",
-      description:
-        "Define scanning formats, barcode or QR-based mapping and anonymity rules.",
-      image: "/images/stakeholders/faculty.png",
-      alt: "",
-    },
-    {
-      title: "Enable AI Assistance",
-      description:
-        "Configure supported answer recognition, AI suggestions and confidence-based faculty review.",
-      image: "/images/stakeholders/reviewers.png",
-      alt: "",
-    },
-    {
-      title: "Define Approval Hierarchy",
-      description:
-        "Configure evaluation submission, moderation, verification and COE approval stages.",
-      image: "/images/stakeholders/department.png",
-      alt: "",
-    },
-    {
-      title: "Configure Result Rules",
-      description:
-        "Set mark consolidation, grading, institutional regulations and publication authorization.",
-      image: "/images/stakeholders/examinations.png",
-      alt: "",
-    },
-    {
-      title: "Validate & Activate",
-      description:
-        "Review all configurations, identify missing prerequisites and activate the evaluation workflow.",
-      image: "/images/stakeholders/reviewers.png",
-      alt: "",
+        "Set mark consolidation, grading, institutional regulations and publication authorization. Review all configurations, resolve missing prerequisites and activate the evaluation workflow.",
+      image: "/images/master-wizard/question-paper-review.webp",
+      alt: "Reviewing a question paper beside an answer sheet",
+      photo: true,
     },
   ]
   return (
