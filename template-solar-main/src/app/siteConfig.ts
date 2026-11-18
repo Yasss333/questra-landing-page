@@ -4,7 +4,7 @@ export const siteConfig = {
   url: "https://www.questra.si",
   description:
     "Automate syllabus-aligned question creation, mid-term and semester paper generation, validation and multi-level approvals with Questra. Request a demo.",
-  contactEmail: "voicedotsio@gmail.com",
+  contactEmail: "psk@voicedots.ai",
   baseLinks: {
     home: "/",
   },
