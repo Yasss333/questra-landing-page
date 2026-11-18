@@ -5,7 +5,6 @@ import {
   EvaluationGovernance,
   FeatureIndex,
   Positioning,
-  PriorityApprovals,
   PriorityClosing,
   EvalIQMasterWizard,
   EvalIQBenefits,
@@ -30,7 +29,6 @@ export default function Home() {
       <EvaluationGovernance />
       <QuestraAdvantage />
       <Positioning />
-      <PriorityApprovals />
       <PriorityClosing
         heading="Your Institution Has the Curriculum. Questra Brings the Intelligence."
         description={
