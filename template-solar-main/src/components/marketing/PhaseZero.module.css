@@ -28,10 +28,10 @@
   padding: 174px 0 82px;
 }
 .heroInner {
-  width: min(1440px, calc(100% - 96px));
+  width: min(960px, calc(100% - 96px));
   margin: auto;
   display: grid;
-  grid-template-columns: minmax(0, 0.92fr) minmax(0, 1.18fr);
+  grid-template-columns: minmax(0, 1fr);
   gap: 52px;
   align-items: start;
   position: relative;
