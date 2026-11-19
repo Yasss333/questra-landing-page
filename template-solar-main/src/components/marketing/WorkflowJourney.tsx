@@ -19,19 +19,19 @@ const journey = [
     accent: WandSparkles,
   },
   {
-    title: "Intelligent Answer Sheet Digitization",
+    title: "EvalIQ Digitization",
     detail: "Bring student scripts into a structured digital workspace.",
     icon: ScanLine,
     accent: ScanText,
   },
   {
-    title: "AI-Assisted Answer Evaluation",
+    title: "EvalIQ Answer Evaluation",
     detail: "Support marking with approved answers and faculty-reviewed suggestions.",
     icon: PenLine,
     accent: BadgeCheck,
   },
   {
-    title: "Faculty-Governed Moderation",
+    title: "EvalIQ Moderation",
     detail: "Review, moderate and authorize marks with academic oversight.",
     icon: ShieldCheck,
     accent: Users,

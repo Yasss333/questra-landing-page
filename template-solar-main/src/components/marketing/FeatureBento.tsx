@@ -18,62 +18,62 @@ import styles from "./FeatureBento.module.css"
 const cards = [
   [
     2,
-    "EvalScan — Intelligent Answer Sheet Digitization",
+    "EvalIQ Digitization",
     "Upload scanned scripts in bulk, identify them by QR or barcode, and flag missing, duplicate or unreadable pages.",
   ],
   [
     4,
-    "EvalVision — AI Handwriting Recognition",
+    "EvalIQ Handwriting Recognition",
     "Recognize handwriting, equations and question structure. Faculty verify uncertain extracts, with multilingual recognition where supported.",
   ],
   [
     2,
-    "EvalIQ Studio — AI-Assisted Answer Evaluation",
+    "EvalIQ Answer Evaluation",
     "Suggest rubric-based marks and partial credit against approved model answers. Faculty verify or override each suggestion.",
   ],
   [
     11,
-    "Digital Faculty Evaluation Workspace",
+    "EvalIQ Faculty Workspace",
     "Review scripts beside approved rubrics, annotate answers, enter marks and submit evaluations for moderation.",
   ],
   [
     8,
-    "FairMark AI — Evaluation Quality Intelligence",
+    "EvalIQ Evaluation Quality",
     "Flag valuation differences, overlooked answers and low-confidence suggestions for faculty review.",
   ],
   [
     5,
-    "Multi-Level Valuation & Academic Moderation",
+    "EvalIQ Moderation",
     "Configure single, double or triple valuation with independent examiners, escalation thresholds and COE authorization.",
   ],
   [
     7,
-    "ResultIQ — Autonomous Result Processing",
+    "EvalIQ Result Processing",
     "Consolidate verified marks, apply institutional grading rules and control when approved results are published.",
   ],
   [
     1,
-    "OutcomeIQ — CO/PO Attainment Intelligence",
+    "EvalIQ Outcome Attainment",
     "Connect question-wise marks to CO/PO attainment and report outcomes by student, subject or department.",
   ],
   [
     9,
-    "BloomIQ — Cognitive Competency Analytics",
+    "EvalIQ Bloom’s Analytics",
     "Analyze evaluated answers across the six Bloom’s levels to identify cognitive learning gaps.",
   ],
   [
     0,
-    "CompetencyDNA — 360° Student Intelligence",
+    "EvalIQ Student Competency",
     "Build student competency profiles from verified results, highlighting topic strengths, gaps and progress.",
   ],
   [
     6,
-    "QuestionLoop — Continuous Assessment Intelligence",
+    "EvalIQ Assessment Improvement",
     "Use observed difficulty and response patterns to identify questions and blueprints for faculty review.",
   ],
   [
     9,
-    "LearnNext AI — Personalized Academic Improvement",
+    "EvalIQ Learning Support",
     "Use approved results to recommend targeted practice and track faculty or mentor interventions.",
   ],
 ] as const
