@@ -117,7 +117,7 @@ export default function DashboardSlideshow() {
     if (!autoplay || (interacting && !motionOptIn)) return
     const timer = window.setInterval(() => {
       if (!document.hidden) setActive((index) => (index + 1) % slides.length)
-    }, 1500)
+    }, 1000)
     return () => window.clearInterval(timer)
   }, [autoplay, interacting, motionOptIn])
   function select(index: number) {

@@ -1,61 +1,79 @@
 import {
-  BookOpen,
-  ScanLine,
-  Sparkles,
-  Files,
-  ShieldCheck,
-  ChartNoAxesCombined,
-  ArrowRight,
+  BookOpen, BrainCircuit, FileText, WandSparkles,
+  ScanLine, ScanText, PenLine, BadgeCheck, ShieldCheck, Users,
+  ChartNoAxesCombined, GraduationCap,
 } from "lucide-react"
 import styles from "./WorkflowJourney.module.css"
+
 const journey = [
-  "Academic Intelligence",
-  "Autonomous Question Paper Generation",
-  "Intelligent Answer Sheet Digitization",
-  "AI-Assisted Answer Evaluation",
-  "Faculty-Governed Moderation",
-  "Academic Performance Intelligence",
+  {
+    title: "Academic Intelligence",
+    detail: "A shared foundation of syllabus, outcomes and academic rules.",
+    icon: BookOpen,
+    accent: BrainCircuit,
+  },
+  {
+    title: "Autonomous Question Paper Generation",
+    detail: "Turn approved questions and blueprints into examination papers.",
+    icon: FileText,
+    accent: WandSparkles,
+  },
+  {
+    title: "Intelligent Answer Sheet Digitization",
+    detail: "Bring student scripts into a structured digital workspace.",
+    icon: ScanLine,
+    accent: ScanText,
+  },
+  {
+    title: "AI-Assisted Answer Evaluation",
+    detail: "Support marking with approved answers and faculty-reviewed suggestions.",
+    icon: PenLine,
+    accent: BadgeCheck,
+  },
+  {
+    title: "Faculty-Governed Moderation",
+    detail: "Review, moderate and authorize marks with academic oversight.",
+    icon: ShieldCheck,
+    accent: Users,
+  },
+  {
+    title: "Academic Performance Intelligence",
+    detail: "Connect verified results to learning outcomes and student progress.",
+    icon: ChartNoAxesCombined,
+    accent: GraduationCap,
+  },
 ]
-const icons = [
-  BookOpen,
-  Files,
-  ScanLine,
-  Sparkles,
-  ShieldCheck,
-  ChartNoAxesCombined,
-]
+
 export default function WorkflowJourney() {
   return (
-    <ol className={styles.grid}>
-      {journey.map((title, index) => {
-        const Icon = icons[index]
-        return (
+    <div className={styles.journey}>
+      <div className={styles.phase}><span />Pre-exam<span /></div>
+      <svg className={styles.ribbon} viewBox="0 0 1200 616" preserveAspectRatio="none" aria-hidden="true">
+        <path className={styles.track} d="M 200 76 H 1000 C 1240 76 1240 432 1000 432 H 200" />
+        <path className={styles.flow} d="M 200 76 H 1000 C 1240 76 1240 432 1000 432 H 200" />
+      </svg>
+      <ol className={styles.grid}>
+        {journey.map(({ title, detail, icon: Icon, accent: Accent }, index) => (
           <li key={title} className={styles.step}>
-            <div className={styles.card}>
-              <div className={styles.circle}>
-                <div className={styles.art} aria-hidden="true">
-                  <div className={styles.orbit} />
-                  <div className={styles.backplate} />
-                  <div className={styles.face}>
-                    <Icon size={34} strokeWidth={1.4} />
-                  </div>
-                  <i className={styles.satellite} />
-                  <i className={styles.satellite} />
+            <article className={styles.stop}>
+              <div className={styles.art} aria-hidden="true">
+                <div className={styles.iconPanel}>
+                  <Icon size={64} strokeWidth={1.25} />
+                  <span className={styles.iconAccent}>
+                    <Accent size={28} strokeWidth={1.5} />
+                  </span>
                 </div>
-                <span className={styles.number}>0{index + 1}</span>
               </div>
-              <h3>{title}</h3>
-            </div>
-            {index < journey.length - 1 && (
-              <ArrowRight
-                className={styles.connector}
-                size={24}
-                aria-hidden="true"
-              />
-            )}
+              <div className={styles.copy}>
+                <span className={styles.number}>{String(index + 1).padStart(2, "0")}</span>
+                <h3>{title}</h3>
+                <p>{detail}</p>
+              </div>
+            </article>
           </li>
-        )
-      })}
-    </ol>
+        ))}
+      </ol>
+      <div className={styles.postPhase}><span />Post-exam<span /></div>
+    </div>
   )
 }
