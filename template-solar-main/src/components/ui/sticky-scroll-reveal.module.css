@@ -47,7 +47,7 @@
 }
 .imageStack {
   position: relative;
-  aspect-ratio: 1;
+  aspect-ratio: 3 / 2;
   border-radius: 24px;
   background: #102442;
   border: 1px solid var(--theme-border, #dce4ef);
@@ -64,7 +64,7 @@
   opacity: 1;
 }
 .image img {
-  object-fit: cover;
+  object-fit: contain;
 }
 .caption {
   display: flex;
@@ -105,9 +105,9 @@
   }
   .mobileImage img {
     width: 100%;
-    aspect-ratio: 1;
+    aspect-ratio: 3 / 2;
     height: auto;
-    object-fit: cover;
+    object-fit: contain;
     border-radius: 18px;
   }
   .step h3 {
