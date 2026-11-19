@@ -1,9 +1,11 @@
 import Link from "next/link"
 import { ArrowRight, Check, Play } from "lucide-react"
+import DashboardSlideshow from "../marketing/DashboardSlideshow"
 import styles from "../marketing/PhaseZero.module.css"
 export function Hero() {
   return (
     <section id="home" className={styles.hero} aria-labelledby="hero-heading">
+      <div className={styles.heroShape} aria-hidden="true" />
       <div className={styles.heroInner}>
         <div className={styles.heroCopy}>
           <span className={styles.eyebrow}>
@@ -53,6 +55,9 @@ export function Hero() {
               View How Questra Works
             </Link>
           </div>
+        </div>
+        <div id="product-screens" className={styles.heroVisual}>
+          <DashboardSlideshow />
         </div>
       </div>
     </section>
