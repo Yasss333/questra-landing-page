@@ -1,6 +1,7 @@
 import Link from "next/link"
 import type { ReactNode } from "react"
 import { HoverEffect } from "@/components/ui/card-hover-effect"
+import { Features } from "@/components/ui/features-8"
 import { StickyScroll } from "@/components/ui/sticky-scroll-reveal"
 import FeatureBento from "./FeatureBento"
 import WorkflowJourney from "./WorkflowJourney"
@@ -190,40 +191,40 @@ export function EvalIQMasterWizard() {
       title: "Select Examination & Link Question Paper",
       description:
         "Choose batch year, degree, department, semester, subject and examination. Link the approved Questra question paper with its patterns and question mappings.",
-      image: "/images/master-wizard/examination-planning.webp",
-      alt: "Administrator organizing documents beside a laptop",
+      image: "/images/master-wizard/examination-planning-ai.png",
+      alt: "AI-generated scene of a Questra administrator selecting an examination and linking its approved question paper",
       photo: true,
     },
     {
       title: "Configure Answer Key & Evaluation Rules",
       description:
         "Attach approved model answers, rubrics and partial-credit criteria. Define the valuation method, permitted mark variations, moderation thresholds and academic regulations.",
-      image: "/images/master-wizard/answer-marking.webp",
-      alt: "Marking a completed answer sheet with a red pen",
+      image: "/images/master-wizard/answer-marking-ai.png",
+      alt: "AI-generated scene of a faculty member configuring a marking rubric, model answer and partial-credit rules",
       photo: true,
     },
     {
       title: "Assign Staff & Define Approval Hierarchy",
       description:
         "Assign eligible examiners, chief examiners and moderation authorities. Configure evaluation submission, moderation, verification and COE approval stages.",
-      image: "/images/master-wizard/staff-meeting.webp",
-      alt: "Colleagues discussing documents around a meeting table",
+      image: "/images/master-wizard/staff-meeting-ai.png",
+      alt: "AI-generated scene of university staff assigning examiners and reviewing the examiner, moderator and COE approval hierarchy",
       photo: true,
     },
     {
       title: "Identify Answer Sheets & Enable AI Assistance",
       description:
         "Define scanning formats, barcode or QR-based mapping and anonymity rules. Configure supported answer recognition, AI suggestions and confidence-based faculty review.",
-      image: "/images/master-wizard/answer-sheet-scanning.webp",
-      alt: "Placing a document on a flatbed scanner",
+      image: "/images/master-wizard/answer-sheet-scanning-ai.png",
+      alt: "AI-generated scene of an administrator scanning anonymized answer sheets with AI suggestions and faculty review on screen",
       photo: true,
     },
     {
       title: "Configure Results, Validate & Activate",
       description:
         "Set mark consolidation, grading, institutional regulations and publication authorization. Review all configurations, resolve missing prerequisites and activate the evaluation workflow.",
-      image: "/images/master-wizard/question-paper-review.webp",
-      alt: "Reviewing a question paper beside an answer sheet",
+      image: "/images/master-wizard/question-paper-review-ai.png",
+      alt: "AI-generated scene of examination authorities validating grading and authorization before activating the evaluation workflow",
       photo: true,
     },
   ]
@@ -303,7 +304,7 @@ export function EvalIQBenefits() {
 }
 
 export function QuestraAdvantage() {
-  const advantages = [
+  const advantages: [string, string][] = [
     ["One Curriculum", "A common academic foundation."],
     ["One Question Bank", "Approved, reusable academic questions."],
     [
@@ -337,13 +338,8 @@ export function QuestraAdvantage() {
           disconnected workflows. Questra’s vision is to unite these activities
           within one intelligent academic ecosystem.
         </p>
-        <div className={styles.featureGrid}>
-          {advantages.map(([title, description]) => (
-            <article className={styles.feature} key={title}>
-              <h3>{title}</h3>
-              <p>{description}</p>
-            </article>
-          ))}
+        <div className={styles.advantageCards}>
+          <Features cards={advantages} path="/" />
         </div>
         <p className={styles.note}>
           Questra creates intelligence before examinations, supports evaluation
