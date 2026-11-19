@@ -84,6 +84,34 @@
 .heroHighlight {
   color: var(--theme-accent);
 }
+.typingHeadline {
+  display: grid;
+  text-wrap: wrap;
+}
+.typingMeasure,
+.typingText {
+  grid-area: 1 / 1;
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+.typingMeasure {
+  visibility: hidden;
+  pointer-events: none;
+}
+.typingCursor {
+  display: inline-block;
+  width: 2px;
+  height: .82em;
+  margin-left: 5px;
+  background: var(--theme-green);
+  animation: cursor-blink 1s steps(1) infinite;
+}
+@keyframes cursor-blink {
+  50% { opacity: 0; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .typingCursor { display: none; }
+}
 .heroSubhead {
   font-size: clamp(19px, 1.5vw, 23px);
   font-weight: 550;

@@ -1,6 +1,7 @@
 import Link from "next/link"
 import { ArrowRight, Check, Play } from "lucide-react"
 import DashboardSlideshow from "../marketing/DashboardSlideshow"
+import HeroHeadline from "./HeroHeadline"
 import styles from "../marketing/PhaseZero.module.css"
 export function Hero() {
   return (
@@ -13,29 +14,14 @@ export function Hero() {
             THE INTELLIGENT EXAMINATION AUTOMATION PLATFORM
           </span>
           <h1 id="hero-heading">
-            The Future of{" "}
-            <span className={styles.heroHighlight}>
-              Intelligent Examination Evaluation
-            </span>
+            <span className={styles.srOnly}>The Future of Examination Intelligence.</span>
+            <span aria-hidden="true">The Future of</span>
+            <HeroHeadline />
           </h1>
-          <h2 className={styles.heroSubhead}>
-            Beyond Question Paper Generation. Beyond Conventional Answer Valuation.
-          </h2>
           <p className={styles.heroDescription}>
-            Introducing <strong>Questra EvalIQ</strong>, an intelligent answer sheet
-            evaluation and academic performance platform designed to transform
-            how higher educational institutions assess student knowledge, ensure
-            evaluation quality, measure learning outcomes and continuously
-            improve academic excellence.
-          </p>
-          <p className={styles.heroDescription}>
-            Powered by AI-assisted evaluation, faculty-controlled assessment,
-            intelligent moderation and academic analytics, EvalIQ connects every
-            question, every student answer and every awarded mark to meaningful
-            educational outcomes.
-          </p>
-          <p className={styles.heroSubhead}>
-            <strong>One Integrated Ecosystem. One Intelligent Evaluation Journey.</strong>
+            Meet <strong>Questra EvalIQ</strong>—from autonomous question paper
+            generation to faculty-guided evaluation and academic insights. One
+            connected examination journey.
           </p>
           <div className={styles.heroChecks}>
             <span>
