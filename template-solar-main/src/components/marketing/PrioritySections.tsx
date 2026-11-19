@@ -124,10 +124,6 @@ export function FeatureIndex() {
       </span>
       <h2>12 Intelligent Evaluation Innovations</h2>
       <FeatureBento />
-      <Link className={styles.sectionLink} href="/#dashboard-preview">
-        Explore the EvalIQ dashboard
-        <ArrowRight size={15} />
-      </Link>
     </section>
   )
 }

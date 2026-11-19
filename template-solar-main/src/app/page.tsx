@@ -1,5 +1,4 @@
 import { Hero } from "@/components/ui/Hero"
-import DashboardPreview from "@/components/ui/DashboardPreview"
 import { FAQ } from "@/components/marketing/HomeSections"
 import {
   ExactWorkflow,
@@ -25,7 +24,6 @@ export default function Home() {
       <Hero />
       <ExactWorkflow />
       <FeatureIndex />
-      <DashboardPreview />
       <EvalIQMasterWizard />
       <EvalIQBenefits />
       <EvaluationGovernance />

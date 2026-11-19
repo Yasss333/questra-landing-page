@@ -13,21 +13,29 @@ export function Hero() {
             THE INTELLIGENT EXAMINATION AUTOMATION PLATFORM
           </span>
           <h1 id="hero-heading">
-            The Future of Intelligence:{" "}
+            The Future of{" "}
             <span className={styles.heroHighlight}>
-              Examination, Evaluation,
-            </span>{" "}
-            and All Those Things.
+              Intelligent Examination Evaluation
+            </span>
           </h1>
           <h2 className={styles.heroSubhead}>
-            Built for Higher Educational Institutions with hierarchy-based
-            faculty accountability.
+            Beyond Question Paper Generation. Beyond Conventional Answer Valuation.
           </h2>
           <p className={styles.heroDescription}>
-            Questra transforms institutional curriculum into examination-ready
-            question papers through intelligence, governance and automation —
-            ensuring every paper is controlled, transparent, efficient and
-            academically aligned.
+            Introducing <strong>Questra EvalIQ</strong>, an intelligent answer sheet
+            evaluation and academic performance platform designed to transform
+            how higher educational institutions assess student knowledge, ensure
+            evaluation quality, measure learning outcomes and continuously
+            improve academic excellence.
+          </p>
+          <p className={styles.heroDescription}>
+            Powered by AI-assisted evaluation, faculty-controlled assessment,
+            intelligent moderation and academic analytics, EvalIQ connects every
+            question, every student answer and every awarded mark to meaningful
+            educational outcomes.
+          </p>
+          <p className={styles.heroSubhead}>
+            <strong>One Integrated Ecosystem. One Intelligent Evaluation Journey.</strong>
           </p>
           <div className={styles.heroChecks}>
             <span>
