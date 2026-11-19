@@ -1063,3 +1063,9 @@
 
 .roles .roleSpotlight { padding: 24px; }
 .roles .roleSpotlight h3 { margin-top: 0; }
+
+@media (min-width: 1100px) {
+  .advantageCards > div {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
